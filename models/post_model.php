@@ -5,7 +5,10 @@
  * @author __ 
  *
  * Data: 16/04/2016
- */
+ */ 
+
+include_once 'user_model.php';
+
 class Post_Model extends Model
 {
 	/** 
@@ -73,9 +76,9 @@ class Post_Model extends Model
 	/** 
 	* Metodos get's
 	*/
-	public function getPost()
+	public function getId_post()
 	{
-		return $this->post;
+		return $this->id_post;
 	}
 
 	public function getTitle()

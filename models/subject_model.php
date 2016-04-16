@@ -5,7 +5,9 @@
  * @author __ 
  *
  * Data: 16/04/2016
- */
+ */ 
+
+
 class Subject_Model extends Model
 {
 	/** 
@@ -38,9 +40,9 @@ class Subject_Model extends Model
 	/** 
 	* Metodos get's
 	*/
-	public function getSubject()
+	public function getId_subject()
 	{
-		return $this->subject;
+		return $this->id_subject;
 	}
 
 	public function getName()

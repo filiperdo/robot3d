@@ -5,7 +5,11 @@
  * @author __ 
  *
  * Data: 16/04/2016
- */
+ */ 
+
+include_once 'item_model.php';
+include_once 'user_model.php';
+
 class Replie_Model extends Model
 {
 	/** 
@@ -66,9 +70,9 @@ class Replie_Model extends Model
 	/** 
 	* Metodos get's
 	*/
-	public function getReplie()
+	public function getId_replie()
 	{
-		return $this->replie;
+		return $this->id_replie;
 	}
 
 	public function getContent()

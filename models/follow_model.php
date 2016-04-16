@@ -5,7 +5,11 @@
  * @author __ 
  *
  * Data: 16/04/2016
- */
+ */ 
+
+include_once 'follower_model.php';
+include_once 'user_model.php';
+
 class Follow_Model extends Model
 {
 	/** 

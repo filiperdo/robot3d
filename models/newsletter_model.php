@@ -5,7 +5,9 @@
  * @author __ 
  *
  * Data: 16/04/2016
- */
+ */ 
+
+
 class Newsletter_Model extends Model
 {
 	/** 
@@ -45,9 +47,9 @@ class Newsletter_Model extends Model
 	/** 
 	* Metodos get's
 	*/
-	public function getNewsletter()
+	public function getId_newsletter()
 	{
-		return $this->newsletter;
+		return $this->id_newsletter;
 	}
 
 	public function getEmail()

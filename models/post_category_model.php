@@ -5,7 +5,11 @@
  * @author __ 
  *
  * Data: 16/04/2016
- */
+ */ 
+
+include_once 'post_model.php';
+include_once 'category_model.php';
+
 class Post_category_Model extends Model
 {
 	/** 

@@ -5,7 +5,9 @@
  * @author __ 
  *
  * Data: 16/04/2016
- */
+ */ 
+
+
 class Typeuser_Model extends Model
 {
 	/** 
@@ -38,9 +40,9 @@ class Typeuser_Model extends Model
 	/** 
 	* Metodos get's
 	*/
-	public function getTypeuser()
+	public function getId_typeuser()
 	{
-		return $this->typeuser;
+		return $this->id_typeuser;
 	}
 
 	public function getName()

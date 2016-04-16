@@ -5,7 +5,9 @@
  * @author __ 
  *
  * Data: 16/04/2016
- */
+ */ 
+
+
 class Permission_Model extends Model
 {
 	/** 
@@ -38,9 +40,9 @@ class Permission_Model extends Model
 	/** 
 	* Metodos get's
 	*/
-	public function getPermission()
+	public function getId_permission()
 	{
-		return $this->permission;
+		return $this->id_permission;
 	}
 
 	public function getName()

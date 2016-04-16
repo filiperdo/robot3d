@@ -5,7 +5,11 @@
  * @author __ 
  *
  * Data: 16/04/2016
- */
+ */ 
+
+include_once 'user_model.php';
+include_once 'topic_model.php';
+
 class Item_Model extends Model
 {
 	/** 
@@ -66,9 +70,9 @@ class Item_Model extends Model
 	/** 
 	* Metodos get's
 	*/
-	public function getItem()
+	public function getId_item()
 	{
-		return $this->item;
+		return $this->id_item;
 	}
 
 	public function getViews()

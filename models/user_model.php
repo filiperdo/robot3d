@@ -5,7 +5,10 @@
  * @author __ 
  *
  * Data: 16/04/2016
- */
+ */ 
+
+include_once 'typeuser_model.php';
+
 class User_Model extends Model
 {
 	/** 
@@ -115,9 +118,9 @@ class User_Model extends Model
 	/** 
 	* Metodos get's
 	*/
-	public function getUser()
+	public function getId_user()
 	{
-		return $this->user;
+		return $this->id_user;
 	}
 
 	public function getName()

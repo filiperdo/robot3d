@@ -5,7 +5,11 @@
  * @author __ 
  *
  * Data: 16/04/2016
- */
+ */ 
+
+include_once 'user_model.php';
+include_once 'permission_model.php';
+
 class User_permission_Model extends Model
 {
 	/** 

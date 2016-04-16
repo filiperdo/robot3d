@@ -5,7 +5,11 @@
  * @author __ 
  *
  * Data: 16/04/2016
- */
+ */ 
+
+include_once 'user_model.php';
+include_once 'post_model.php';
+
 class Comment_Model extends Model
 {
 	/** 
@@ -59,9 +63,9 @@ class Comment_Model extends Model
 	/** 
 	* Metodos get's
 	*/
-	public function getComment()
+	public function getId_comment()
 	{
-		return $this->comment;
+		return $this->id_comment;
 	}
 
 	public function getContent()

@@ -5,7 +5,10 @@
  * @author __ 
  *
  * Data: 16/04/2016
- */
+ */ 
+
+include_once 'user_model.php';
+
 class Project_Model extends Model
 {
 	/** 
@@ -80,9 +83,9 @@ class Project_Model extends Model
 	/** 
 	* Metodos get's
 	*/
-	public function getProject()
+	public function getId_project()
 	{
-		return $this->project;
+		return $this->id_project;
 	}
 
 	public function getName()

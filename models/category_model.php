@@ -5,7 +5,9 @@
  * @author __ 
  *
  * Data: 16/04/2016
- */
+ */ 
+
+
 class Category_Model extends Model
 {
 	/** 
@@ -38,9 +40,9 @@ class Category_Model extends Model
 	/** 
 	* Metodos get's
 	*/
-	public function getCategory()
+	public function getId_category()
 	{
-		return $this->category;
+		return $this->id_category;
 	}
 
 	public function getName()

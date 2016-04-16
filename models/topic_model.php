@@ -5,7 +5,10 @@
  * @author __ 
  *
  * Data: 16/04/2016
- */
+ */ 
+
+include_once 'subject_model.php';
+
 class Topic_Model extends Model
 {
 	/** 
@@ -52,9 +55,9 @@ class Topic_Model extends Model
 	/** 
 	* Metodos get's
 	*/
-	public function getTopic()
+	public function getId_topic()
 	{
-		return $this->topic;
+		return $this->id_topic;
 	}
 
 	public function getName()
