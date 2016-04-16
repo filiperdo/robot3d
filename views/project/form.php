@@ -44,6 +44,11 @@
 </div>
 
 <div class="form-group">
+	<label for="level">Level</label> 
+		<input type="text" name="level" id="level"  class="form-control" required="required" value="<?=$this->obj->getLevel()?>" />
+</div>
+
+<div class="form-group">
 	<label for="date">Date</label> 
 		<input type="text" name="date" id="date"  class="form-control" required="required" value="<?=$this->obj->getDate()?>" />
 </div>

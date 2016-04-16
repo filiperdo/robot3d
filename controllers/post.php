@@ -1,6 +1,6 @@
 <?php 
 
-class User extends Controller {
+class Post extends Controller {
 
 	public function __construct() {
 		parent::__construct();
@@ -12,11 +12,11 @@ class User extends Controller {
 	*/
 	public function index()
 	{
-		$this->view->title = "User";
-		$this->view->listarUser = $this->model->listarUser();
+		$this->view->title = "Post";
+		$this->view->listarPost = $this->model->listarPost();
 
 		$this->view->render( "header" );
-		$this->view->render( "user/index" );
+		$this->view->render( "post/index" );
 		$this->view->render( "footer" );
 	}
 
@@ -25,15 +25,15 @@ class User extends Controller {
 	*/
 	public function form( $id = NULL )
 	{
-		$this->view->title = "Cadastrar User";
+		$this->view->title = "Cadastrar Post";
 		$this->view->action = "create";
 		$this->view->obj = $this->model;
 
 		if( $id ) 
 		{
-			$this->view->title = "Editar User";
+			$this->view->title = "Editar Post";
 			$this->view->action = "edit/".$id;
-			$this->view->obj = $this->model->obterUser( $id );
+			$this->view->obj = $this->model->obterPost( $id );
 
 			if ( empty( $this->view->obj ) ) {
 				die( "Valor invalido!" );
@@ -41,7 +41,7 @@ class User extends Controller {
 		}
 
 		$this->view->render( "header" );
-		$this->view->render( "user/form" );
+		$this->view->render( "post/form" );
 		$this->view->render( "footer" );
 	}
 
@@ -51,24 +51,18 @@ class User extends Controller {
 	public function create()
 	{
 		$data = array(
-			'id_user' => $_POST["id_user"], 
-			'name' => $_POST["name"], 
-			'login' => $_POST["login"], 
-			'password' => $_POST["password"], 
-			'email' => $_POST["email"], 
-			'website' => $_POST["website"], 
-			'bio' => $_POST["bio"], 
-			'num_login' => $_POST["num_login"], 
+			'id_post' => $_POST["id_post"], 
+			'title' => $_POST["title"], 
+			'content' => $_POST["content"], 
 			'date' => $_POST["date"], 
-			'linguage' => $_POST["linguage"], 
-			'id_typeuser' => $_POST["id_typeuser"], 
-			'lastLogin' => $_POST["lastLogin"], 
+			'views' => $_POST["views"], 
 			'status' => $_POST["status"], 
+			'id_user' => $_POST["id_user"], 
 		);
 
 		$this->model->create( $data ) ? $msg = base64_encode( "OPERACAO_SUCESSO" ) : $msg = base64_encode( "OPERACAO_ERRO" );
 
-		header("location: " . URL . "user?st=".$msg);
+		header("location: " . URL . "post?st=".$msg);
 	}
 
 	/** 
@@ -77,25 +71,19 @@ class User extends Controller {
 	public function edit( $id )
 	{
 		$data = array(
-			"id_user" 	=> $id,
-			'id_user' => $_POST["id_user"], 
-			'name' => $_POST["name"], 
-			'login' => $_POST["login"], 
-			'password' => $_POST["password"], 
-			'email' => $_POST["email"], 
-			'website' => $_POST["website"], 
-			'bio' => $_POST["bio"], 
-			'num_login' => $_POST["num_login"], 
+			"id_post" 	=> $id,
+			'id_post' => $_POST["id_post"], 
+			'title' => $_POST["title"], 
+			'content' => $_POST["content"], 
 			'date' => $_POST["date"], 
-			'linguage' => $_POST["linguage"], 
-			'id_typeuser' => $_POST["id_typeuser"], 
-			'lastLogin' => $_POST["lastLogin"], 
+			'views' => $_POST["views"], 
 			'status' => $_POST["status"], 
+			'id_user' => $_POST["id_user"], 
 		);
 
 		$this->model->edit( $data, $id ) ? $msg = base64_encode( "OPERACAO_SUCESSO" ) : $msg = base64_encode( "OPERACAO_ERRO" );
 
-		header("location: " . URL . "user?st=".$msg);
+		header("location: " . URL . "post?st=".$msg);
 	}
 
 	/** 
@@ -105,6 +93,6 @@ class User extends Controller {
 	{
 		$this->model->delete( $id ) ? $msg = base64_encode( "OPERACAO_SUCESSO" ) : $msg = base64_encode( "OPERACAO_ERRO" );
 
-		header("location: " . URL . "user?st=".$msg);
+		header("location: " . URL . "post?st=".$msg);
 	}
 }

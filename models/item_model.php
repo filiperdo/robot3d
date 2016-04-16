@@ -1,70 +1,51 @@
 <?php 
 
 /** 
- * Classe Project
+ * Classe Item
  * @author __ 
  *
  * Data: 16/04/2016
  */
-class Project_Model extends Model
+class Item_Model extends Model
 {
 	/** 
 	* Atributos Private 
 	*/
-	private $id_project;
-	private $name;
-	private $website;
-	private $link_image;
-	private $description;
-	private $level;
+	private $id_item;
+	private $views;
+	private $content;
 	private $date;
 	private $user;
+	private $topic;
 
 	public function __construct()
 	{
 		parent::__construct();
 
-		$this->id_project = '';
-		$this->name = '';
-		$this->website = '';
-		$this->link_image = '';
-		$this->description = '';
-		$this->level = '';
+		$this->id_item = '';
+		$this->views = '';
+		$this->content = '';
 		$this->date = '';
 		$this->user = new User_Model();
+		$this->topic = new Topic_Model();
 	}
 
 	/** 
 	* Metodos set's
 	*/
-	public function setId_project( $id_project )
+	public function setId_item( $id_item )
 	{
-		$this->id_project = $id_project;
+		$this->id_item = $id_item;
 	}
 
-	public function setName( $name )
+	public function setViews( $views )
 	{
-		$this->name = $name;
+		$this->views = $views;
 	}
 
-	public function setWebsite( $website )
+	public function setContent( $content )
 	{
-		$this->website = $website;
-	}
-
-	public function setLink_image( $link_image )
-	{
-		$this->link_image = $link_image;
-	}
-
-	public function setDescription( $description )
-	{
-		$this->description = $description;
-	}
-
-	public function setLevel( $level )
-	{
-		$this->level = $level;
+		$this->content = $content;
 	}
 
 	public function setDate( $date )
@@ -77,37 +58,27 @@ class Project_Model extends Model
 		$this->user = $user;
 	}
 
+	public function setTopic( Topic_Model $topic )
+	{
+		$this->topic = $topic;
+	}
+
 	/** 
 	* Metodos get's
 	*/
-	public function getProject()
+	public function getItem()
 	{
-		return $this->project;
+		return $this->item;
 	}
 
-	public function getName()
+	public function getViews()
 	{
-		return $this->name;
+		return $this->views;
 	}
 
-	public function getWebsite()
+	public function getContent()
 	{
-		return $this->website;
-	}
-
-	public function getLink_image()
-	{
-		return $this->link_image;
-	}
-
-	public function getDescription()
-	{
-		return $this->description;
-	}
-
-	public function getLevel()
-	{
-		return $this->level;
+		return $this->content;
 	}
 
 	public function getDate()
@@ -120,6 +91,11 @@ class Project_Model extends Model
 		return $this->user;
 	}
 
+	public function getTopic()
+	{
+		return $this->topic;
+	}
+
 
 	/** 
 	* Metodo create
@@ -128,7 +104,7 @@ class Project_Model extends Model
 	{
 		$this->db->beginTransaction();
 
-		if( !$id = $this->db->insert( "project", $data ) ){
+		if( !$id = $this->db->insert( "item", $data ) ){
 			$this->db->rollBack();
 			return false;
 		}
@@ -144,7 +120,7 @@ class Project_Model extends Model
 	{
 		$this->db->beginTransaction();
 
-		if( !$update = $this->db->update("project", $data, "id_project = {$id} ") ){
+		if( !$update = $this->db->update("item", $data, "id_item = {$id} ") ){
 			$this->db->rollBack();
 			return false;
 		}
@@ -160,7 +136,7 @@ class Project_Model extends Model
 	{
 		$this->db->beginTransaction();
 
-		if( !$delete = $this->db->delete("project", "id_project = {$id} ") ){ 
+		if( !$delete = $this->db->delete("item", "id_item = {$id} ") ){ 
 			$this->db->rollBack();
 			return false;
 		}
@@ -170,29 +146,29 @@ class Project_Model extends Model
 	}
 
 	/** 
-	* Metodo obterProject
+	* Metodo obterItem
 	*/
-	public function obterProject( $id_project )
+	public function obterItem( $id_item )
 	{
 		$sql  = "select * ";
-		$sql .= "from project ";
-		$sql .= "where id_project = :id ";
+		$sql .= "from item ";
+		$sql .= "where id_item = :id ";
 
-		$result = $this->db->select( $sql, array("id" => $id_project) );
+		$result = $this->db->select( $sql, array("id" => $id_item) );
 		return $this->montarObjeto( $result[0] );
 	}
 
 	/** 
-	* Metodo listarProject
+	* Metodo listarItem
 	*/
-	public function listarProject()
+	public function listarItem()
 	{
 		$sql  = "select * ";
-		$sql .= "from project ";
+		$sql .= "from item ";
 
 		if ( isset( $_POST["like"] ) )
 		{
-			$sql .= "where id_project like :id "; // Configurar o like com o campo necessario da tabela 
+			$sql .= "where id_item like :id "; // Configurar o like com o campo necessario da tabela 
 			$result = $this->db->select( $sql, array("id" => "%{$_POST["like"]}%") );
 		}
 		else
@@ -225,17 +201,18 @@ class Project_Model extends Model
 	*/
 	private function montarObjeto( $row )
 	{
-		$this->setId_project( $row["id_project"] );
-		$this->setName( $row["name"] );
-		$this->setWebsite( $row["website"] );
-		$this->setLink_image( $row["link_image"] );
-		$this->setDescription( $row["description"] );
-		$this->setLevel( $row["level"] );
+		$this->setId_item( $row["id_item"] );
+		$this->setViews( $row["views"] );
+		$this->setContent( $row["content"] );
 		$this->setDate( $row["date"] );
 
 		$objUser = new User_Model();
 		$objUser->obterUser( $row["id_user"] );
 		$this->setUser( $objUser );
+
+		$objTopic = new Topic_Model();
+		$objTopic->obterTopic( $row["id_topic"] );
+		$this->setTopic( $objTopic );
 
 		return $this;
 	}

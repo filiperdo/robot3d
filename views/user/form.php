@@ -69,6 +69,21 @@
 </div>
 
 <div class="form-group">
+	<label for="id_typeuser">Id_typeuser</label> 
+		<input type="text" name="id_typeuser" id="id_typeuser"  class="form-control" required="required" value="<?=$this->obj->getId_typeuser()?>" />
+</div>
+
+<div class="form-group">
+	<label for="lastLogin">LastLogin</label> 
+		<input type="text" name="lastLogin" id="lastLogin"  class="form-control" required="required" value="<?=$this->obj->getLastLogin()?>" />
+</div>
+
+<div class="form-group">
+	<label for="status">Status</label> 
+		<input type="text" name="status" id="status"  class="form-control" required="required" value="<?=$this->obj->getStatus()?>" />
+</div>
+
+<div class="form-group">
 	<input type="submit" name="salvar" id="salvar" value="Salvar" class="btn btn-success" />
 	<a href="<?php echo URL; ?>user" class="btn btn-info">Cancelar</a>
 </div>

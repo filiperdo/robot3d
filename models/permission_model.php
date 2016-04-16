@@ -1,63 +1,51 @@
 <?php 
 
 /** 
- * Classe Newsletter
+ * Classe Permission
  * @author __ 
  *
  * Data: 16/04/2016
  */
-class Newsletter_Model extends Model
+class Permission_Model extends Model
 {
 	/** 
 	* Atributos Private 
 	*/
-	private $id_newsletter;
-	private $email;
-	private $data;
+	private $id_permission;
+	private $name;
 
 	public function __construct()
 	{
 		parent::__construct();
 
-		$this->id_newsletter = '';
-		$this->email = '';
-		$this->data = '';
+		$this->id_permission = '';
+		$this->name = '';
 	}
 
 	/** 
 	* Metodos set's
 	*/
-	public function setId_newsletter( $id_newsletter )
+	public function setId_permission( $id_permission )
 	{
-		$this->id_newsletter = $id_newsletter;
+		$this->id_permission = $id_permission;
 	}
 
-	public function setEmail( $email )
+	public function setName( $name )
 	{
-		$this->email = $email;
-	}
-
-	public function setData( $data )
-	{
-		$this->data = $data;
+		$this->name = $name;
 	}
 
 	/** 
 	* Metodos get's
 	*/
-	public function getNewsletter()
+	public function getPermission()
 	{
-		return $this->newsletter;
+		return $this->permission;
 	}
 
-	public function getEmail()
+	public function getName()
 	{
-		return $this->email;
-	}
-
-	public function getData()
-	{
-		return $this->data;
+		return $this->name;
 	}
 
 
@@ -68,7 +56,7 @@ class Newsletter_Model extends Model
 	{
 		$this->db->beginTransaction();
 
-		if( !$id = $this->db->insert( "newsletter", $data ) ){
+		if( !$id = $this->db->insert( "permission", $data ) ){
 			$this->db->rollBack();
 			return false;
 		}
@@ -84,7 +72,7 @@ class Newsletter_Model extends Model
 	{
 		$this->db->beginTransaction();
 
-		if( !$update = $this->db->update("newsletter", $data, "id_newsletter = {$id} ") ){
+		if( !$update = $this->db->update("permission", $data, "id_permission = {$id} ") ){
 			$this->db->rollBack();
 			return false;
 		}
@@ -100,7 +88,7 @@ class Newsletter_Model extends Model
 	{
 		$this->db->beginTransaction();
 
-		if( !$delete = $this->db->delete("newsletter", "id_newsletter = {$id} ") ){ 
+		if( !$delete = $this->db->delete("permission", "id_permission = {$id} ") ){ 
 			$this->db->rollBack();
 			return false;
 		}
@@ -110,29 +98,29 @@ class Newsletter_Model extends Model
 	}
 
 	/** 
-	* Metodo obterNewsletter
+	* Metodo obterPermission
 	*/
-	public function obterNewsletter( $id_newsletter )
+	public function obterPermission( $id_permission )
 	{
 		$sql  = "select * ";
-		$sql .= "from newsletter ";
-		$sql .= "where id_newsletter = :id ";
+		$sql .= "from permission ";
+		$sql .= "where id_permission = :id ";
 
-		$result = $this->db->select( $sql, array("id" => $id_newsletter) );
+		$result = $this->db->select( $sql, array("id" => $id_permission) );
 		return $this->montarObjeto( $result[0] );
 	}
 
 	/** 
-	* Metodo listarNewsletter
+	* Metodo listarPermission
 	*/
-	public function listarNewsletter()
+	public function listarPermission()
 	{
 		$sql  = "select * ";
-		$sql .= "from newsletter ";
+		$sql .= "from permission ";
 
 		if ( isset( $_POST["like"] ) )
 		{
-			$sql .= "where id_newsletter like :id "; // Configurar o like com o campo necessario da tabela 
+			$sql .= "where id_permission like :id "; // Configurar o like com o campo necessario da tabela 
 			$result = $this->db->select( $sql, array("id" => "%{$_POST["like"]}%") );
 		}
 		else
@@ -165,9 +153,8 @@ class Newsletter_Model extends Model
 	*/
 	private function montarObjeto( $row )
 	{
-		$this->setId_newsletter( $row["id_newsletter"] );
-		$this->setEmail( $row["email"] );
-		$this->setData( $row["data"] );
+		$this->setId_permission( $row["id_permission"] );
+		$this->setName( $row["name"] );
 
 		return $this;
 	}

@@ -1,63 +1,51 @@
 <?php 
 
 /** 
- * Classe Newsletter
+ * Classe Post_category
  * @author __ 
  *
  * Data: 16/04/2016
  */
-class Newsletter_Model extends Model
+class Post_category_Model extends Model
 {
 	/** 
 	* Atributos Private 
 	*/
-	private $id_newsletter;
-	private $email;
-	private $data;
+	private $post;
+	private $category;
 
 	public function __construct()
 	{
 		parent::__construct();
 
-		$this->id_newsletter = '';
-		$this->email = '';
-		$this->data = '';
+		$this->post = new Post_Model();
+		$this->category = new Category_Model();
 	}
 
 	/** 
 	* Metodos set's
 	*/
-	public function setId_newsletter( $id_newsletter )
+	public function setPost( Post_Model $post )
 	{
-		$this->id_newsletter = $id_newsletter;
+		$this->post = $post;
 	}
 
-	public function setEmail( $email )
+	public function setCategory( Category_Model $category )
 	{
-		$this->email = $email;
-	}
-
-	public function setData( $data )
-	{
-		$this->data = $data;
+		$this->category = $category;
 	}
 
 	/** 
 	* Metodos get's
 	*/
-	public function getNewsletter()
+	public function getPost()
 	{
-		return $this->newsletter;
+		return $this->post;
 	}
 
-	public function getEmail()
+	public function getCategory()
 	{
-		return $this->email;
-	}
-
-	public function getData()
-	{
-		return $this->data;
+		return $this->category;
 	}
 
 
@@ -68,7 +56,7 @@ class Newsletter_Model extends Model
 	{
 		$this->db->beginTransaction();
 
-		if( !$id = $this->db->insert( "newsletter", $data ) ){
+		if( !$id = $this->db->insert( "post_category", $data ) ){
 			$this->db->rollBack();
 			return false;
 		}
@@ -84,7 +72,7 @@ class Newsletter_Model extends Model
 	{
 		$this->db->beginTransaction();
 
-		if( !$update = $this->db->update("newsletter", $data, "id_newsletter = {$id} ") ){
+		if( !$update = $this->db->update("post_category", $data, "id_post_category = {$id} ") ){
 			$this->db->rollBack();
 			return false;
 		}
@@ -100,7 +88,7 @@ class Newsletter_Model extends Model
 	{
 		$this->db->beginTransaction();
 
-		if( !$delete = $this->db->delete("newsletter", "id_newsletter = {$id} ") ){ 
+		if( !$delete = $this->db->delete("post_category", "id_post_category = {$id} ") ){ 
 			$this->db->rollBack();
 			return false;
 		}
@@ -110,29 +98,29 @@ class Newsletter_Model extends Model
 	}
 
 	/** 
-	* Metodo obterNewsletter
+	* Metodo obterPost_category
 	*/
-	public function obterNewsletter( $id_newsletter )
+	public function obterPost_category( $id_post_category )
 	{
 		$sql  = "select * ";
-		$sql .= "from newsletter ";
-		$sql .= "where id_newsletter = :id ";
+		$sql .= "from post_category ";
+		$sql .= "where id_post_category = :id ";
 
-		$result = $this->db->select( $sql, array("id" => $id_newsletter) );
+		$result = $this->db->select( $sql, array("id" => $id_post_category) );
 		return $this->montarObjeto( $result[0] );
 	}
 
 	/** 
-	* Metodo listarNewsletter
+	* Metodo listarPost_category
 	*/
-	public function listarNewsletter()
+	public function listarPost_category()
 	{
 		$sql  = "select * ";
-		$sql .= "from newsletter ";
+		$sql .= "from post_category ";
 
 		if ( isset( $_POST["like"] ) )
 		{
-			$sql .= "where id_newsletter like :id "; // Configurar o like com o campo necessario da tabela 
+			$sql .= "where id_post_category like :id "; // Configurar o like com o campo necessario da tabela 
 			$result = $this->db->select( $sql, array("id" => "%{$_POST["like"]}%") );
 		}
 		else
@@ -165,9 +153,14 @@ class Newsletter_Model extends Model
 	*/
 	private function montarObjeto( $row )
 	{
-		$this->setId_newsletter( $row["id_newsletter"] );
-		$this->setEmail( $row["email"] );
-		$this->setData( $row["data"] );
+
+		$objPost = new Post_Model();
+		$objPost->obterPost( $row["id_post"] );
+		$this->setPost( $objPost );
+
+		$objCategory = new Category_Model();
+		$objCategory->obterCategory( $row["id_category"] );
+		$this->setCategory( $objCategory );
 
 		return $this;
 	}

@@ -44,6 +44,9 @@
 		<th>Num_login </th>
 		<th>Date </th>
 		<th>Linguage </th>
+		<th>Id_typeuser </th>
+		<th>LastLogin </th>
+		<th>Status </th>
 		<th></th>
 	</tr>
 	</thead>
@@ -60,6 +63,9 @@
 		<td><?php echo $user->getNum_login(); ?></td>
 		<td><?php echo $user->getDate(); ?></td>
 		<td><?php echo $user->getLinguage(); ?></td>
+		<td><?php echo $user->getId_typeuser(); ?></td>
+		<td><?php echo $user->getLastLogin(); ?></td>
+		<td><?php echo $user->getStatus(); ?></td>
 		<td align="right">
 			<a href="<?php echo URL;?>user/form/<?php echo $user->getId_user();?>" class="btn btn-info btn-sm"><i class="glyphicon glyphicon-pencil"></i></a>
 			<a href="<?php echo URL;?>user/delete/<?php echo $user->getId_user();?>" class="delete btn btn-danger btn-sm"><i class="glyphicon glyphicon-trash"></i></a>

@@ -1,33 +1,49 @@
 <?php 
 
 /** 
- * Classe Follow
+ * Classe Comment
  * @author __ 
  *
  * Data: 16/04/2016
  */
-class Follow_Model extends Model
+class Comment_Model extends Model
 {
 	/** 
 	* Atributos Private 
 	*/
-	private $follower;
+	private $id_comment;
+	private $content;
+	private $date;
 	private $user;
+	private $post;
 
 	public function __construct()
 	{
 		parent::__construct();
 
-		$this->follower = new Follower_Model();
+		$this->id_comment = '';
+		$this->content = '';
+		$this->date = '';
 		$this->user = new User_Model();
+		$this->post = new Post_Model();
 	}
 
 	/** 
 	* Metodos set's
 	*/
-	public function setFollower( Follower_Model $follower )
+	public function setId_comment( $id_comment )
 	{
-		$this->follower = $follower;
+		$this->id_comment = $id_comment;
+	}
+
+	public function setContent( $content )
+	{
+		$this->content = $content;
+	}
+
+	public function setDate( $date )
+	{
+		$this->date = $date;
 	}
 
 	public function setUser( User_Model $user )
@@ -35,17 +51,37 @@ class Follow_Model extends Model
 		$this->user = $user;
 	}
 
+	public function setPost( Post_Model $post )
+	{
+		$this->post = $post;
+	}
+
 	/** 
 	* Metodos get's
 	*/
-	public function getFollower()
+	public function getComment()
 	{
-		return $this->follower;
+		return $this->comment;
+	}
+
+	public function getContent()
+	{
+		return $this->content;
+	}
+
+	public function getDate()
+	{
+		return $this->date;
 	}
 
 	public function getUser()
 	{
 		return $this->user;
+	}
+
+	public function getPost()
+	{
+		return $this->post;
 	}
 
 
@@ -56,7 +92,7 @@ class Follow_Model extends Model
 	{
 		$this->db->beginTransaction();
 
-		if( !$id = $this->db->insert( "follow", $data ) ){
+		if( !$id = $this->db->insert( "comment", $data ) ){
 			$this->db->rollBack();
 			return false;
 		}
@@ -72,7 +108,7 @@ class Follow_Model extends Model
 	{
 		$this->db->beginTransaction();
 
-		if( !$update = $this->db->update("follow", $data, "id_follow = {$id} ") ){
+		if( !$update = $this->db->update("comment", $data, "id_comment = {$id} ") ){
 			$this->db->rollBack();
 			return false;
 		}
@@ -88,7 +124,7 @@ class Follow_Model extends Model
 	{
 		$this->db->beginTransaction();
 
-		if( !$delete = $this->db->delete("follow", "id_follow = {$id} ") ){ 
+		if( !$delete = $this->db->delete("comment", "id_comment = {$id} ") ){ 
 			$this->db->rollBack();
 			return false;
 		}
@@ -98,29 +134,29 @@ class Follow_Model extends Model
 	}
 
 	/** 
-	* Metodo obterFollow
+	* Metodo obterComment
 	*/
-	public function obterFollow( $id_follow )
+	public function obterComment( $id_comment )
 	{
 		$sql  = "select * ";
-		$sql .= "from follow ";
-		$sql .= "where id_follow = :id ";
+		$sql .= "from comment ";
+		$sql .= "where id_comment = :id ";
 
-		$result = $this->db->select( $sql, array("id" => $id_follow) );
+		$result = $this->db->select( $sql, array("id" => $id_comment) );
 		return $this->montarObjeto( $result[0] );
 	}
 
 	/** 
-	* Metodo listarFollow
+	* Metodo listarComment
 	*/
-	public function listarFollow()
+	public function listarComment()
 	{
 		$sql  = "select * ";
-		$sql .= "from follow ";
+		$sql .= "from comment ";
 
 		if ( isset( $_POST["like"] ) )
 		{
-			$sql .= "where id_follow like :id "; // Configurar o like com o campo necessario da tabela 
+			$sql .= "where id_comment like :id "; // Configurar o like com o campo necessario da tabela 
 			$result = $this->db->select( $sql, array("id" => "%{$_POST["like"]}%") );
 		}
 		else
@@ -153,14 +189,17 @@ class Follow_Model extends Model
 	*/
 	private function montarObjeto( $row )
 	{
-
-		$objFollower = new Follower_Model();
-		$objFollower->obterFollower( $row["id_follower"] );
-		$this->setFollower( $objFollower );
+		$this->setId_comment( $row["id_comment"] );
+		$this->setContent( $row["content"] );
+		$this->setDate( $row["date"] );
 
 		$objUser = new User_Model();
 		$objUser->obterUser( $row["id_user"] );
 		$this->setUser( $objUser );
+
+		$objPost = new Post_Model();
+		$objPost->obterPost( $row["id_post"] );
+		$this->setPost( $objPost );
 
 		return $this;
 	}

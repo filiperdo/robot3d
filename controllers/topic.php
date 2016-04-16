@@ -1,6 +1,6 @@
 <?php 
 
-class Project extends Controller {
+class Topic extends Controller {
 
 	public function __construct() {
 		parent::__construct();
@@ -12,11 +12,11 @@ class Project extends Controller {
 	*/
 	public function index()
 	{
-		$this->view->title = "Project";
-		$this->view->listarProject = $this->model->listarProject();
+		$this->view->title = "Topic";
+		$this->view->listarTopic = $this->model->listarTopic();
 
 		$this->view->render( "header" );
-		$this->view->render( "project/index" );
+		$this->view->render( "topic/index" );
 		$this->view->render( "footer" );
 	}
 
@@ -25,15 +25,15 @@ class Project extends Controller {
 	*/
 	public function form( $id = NULL )
 	{
-		$this->view->title = "Cadastrar Project";
+		$this->view->title = "Cadastrar Topic";
 		$this->view->action = "create";
 		$this->view->obj = $this->model;
 
 		if( $id ) 
 		{
-			$this->view->title = "Editar Project";
+			$this->view->title = "Editar Topic";
 			$this->view->action = "edit/".$id;
-			$this->view->obj = $this->model->obterProject( $id );
+			$this->view->obj = $this->model->obterTopic( $id );
 
 			if ( empty( $this->view->obj ) ) {
 				die( "Valor invalido!" );
@@ -41,7 +41,7 @@ class Project extends Controller {
 		}
 
 		$this->view->render( "header" );
-		$this->view->render( "project/form" );
+		$this->view->render( "topic/form" );
 		$this->view->render( "footer" );
 	}
 
@@ -51,19 +51,15 @@ class Project extends Controller {
 	public function create()
 	{
 		$data = array(
-			'id_project' => $_POST["id_project"], 
+			'id_topic' => $_POST["id_topic"], 
 			'name' => $_POST["name"], 
-			'website' => $_POST["website"], 
-			'link_image' => $_POST["link_image"], 
 			'description' => $_POST["description"], 
-			'level' => $_POST["level"], 
-			'date' => $_POST["date"], 
-			'id_user' => $_POST["id_user"], 
+			'id_subject' => $_POST["id_subject"], 
 		);
 
 		$this->model->create( $data ) ? $msg = base64_encode( "OPERACAO_SUCESSO" ) : $msg = base64_encode( "OPERACAO_ERRO" );
 
-		header("location: " . URL . "project?st=".$msg);
+		header("location: " . URL . "topic?st=".$msg);
 	}
 
 	/** 
@@ -72,20 +68,16 @@ class Project extends Controller {
 	public function edit( $id )
 	{
 		$data = array(
-			"id_project" 	=> $id,
-			'id_project' => $_POST["id_project"], 
+			"id_topic" 	=> $id,
+			'id_topic' => $_POST["id_topic"], 
 			'name' => $_POST["name"], 
-			'website' => $_POST["website"], 
-			'link_image' => $_POST["link_image"], 
 			'description' => $_POST["description"], 
-			'level' => $_POST["level"], 
-			'date' => $_POST["date"], 
-			'id_user' => $_POST["id_user"], 
+			'id_subject' => $_POST["id_subject"], 
 		);
 
 		$this->model->edit( $data, $id ) ? $msg = base64_encode( "OPERACAO_SUCESSO" ) : $msg = base64_encode( "OPERACAO_ERRO" );
 
-		header("location: " . URL . "project?st=".$msg);
+		header("location: " . URL . "topic?st=".$msg);
 	}
 
 	/** 
@@ -95,6 +87,6 @@ class Project extends Controller {
 	{
 		$this->model->delete( $id ) ? $msg = base64_encode( "OPERACAO_SUCESSO" ) : $msg = base64_encode( "OPERACAO_ERRO" );
 
-		header("location: " . URL . "project?st=".$msg);
+		header("location: " . URL . "topic?st=".$msg);
 	}
 }

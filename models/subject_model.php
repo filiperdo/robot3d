@@ -1,63 +1,51 @@
 <?php 
 
 /** 
- * Classe Newsletter
+ * Classe Subject
  * @author __ 
  *
  * Data: 16/04/2016
  */
-class Newsletter_Model extends Model
+class Subject_Model extends Model
 {
 	/** 
 	* Atributos Private 
 	*/
-	private $id_newsletter;
-	private $email;
-	private $data;
+	private $id_subject;
+	private $name;
 
 	public function __construct()
 	{
 		parent::__construct();
 
-		$this->id_newsletter = '';
-		$this->email = '';
-		$this->data = '';
+		$this->id_subject = '';
+		$this->name = '';
 	}
 
 	/** 
 	* Metodos set's
 	*/
-	public function setId_newsletter( $id_newsletter )
+	public function setId_subject( $id_subject )
 	{
-		$this->id_newsletter = $id_newsletter;
+		$this->id_subject = $id_subject;
 	}
 
-	public function setEmail( $email )
+	public function setName( $name )
 	{
-		$this->email = $email;
-	}
-
-	public function setData( $data )
-	{
-		$this->data = $data;
+		$this->name = $name;
 	}
 
 	/** 
 	* Metodos get's
 	*/
-	public function getNewsletter()
+	public function getSubject()
 	{
-		return $this->newsletter;
+		return $this->subject;
 	}
 
-	public function getEmail()
+	public function getName()
 	{
-		return $this->email;
-	}
-
-	public function getData()
-	{
-		return $this->data;
+		return $this->name;
 	}
 
 
@@ -68,7 +56,7 @@ class Newsletter_Model extends Model
 	{
 		$this->db->beginTransaction();
 
-		if( !$id = $this->db->insert( "newsletter", $data ) ){
+		if( !$id = $this->db->insert( "subject", $data ) ){
 			$this->db->rollBack();
 			return false;
 		}
@@ -84,7 +72,7 @@ class Newsletter_Model extends Model
 	{
 		$this->db->beginTransaction();
 
-		if( !$update = $this->db->update("newsletter", $data, "id_newsletter = {$id} ") ){
+		if( !$update = $this->db->update("subject", $data, "id_subject = {$id} ") ){
 			$this->db->rollBack();
 			return false;
 		}
@@ -100,7 +88,7 @@ class Newsletter_Model extends Model
 	{
 		$this->db->beginTransaction();
 
-		if( !$delete = $this->db->delete("newsletter", "id_newsletter = {$id} ") ){ 
+		if( !$delete = $this->db->delete("subject", "id_subject = {$id} ") ){ 
 			$this->db->rollBack();
 			return false;
 		}
@@ -110,29 +98,29 @@ class Newsletter_Model extends Model
 	}
 
 	/** 
-	* Metodo obterNewsletter
+	* Metodo obterSubject
 	*/
-	public function obterNewsletter( $id_newsletter )
+	public function obterSubject( $id_subject )
 	{
 		$sql  = "select * ";
-		$sql .= "from newsletter ";
-		$sql .= "where id_newsletter = :id ";
+		$sql .= "from subject ";
+		$sql .= "where id_subject = :id ";
 
-		$result = $this->db->select( $sql, array("id" => $id_newsletter) );
+		$result = $this->db->select( $sql, array("id" => $id_subject) );
 		return $this->montarObjeto( $result[0] );
 	}
 
 	/** 
-	* Metodo listarNewsletter
+	* Metodo listarSubject
 	*/
-	public function listarNewsletter()
+	public function listarSubject()
 	{
 		$sql  = "select * ";
-		$sql .= "from newsletter ";
+		$sql .= "from subject ";
 
 		if ( isset( $_POST["like"] ) )
 		{
-			$sql .= "where id_newsletter like :id "; // Configurar o like com o campo necessario da tabela 
+			$sql .= "where id_subject like :id "; // Configurar o like com o campo necessario da tabela 
 			$result = $this->db->select( $sql, array("id" => "%{$_POST["like"]}%") );
 		}
 		else
@@ -165,9 +153,8 @@ class Newsletter_Model extends Model
 	*/
 	private function montarObjeto( $row )
 	{
-		$this->setId_newsletter( $row["id_newsletter"] );
-		$this->setEmail( $row["email"] );
-		$this->setData( $row["data"] );
+		$this->setId_subject( $row["id_subject"] );
+		$this->setName( $row["name"] );
 
 		return $this;
 	}

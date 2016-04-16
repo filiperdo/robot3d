@@ -4,14 +4,14 @@
  * Classe User
  * @author __ 
  *
- * Data: 09/04/2016
+ * Data: 16/04/2016
  */
 class User_Model extends Model
 {
 	/** 
 	* Atributos Private 
 	*/
-	private $user;
+	private $id_user;
 	private $name;
 	private $login;
 	private $password;
@@ -21,6 +21,9 @@ class User_Model extends Model
 	private $num_login;
 	private $date;
 	private $linguage;
+	private $typeuser;
+	private $lastLogin;
+	private $status;
 
 	public function __construct()
 	{
@@ -36,6 +39,9 @@ class User_Model extends Model
 		$this->num_login = '';
 		$this->date = '';
 		$this->linguage = '';
+		$this->typeuser = new Typeuser_Model();
+		$this->lastLogin = '';
+		$this->status = '';
 	}
 
 	/** 
@@ -91,12 +97,27 @@ class User_Model extends Model
 		$this->linguage = $linguage;
 	}
 
+	public function setTypeuser( Typeuser_Model $typeuser )
+	{
+		$this->typeuser = $typeuser;
+	}
+
+	public function setLastLogin( $lastLogin )
+	{
+		$this->lastLogin = $lastLogin;
+	}
+
+	public function setStatus( $status )
+	{
+		$this->status = $status;
+	}
+
 	/** 
 	* Metodos get's
 	*/
-	public function getId_user()
+	public function getUser()
 	{
-		return $this->id_user;
+		return $this->user;
 	}
 
 	public function getName()
@@ -142,6 +163,21 @@ class User_Model extends Model
 	public function getLinguage()
 	{
 		return $this->linguage;
+	}
+
+	public function getTypeuser()
+	{
+		return $this->typeuser;
+	}
+
+	public function getLastLogin()
+	{
+		return $this->lastLogin;
+	}
+
+	public function getStatus()
+	{
+		return $this->status;
 	}
 
 
@@ -259,6 +295,12 @@ class User_Model extends Model
 		$this->setNum_login( $row["num_login"] );
 		$this->setDate( $row["date"] );
 		$this->setLinguage( $row["linguage"] );
+
+		$objTypeuser = new Typeuser_Model();
+		$objTypeuser->obterTypeuser( $row["id_typeuser"] );
+		$this->setTypeuser( $objTypeuser );
+		$this->setLastLogin( $row["lastLogin"] );
+		$this->setStatus( $row["status"] );
 
 		return $this;
 	}
