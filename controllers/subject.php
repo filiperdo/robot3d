@@ -51,7 +51,6 @@ class Subject extends Controller {
 	public function create()
 	{
 		$data = array(
-			'id_subject' => $_POST["id_subject"], 
 			'name' => $_POST["name"], 
 		);
 
@@ -66,8 +65,6 @@ class Subject extends Controller {
 	public function edit( $id )
 	{
 		$data = array(
-			"id_subject" 	=> $id,
-			'id_subject' => $_POST["id_subject"], 
 			'name' => $_POST["name"], 
 		);
 

@@ -1,6 +1,6 @@
 <?php 
 
-class User_permission extends Controller {
+class Project_component extends Controller {
 
 	public function __construct() {
 		parent::__construct();
@@ -12,11 +12,11 @@ class User_permission extends Controller {
 	*/
 	public function index()
 	{
-		$this->view->title = "User_permission";
-		$this->view->listarUser_permission = $this->model->listarUser_permission();
+		$this->view->title = "Project_component";
+		$this->view->listarProject_component = $this->model->listarProject_component();
 
 		$this->view->render( "header" );
-		$this->view->render( "user_permission/index" );
+		$this->view->render( "project_component/index" );
 		$this->view->render( "footer" );
 	}
 
@@ -25,15 +25,15 @@ class User_permission extends Controller {
 	*/
 	public function form( $id = NULL )
 	{
-		$this->view->title = "Cadastrar User_permission";
+		$this->view->title = "Cadastrar Project_component";
 		$this->view->action = "create";
 		$this->view->obj = $this->model;
 
 		if( $id ) 
 		{
-			$this->view->title = "Editar User_permission";
+			$this->view->title = "Editar Project_component";
 			$this->view->action = "edit/".$id;
-			$this->view->obj = $this->model->obterUser_permission( $id );
+			$this->view->obj = $this->model->obterProject_component( $id );
 
 			if ( empty( $this->view->obj ) ) {
 				die( "Valor invalido!" );
@@ -41,7 +41,7 @@ class User_permission extends Controller {
 		}
 
 		$this->view->render( "header" );
-		$this->view->render( "user_permission/form" );
+		$this->view->render( "project_component/form" );
 		$this->view->render( "footer" );
 	}
 
@@ -51,13 +51,13 @@ class User_permission extends Controller {
 	public function create()
 	{
 		$data = array(
-			'id_user' => $_POST["id_user"], 
-			'id_permission' => $_POST["id_permission"], 
+			'id_project' => $_POST["id_project"], 
+			'id_component' => $_POST["id_component"], 
 		);
 
 		$this->model->create( $data ) ? $msg = base64_encode( "OPERACAO_SUCESSO" ) : $msg = base64_encode( "OPERACAO_ERRO" );
 
-		header("location: " . URL . "user_permission?st=".$msg);
+		header("location: " . URL . "project_component?st=".$msg);
 	}
 
 	/** 
@@ -66,14 +66,13 @@ class User_permission extends Controller {
 	public function edit( $id )
 	{
 		$data = array(
-			"id_user_permission" 	=> $id,
-			'id_user' => $_POST["id_user"], 
-			'id_permission' => $_POST["id_permission"], 
+			'id_project' => $_POST["id_project"], 
+			'id_component' => $_POST["id_component"], 
 		);
 
 		$this->model->edit( $data, $id ) ? $msg = base64_encode( "OPERACAO_SUCESSO" ) : $msg = base64_encode( "OPERACAO_ERRO" );
 
-		header("location: " . URL . "user_permission?st=".$msg);
+		header("location: " . URL . "project_component?st=".$msg);
 	}
 
 	/** 
@@ -83,6 +82,6 @@ class User_permission extends Controller {
 	{
 		$this->model->delete( $id ) ? $msg = base64_encode( "OPERACAO_SUCESSO" ) : $msg = base64_encode( "OPERACAO_ERRO" );
 
-		header("location: " . URL . "user_permission?st=".$msg);
+		header("location: " . URL . "project_component?st=".$msg);
 	}
 }

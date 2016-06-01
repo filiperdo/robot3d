@@ -4,7 +4,7 @@
  * Classe Project
  * @author __ 
  *
- * Data: 16/04/2016
+ * Data: 01/06/2016
  */ 
 
 include_once 'user_model.php';
@@ -15,10 +15,10 @@ class Project_Model extends Model
 	* Atributos Private 
 	*/
 	private $id_project;
-	private $name;
+	private $title;
 	private $website;
 	private $link_image;
-	private $description;
+	private $content;
 	private $level;
 	private $date;
 	private $user;
@@ -28,10 +28,10 @@ class Project_Model extends Model
 		parent::__construct();
 
 		$this->id_project = '';
-		$this->name = '';
+		$this->title = '';
 		$this->website = '';
 		$this->link_image = '';
-		$this->description = '';
+		$this->content = '';
 		$this->level = '';
 		$this->date = '';
 		$this->user = new User_Model();
@@ -45,9 +45,9 @@ class Project_Model extends Model
 		$this->id_project = $id_project;
 	}
 
-	public function setName( $name )
+	public function setTitle( $title )
 	{
-		$this->name = $name;
+		$this->title = $title;
 	}
 
 	public function setWebsite( $website )
@@ -60,9 +60,9 @@ class Project_Model extends Model
 		$this->link_image = $link_image;
 	}
 
-	public function setDescription( $description )
+	public function setContent( $content )
 	{
-		$this->description = $description;
+		$this->content = $content;
 	}
 
 	public function setLevel( $level )
@@ -88,9 +88,9 @@ class Project_Model extends Model
 		return $this->id_project;
 	}
 
-	public function getName()
+	public function getTitle()
 	{
-		return $this->name;
+		return $this->title;
 	}
 
 	public function getWebsite()
@@ -103,9 +103,9 @@ class Project_Model extends Model
 		return $this->link_image;
 	}
 
-	public function getDescription()
+	public function getContent()
 	{
-		return $this->description;
+		return $this->content;
 	}
 
 	public function getLevel()
@@ -229,10 +229,10 @@ class Project_Model extends Model
 	private function montarObjeto( $row )
 	{
 		$this->setId_project( $row["id_project"] );
-		$this->setName( $row["name"] );
+		$this->setTitle( $row["title"] );
 		$this->setWebsite( $row["website"] );
 		$this->setLink_image( $row["link_image"] );
-		$this->setDescription( $row["description"] );
+		$this->setContent( $row["content"] );
 		$this->setLevel( $row["level"] );
 		$this->setDate( $row["date"] );
 

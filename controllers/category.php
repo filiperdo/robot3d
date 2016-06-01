@@ -51,7 +51,6 @@ class Category extends Controller {
 	public function create()
 	{
 		$data = array(
-			'id_category' => $_POST["id_category"], 
 			'name' => $_POST["name"], 
 		);
 
@@ -66,8 +65,6 @@ class Category extends Controller {
 	public function edit( $id )
 	{
 		$data = array(
-			"id_category" 	=> $id,
-			'id_category' => $_POST["id_category"], 
 			'name' => $_POST["name"], 
 		);
 

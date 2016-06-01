@@ -4,11 +4,10 @@
  * Classe Comment
  * @author __ 
  *
- * Data: 16/04/2016
+ * Data: 01/06/2016
  */ 
 
 include_once 'user_model.php';
-include_once 'post_model.php';
 
 class Comment_Model extends Model
 {
@@ -19,7 +18,6 @@ class Comment_Model extends Model
 	private $content;
 	private $date;
 	private $user;
-	private $post;
 
 	public function __construct()
 	{
@@ -29,7 +27,6 @@ class Comment_Model extends Model
 		$this->content = '';
 		$this->date = '';
 		$this->user = new User_Model();
-		$this->post = new Post_Model();
 	}
 
 	/** 
@@ -55,11 +52,6 @@ class Comment_Model extends Model
 		$this->user = $user;
 	}
 
-	public function setPost( Post_Model $post )
-	{
-		$this->post = $post;
-	}
-
 	/** 
 	* Metodos get's
 	*/
@@ -81,11 +73,6 @@ class Comment_Model extends Model
 	public function getUser()
 	{
 		return $this->user;
-	}
-
-	public function getPost()
-	{
-		return $this->post;
 	}
 
 
@@ -200,10 +187,6 @@ class Comment_Model extends Model
 		$objUser = new User_Model();
 		$objUser->obterUser( $row["id_user"] );
 		$this->setUser( $objUser );
-
-		$objPost = new Post_Model();
-		$objPost->obterPost( $row["id_post"] );
-		$this->setPost( $objPost );
 
 		return $this;
 	}

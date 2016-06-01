@@ -42,8 +42,8 @@
 	<tbody>
 	<?php foreach( $this->listarFollow as $follow ) { ?>
 	<tr>
- 		<td><?php echo $follow->getId_follower(); ?></td>
-		<td><?php echo $follow->getId_user(); ?></td>
+ 		<td><?php echo ""; ?></td>
+		<td><?php echo ""; ?></td>
 		<td align="right">
 			<a href="<?php echo URL;?>follow/form/<?php echo $follow->getId_follow();?>" class="btn btn-info btn-sm"><i class="glyphicon glyphicon-pencil"></i></a>
 			<a href="<?php echo URL;?>follow/delete/<?php echo $follow->getId_follow();?>" class="delete btn btn-danger btn-sm"><i class="glyphicon glyphicon-trash"></i></a>

@@ -4,7 +4,7 @@
  * Classe Item
  * @author __ 
  *
- * Data: 16/04/2016
+ * Data: 01/06/2016
  */ 
 
 include_once 'user_model.php';

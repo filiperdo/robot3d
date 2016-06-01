@@ -51,7 +51,6 @@ class Topic extends Controller {
 	public function create()
 	{
 		$data = array(
-			'id_topic' => $_POST["id_topic"], 
 			'name' => $_POST["name"], 
 			'description' => $_POST["description"], 
 			'id_subject' => $_POST["id_subject"], 
@@ -68,8 +67,6 @@ class Topic extends Controller {
 	public function edit( $id )
 	{
 		$data = array(
-			"id_topic" 	=> $id,
-			'id_topic' => $_POST["id_topic"], 
 			'name' => $_POST["name"], 
 			'description' => $_POST["description"], 
 			'id_subject' => $_POST["id_subject"], 

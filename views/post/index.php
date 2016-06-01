@@ -40,7 +40,7 @@
 		<th>Date </th>
 		<th>Views </th>
 		<th>Status </th>
-		<th>Id_user </th>
+		<th>Id_comment </th>
 		<th></th>
 	</tr>
 	</thead>
@@ -53,7 +53,7 @@
 		<td><?php echo $post->getDate(); ?></td>
 		<td><?php echo $post->getViews(); ?></td>
 		<td><?php echo $post->getStatus(); ?></td>
-		<td><?php echo $post->getId_user(); ?></td>
+		<td><?php echo ""; ?></td>
 		<td align="right">
 			<a href="<?php echo URL;?>post/form/<?php echo $post->getId_post();?>" class="btn btn-info btn-sm"><i class="glyphicon glyphicon-pencil"></i></a>
 			<a href="<?php echo URL;?>post/delete/<?php echo $post->getId_post();?>" class="delete btn btn-danger btn-sm"><i class="glyphicon glyphicon-trash"></i></a>

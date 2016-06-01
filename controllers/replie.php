@@ -51,7 +51,6 @@ class Replie extends Controller {
 	public function create()
 	{
 		$data = array(
-			'id_replie' => $_POST["id_replie"], 
 			'content' => $_POST["content"], 
 			'date' => $_POST["date"], 
 			'id_item' => $_POST["id_item"], 
@@ -70,8 +69,6 @@ class Replie extends Controller {
 	public function edit( $id )
 	{
 		$data = array(
-			"id_replie" 	=> $id,
-			'id_replie' => $_POST["id_replie"], 
 			'content' => $_POST["content"], 
 			'date' => $_POST["date"], 
 			'id_item' => $_POST["id_item"], 

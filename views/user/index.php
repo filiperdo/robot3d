@@ -41,11 +41,11 @@
 		<th>Email </th>
 		<th>Website </th>
 		<th>Bio </th>
-		<th>Num_login </th>
+		<th>Numlogin </th>
 		<th>Date </th>
 		<th>Linguage </th>
 		<th>Id_typeuser </th>
-		<th>LastLogin </th>
+		<th>Lastlogin </th>
 		<th>Status </th>
 		<th></th>
 	</tr>
@@ -60,11 +60,11 @@
 		<td><?php echo $user->getEmail(); ?></td>
 		<td><?php echo $user->getWebsite(); ?></td>
 		<td><?php echo $user->getBio(); ?></td>
-		<td><?php echo $user->getNum_login(); ?></td>
+		<td><?php echo $user->getNumlogin(); ?></td>
 		<td><?php echo $user->getDate(); ?></td>
 		<td><?php echo $user->getLinguage(); ?></td>
-		<td><?php echo $user->getId_typeuser(); ?></td>
-		<td><?php echo $user->getLastLogin(); ?></td>
+		<td><?php echo ""; ?></td>
+		<td><?php echo $user->getLastlogin(); ?></td>
 		<td><?php echo $user->getStatus(); ?></td>
 		<td align="right">
 			<a href="<?php echo URL;?>user/form/<?php echo $user->getId_user();?>" class="btn btn-info btn-sm"><i class="glyphicon glyphicon-pencil"></i></a>

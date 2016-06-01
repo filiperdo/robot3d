@@ -51,18 +51,17 @@ class User extends Controller {
 	public function create()
 	{
 		$data = array(
-			'id_user' => $_POST["id_user"], 
 			'name' => $_POST["name"], 
 			'login' => $_POST["login"], 
 			'password' => $_POST["password"], 
 			'email' => $_POST["email"], 
 			'website' => $_POST["website"], 
 			'bio' => $_POST["bio"], 
-			'num_login' => $_POST["num_login"], 
+			'numlogin' => $_POST["numlogin"], 
 			'date' => $_POST["date"], 
 			'linguage' => $_POST["linguage"], 
 			'id_typeuser' => $_POST["id_typeuser"], 
-			'lastLogin' => $_POST["lastLogin"], 
+			'lastlogin' => $_POST["lastlogin"], 
 			'status' => $_POST["status"], 
 		);
 
@@ -77,19 +76,17 @@ class User extends Controller {
 	public function edit( $id )
 	{
 		$data = array(
-			"id_user" 	=> $id,
-			'id_user' => $_POST["id_user"], 
 			'name' => $_POST["name"], 
 			'login' => $_POST["login"], 
 			'password' => $_POST["password"], 
 			'email' => $_POST["email"], 
 			'website' => $_POST["website"], 
 			'bio' => $_POST["bio"], 
-			'num_login' => $_POST["num_login"], 
+			'numlogin' => $_POST["numlogin"], 
 			'date' => $_POST["date"], 
 			'linguage' => $_POST["linguage"], 
 			'id_typeuser' => $_POST["id_typeuser"], 
-			'lastLogin' => $_POST["lastLogin"], 
+			'lastlogin' => $_POST["lastlogin"], 
 			'status' => $_POST["status"], 
 		);
 

@@ -1,37 +1,37 @@
 <?php 
 
 /** 
- * Classe User_permission
+ * Classe Typeuser_permission
  * @author __ 
  *
- * Data: 16/04/2016
+ * Data: 01/06/2016
  */ 
 
-include_once 'user_model.php';
+include_once 'typeuser_model.php';
 include_once 'permission_model.php';
 
-class User_permission_Model extends Model
+class Typeuser_permission_Model extends Model
 {
 	/** 
 	* Atributos Private 
 	*/
-	private $user;
+	private $typeuser;
 	private $permission;
 
 	public function __construct()
 	{
 		parent::__construct();
 
-		$this->user = new User_Model();
+		$this->typeuser = new Typeuser_Model();
 		$this->permission = new Permission_Model();
 	}
 
 	/** 
 	* Metodos set's
 	*/
-	public function setUser( User_Model $user )
+	public function setTypeuser( Typeuser_Model $typeuser )
 	{
-		$this->user = $user;
+		$this->typeuser = $typeuser;
 	}
 
 	public function setPermission( Permission_Model $permission )
@@ -42,9 +42,9 @@ class User_permission_Model extends Model
 	/** 
 	* Metodos get's
 	*/
-	public function getUser()
+	public function getTypeuser()
 	{
-		return $this->user;
+		return $this->typeuser;
 	}
 
 	public function getPermission()
@@ -60,7 +60,7 @@ class User_permission_Model extends Model
 	{
 		$this->db->beginTransaction();
 
-		if( !$id = $this->db->insert( "user_permission", $data ) ){
+		if( !$id = $this->db->insert( "typeuser_permission", $data ) ){
 			$this->db->rollBack();
 			return false;
 		}
@@ -76,7 +76,7 @@ class User_permission_Model extends Model
 	{
 		$this->db->beginTransaction();
 
-		if( !$update = $this->db->update("user_permission", $data, "id_user_permission = {$id} ") ){
+		if( !$update = $this->db->update("typeuser_permission", $data, "id_typeuser_permission = {$id} ") ){
 			$this->db->rollBack();
 			return false;
 		}
@@ -92,7 +92,7 @@ class User_permission_Model extends Model
 	{
 		$this->db->beginTransaction();
 
-		if( !$delete = $this->db->delete("user_permission", "id_user_permission = {$id} ") ){ 
+		if( !$delete = $this->db->delete("typeuser_permission", "id_typeuser_permission = {$id} ") ){ 
 			$this->db->rollBack();
 			return false;
 		}
@@ -102,29 +102,29 @@ class User_permission_Model extends Model
 	}
 
 	/** 
-	* Metodo obterUser_permission
+	* Metodo obterTypeuser_permission
 	*/
-	public function obterUser_permission( $id_user_permission )
+	public function obterTypeuser_permission( $id_typeuser_permission )
 	{
 		$sql  = "select * ";
-		$sql .= "from user_permission ";
-		$sql .= "where id_user_permission = :id ";
+		$sql .= "from typeuser_permission ";
+		$sql .= "where id_typeuser_permission = :id ";
 
-		$result = $this->db->select( $sql, array("id" => $id_user_permission) );
+		$result = $this->db->select( $sql, array("id" => $id_typeuser_permission) );
 		return $this->montarObjeto( $result[0] );
 	}
 
 	/** 
-	* Metodo listarUser_permission
+	* Metodo listarTypeuser_permission
 	*/
-	public function listarUser_permission()
+	public function listarTypeuser_permission()
 	{
 		$sql  = "select * ";
-		$sql .= "from user_permission ";
+		$sql .= "from typeuser_permission ";
 
 		if ( isset( $_POST["like"] ) )
 		{
-			$sql .= "where id_user_permission like :id "; // Configurar o like com o campo necessario da tabela 
+			$sql .= "where id_typeuser_permission like :id "; // Configurar o like com o campo necessario da tabela 
 			$result = $this->db->select( $sql, array("id" => "%{$_POST["like"]}%") );
 		}
 		else
@@ -158,9 +158,9 @@ class User_permission_Model extends Model
 	private function montarObjeto( $row )
 	{
 
-		$objUser = new User_Model();
-		$objUser->obterUser( $row["id_user"] );
-		$this->setUser( $objUser );
+		$objTypeuser = new Typeuser_Model();
+		$objTypeuser->obterTypeuser( $row["id_typeuser"] );
+		$this->setTypeuser( $objTypeuser );
 
 		$objPermission = new Permission_Model();
 		$objPermission->obterPermission( $row["id_permission"] );

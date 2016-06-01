@@ -51,11 +51,10 @@ class Project extends Controller {
 	public function create()
 	{
 		$data = array(
-			'id_project' => $_POST["id_project"], 
-			'name' => $_POST["name"], 
+			'title' => $_POST["title"], 
 			'website' => $_POST["website"], 
 			'link_image' => $_POST["link_image"], 
-			'description' => $_POST["description"], 
+			'content' => $_POST["content"], 
 			'level' => $_POST["level"], 
 			'date' => $_POST["date"], 
 			'id_user' => $_POST["id_user"], 
@@ -72,12 +71,10 @@ class Project extends Controller {
 	public function edit( $id )
 	{
 		$data = array(
-			"id_project" 	=> $id,
-			'id_project' => $_POST["id_project"], 
-			'name' => $_POST["name"], 
+			'title' => $_POST["title"], 
 			'website' => $_POST["website"], 
 			'link_image' => $_POST["link_image"], 
-			'description' => $_POST["description"], 
+			'content' => $_POST["content"], 
 			'level' => $_POST["level"], 
 			'date' => $_POST["date"], 
 			'id_user' => $_POST["id_user"], 

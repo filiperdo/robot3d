@@ -38,7 +38,6 @@
 		<th>Content </th>
 		<th>Date </th>
 		<th>Id_user </th>
-		<th>Id_post </th>
 		<th></th>
 	</tr>
 	</thead>
@@ -48,8 +47,7 @@
  		<td><?php echo $comment->getId_comment(); ?></td>
 		<td><?php echo $comment->getContent(); ?></td>
 		<td><?php echo $comment->getDate(); ?></td>
-		<td><?php echo $comment->getId_user(); ?></td>
-		<td><?php echo $comment->getId_post(); ?></td>
+		<td><?php echo ""; ?></td>
 		<td align="right">
 			<a href="<?php echo URL;?>comment/form/<?php echo $comment->getId_comment();?>" class="btn btn-info btn-sm"><i class="glyphicon glyphicon-pencil"></i></a>
 			<a href="<?php echo URL;?>comment/delete/<?php echo $comment->getId_comment();?>" class="delete btn btn-danger btn-sm"><i class="glyphicon glyphicon-trash"></i></a>

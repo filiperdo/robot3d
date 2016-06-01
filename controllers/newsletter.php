@@ -51,7 +51,6 @@ class Newsletter extends Controller {
 	public function create()
 	{
 		$data = array(
-			'id_newsletter' => $_POST["id_newsletter"], 
 			'email' => $_POST["email"], 
 			'data' => $_POST["data"], 
 		);
@@ -67,8 +66,6 @@ class Newsletter extends Controller {
 	public function edit( $id )
 	{
 		$data = array(
-			"id_newsletter" 	=> $id,
-			'id_newsletter' => $_POST["id_newsletter"], 
 			'email' => $_POST["email"], 
 			'data' => $_POST["data"], 
 		);

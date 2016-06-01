@@ -42,8 +42,8 @@
 	<tbody>
 	<?php foreach( $this->listarPost_category as $post_category ) { ?>
 	<tr>
- 		<td><?php echo $post_category->getId_post(); ?></td>
-		<td><?php echo $post_category->getId_category(); ?></td>
+ 		<td><?php echo ""; ?></td>
+		<td><?php echo ""; ?></td>
 		<td align="right">
 			<a href="<?php echo URL;?>post_category/form/<?php echo $post_category->getId_post_category();?>" class="btn btn-info btn-sm"><i class="glyphicon glyphicon-pencil"></i></a>
 			<a href="<?php echo URL;?>post_category/delete/<?php echo $post_category->getId_post_category();?>" class="delete btn btn-danger btn-sm"><i class="glyphicon glyphicon-trash"></i></a>

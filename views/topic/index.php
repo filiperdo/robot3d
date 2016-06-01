@@ -47,7 +47,7 @@
  		<td><?php echo $topic->getId_topic(); ?></td>
 		<td><?php echo $topic->getName(); ?></td>
 		<td><?php echo $topic->getDescription(); ?></td>
-		<td><?php echo $topic->getId_subject(); ?></td>
+		<td><?php echo ""; ?></td>
 		<td align="right">
 			<a href="<?php echo URL;?>topic/form/<?php echo $topic->getId_topic();?>" class="btn btn-info btn-sm"><i class="glyphicon glyphicon-pencil"></i></a>
 			<a href="<?php echo URL;?>topic/delete/<?php echo $topic->getId_topic();?>" class="delete btn btn-danger btn-sm"><i class="glyphicon glyphicon-trash"></i></a>

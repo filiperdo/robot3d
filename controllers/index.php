@@ -13,10 +13,10 @@ class Index extends Controller {
          */
         $this->view->menu = array(
         	0 => array('link' => 'index', 		'label' => 'Home', 		'toggle' => ''),
-       		1 => array('link' => 'index/docs',	'label' => 'Sobre', 	'toggle' => ''),
+       		//1 => array('link' => 'index/docs',	'label' => 'Sobre', 	'toggle' => ''),
         	2 => array('link' => 'profile', 	'label' => 'Projetos', 	'toggle' => ''),
         	3 => array('link' => '#msgModal', 	'label' => 'Tutoriais',	'toggle' => 'data-toggle="modal"'),
-       		4 => array('link' => 'index',		'label' => 'Fórum', 	'toggle' => ''),
+       		4 => array('link' => 'index',		'label' => 'FÃ³rum', 	'toggle' => ''),
         	5 => array('link' => 'index',		'label' => 'Suporte', 	'toggle' => ''),
         );
         

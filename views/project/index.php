@@ -35,10 +35,10 @@
 	<thead>
 	<tr>
 		<th>Id_project </th>
-		<th>Name </th>
+		<th>Title </th>
 		<th>Website </th>
 		<th>Link_image </th>
-		<th>Description </th>
+		<th>Content </th>
 		<th>Level </th>
 		<th>Date </th>
 		<th>Id_user </th>
@@ -49,13 +49,13 @@
 	<?php foreach( $this->listarProject as $project ) { ?>
 	<tr>
  		<td><?php echo $project->getId_project(); ?></td>
-		<td><?php echo $project->getName(); ?></td>
+		<td><?php echo $project->getTitle(); ?></td>
 		<td><?php echo $project->getWebsite(); ?></td>
 		<td><?php echo $project->getLink_image(); ?></td>
-		<td><?php echo $project->getDescription(); ?></td>
+		<td><?php echo $project->getContent(); ?></td>
 		<td><?php echo $project->getLevel(); ?></td>
 		<td><?php echo $project->getDate(); ?></td>
-		<td><?php echo $project->getId_user(); ?></td>
+		<td><?php echo ""; ?></td>
 		<td align="right">
 			<a href="<?php echo URL;?>project/form/<?php echo $project->getId_project();?>" class="btn btn-info btn-sm"><i class="glyphicon glyphicon-pencil"></i></a>
 			<a href="<?php echo URL;?>project/delete/<?php echo $project->getId_project();?>" class="delete btn btn-danger btn-sm"><i class="glyphicon glyphicon-trash"></i></a>

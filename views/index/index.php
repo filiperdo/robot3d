@@ -11,23 +11,23 @@
           </a>
 
           <h5 class="qy">
-            <a class="aku" href="profile/index.html">Dave Gamache</a>
+            <a class="aku" href="profile/index.html">Filipe Rodrigues</a>
           </h5>
 
-          <p class="alu">I wish i was a little bit taller, wish i was a baller, wish i had a girl… also.</p>
+          <p class="alu">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
 
           <ul class="aoi">
             <li class="aoj">
               <a href="#userModal" class="aku" data-toggle="modal">
-                Friends
-                <h5 class="ali">12M</h5>
+                Seguindo
+                <h5 class="ali">12</h5>
               </a>
             </li>
 
             <li class="aoj">
               <a href="#userModal" class="aku" data-toggle="modal">
-                Enemies
-                <h5 class="ali">1</h5>
+                Seguidores
+                <h5 class="ali">132</h5>
               </a>
             </li>
           </ul>
@@ -36,20 +36,20 @@
 
       <div class="qv rc sm sp">
         <div class="qw">
-          <h5 class="ald">About <small>· <a href="#">Edit</a></small></h5>
+          <h5 class="ald">Sobre mim <small>· <a href="#">Editar</a></small></h5>
           <ul class="eb tb">
-            <li><span class="dp h xh all"></span>Went to <a href="#">Oh, Canada</a>
-            <li><span class="dp h ajw all"></span>Became friends with <a href="#">Obama</a>
-            <li><span class="dp h abu all"></span>Worked at <a href="#">Github</a>
-            <li><span class="dp h ack all"></span>Lives in <a href="#">San Francisco, CA</a>
-            <li><span class="dp h adt all"></span>From <a href="#">Seattle, WA</a>
+            <!-- <li><span class="dp h xh all"></span>Went to <a href="#">Oh, Canada</a> -->
+            <li><span class="dp h ajw all"></span>Se tornou amigo <a href="#"> Lorem ipsum </a>
+            <li><span class="dp h abu all"></span>Projetos <a href="#">Github</a>
+            <li><span class="dp h ack all"></span>Mora em <a href="#">Santo André, SP</a>
+            <li><span class="dp h adt all"></span>Posts <a href="#">145</a>
           </ul>
         </div>
       </div>
 
        <div class="qv rc sm sp">
         <div class="qw">
-          <h5 class="ald">Photos <small>· <a href="#">Edit</a></small></h5>
+          <h5 class="ald">Projetos <small>· <a href="#">Ver todos</a></small></h5>
           <div data-grid="images" data-target-height="150">
             <div>
               <img data-width="640" data-height="640" data-action="zoom" src="<?php echo URL; ?>public/img/instagram_5.jpg">
@@ -102,11 +102,11 @@
           <div class="qg">
             <div class="qn">
               <small class="eg dp">4 min</small>
-              <h5>Dave Gamache</h5>
+              <h5>Filipe Rodrigues</h5>
             </div>
 
             <p>
-              Aenean lacinia bibendum nulla sed consectetur. Vestibulum id ligula porta felis euismod semper. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
             </p>
 
             <div class="any" data-grid="images">
@@ -136,7 +136,8 @@
                 </a>
                 <div class="qg">
                   <strong>Jacon Thornton: </strong>
-                  Donec id elit non mi porta gravida at eget metus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec ullamcorper nulla non metus auctor fringilla. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Sed posuere consectetur est at lobortis.
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit .
+                  
                 </div>
               </li>
               <li class="qf">
@@ -167,7 +168,8 @@
                 <h5>Jacob Thornton</h5>
               </div>
               <p>
-                Donec id elit non mi porta gravida at eget metus. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                
               </p>
             </div>
           </div>
@@ -186,11 +188,12 @@
             </div>
 
             <p>
-              Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+             
             </p>
 
             <div class="any" data-grid="images">
-              <img style="display: none" data-width="640" data-height="640" data-action="zoom" src="<?php echo URL; ?>public/img/instagram_3.jpg">
+              <img style="display: none" data-width="930" data-height="546" data-action="zoom" src="<?php echo URL; ?>public/img/instagram_3.jpg">
             </div>
 
             <ul class="qo">
@@ -201,8 +204,9 @@
                     src="<?php echo URL; ?>public/img/avatar-dhg.png">
                 </a>
                 <div class="qg">
-                  <strong>Dave Gamache: </strong>
-                  Donec id elit non mi porta gravida at eget metus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec ullamcorper nulla non metus auctor fringilla. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Sed posuere consectetur est at lobortis.
+                  <strong>Filipe Rodrigues: </strong>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit .
+                  
                 </div>
               </li>
             </ul>
@@ -218,18 +222,18 @@
 
       <div class="qv rc alu ss">
         <div class="qw">
-          <h5 class="ald">Sponsored</h5>
+          <h5 class="ald">Titulo</h5>
           <div data-grid="images" data-target-height="150">
             <img class="qh" data-width="640" data-height="640" data-action="zoom" src="<?php echo URL; ?>public/img/instagram_2.jpg">
           </div>
-          <p><strong>It might be time to visit Iceland.</strong> Iceland is so chill, and everything looks cool here. Also, we heard the people are pretty nice. What are you waiting for?</p>
-          <button class="cg ts fx">Buy a ticket</button>
+          <p><strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+          <button class="cg ts fx">Loren ipsum</button>
         </div>
       </div>
 
       <div class="qv rc alu ss">
         <div class="qw">
-        <h5 class="ald">Likes <small>· <a href="#">View All</a></small></h5>
+        <h5 class="ald">Quem seguir? <small>· <a href="#">Ver todos</a></small></h5>
         <ul class="qo anx">
           <li class="qf alm">
             <a class="qj" href="#">
@@ -238,10 +242,10 @@
                 src="<?php echo URL; ?>public/img/avatar-fat.jpg">
             </a>
             <div class="qg">
-              <strong>Jacob Thornton</strong> @fat
+              <strong>Lorem ipsum </strong> @fat
               <div class="aoa">
                 <button class="cg ts fx">
-                  <span class="h vc"></span> Follow</button>
+                  <span class="h vc"></span> Seguir</button>
               </div>
             </div>
           </li>
@@ -252,23 +256,23 @@
                 src="<?php echo URL; ?>public/img/avatar-mdo.png">
             </a>
             <div class="qg">
-              <strong>Mark Otto</strong> @mdo
+              <strong>Lorem ipsum </strong> @mdo
               <div class="aoa">
                 <button class="cg ts fx">
-                  <span class="h vc"></span> Follow</button></button>
+                  <span class="h vc"></span> Seguir</button></button>
               </div>
             </div>
           </li>
         </ul>
         </div>
         <div class="qz">
-          Dave really likes these nerds, no one knows why though.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit,
         </div>
       </div>
 
       <div class="qv rc aok">
         <div class="qw">
-          © 2015 Bootstrap
+          © 2015 Robo3D
 
           <a href="#">About</a>
           <a href="#">Help</a>

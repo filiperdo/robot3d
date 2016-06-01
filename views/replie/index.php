@@ -49,9 +49,9 @@
  		<td><?php echo $replie->getId_replie(); ?></td>
 		<td><?php echo $replie->getContent(); ?></td>
 		<td><?php echo $replie->getDate(); ?></td>
-		<td><?php echo $replie->getId_item(); ?></td>
+		<td><?php echo ""; ?></td>
 		<td><?php echo $replie->getReplie_id_replie(); ?></td>
-		<td><?php echo $replie->getId_user(); ?></td>
+		<td><?php echo ""; ?></td>
 		<td align="right">
 			<a href="<?php echo URL;?>replie/form/<?php echo $replie->getId_replie();?>" class="btn btn-info btn-sm"><i class="glyphicon glyphicon-pencil"></i></a>
 			<a href="<?php echo URL;?>replie/delete/<?php echo $replie->getId_replie();?>" class="delete btn btn-danger btn-sm"><i class="glyphicon glyphicon-trash"></i></a>

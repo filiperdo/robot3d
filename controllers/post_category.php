@@ -66,7 +66,6 @@ class Post_category extends Controller {
 	public function edit( $id )
 	{
 		$data = array(
-			"id_post_category" 	=> $id,
 			'id_post' => $_POST["id_post"], 
 			'id_category' => $_POST["id_category"], 
 		);

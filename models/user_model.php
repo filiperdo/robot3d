@@ -4,7 +4,7 @@
  * Classe User
  * @author __ 
  *
- * Data: 16/04/2016
+ * Data: 01/06/2016
  */ 
 
 include_once 'typeuser_model.php';
@@ -21,11 +21,11 @@ class User_Model extends Model
 	private $email;
 	private $website;
 	private $bio;
-	private $num_login;
+	private $numlogin;
 	private $date;
 	private $linguage;
 	private $typeuser;
-	private $lastLogin;
+	private $lastlogin;
 	private $status;
 
 	public function __construct()
@@ -39,11 +39,11 @@ class User_Model extends Model
 		$this->email = '';
 		$this->website = '';
 		$this->bio = '';
-		$this->num_login = '';
+		$this->numlogin = '';
 		$this->date = '';
 		$this->linguage = '';
 		$this->typeuser = new Typeuser_Model();
-		$this->lastLogin = '';
+		$this->lastlogin = '';
 		$this->status = '';
 	}
 
@@ -85,9 +85,9 @@ class User_Model extends Model
 		$this->bio = $bio;
 	}
 
-	public function setNum_login( $num_login )
+	public function setNumlogin( $numlogin )
 	{
-		$this->num_login = $num_login;
+		$this->numlogin = $numlogin;
 	}
 
 	public function setDate( $date )
@@ -105,9 +105,9 @@ class User_Model extends Model
 		$this->typeuser = $typeuser;
 	}
 
-	public function setLastLogin( $lastLogin )
+	public function setLastlogin( $lastlogin )
 	{
-		$this->lastLogin = $lastLogin;
+		$this->lastlogin = $lastlogin;
 	}
 
 	public function setStatus( $status )
@@ -153,9 +153,9 @@ class User_Model extends Model
 		return $this->bio;
 	}
 
-	public function getNum_login()
+	public function getNumlogin()
 	{
-		return $this->num_login;
+		return $this->numlogin;
 	}
 
 	public function getDate()
@@ -173,9 +173,9 @@ class User_Model extends Model
 		return $this->typeuser;
 	}
 
-	public function getLastLogin()
+	public function getLastlogin()
 	{
-		return $this->lastLogin;
+		return $this->lastlogin;
 	}
 
 	public function getStatus()
@@ -295,14 +295,14 @@ class User_Model extends Model
 		$this->setEmail( $row["email"] );
 		$this->setWebsite( $row["website"] );
 		$this->setBio( $row["bio"] );
-		$this->setNum_login( $row["num_login"] );
+		$this->setNumlogin( $row["numlogin"] );
 		$this->setDate( $row["date"] );
 		$this->setLinguage( $row["linguage"] );
 
 		$objTypeuser = new Typeuser_Model();
 		$objTypeuser->obterTypeuser( $row["id_typeuser"] );
 		$this->setTypeuser( $objTypeuser );
-		$this->setLastLogin( $row["lastLogin"] );
+		$this->setLastlogin( $row["lastlogin"] );
 		$this->setStatus( $row["status"] );
 
 		return $this;

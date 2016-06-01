@@ -51,7 +51,6 @@ class Item extends Controller {
 	public function create()
 	{
 		$data = array(
-			'id_item' => $_POST["id_item"], 
 			'views' => $_POST["views"], 
 			'content' => $_POST["content"], 
 			'date' => $_POST["date"], 
@@ -70,8 +69,6 @@ class Item extends Controller {
 	public function edit( $id )
 	{
 		$data = array(
-			"id_item" 	=> $id,
-			'id_item' => $_POST["id_item"], 
 			'views' => $_POST["views"], 
 			'content' => $_POST["content"], 
 			'date' => $_POST["date"], 

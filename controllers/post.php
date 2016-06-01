@@ -51,13 +51,12 @@ class Post extends Controller {
 	public function create()
 	{
 		$data = array(
-			'id_post' => $_POST["id_post"], 
 			'title' => $_POST["title"], 
 			'content' => $_POST["content"], 
 			'date' => $_POST["date"], 
 			'views' => $_POST["views"], 
 			'status' => $_POST["status"], 
-			'id_user' => $_POST["id_user"], 
+			'id_comment' => $_POST["id_comment"], 
 		);
 
 		$this->model->create( $data ) ? $msg = base64_encode( "OPERACAO_SUCESSO" ) : $msg = base64_encode( "OPERACAO_ERRO" );
@@ -71,14 +70,12 @@ class Post extends Controller {
 	public function edit( $id )
 	{
 		$data = array(
-			"id_post" 	=> $id,
-			'id_post' => $_POST["id_post"], 
 			'title' => $_POST["title"], 
 			'content' => $_POST["content"], 
 			'date' => $_POST["date"], 
 			'views' => $_POST["views"], 
 			'status' => $_POST["status"], 
-			'id_user' => $_POST["id_user"], 
+			'id_comment' => $_POST["id_comment"], 
 		);
 
 		$this->model->edit( $data, $id ) ? $msg = base64_encode( "OPERACAO_SUCESSO" ) : $msg = base64_encode( "OPERACAO_ERRO" );

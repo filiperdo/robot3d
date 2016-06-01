@@ -66,7 +66,6 @@ class Follow extends Controller {
 	public function edit( $id )
 	{
 		$data = array(
-			"id_follow" 	=> $id,
 			'id_follower' => $_POST["id_follower"], 
 			'id_user' => $_POST["id_user"], 
 		);

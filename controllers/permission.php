@@ -51,7 +51,6 @@ class Permission extends Controller {
 	public function create()
 	{
 		$data = array(
-			'id_permission' => $_POST["id_permission"], 
 			'name' => $_POST["name"], 
 		);
 
@@ -66,8 +65,6 @@ class Permission extends Controller {
 	public function edit( $id )
 	{
 		$data = array(
-			"id_permission" 	=> $id,
-			'id_permission' => $_POST["id_permission"], 
 			'name' => $_POST["name"], 
 		);
 

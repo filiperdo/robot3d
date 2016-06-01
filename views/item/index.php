@@ -50,8 +50,8 @@
 		<td><?php echo $item->getViews(); ?></td>
 		<td><?php echo $item->getContent(); ?></td>
 		<td><?php echo $item->getDate(); ?></td>
-		<td><?php echo $item->getId_user(); ?></td>
-		<td><?php echo $item->getId_topic(); ?></td>
+		<td><?php echo ""; ?></td>
+		<td><?php echo ""; ?></td>
 		<td align="right">
 			<a href="<?php echo URL;?>item/form/<?php echo $item->getId_item();?>" class="btn btn-info btn-sm"><i class="glyphicon glyphicon-pencil"></i></a>
 			<a href="<?php echo URL;?>item/delete/<?php echo $item->getId_item();?>" class="delete btn btn-danger btn-sm"><i class="glyphicon glyphicon-trash"></i></a>
