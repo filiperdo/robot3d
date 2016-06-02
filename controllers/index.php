@@ -7,26 +7,16 @@ class Index extends Controller {
     function __construct() {
         parent::__construct();
         //Auth::handleLogin();
-        
-        /**
-         * Menu
-         */
-        $this->view->menu = array(
-        	0 => array('link' => 'index', 		'label' => 'Home', 		'toggle' => ''),
-       		//1 => array('link' => 'index/docs',	'label' => 'Sobre', 	'toggle' => ''),
-        	2 => array('link' => 'profile', 	'label' => 'Projetos', 	'toggle' => ''),
-        	3 => array('link' => '#msgModal', 	'label' => 'Tutoriais',	'toggle' => 'data-toggle="modal"'),
-       		4 => array('link' => 'index',		'label' => 'Fórum', 	'toggle' => ''),
-        	5 => array('link' => 'index',		'label' => 'Suporte', 	'toggle' => ''),
-        );
-        
+
     }
     
     function index() {
  
         $this->view->title = 'Home';
         $this->view->render('header.inc');
+        $this->view->render('col-left');
         $this->view->render('index/index');
+        $this->view->render('col-right');
         $this->view->render('footer.inc');
     	
     }

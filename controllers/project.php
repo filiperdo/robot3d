@@ -15,9 +15,10 @@ class Project extends Controller {
 		$this->view->title = "Project";
 		$this->view->listarProject = $this->model->listarProject();
 
-		$this->view->render( "header" );
+		$this->view->render( "header.inc" );
 		$this->view->render( "project/index" );
-		$this->view->render( "footer" );
+		$this->view->render( "col-right" );
+		$this->view->render( "footer.inc" );
 	}
 
 	/** 

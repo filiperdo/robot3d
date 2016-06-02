@@ -1,5 +1,5 @@
 <?php Session::init(); ?>
-<?php include_once 'menu.php';?>    
+<?php include_once 'menu-admin.php';?>    
 <!DOCTYPE html>
 <html lang="en">
 
