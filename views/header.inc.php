@@ -72,16 +72,28 @@
         </ul>
 
         <ul class="nav navbar-nav og ale ss">
+        
+        <?php if( Session::get( 'loggedIn' ) ){?>
+        
           <li>
-            <a class="g" href="notifications/index.html">
+            <a class="g" href="index">
               <span class="h ws"></span>
             </a>
           </li>
+          
           <li>
             <button class="cg fm ox anl" data-toggle="popover">
               <img class="cu" src="<?php echo URL; ?>public/img/avatar-dhg.png">
             </button>
           </li>
+          
+         <?php } else { ?> 
+         
+          <li><a href="<?php echo URL; ?>login">Login</a></li>
+          <li><a href="#">Cadastrar</a></li>
+          
+         <?php } ?>
+         
         </ul>
 
         <form class="ow og i" role="search">
@@ -96,14 +108,19 @@
             <a <?php echo $menu['toggle']; ?> href="<?php echo $menu['link']; ?>"><?php echo $menu['label']; ?></a>
           </li>
           <?php } ?>
-          
-          <!-- <li><a href="#" data-action="growl">Growl</a></li> -->
-          <li><a href="#">Logout</a></li>
+          <?php if( Session::get( 'loggedIn' ) ){?>
+          <li><a href="<?php echo URL?>login/logout"><i class="glyphicon glyphicon-off"></i> Logout</a></li>
+          <?php } else { ?>
+          <li><a href="<?php echo URL; ?>login">Login</a></li>
+          <li><a href="#">Cadastrar</a></li>
+          <?php } ?>
         </ul>
-        <ul class="nav navbar-nav hidden">
+        
+        <ul class="nav navbar-nav hidden"> 
           <!-- <li><a href="#" data-action="growl">Growl</a></li> -->
-          <li><a href="#">Logout</a></li>
+          <li><a href="<?php echo URL?>login/logout"><i class="glyphicon glyphicon-off"></i> Logout</a></li>
         </ul>
+        
       </div>
   </div>
 </nav>

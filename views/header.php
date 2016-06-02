@@ -91,11 +91,13 @@
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
-	                <?php foreach( $menu as $key => $item ) { ?>
+	                <?php foreach( $menu_admin as $menu ) { ?>
 				        <li>
-				        	<a href="<?php echo URL . $key; ?>">
-				        		<i class="<?php echo $item['icon']?>"></i> <?php echo $item['label']; ?> 
+				        
+				        	<a href="<?php echo URL . $menu['link']; ?>">
+				        		<i class="<?php echo $menu['icon']?>"></i> <?php echo $menu['label'];?>
 				        	</a>
+				        	
 				        </li>
 			        <?php } ?>
                 </ul>

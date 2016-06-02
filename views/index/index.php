@@ -17,14 +17,12 @@
 
         <li class="qf b aml">
           <a class="qj" href="#">
-            <img
-              class="qh cu"
-              src="<?php echo URL; ?>public/img/avatar-dhg.png">
+            <img class="qh cu" src="<?php echo URL; ?>public/img/avatar-dhg.png">
           </a>
           <div class="qg">
             <div class="qn">
               <small class="eg dp">4 min</small>
-              <h5>Filipe Rodrigues</h5>
+              <h5>Filipe Rodrigues</h5> <!-- loggedIn -->
             </div>
 
             <p>

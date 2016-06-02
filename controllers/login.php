@@ -9,7 +9,17 @@ class Login extends Controller {
     function index() 
     {    
         $this->view->title = 'Login';
-        $this->view->render('login/login');
+        $this->view->render('header.inc');
+        $this->view->render('col-left');
+        $this->view->render('login/index');
+        $this->view->render('col-right');
+        $this->view->render('footer.inc');
+    }
+    
+    function cadastro()
+    {
+    	$this->view->title = 'Cadastrar';
+    	$this->view->render('login/form');
     }
     
     function run()

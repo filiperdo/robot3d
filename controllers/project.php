@@ -21,6 +21,16 @@ class Project extends Controller {
 		$this->view->render( "footer.inc" );
 	}
 
+	public function lista()
+	{
+		$this->view->title = "Project";
+		$this->view->listarProject = $this->model->listarProject();
+		
+		$this->view->render( "header" );
+		$this->view->render( "project/lista" );
+		$this->view->render( "footer" );
+	}
+	
 	/** 
 	* Metodo editForm
 	*/
@@ -46,24 +56,36 @@ class Project extends Controller {
 		$this->view->render( "footer" );
 	}
 
+	public function project( $id_project )
+	{
+		$this->view->obj = $this->model->obterProject( $id_project );
+		
+		$this->view->render( "header.inc" );
+		$this->view->render( "project/project" );
+		$this->view->render( "col-right" );
+		$this->view->render( "footer.inc" );
+	}
+	
 	/** 
 	* Metodo create
 	*/
 	public function create()
 	{
+		Session::init();
+		
 		$data = array(
-			'title' => $_POST["title"], 
-			'website' => $_POST["website"], 
-			'link_image' => $_POST["link_image"], 
-			'content' => $_POST["content"], 
-			'level' => $_POST["level"], 
-			'date' => $_POST["date"], 
-			'id_user' => $_POST["id_user"], 
+			'title' 			=> $_POST["title"], 
+			'website' 			=> $_POST["website"], 
+			'link_image' 		=> $_POST["link_image"], 
+			'content' 			=> $_POST["content"], 
+			'level' 			=> $_POST["level"], 
+			//'date' 				=> date("Y-m-d H:i:s"), 
+			'id_user' 			=> Session::get('userid')
 		);
-
+		
 		$this->model->create( $data ) ? $msg = base64_encode( "OPERACAO_SUCESSO" ) : $msg = base64_encode( "OPERACAO_ERRO" );
-
-		header("location: " . URL . "project?st=".$msg);
+		
+		header("location: " . URL . "project/lista?st=".$msg); // Ajustar o caminho de retorno
 	}
 
 	/** 
@@ -78,7 +100,7 @@ class Project extends Controller {
 			'content' => $_POST["content"], 
 			'level' => $_POST["level"], 
 			'date' => $_POST["date"], 
-			'id_user' => $_POST["id_user"], 
+			'id_user' => $_POST["id_user"],
 		);
 
 		$this->model->edit( $data, $id ) ? $msg = base64_encode( "OPERACAO_SUCESSO" ) : $msg = base64_encode( "OPERACAO_ERRO" );

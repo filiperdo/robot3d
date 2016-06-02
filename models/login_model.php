@@ -42,7 +42,7 @@ class Login_Model extends Model
     {
     	Session::init();
     	Session::destroy();
-    	header('location: ../login');
+    	header('location: ../');
     }
     
 }

@@ -1,12 +1,12 @@
 <?php
 
-	$menu = array(
+	$menu_admin = array(
 			
-        0 => array('link' => 'index', 		'label' => 'Home', 		'toggle' => ''),
-       	//1 => array('link' => 'index/docs',	'label' => 'Sobre', 	'toggle' => ''),
-        2 => array('link' => 'project', 	'label' => 'Projetos', 	'toggle' => ''),
-        3 => array('link' => '#msgModal', 	'label' => 'Tutoriais',	'toggle' => 'data-toggle="modal"'),
-       	4 => array('link' => 'index',		'label' => 'Fórum', 	'toggle' => ''),
-        5 => array('link' => 'index',		'label' => 'Suporte', 	'toggle' => ''),
+        0 => array('link' => '#', 	'label' => 'Dashboard', 		'icon' => 'glyphicon glyphicon-dashboard'),
+       	1 => array('link' => 'post',		'label' => 'Blog', 				'icon' => 'glyphicon glyphicon-pencil'),
+        2 => array('link' => 'subject', 	'label' => 'Forum', 			'icon' => 'glyphicon glyphicon-list-alt'),
+        3 => array('link' => 'category', 	'label' => 'Categorias',		'icon' => 'glyphicon glyphicon-list'),
+       	4 => array('link' => 'user',		'label' => 'Membros', 			'icon' => 'glyphicon glyphicon-user'),
+        5 => array('link' => 'datalog',		'label' => 'Datalog', 			'icon' => 'glyphicon glyphicon-stats'),
 			
 	);

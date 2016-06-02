@@ -137,6 +137,7 @@ class Project_Model extends Model
 		}
 
 		$this->db->commit();
+		
 		return true;
 	}
 
