@@ -56,13 +56,13 @@ class Project extends Controller {
 		$this->view->render( "footer" );
 	}
 
-	public function project( $id_project )
+	public function item( $id_project )
 	{
 		$this->view->obj = $this->model->obterProject( $id_project );
 		
 		$this->view->render( "header.inc" );
-		$this->view->render( "project/project" );
-		$this->view->render( "col-right" );
+		$this->view->render( "project/item" );
+		//$this->view->render( "col-right" );
 		$this->view->render( "footer.inc" );
 	}
 	

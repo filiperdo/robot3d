@@ -57,7 +57,7 @@
         <span class="ov"></span>
       </button>
       <a class="e" href="<?php echo URL; ?>index">
-        <img src="public/img/logo-robo3d.png" alt="brand">
+        <img src="<?php echo URL?>public/img/logo-robo3d.png" alt="brand">
       </a>
     </div>
     <div class="f collapse" id="navbar-collapse-main">
@@ -66,7 +66,7 @@
 
           <?php foreach( $menu_base as $menu ) { ?>
           <li><!-- class="active" -->
-            <a <?php echo $menu['toggle']; ?> href="<?php echo $menu['link']; ?>"><?php echo $menu['label']; ?></a>
+            <a <?php echo $menu['toggle']; ?> href="<?php echo URL . $menu['link']; ?>"><?php echo $menu['label']; ?></a>
           </li>
           <?php } ?>
         </ul>
@@ -105,7 +105,7 @@
         <ul class="nav navbar-nav st su sv">
           <?php foreach( $menu_base as $menu ) { ?>
           <li><!-- class="active" -->
-            <a <?php echo $menu['toggle']; ?> href="<?php echo $menu['link']; ?>"><?php echo $menu['label']; ?></a>
+            <a <?php echo $menu['toggle']; ?> href="<?php echo URL . $menu['link']; ?>"><?php echo $menu['label']; ?></a>
           </li>
           <?php } ?>
           <?php if( Session::get( 'loggedIn' ) ){?>

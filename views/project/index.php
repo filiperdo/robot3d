@@ -2,21 +2,31 @@
 <ul class="ca qo anx">
 
 <li class="qf b aml row">
-	<?php for( $i = 0; $i < 7; $i++ ) { ?>
+	<?php foreach( $this->listarProject as $project ) { ?>
 	<div class="col-md-4">
       <div class="qv rc aog alu">
         <div class="qx" style="background-image: url(<?php echo URL; ?>public/img/unsplash_1.jpg);"></div>
+        
         <div class="qw dj">
 
-          <h5 class="qy">
-            <a class="aku" href="index"> Título Projeto</a>
-          </h5>
+	          <h5 class="qy">
+	            <a class="aku" href="<?php echo URL?>project/item/<?php echo $project->getId_project(); ?>"> <?php echo $project->getTitle(); ?></a>
+	          </h5>
 
-          <p class="alu">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
-
+        	<p class="alu"><?php echo $project->getContent(); ?></p>
+			
+			<div class="row">
+				<div class="col-md-4"><small><strong>4,56</strong><br>Views</small></div>
+				<div class="col-md-4"><small><strong>34</strong><br>Comments</small></div>
+				<div class="col-md-4"><small><strong>100</strong><br>Likes</small></div>
+			</div>
+			
         </div>
+      
       </div>
+	
 	</div><!-- .col-md-4 -->
+	
 	<?php } ?> 
 </li>
 

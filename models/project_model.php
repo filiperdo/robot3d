@@ -189,19 +189,22 @@ class Project_Model extends Model
 	/** 
 	* Metodo listarProject
 	*/
-	public function listarProject()
+	public function listarProject( $limit = NULL )
 	{
 		$sql  = "select * ";
 		$sql .= "from project ";
 
 		if ( isset( $_POST["like"] ) )
 		{
-			$sql .= "where id_project like :id "; // Configurar o like com o campo necessario da tabela 
-			$result = $this->db->select( $sql, array("id" => "%{$_POST["like"]}%") );
+			$sql .= "where title like :txt "; // Configurar o like com o campo necessario da tabela 
+			$result = $this->db->select( $sql, array("txt" => "%{$_POST["like"]}%") );
 		}
 		else
 			$result = $this->db->select( $sql );
-
+		
+		if( $limit )
+			$sql .= "limit " . $limit;	
+		
 		return $this->montarLista($result);
 	}
 

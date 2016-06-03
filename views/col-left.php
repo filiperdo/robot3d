@@ -65,16 +65,21 @@
         <div class="qw">
           <h5 class="ald">Últimos projetos <small> - <a href="<?php echo URL?>project">Ver todos</a></small></h5>
           
+          <?php 
+          include_once 'models/project_model.php';
+          $objProject = new Project_Model();
+          ?>
+          
           <ul class="qo anx"><!-- listar os ultimos 5 projetos ou os mais curtidos -->
-          <?php for( $i=0; $i<5; $i++ ) {?>
+          <?php foreach( $objProject->listarProject( 2 ) as $project ) {?>
           <li class="qf alm">
-            <a class="qj" href="#">
+            <a class="qj" href="<?php echo URL . 'project/item/' . $project->getId_project(); ?>">
               <img class="qh cu" src="<?php echo URL; ?>public/img/instagram_10.jpg">
             </a>
             <div class="qg">
-              <strong>Lorem ipsum </strong> #nameuser
+              <strong><a href="<?php echo URL . 'project/item/' . $project->getId_project(); ?>"><?php echo $project->getTitle(); ?></a> </strong> #<?php echo $project->getUser()->getLogin(); ?>
               <div class="aoa ">
-                <p><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit</small></p>
+                <p><small><?php echo substr($project->getContent(), 0,50); ?></small></p>
               </div>
             </div>
           </li>

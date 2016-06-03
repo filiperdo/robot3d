@@ -1,0 +1,749 @@
+[03-May-2016 11:37:45 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[03-May-2016 11:37:45 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[03-May-2016 11:37:45 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[03-May-2016 11:37:45 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[03-May-2016 11:37:45 America/Chicago] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20121212
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[03-May-2016 12:33:06 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[03-May-2016 12:33:06 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[03-May-2016 12:33:06 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[03-May-2016 12:33:06 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[03-May-2016 12:33:06 America/Chicago] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20121212
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[03-May-2016 18:10:39 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[03-May-2016 18:10:39 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[03-May-2016 18:10:39 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[03-May-2016 18:10:39 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[03-May-2016 18:10:39 America/Chicago] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20121212
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[03-May-2016 18:10:40 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[03-May-2016 18:10:40 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[03-May-2016 18:10:40 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[03-May-2016 18:10:40 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[03-May-2016 18:10:40 America/Chicago] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20121212
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[04-May-2016 06:25:28 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[04-May-2016 06:25:28 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[04-May-2016 06:25:28 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[04-May-2016 06:25:28 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[04-May-2016 06:25:28 America/Chicago] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20121212
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[04-May-2016 11:50:48 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[04-May-2016 11:50:48 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[04-May-2016 11:50:48 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[04-May-2016 11:50:48 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[04-May-2016 11:50:48 America/Chicago] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20121212
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[04-May-2016 11:51:08 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[04-May-2016 11:51:08 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[04-May-2016 11:51:08 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[04-May-2016 11:51:08 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[04-May-2016 11:51:08 America/Chicago] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20121212
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[04-May-2016 13:52:14 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[04-May-2016 13:52:14 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[04-May-2016 13:52:14 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[04-May-2016 13:52:14 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[04-May-2016 13:52:14 America/Chicago] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20121212
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[04-May-2016 13:52:27 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[04-May-2016 13:52:27 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[04-May-2016 13:52:27 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[04-May-2016 13:52:27 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[04-May-2016 13:52:27 America/Chicago] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20121212
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[04-May-2016 20:49:15 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[04-May-2016 20:49:15 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[04-May-2016 20:49:15 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[04-May-2016 20:49:15 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[04-May-2016 20:49:15 America/Chicago] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20121212
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[04-May-2016 20:50:40 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[04-May-2016 20:50:40 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[04-May-2016 20:50:40 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[04-May-2016 20:50:40 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[04-May-2016 20:50:40 America/Chicago] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20121212
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[04-May-2016 20:50:59 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[04-May-2016 20:50:59 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[04-May-2016 20:50:59 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[04-May-2016 20:50:59 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[04-May-2016 20:50:59 America/Chicago] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20121212
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[05-May-2016 05:42:13 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[05-May-2016 05:42:13 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[05-May-2016 05:42:13 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[05-May-2016 05:42:13 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[05-May-2016 05:42:13 America/Chicago] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20121212
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[05-May-2016 07:21:12 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[05-May-2016 07:21:12 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[05-May-2016 07:21:12 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[05-May-2016 07:21:12 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[05-May-2016 07:21:12 America/Chicago] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20121212
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[05-May-2016 07:29:51 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[05-May-2016 07:29:51 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[05-May-2016 07:29:51 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[05-May-2016 07:29:51 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[05-May-2016 07:29:51 America/Chicago] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20121212
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[05-May-2016 07:29:51 America/Chicago] PHP Warning:  require(views/index/index.php): failed to open stream: No such file or directory in /home/edasi789/public_html/robo3d.com.br/libs/View.php on line 11
+[05-May-2016 07:29:51 America/Chicago] PHP Fatal error:  require(): Failed opening required 'views/index/index.php' (include_path='.:/opt/php55/lib/php') in /home/edasi789/public_html/robo3d.com.br/libs/View.php on line 11
+[05-May-2016 07:31:00 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[05-May-2016 07:31:00 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[05-May-2016 07:31:00 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[05-May-2016 07:31:00 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[05-May-2016 07:31:00 America/Chicago] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20121212
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[05-May-2016 07:32:16 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[05-May-2016 07:32:16 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[05-May-2016 07:32:16 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[05-May-2016 07:32:16 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[05-May-2016 07:32:16 America/Chicago] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20121212
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[05-May-2016 07:45:42 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[05-May-2016 07:45:42 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[05-May-2016 07:45:42 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[05-May-2016 07:45:42 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[05-May-2016 07:45:42 America/Chicago] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20121212
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[05-May-2016 07:47:08 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[05-May-2016 07:47:08 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[05-May-2016 07:47:08 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[05-May-2016 07:47:08 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[05-May-2016 07:47:08 America/Chicago] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20121212
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[05-May-2016 09:00:23 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[05-May-2016 09:00:23 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[05-May-2016 09:00:23 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[05-May-2016 09:00:23 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[05-May-2016 09:00:23 America/Chicago] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20121212
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[05-May-2016 10:11:26 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[05-May-2016 10:11:26 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[05-May-2016 10:11:26 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[05-May-2016 10:11:26 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[05-May-2016 10:11:26 America/Chicago] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20121212
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[05-May-2016 13:18:07 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[05-May-2016 13:18:07 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[05-May-2016 13:18:07 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[05-May-2016 13:18:07 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[05-May-2016 13:18:07 America/Chicago] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20121212
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[05-May-2016 13:51:48 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[05-May-2016 13:51:48 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[05-May-2016 13:51:48 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[05-May-2016 13:51:48 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[05-May-2016 13:51:48 America/Chicago] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20121212
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[05-May-2016 13:52:09 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[05-May-2016 13:52:09 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[05-May-2016 13:52:09 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[05-May-2016 13:52:09 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[05-May-2016 13:52:09 America/Chicago] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20121212
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[05-May-2016 13:54:02 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[05-May-2016 13:54:02 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[05-May-2016 13:54:02 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[05-May-2016 13:54:02 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[05-May-2016 13:54:02 America/Chicago] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20121212
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[05-May-2016 13:54:06 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[05-May-2016 13:54:06 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[05-May-2016 13:54:06 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[05-May-2016 13:54:06 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[05-May-2016 13:54:06 America/Chicago] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20121212
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[05-May-2016 13:54:22 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[05-May-2016 13:54:22 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[05-May-2016 13:54:22 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[05-May-2016 13:54:22 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[05-May-2016 13:54:22 America/Chicago] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20121212
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[05-May-2016 13:54:36 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[05-May-2016 13:54:36 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[05-May-2016 13:54:36 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[05-May-2016 13:54:36 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[05-May-2016 13:54:36 America/Chicago] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20121212
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[05-May-2016 13:55:12 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[05-May-2016 13:55:12 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[05-May-2016 13:55:12 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[05-May-2016 13:55:12 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[05-May-2016 13:55:12 America/Chicago] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20121212
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[05-May-2016 13:55:24 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[05-May-2016 13:55:24 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[05-May-2016 13:55:24 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[05-May-2016 13:55:24 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[05-May-2016 13:55:24 America/Chicago] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20121212
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[05-May-2016 13:58:04 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[05-May-2016 13:58:04 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[05-May-2016 13:58:04 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[05-May-2016 13:58:04 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[05-May-2016 13:58:04 America/Chicago] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20121212
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[05-May-2016 13:58:27 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[05-May-2016 13:58:27 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[05-May-2016 13:58:27 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[05-May-2016 13:58:27 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[05-May-2016 13:58:27 America/Chicago] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20121212
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[05-May-2016 14:34:47 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[05-May-2016 14:34:47 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[05-May-2016 14:34:47 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[05-May-2016 14:34:47 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[05-May-2016 14:34:47 America/Chicago] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20121212
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[05-May-2016 14:35:50 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[05-May-2016 14:35:50 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[05-May-2016 14:35:50 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[05-May-2016 14:35:50 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[05-May-2016 14:35:50 America/Chicago] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20121212
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[05-May-2016 16:20:23 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[05-May-2016 16:20:23 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[05-May-2016 16:20:23 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[05-May-2016 16:20:23 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[05-May-2016 16:20:23 America/Chicago] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20121212
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[05-May-2016 20:20:08 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[05-May-2016 20:20:08 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[05-May-2016 20:20:08 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[05-May-2016 20:20:08 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[05-May-2016 20:20:08 America/Chicago] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20121212
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[06-May-2016 07:13:17 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[06-May-2016 07:13:17 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[06-May-2016 07:13:17 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[06-May-2016 07:13:17 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[06-May-2016 07:13:17 America/Chicago] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20121212
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[06-May-2016 07:13:17 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[06-May-2016 07:13:17 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[06-May-2016 07:13:17 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[06-May-2016 07:13:17 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[06-May-2016 07:13:17 America/Chicago] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20121212
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[06-May-2016 11:56:34 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[06-May-2016 11:56:34 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[06-May-2016 11:56:34 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[06-May-2016 11:56:34 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[06-May-2016 11:56:34 America/Chicago] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20121212
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[06-May-2016 11:56:52 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[06-May-2016 11:56:52 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[06-May-2016 11:56:52 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[06-May-2016 11:56:52 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[06-May-2016 11:56:52 America/Chicago] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20121212
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[06-May-2016 21:14:35 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[06-May-2016 21:14:35 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[06-May-2016 21:14:35 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[06-May-2016 21:14:35 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[06-May-2016 21:14:35 America/Chicago] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20121212
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[08-May-2016 10:45:09 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[08-May-2016 10:45:09 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[08-May-2016 10:45:09 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[08-May-2016 10:45:09 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[08-May-2016 10:45:09 America/Chicago] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20121212
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[09-May-2016 06:05:44 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[09-May-2016 06:05:44 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[09-May-2016 06:05:44 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[09-May-2016 06:05:44 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[09-May-2016 06:05:44 America/Chicago] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20121212
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[09-May-2016 16:48:40 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[09-May-2016 16:48:40 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[09-May-2016 16:48:40 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[09-May-2016 16:48:40 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[09-May-2016 16:48:40 America/Chicago] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20121212
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[11-May-2016 14:33:17 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[11-May-2016 14:33:17 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[11-May-2016 14:33:17 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[11-May-2016 14:33:17 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[11-May-2016 14:33:17 America/Chicago] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20121212
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[11-May-2016 17:29:07 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[11-May-2016 17:29:07 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[11-May-2016 17:29:07 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[11-May-2016 17:29:07 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[11-May-2016 17:29:07 America/Chicago] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20121212
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[12-May-2016 21:33:46 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[12-May-2016 21:33:46 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[12-May-2016 21:33:46 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[12-May-2016 21:33:46 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[12-May-2016 21:33:46 America/Chicago] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20121212
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[13-May-2016 20:55:24 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[13-May-2016 20:55:24 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[13-May-2016 20:55:24 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[13-May-2016 20:55:24 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[13-May-2016 20:55:24 America/Chicago] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20121212
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[13-May-2016 21:03:44 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[13-May-2016 21:03:44 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[13-May-2016 21:03:44 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[13-May-2016 21:03:44 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[13-May-2016 21:03:44 America/Chicago] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20121212
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[24-May-2016 01:47:01 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[24-May-2016 01:47:01 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[24-May-2016 01:47:01 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[24-May-2016 01:47:01 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[24-May-2016 01:47:01 America/Chicago] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20121212
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[25-May-2016 04:07:16 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[25-May-2016 04:07:16 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[25-May-2016 04:07:16 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[25-May-2016 04:07:16 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[25-May-2016 04:07:16 America/Chicago] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20121212
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[25-May-2016 17:06:11 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[25-May-2016 17:06:11 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[25-May-2016 17:06:11 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[25-May-2016 17:06:11 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[25-May-2016 17:06:11 America/Chicago] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20121212
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[26-May-2016 10:25:05 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[26-May-2016 10:25:05 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[26-May-2016 10:25:05 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[26-May-2016 10:25:05 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[26-May-2016 10:25:05 America/Chicago] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20121212
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[27-May-2016 15:53:59 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[27-May-2016 15:53:59 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[27-May-2016 15:53:59 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[27-May-2016 15:53:59 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[27-May-2016 15:53:59 America/Chicago] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20121212
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[27-May-2016 16:31:23 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[27-May-2016 16:31:23 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[27-May-2016 16:31:23 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[27-May-2016 16:31:23 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[27-May-2016 16:31:23 America/Chicago] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20121212
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[27-May-2016 16:31:31 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[27-May-2016 16:31:31 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[27-May-2016 16:31:31 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[27-May-2016 16:31:31 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[27-May-2016 16:31:31 America/Chicago] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20121212
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[28-May-2016 01:47:58 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-May-2016 01:47:58 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-May-2016 01:47:58 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-May-2016 01:47:58 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-May-2016 01:47:58 America/Chicago] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20121212
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[28-May-2016 04:07:16 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-May-2016 04:07:16 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-May-2016 04:07:16 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-May-2016 04:07:16 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-May-2016 04:07:16 America/Chicago] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20121212
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[28-May-2016 16:07:13 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-May-2016 16:07:13 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-May-2016 16:07:13 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-May-2016 16:07:13 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-May-2016 16:07:13 America/Chicago] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20121212
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[28-May-2016 17:06:12 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-May-2016 17:06:12 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-May-2016 17:06:12 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-May-2016 17:06:12 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-May-2016 17:06:12 America/Chicago] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20121212
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[28-May-2016 19:28:59 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-May-2016 19:28:59 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-May-2016 19:28:59 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-May-2016 19:28:59 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-May-2016 19:29:00 America/Chicago] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20121212
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[30-May-2016 14:41:35 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[30-May-2016 14:41:35 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[30-May-2016 14:41:35 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[30-May-2016 14:41:35 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[30-May-2016 14:41:35 America/Chicago] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20121212
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[30-May-2016 19:44:34 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[30-May-2016 19:44:34 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[30-May-2016 19:44:34 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[30-May-2016 19:44:34 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[30-May-2016 19:44:34 America/Chicago] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20121212
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[30-May-2016 19:44:35 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[30-May-2016 19:44:35 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[30-May-2016 19:44:35 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[30-May-2016 19:44:35 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[30-May-2016 19:44:35 America/Chicago] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20121212
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[31-May-2016 04:07:17 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[31-May-2016 04:07:17 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[31-May-2016 04:07:17 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[31-May-2016 04:07:17 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[31-May-2016 04:07:17 America/Chicago] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20121212
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[31-May-2016 08:05:22 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[31-May-2016 08:05:22 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[31-May-2016 08:05:22 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[31-May-2016 08:05:22 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[31-May-2016 08:05:22 America/Chicago] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20121212
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[31-May-2016 08:09:13 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[31-May-2016 08:09:13 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[31-May-2016 08:09:13 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[31-May-2016 08:09:13 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[31-May-2016 08:09:13 America/Chicago] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20121212
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[31-May-2016 09:06:58 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[31-May-2016 09:06:58 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[31-May-2016 09:06:58 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[31-May-2016 09:06:58 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[31-May-2016 09:06:58 America/Chicago] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20121212
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[31-May-2016 17:06:13 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[31-May-2016 17:06:13 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[31-May-2016 17:06:13 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[31-May-2016 17:06:13 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[31-May-2016 17:06:13 America/Chicago] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20121212
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[31-May-2016 17:59:12 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[31-May-2016 17:59:12 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[31-May-2016 17:59:12 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[31-May-2016 17:59:12 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[31-May-2016 17:59:12 America/Chicago] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20121212
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[31-May-2016 21:40:07 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[31-May-2016 21:40:07 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[31-May-2016 21:40:07 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[31-May-2016 21:40:07 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[31-May-2016 21:40:07 America/Chicago] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20121212
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[01-Jun-2016 07:36:13 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[01-Jun-2016 07:36:13 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[01-Jun-2016 07:36:13 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[01-Jun-2016 07:36:13 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[01-Jun-2016 07:36:13 America/Chicago] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20121212
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[01-Jun-2016 07:36:50 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[01-Jun-2016 07:36:50 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[01-Jun-2016 07:36:50 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[01-Jun-2016 07:36:50 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[01-Jun-2016 07:36:50 America/Chicago] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20121212
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[01-Jun-2016 08:33:57 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[01-Jun-2016 08:33:57 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[01-Jun-2016 08:33:57 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[01-Jun-2016 08:33:57 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[01-Jun-2016 08:33:57 America/Chicago] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20121212
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[01-Jun-2016 08:56:23 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[01-Jun-2016 08:56:23 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[01-Jun-2016 08:56:23 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[01-Jun-2016 08:56:23 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[01-Jun-2016 08:56:23 America/Chicago] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20121212
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[01-Jun-2016 13:15:41 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[01-Jun-2016 13:15:41 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[01-Jun-2016 13:15:41 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[01-Jun-2016 13:15:41 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[01-Jun-2016 13:15:41 America/Chicago] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20121212
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[01-Jun-2016 14:33:05 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[01-Jun-2016 14:33:05 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[01-Jun-2016 14:33:05 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[01-Jun-2016 14:33:05 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[01-Jun-2016 14:33:05 America/Chicago] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20121212
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[01-Jun-2016 19:33:02 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[01-Jun-2016 19:33:02 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[01-Jun-2016 19:33:02 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[01-Jun-2016 19:33:02 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[01-Jun-2016 19:33:02 America/Chicago] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20121212
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[02-Jun-2016 15:15:08 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[02-Jun-2016 15:15:08 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[02-Jun-2016 15:15:08 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[02-Jun-2016 15:15:08 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[02-Jun-2016 15:15:08 America/Chicago] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20121212
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[02-Jun-2016 15:15:16 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[02-Jun-2016 15:15:16 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[02-Jun-2016 15:15:16 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[02-Jun-2016 15:15:16 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[02-Jun-2016 15:15:16 America/Chicago] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20121212
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[02-Jun-2016 15:15:39 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[02-Jun-2016 15:15:39 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[02-Jun-2016 15:15:39 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[02-Jun-2016 15:15:39 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[02-Jun-2016 15:15:39 America/Chicago] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20121212
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[02-Jun-2016 15:15:46 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[02-Jun-2016 15:15:46 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[02-Jun-2016 15:15:46 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[02-Jun-2016 15:15:46 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[02-Jun-2016 15:15:46 America/Chicago] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20121212
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[02-Jun-2016 15:19:23 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[02-Jun-2016 15:19:23 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[02-Jun-2016 15:19:23 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/sqlite.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[02-Jun-2016 15:19:23 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so' - /opt/php55/lib/php/extensions/no-debug-non-zts-20121212/pdo_mysql.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[02-Jun-2016 15:19:23 America/Chicago] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20121212
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
