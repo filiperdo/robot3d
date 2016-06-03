@@ -24,6 +24,45 @@
 
 	<div class="gr"><!-- gn Coluna direita -->
 
+		
+		<div class="qv rc alu ss">
+	        <div class="qw">
+	        
+	        <h4 class="ald"><?php echo $this->obj->getTitle();?></h4>
+	        <h5 class="ald">Autor: </h5>
+	        <ul class="qo anx">
+	          <li class="qf alm">
+	            <a class="qj" href="#">
+	              <img class="qh cu" src="<?php echo URL; ?>public/img/avatar-fat.jpg">
+	            </a>
+	            <div class="qg">
+	              <strong><?php echo $this->obj->getUser()->getName();?> </strong> @<?php echo $this->obj->getUser()->getLogin();?>
+	              <div class="aoa">
+	                <button class="cg ts fx"><span class="h vc"></span> Seguir</button>
+	              </div>
+	            </div>
+	          </li>
+	        </ul>
+	        
+	        </div>
+	        <div class="qz">
+	          Publicado em 30 de abril de 2016
+	        </div>
+	      </div>
+		
+		<div class="qv rc aok">
+	        <div class="qw">
+	          <h5>Membros do projeto</h5>
+	          <?php for( $i=0; $i<5; $i++ ){?>
+	          <!-- <div style="flot:left; width: 25px;">
+		          <a class="" href="#">
+		              <img class=" cu" src="<?php echo URL; ?>public/img/avatar-fat.jpg">
+		          </a>
+	          </div> -->
+	          <?php } ?>
+	        </div>
+	      </div>
+		
       <div class="qv rc alu ss">
         <div class="qw">
           <h5 class="ald">Autor</h5>
@@ -35,63 +74,4 @@
         </div>
       </div>
 
-      <div class="qv rc alu ss">
-        <div class="qw">
-        <h5 class="ald">Quem seguir? <small> <a href="#">Ver todos</a></small></h5>
-        <ul class="qo anx">
-          <li class="qf alm">
-            <a class="qj" href="#">
-              <img class="qh cu" src="<?php echo URL; ?>public/img/avatar-fat.jpg">
-            </a>
-            <div class="qg">
-              <strong>Lorem ipsum </strong> @fat
-              <div class="aoa">
-                <button class="cg ts fx">
-                  <span class="h vc"></span> Seguir
-                </button>
-              </div>
-            </div>
-          </li>
-           <li class="qf">
-            <a class="qj" href="#">
-              <img class="qh cu" src="<?php echo URL; ?>public/img/avatar-mdo.png">
-            </a>
-            <div class="qg">
-              <strong>Lorem ipsum </strong> @mdo
-              <div class="aoa">
-                <button class="cg ts fx">
-                  <span class="h vc"></span> Seguir
-                </button>
-              </div>
-            </div>
-          </li>
-        </ul>
-        </div>
-        <div class="qz">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-        </div>
-      </div>
-
-      <div class="qv rc aok">
-        <div class="qw">
-          2015 Robo3D
-		
-          <a href="#">About</a>
-          <a href="#">Help</a>
-          <a href="#">Terms</a>
-          <a href="#">Privacy</a>
-          <a href="#">Cookies</a>
-          <a href="#">Ads </a>
-          <a href="#">info</a>
-          <a href="#">Brand</a>
-          <a href="#">Blog</a>
-          <a href="#">Status</a>
-          <a href="#">Apps</a>
-          <a href="#">Jobs</a>
-          <a href="#">Advertise</a>
-          
-        </div>
-      </div>
-      
-      
     </div><!-- .gn Coluna direita -->
