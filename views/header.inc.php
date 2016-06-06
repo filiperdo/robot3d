@@ -16,6 +16,7 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
     <link href="<?php echo URL; ?>public/css/bootstrap.css" rel="stylesheet">
     <link href="<?php echo URL; ?>public/css/toolkit.css" rel="stylesheet">
+    <link href="<?php echo URL; ?>public/css/style.css" rel="stylesheet">
     <link href="<?php echo URL; ?>public/css/application.css" rel="stylesheet">
 	
 	<?php

@@ -1,5 +1,11 @@
 <div class="hh">
 
+	<ol class="breadcrumb bread-border">
+	  <li><a href="<?php echo URL?>">Home</a></li>
+	  <li><a href="<?php echo URL?>project">Projetos</a></li>
+	  <li><?=$this->obj->getTitle()?></li>
+	</ol>
+
 	<div class="qv rc aog alu">
 		<div class="qx" style="background-image: url(<?php echo URL; ?>public/img/unsplash_1.jpg); height: 350px;"></div>
 	</div>

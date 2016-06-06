@@ -137,21 +137,18 @@ class Topic_Model extends Model
 		return $this->montarObjeto( $result[0] );
 	}
 
-	/** 
-	* Metodo listarTopic
-	*/
-	public function listarTopic()
+	/**
+	 * Metodo listarTopicBySubject
+	 * @param unknown $id_subject
+	 * @return Topic_Model[]
+	 */
+	public function listarTopicBySubject( $id_subject )
 	{
 		$sql  = "select * ";
-		$sql .= "from topic ";
-
-		if ( isset( $_POST["like"] ) )
-		{
-			$sql .= "where id_topic like :id "; // Configurar o like com o campo necessario da tabela 
-			$result = $this->db->select( $sql, array("id" => "%{$_POST["like"]}%") );
-		}
-		else
-			$result = $this->db->select( $sql );
+		$sql .= "from topic as t ";
+		$sql .= "where t.id_subject = :id "; 
+		
+		$result = $this->db->select( $sql, array("id" => $id_subject ) );
 
 		return $this->montarLista($result);
 	}

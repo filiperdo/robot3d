@@ -16,6 +16,7 @@ class Item_Model extends Model
 	* Atributos Private 
 	*/
 	private $id_item;
+	private $title;
 	private $views;
 	private $content;
 	private $date;
@@ -27,6 +28,7 @@ class Item_Model extends Model
 		parent::__construct();
 
 		$this->id_item = '';
+		$this->title = '';
 		$this->views = '';
 		$this->content = '';
 		$this->date = '';
@@ -40,6 +42,11 @@ class Item_Model extends Model
 	public function setId_item( $id_item )
 	{
 		$this->id_item = $id_item;
+	}
+	
+	public function setTitle( $title )
+	{
+		$this->title = $title;
 	}
 
 	public function setViews( $views )
@@ -75,6 +82,11 @@ class Item_Model extends Model
 		return $this->id_item;
 	}
 
+	public function getTitle()
+	{
+		return $this->title;
+	}
+	
 	public function getViews()
 	{
 		return $this->views;
@@ -162,21 +174,18 @@ class Item_Model extends Model
 		return $this->montarObjeto( $result[0] );
 	}
 
-	/** 
-	* Metodo listarItem
-	*/
-	public function listarItem()
+	/**
+	 * Metodo listarItem
+	 * @param unknown $id_topic
+	 * @return Item_Model[]
+	 */
+	public function listarItemByTopic( $id_topic )
 	{
 		$sql  = "select * ";
-		$sql .= "from item ";
-
-		if ( isset( $_POST["like"] ) )
-		{
-			$sql .= "where id_item like :id "; // Configurar o like com o campo necessario da tabela 
-			$result = $this->db->select( $sql, array("id" => "%{$_POST["like"]}%") );
-		}
-		else
-			$result = $this->db->select( $sql );
+		$sql .= "from item as i ";
+		$sql .= "where i.id_topic = :id "; 
+		
+		$result = $this->db->select( $sql, array("id" => $id_topic ) );
 
 		return $this->montarLista($result);
 	}
@@ -206,6 +215,7 @@ class Item_Model extends Model
 	private function montarObjeto( $row )
 	{
 		$this->setId_item( $row["id_item"] );
+		$this->setTitle( $row['title'] );
 		$this->setViews( $row["views"] );
 		$this->setContent( $row["content"] );
 		$this->setDate( $row["date"] );
