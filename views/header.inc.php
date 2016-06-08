@@ -19,6 +19,8 @@
     <link href="<?php echo URL; ?>public/css/style.css" rel="stylesheet">
     <link href="<?php echo URL; ?>public/css/application.css" rel="stylesheet">
 	
+	<script src="<?php echo URL; ?>public/js/jquery.min.js"></script>
+	
 	<?php
     if (isset($this->js)) 
     {
@@ -70,6 +72,7 @@
             <a <?php echo $menu['toggle']; ?> href="<?php echo URL . $menu['link']; ?>"><?php echo $menu['label']; ?></a>
           </li>
           <?php } ?>
+          
         </ul>
 
         <ul class="nav navbar-nav og ale ss">
@@ -91,7 +94,7 @@
          <?php } else { ?> 
          
           <li><a href="<?php echo URL; ?>login">Login</a></li>
-          <li><a href="#">Cadastrar</a></li>
+          <li><a href="<?php echo URL?>login/register">Cadastrar</a></li>
           
          <?php } ?>
          
@@ -113,7 +116,7 @@
           <li><a href="<?php echo URL?>login/logout"><i class="glyphicon glyphicon-off"></i> Logout</a></li>
           <?php } else { ?>
           <li><a href="<?php echo URL; ?>login">Login</a></li>
-          <li><a href="#">Cadastrar</a></li>
+          <li><a href="<?php echo URL?>login/register">Cadastrar</a></li>
           <?php } ?>
         </ul>
         

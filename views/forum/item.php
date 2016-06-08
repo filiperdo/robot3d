@@ -12,7 +12,7 @@
 		
 		<div class="row" style="margin-bottom: 10px">
 			<div class="col-md-12">
-				<a href="<?php echo URL; ?>forum/write" class="cg ts fx">Novo topico</a>
+				<a href="<?php echo URL; ?>forum/write/<?php echo $this->objTopic->getId_topic(); ?>" class="cg ts fx"><i class="glyphicon glyphicon-plus"></i> Novo topico</a>
 			</div>
 		</div>
 		

@@ -29,7 +29,7 @@ class User extends Controller {
 		$this->view->action = "create";
 		$this->view->obj = $this->model;
 
-		if( $id ) 
+		if( $id )
 		{
 			$this->view->title = "Editar User";
 			$this->view->action = "edit/".$id;
@@ -45,29 +45,42 @@ class User extends Controller {
 		$this->view->render( "footer" );
 	}
 
+	public function dashboard()
+	{
+		$this->view->title = "Dashboard";
+		
+		$this->view->render( "header.inc" );
+		$this->view->render( "col-left" );
+		$this->view->render( "user/dashboard" );
+		$this->view->render( "footer.inc" );
+	}
+	
 	/** 
 	* Metodo create
 	*/
 	public function create()
 	{
+		
+		// VERIFICAR SE LOGIN JA EXISTE NO BANCO DE DADOS
+		
 		$data = array(
-			'name' => $_POST["name"], 
-			'login' => $_POST["login"], 
-			'password' => $_POST["password"], 
-			'email' => $_POST["email"], 
-			'website' => $_POST["website"], 
-			'bio' => $_POST["bio"], 
-			'numlogin' => $_POST["numlogin"], 
-			'date' => $_POST["date"], 
-			'linguage' => $_POST["linguage"], 
-			'id_typeuser' => $_POST["id_typeuser"], 
-			'lastlogin' => $_POST["lastlogin"], 
-			'status' => $_POST["status"], 
+			//'name' 			=> $_POST["name"], 
+			'login' 		=> $_POST["login"], 
+			'password' 		=> $_POST["password"], 
+			'email' 		=> $_POST["email"], 
+			//'website' 		=> $_POST["website"], 
+			//'bio' 			=> $_POST["bio"], 
+			//'numlogin' 		=> $_POST["numlogin"], 
+			//'date' 			=> $_POST["date"], 
+			'linguage' 		=> 'PT', 
+			'id_typeuser' 	=> 1, // Membro
+			//'lastlogin' 	=> $_POST["lastlogin"], 
+			'status' 		=> 'ACTIVE',
 		);
 
-		$this->model->create( $data ) ? $msg = base64_encode( "OPERACAO_SUCESSO" ) : $msg = base64_encode( "OPERACAO_ERRO" );
+		$this->model->create( $data ) ? $msg = base64_encode( "CADASTRO_SUCESSO" ) : $msg = base64_encode( "OPERACAO_ERRO" );
 
-		header("location: " . URL . "user?st=".$msg);
+		header("location: " . URL . "login?st=".$msg);
 	}
 
 	/** 
@@ -76,18 +89,18 @@ class User extends Controller {
 	public function edit( $id )
 	{
 		$data = array(
-			'name' => $_POST["name"], 
-			'login' => $_POST["login"], 
-			'password' => $_POST["password"], 
-			'email' => $_POST["email"], 
-			'website' => $_POST["website"], 
-			'bio' => $_POST["bio"], 
-			'numlogin' => $_POST["numlogin"], 
-			'date' => $_POST["date"], 
-			'linguage' => $_POST["linguage"], 
-			'id_typeuser' => $_POST["id_typeuser"], 
-			'lastlogin' => $_POST["lastlogin"], 
-			'status' => $_POST["status"], 
+			'name' 				=> $_POST["name"], 
+			'login' 			=> $_POST["login"], 
+			'password' 			=> $_POST["password"], 
+			'email' 			=> $_POST["email"], 
+			'website' 			=> $_POST["website"], 
+			'bio' 				=> $_POST["bio"], 
+			'numlogin' 			=> $_POST["numlogin"], 
+			'date' 				=> $_POST["date"], 
+			'linguage' 			=> $_POST["linguage"], 
+			'id_typeuser' 		=> $_POST["id_typeuser"], 
+			'lastlogin' 		=> $_POST["lastlogin"], 
+			'status' 			=> $_POST["status"], 
 		);
 
 		$this->model->edit( $data, $id ) ? $msg = base64_encode( "OPERACAO_SUCESSO" ) : $msg = base64_encode( "OPERACAO_ERRO" );

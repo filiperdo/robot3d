@@ -56,12 +56,15 @@ class Project extends Controller {
 		$this->view->render( "footer" );
 	}
 
-	public function item( $id_project )
+	public function detail( $id_project )
 	{
 		$this->view->obj = $this->model->obterProject( $id_project );
 		
+		require_once 'models/component_model.php';
+		$this->view->objComponent = new Component_Model();
+		
 		$this->view->render( "header.inc" );
-		$this->view->render( "project/item" );
+		$this->view->render( "project/detail" );
 		//$this->view->render( "col-right" );
 		$this->view->render( "footer.inc" );
 	}

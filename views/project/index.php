@@ -22,7 +22,7 @@
 			<div class="row">
 				<div class="col-md-12">
 		        	<h5 class="qy">
-		        		<a class="aku" href="<?php echo URL?>project/item/<?php echo $project->getId_project(); ?>"> <?php echo $project->getTitle(); ?></a>
+		        		<a class="aku" href="<?php echo URL?>project/detail/<?php echo $project->getId_project(); ?>"> <?php echo $project->getTitle(); ?></a>
 		        	</h5>
 	
 	        		<p class="alu"><?php echo $project->getContent(); ?></p>

@@ -36,11 +36,9 @@
 	<tr>
 		<th>Id_post </th>
 		<th>Title </th>
-		<th>Content </th>
 		<th>Date </th>
 		<th>Views </th>
 		<th>Status </th>
-		<th>Id_comment </th>
 		<th></th>
 	</tr>
 	</thead>
@@ -49,11 +47,9 @@
 	<tr>
  		<td><?php echo $post->getId_post(); ?></td>
 		<td><?php echo $post->getTitle(); ?></td>
-		<td><?php echo $post->getContent(); ?></td>
-		<td><?php echo $post->getDate(); ?></td>
+		<td><?php echo Data::formataDataHora( $post->getDate() ); ?></td>
 		<td><?php echo $post->getViews(); ?></td>
 		<td><?php echo $post->getStatus(); ?></td>
-		<td><?php echo ""; ?></td>
 		<td align="right">
 			<a href="<?php echo URL;?>post/form/<?php echo $post->getId_post();?>" class="btn btn-info btn-sm"><i class="glyphicon glyphicon-pencil"></i></a>
 			<a href="<?php echo URL;?>post/delete/<?php echo $post->getId_post();?>" class="delete btn btn-danger btn-sm"><i class="glyphicon glyphicon-trash"></i></a>
@@ -62,7 +58,6 @@
 	<?php } ?>
 	</tbody>
 </table>
-
 
 <script>
 $(function() {

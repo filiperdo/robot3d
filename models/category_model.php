@@ -130,6 +130,23 @@ class Category_Model extends Model
 
 		return $this->montarLista($result);
 	}
+	
+	/**
+	 * Lista as categorias vinculadas a um projetos
+	 * @param unknown $id_post
+	 */
+	public function listCategoryByPost( $id_post )
+	{
+		$sql  = "select c.* ";
+		$sql .= "from category as c ";
+		$sql .= "inner join post_category as pc ";
+		$sql .= "on pc.id_category = c.id_category ";
+		$sql .= "where pc.id_post = :id_p ";
+		
+		$result = $this->db->select( $sql, array("id_p" => $id_post ) );
+		
+		return $this->montarLista($result);
+	}
 
 	/** 
 	* Metodo montarLista

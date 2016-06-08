@@ -55,7 +55,7 @@
 
       <div class="qv rc aok">
         <div class="qw">
-          2015 Robo3D
+          <?php echo date('Y');?> Robo3D
 		
           <a href="#">About</a>
           <a href="#">Help</a>

@@ -28,7 +28,12 @@ class Post extends Controller {
 		$this->view->title = "Cadastrar Post";
 		$this->view->action = "create";
 		$this->view->obj = $this->model;
-
+		$this->view->array_category = array();
+		
+		require_once 'models/category_model.php';
+		$objCategoria = new Category_Model();
+		$this->view->listCategory = $objCategoria->listarCategory();
+		
 		if( $id ) 
 		{
 			$this->view->title = "Editar Post";
@@ -37,6 +42,12 @@ class Post extends Controller {
 
 			if ( empty( $this->view->obj ) ) {
 				die( "Valor invalido!" );
+			}
+			
+			// Monta o array com as categorias vinculadas ao post
+			foreach ( $objCategoria->listCategoryByPost( $id ) as $category )
+			{
+				$this->view->array_category[] = $category->getId_category();
 			}
 		}
 
@@ -50,17 +61,48 @@ class Post extends Controller {
 	*/
 	public function create()
 	{
+		$this->model->db->beginTransaction();
+		
+		/**
+		 * Cadastra o post
+		 * @var unknown
+		 */
 		$data = array(
-			'title' => $_POST["title"], 
-			'content' => $_POST["content"], 
-			'date' => $_POST["date"], 
-			'views' => $_POST["views"], 
-			'status' => $_POST["status"], 
-			'id_comment' => $_POST["id_comment"], 
+			'title' 		=> $_POST["title"], 
+			'content' 		=> $_POST["content"], 
+			'status' 		=> $_POST["status"], 
 		);
 
-		$this->model->create( $data ) ? $msg = base64_encode( "OPERACAO_SUCESSO" ) : $msg = base64_encode( "OPERACAO_ERRO" );
-
+		if( !$id_post = $this->model->create( $data ) )
+		{
+			$this->model->db->rollBack();
+			$msg = base64_encode( "OPERACAO_ERRO" );
+			header("location: " . URL . "post?st=".$msg);
+		}
+		
+		/**
+		 * Cadastra as categorias do post
+		 */
+		foreach( $_POST['categoria'] as $id_categoria )
+		{
+			$data_category = array(
+				'id_post'		=> $id_post,
+				'id_category'	=> $id_categoria
+			);
+			
+			if( !$this->model->db->insert( "post_category", $data_category, false ) )
+			{
+				$this->model->db->rollBack();
+				$msg = base64_encode( "OPERACAO_ERRO" );
+				header("location: " . URL . "post?st=".$msg);
+			}
+		}
+		
+		/**
+		 * Realiza o commit e retorna a view
+		 */
+		$this->model->db->commit();
+		$msg = base64_encode( "OPERACAO_SUCESSO" );
 		header("location: " . URL . "post?st=".$msg);
 	}
 
@@ -69,17 +111,51 @@ class Post extends Controller {
 	*/
 	public function edit( $id )
 	{
+		$this->model->db->beginTransaction();
+		
+		/**
+		 * Edita os dados do post
+		 * @var unknown
+		 */
 		$data = array(
-			'title' => $_POST["title"], 
-			'content' => $_POST["content"], 
-			'date' => $_POST["date"], 
-			'views' => $_POST["views"], 
-			'status' => $_POST["status"], 
-			'id_comment' => $_POST["id_comment"], 
+			'title' 		=> $_POST["title"], 
+			'content' 		=> $_POST["content"], 
+			'status' 		=> $_POST["status"], 
 		);
 
-		$this->model->edit( $data, $id ) ? $msg = base64_encode( "OPERACAO_SUCESSO" ) : $msg = base64_encode( "OPERACAO_ERRO" );
-
+		if( !$this->model->edit( $data, $id ) )
+		{
+			$this->model->db->rollBack();
+			$msg = base64_encode( "OPERACAO_ERRO" );
+			header("location: " . URL . "post?st=".$msg."&erro=1");
+		}
+		
+		/**
+		 * Cadastra as categorias do post
+		 */
+		// Deleta todas as categorias vinculadas ao post
+		$this->model->db->deleteComposityKey('post_category', "id_post = {$id}" );
+		
+		foreach( $_POST['categoria'] as $id_categoria )
+		{
+			$data_category = array(
+				'id_post'		=> $id,
+				'id_category'	=> $id_categoria
+			);
+			
+			if( !$this->model->db->insert( "post_category", $data_category, false ) )
+			{
+				$this->model->db->rollBack();
+				$msg = base64_encode( "OPERACAO_ERRO" );
+				header( "location: " . URL . "post?st=".$msg."&erro=3" );
+			}
+		}
+		
+		/**
+		 * Realiza o commit e retorna a view
+		 */
+		$this->model->db->commit();
+		$msg = base64_encode( "OPERACAO_SUCESSO" );
 		header("location: " . URL . "post?st=".$msg);
 	}
 

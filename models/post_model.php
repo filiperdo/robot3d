@@ -7,7 +7,6 @@
  * Data: 01/06/2016
  */ 
 
-include_once 'comment_model.php';
 
 class Post_Model extends Model
 {
@@ -20,7 +19,6 @@ class Post_Model extends Model
 	private $date;
 	private $views;
 	private $status;
-	private $comment;
 
 	public function __construct()
 	{
@@ -32,7 +30,6 @@ class Post_Model extends Model
 		$this->date = '';
 		$this->views = '';
 		$this->status = '';
-		$this->comment = new Comment_Model();
 	}
 
 	/** 
@@ -68,11 +65,6 @@ class Post_Model extends Model
 		$this->status = $status;
 	}
 
-	public function setComment( Comment_Model $comment )
-	{
-		$this->comment = $comment;
-	}
-
 	/** 
 	* Metodos get's
 	*/
@@ -106,26 +98,21 @@ class Post_Model extends Model
 		return $this->status;
 	}
 
-	public function getComment()
-	{
-		return $this->comment;
-	}
-
 
 	/** 
 	* Metodo create
 	*/
 	public function create( $data )
 	{
-		$this->db->beginTransaction();
+		//$this->db->beginTransaction();
 
 		if( !$id = $this->db->insert( "post", $data ) ){
 			$this->db->rollBack();
 			return false;
 		}
 
-		$this->db->commit();
-		return true;
+		//$this->db->commit();
+		return $id;
 	}
 
 	/** 
@@ -133,14 +120,14 @@ class Post_Model extends Model
 	*/
 	public function edit( $data, $id )
 	{
-		$this->db->beginTransaction();
+		//$this->db->beginTransaction();
 
 		if( !$update = $this->db->update("post", $data, "id_post = {$id} ") ){
 			$this->db->rollBack();
 			return false;
 		}
 
-		$this->db->commit();
+		//$this->db->commit();
 		return $update;
 	}
 
@@ -149,14 +136,14 @@ class Post_Model extends Model
 	*/
 	public function delete( $id )
 	{
-		$this->db->beginTransaction();
+		//$this->db->beginTransaction();
 
 		if( !$delete = $this->db->delete("post", "id_post = {$id} ") ){ 
 			$this->db->rollBack();
 			return false;
 		}
 
-		$this->db->commit();
+		//$this->db->commit();
 		return $delete;
 	}
 
@@ -222,10 +209,6 @@ class Post_Model extends Model
 		$this->setDate( $row["date"] );
 		$this->setViews( $row["views"] );
 		$this->setStatus( $row["status"] );
-
-		$objComment = new Comment_Model();
-		$objComment->obterComment( $row["id_comment"] );
-		$this->setComment( $objComment );
 
 		return $this;
 	}

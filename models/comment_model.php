@@ -18,6 +18,7 @@ class Comment_Model extends Model
 	private $content;
 	private $date;
 	private $user;
+	private $id_post;
 
 	public function __construct()
 	{
@@ -27,6 +28,7 @@ class Comment_Model extends Model
 		$this->content = '';
 		$this->date = '';
 		$this->user = new User_Model();
+		$this->id_post = '';
 	}
 
 	/** 
@@ -50,6 +52,11 @@ class Comment_Model extends Model
 	public function setUser( User_Model $user )
 	{
 		$this->user = $user;
+	}
+	
+	public function setId_post( $id_post )
+	{
+		$this->id_post = $id_post;
 	}
 
 	/** 
@@ -75,6 +82,10 @@ class Comment_Model extends Model
 		return $this->user;
 	}
 
+	public function getId_post()
+	{
+		return $this->id_post;
+	}
 
 	/** 
 	* Metodo create
@@ -187,6 +198,8 @@ class Comment_Model extends Model
 		$objUser = new User_Model();
 		$objUser->obterUser( $row["id_user"] );
 		$this->setUser( $objUser );
+		
+		$this->setId_post( $row['id_post'] );
 
 		return $this;
 	}

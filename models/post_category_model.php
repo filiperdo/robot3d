@@ -58,14 +58,14 @@ class Post_category_Model extends Model
 	*/
 	public function create( $data )
 	{
-		$this->db->beginTransaction();
+		//$this->db->beginTransaction();
 
 		if( !$id = $this->db->insert( "post_category", $data ) ){
 			$this->db->rollBack();
 			return false;
 		}
 
-		$this->db->commit();
+		//$this->db->commit();
 		return true;
 	}
 

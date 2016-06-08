@@ -47,7 +47,7 @@ class Database extends PDO
      * @param string $table A name of table to insert into
      * @param string $data An associative array
      */
-    public function insert( $table, $data )
+    public function insert( $table, $data, $return_id = true )
     {
         ksort( $data );
         
@@ -62,11 +62,18 @@ class Database extends PDO
         
         $sth->execute();
         
-        // Seleciona o id do ultimo registro
-        $row = $this->select( "select max(id_" . $table . ") as uid from " . $table );
-        
-        // Retorna o id do ultimo registro
-        return $row[0]['uid'];
+        if( $return_id )
+        {
+	        // Seleciona o id do ultimo registro
+	        $row = $this->select( "select max(id_" . $table . ") as uid from " . $table );
+	        
+	        // Retorna o id do ultimo registro
+	        return $row[0]['uid'];
+        }
+        else 
+        {
+        	return true;
+        }
 		
     }
     
@@ -114,6 +121,18 @@ class Database extends PDO
     public function delete($table, $where, $limit = 1)
     {
         return $this->exec("DELETE FROM $table WHERE $where LIMIT $limit");
+    }
+    
+    
+    /**
+     * deleteComposityKey
+     * @param unknown $table
+     * @param unknown $where
+     * @return number
+     */
+    public function deleteComposityKey( $table, $where )
+    {
+    	return $this->exec("DELETE FROM {$table} WHERE {$where} ");
     }
     
 }

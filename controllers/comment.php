@@ -51,9 +51,10 @@ class Comment extends Controller {
 	public function create()
 	{
 		$data = array(
-			'content' => $_POST["content"], 
-			'date' => $_POST["date"], 
-			'id_user' => $_POST["id_user"], 
+			'content' 	=> $_POST["content"], 
+			'date' 		=> $_POST["date"], 
+			'id_user' 	=> $_POST["id_user"],
+			'id_post'	=> $_POST['id_post']
 		);
 
 		$this->model->create( $data ) ? $msg = base64_encode( "OPERACAO_SUCESSO" ) : $msg = base64_encode( "OPERACAO_ERRO" );
@@ -67,9 +68,7 @@ class Comment extends Controller {
 	public function edit( $id )
 	{
 		$data = array(
-			'content' => $_POST["content"], 
-			'date' => $_POST["date"], 
-			'id_user' => $_POST["id_user"], 
+			'content' 	=> $_POST["content"],
 		);
 
 		$this->model->edit( $data, $id ) ? $msg = base64_encode( "OPERACAO_SUCESSO" ) : $msg = base64_encode( "OPERACAO_ERRO" );

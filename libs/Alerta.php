@@ -23,7 +23,9 @@ class Alerta
         $this->arrayMsgOk['OPERACAO_SUCESSO'] = "Opera&ccedil;&atilde;o realizada com sucesso!";
         $this->arrayMsgOk['SENHA_SUCESSO'] = "Senha atualizada com sucesso!";
         $this->arrayMsgOk['EMAIL_REDEFINIR_SENHA'] = 'E-mail enviado!<br/>Por favor, confira seu e-mail e leia as instruções para redefinir sua senha.';
-
+		$this->arrayMsgOk['CADASTRO_SUCESSO'] = 'Cadastro efetuado com sucesso!';
+        
+        
         // Mensagens de Erro
         $this->arrayMsgErro['OPERACAO_ERRO'] = "Erro ao executar a operacao!";
         $this->arrayMsgErro['ERRO_DELETAR_MODULO'] = "Este módulo está sendo utilizado por um ou mais cursos!";

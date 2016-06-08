@@ -16,6 +16,18 @@ class Login extends Controller {
         $this->view->render('footer.inc');
     }
     
+    public function register()
+    {
+    	$this->view->title = 'Cadastrar';
+    	$this->view->render('header.inc');
+    	$this->view->render('col-left');
+    	$this->view->render('login/register');
+    	$this->view->render('col-right');
+    	$this->view->render('footer.inc');
+    }
+    
+    
+    
     function cadastro()
     {
     	$this->view->title = 'Cadastrar';

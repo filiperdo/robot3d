@@ -73,9 +73,14 @@ class Forum extends Controller {
 	}
 	
 	
-	public function write()
+	public function write( $id_topic ) 
 	{
 		$this->view->title = "Forum";
+		
+		require_once 'models/topic_model.php';
+		$objTopic = new Topic_Model();
+		$objTopic->obterTopic( $id_topic );
+		$this->view->objTopic = $objTopic;
 		
 		$this->view->render( "header.inc" );
 		$this->view->render( "forum/write" );

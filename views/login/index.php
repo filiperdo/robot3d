@@ -31,9 +31,11 @@
           <div style="margin:10px 0"><?php if (isset($_GET['st'])) { $objAlerta = new Alerta($_GET['st']); } ?></div>
           
           <div class="form-group" >
-              <button type="submit" class="btn btn-success">Login</button>
-              <a href="" class="btn btn-info">Esquici a senha</a>
-              <a href="" class="btn btn-primary">Cadastrar</a>
+              <button type="submit" class="cg fp"><i class="h aak"></i> Login</button>
+              
+              <a href="<?php echo URL?>login/register" class="cg tu"><i class="h aju"></i> Cadastrar</a>
+              
+              <a href="" style="float: right;"><small><i class="h aam"></i> Esquici minha senha</small></a>
           </div>
            
           </form>

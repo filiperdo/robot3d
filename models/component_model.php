@@ -130,7 +130,23 @@ class Component_Model extends Model
 
 		return $this->montarLista($result);
 	}
-
+	
+	/**
+	 * Lista os componentes de um projeto
+	 * @param unknown $id_project
+	 */
+	public function listComponentByProject( $id_project )
+	{
+		$sql  = "select c.* ";
+		$sql .= "from component as c ";
+		$sql .= "inner join project_component as pc ";
+		$sql .= "on pc.id_component = c.id_component ";
+		$sql .= "where pc.id_project = :id_project ";
+		
+		$result = $this->db->select( $sql, array( "id_project" => $id_project ) );
+		return $this->montarLista( $result );
+	}
+	
 	/** 
 	* Metodo montarLista
 	*/

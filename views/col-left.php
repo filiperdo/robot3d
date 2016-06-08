@@ -33,7 +33,7 @@
           
         <?php } else { ?>
         
-        <h4>O que é o Robo 3D?</h4>
+        <h4>O que e o Robo 3D?</h4>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt. <br>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.<p>
         
@@ -63,7 +63,7 @@
 	
        <div class="qv rc sm sp">
         <div class="qw">
-          <h5 class="ald">Últimos projetos <small> - <a href="<?php echo URL?>project">Ver todos</a></small></h5>
+          <h5 class="ald">Ultimos projetos <small> - <a href="<?php echo URL?>project">Ver todos</a></small></h5>
           
           <?php 
           include_once 'models/project_model.php';
@@ -71,13 +71,13 @@
           ?>
           
           <ul class="qo anx"><!-- listar os ultimos 5 projetos ou os mais curtidos -->
-          <?php foreach( $objProject->listarProject( 2 ) as $project ) {?>
+          <?php foreach( $objProject->listarProject( 4 ) as $project ) {?>
           <li class="qf alm">
-            <a class="qj" href="<?php echo URL . 'project/item/' . $project->getId_project(); ?>">
+            <a class="qj" href="<?php echo URL . 'project/detail/' . $project->getId_project(); ?>">
               <img class="qh cu" src="<?php echo URL; ?>public/img/instagram_10.jpg">
             </a>
             <div class="qg">
-              <strong><a href="<?php echo URL . 'project/item/' . $project->getId_project(); ?>"><?php echo $project->getTitle(); ?></a> </strong> #<?php echo $project->getUser()->getLogin(); ?>
+              <strong><a href="<?php echo URL . 'project/detail/' . $project->getId_project(); ?>"><?php echo $project->getTitle(); ?></a> </strong> @<?php echo $project->getUser()->getLogin(); ?>
               <div class="aoa ">
                 <p><small><?php echo substr($project->getContent(), 0,50); ?></small></p>
               </div>
