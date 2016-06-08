@@ -203,6 +203,24 @@ class Project_Model extends Model
 		return $this->montarLista($result);
 	}
 
+	/**
+	 * lista os projetos para a home unindo com os posts
+	 * @param unknown $limit
+	 */
+	public function listarProjectHome( $limit = NULL )
+	{
+		$sql  = "select * ";
+		$sql .= "from project as p ";
+		$sql .= "order by p.date desc ";
+	
+		if( $limit )
+			$sql .= "limit {$limit} ";
+	
+		$result = $this->db->select($sql);
+	
+		return $this->montarLista($result);
+	}
+	
 	/** 
 	* Metodo montarLista
 	*/

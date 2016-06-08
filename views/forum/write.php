@@ -4,7 +4,7 @@
 	
 		<li class="qf b aml row">
 			<ol class="breadcrumb">
-			  <li><a href="<?php echo URL?>">Home</a><span class="h abe"></span></li>
+			  <li><a href="<?php echo URL?>">Home</a></li>
 			  <li><a href="<?php echo URL?>forum">Forum</a></li>
 			  <li><a href="<?php echo URL . 'forum/item/' . $this->objTopic->getId_topic(); ?>"><?php echo $this->objTopic->getName();?></a></li>
 			  <li class="active"><?php echo $this->objTopic->getName(); ?></li>

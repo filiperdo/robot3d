@@ -89,7 +89,35 @@ class Data
 	
 		return $senha; 
 	}
-
+	
+	static public function getPhotoUser( $id )
+	{
+		$pasta = 'public/img/user/' . $id . '/';
+		$foto_padrao = URL . 'public/img/avatar-fat.jpg';
+		
+		if ( is_dir( $pasta ) )
+		{
+			$diretorio = dir($pasta);
+			$retorno = false;
+			
+			while(($arquivo = $diretorio->read()) !== false)
+			{
+				$tipo = substr($arquivo,-4);
+				if( $tipo == ".jpg" || $tipo == ".png" )
+				{
+					return $pasta . $arquivo ;
+					$retorno = true;
+				}
+			}
+			$diretorio->close();
+				
+			if( $retorno == false )
+				return $foto_padrao;
+		}
+		else {
+			return $foto_padrao;
+		}
+	}
 }
 
 ?>

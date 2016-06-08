@@ -164,6 +164,7 @@ class Post extends Controller {
 	*/
 	public function delete( $id )
 	{
+		
 		$this->model->delete( $id ) ? $msg = base64_encode( "OPERACAO_SUCESSO" ) : $msg = base64_encode( "OPERACAO_ERRO" );
 
 		header("location: " . URL . "post?st=".$msg);

@@ -37,14 +37,11 @@
 		<th>Id_user </th>
 		<th>Name </th>
 		<th>Login </th>
-		<th>Password </th>
 		<th>Email </th>
-		<th>Website </th>
-		<th>Bio </th>
 		<th>Numlogin </th>
 		<th>Date </th>
 		<th>Linguage </th>
-		<th>Id_typeuser </th>
+		<th>Tipo </th>
 		<th>Lastlogin </th>
 		<th>Status </th>
 		<th></th>
@@ -56,12 +53,9 @@
  		<td><?php echo $user->getId_user(); ?></td>
 		<td><?php echo $user->getName(); ?></td>
 		<td><?php echo $user->getLogin(); ?></td>
-		<td><?php echo $user->getPassword(); ?></td>
 		<td><?php echo $user->getEmail(); ?></td>
-		<td><?php echo $user->getWebsite(); ?></td>
-		<td><?php echo $user->getBio(); ?></td>
 		<td><?php echo $user->getNumlogin(); ?></td>
-		<td><?php echo $user->getDate(); ?></td>
+		<td><?php echo Data::formataDataHora( $user->getDate() ); ?></td>
 		<td><?php echo $user->getLinguage(); ?></td>
 		<td><?php echo ""; ?></td>
 		<td><?php echo $user->getLastlogin(); ?></td>

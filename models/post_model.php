@@ -136,14 +136,14 @@ class Post_Model extends Model
 	*/
 	public function delete( $id )
 	{
-		//$this->db->beginTransaction();
+		$this->db->beginTransaction();
 
 		if( !$delete = $this->db->delete("post", "id_post = {$id} ") ){ 
 			$this->db->rollBack();
 			return false;
 		}
 
-		//$this->db->commit();
+		$this->db->commit();
 		return $delete;
 	}
 
@@ -179,6 +179,24 @@ class Post_Model extends Model
 		return $this->montarLista($result);
 	}
 
+	/**
+	 * Lista os posts para a home unindo com os projetos
+	 */
+	public function listPostHome( $limit = false )
+	{
+		$sql  = "select * ";
+		$sql .= "from post as p ";
+		$sql .= "where p.status = 'PUBLISHED' ";
+		$sql .= "order by p.date desc ";
+		
+		if( $limit )
+			$sql .= "limit {$limit} ";
+		
+		$result = $this->db->select( $sql );
+		
+		return $this->montarLista($result);
+	}
+	
 	/** 
 	* Metodo montarLista
 	*/
