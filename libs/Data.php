@@ -105,7 +105,7 @@ class Data
 				$tipo = substr($arquivo,-4);
 				if( $tipo == ".jpg" || $tipo == ".png" )
 				{
-					return $pasta . $arquivo ;
+					return URL . $pasta . $arquivo ;
 					$retorno = true;
 				}
 			}

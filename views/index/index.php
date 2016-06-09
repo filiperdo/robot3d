@@ -10,7 +10,7 @@
           <div class="qg">
             <div class="qn">
               <small class="eg dp">4 min</small>
-              <h5><?php echo $list['title']; ?></h5> 
+              <h4 class="page-header"><?php echo $list['title']; ?></h4> 
             </div>
 
             <p><?php echo $list['content']; ?></p>
@@ -26,16 +26,17 @@
             </div>
 			
             <ul class="qo alm">
+            <?php for($i=0; $i<2; $i++){?>
               <li class="qf">
                 <a class="qj" href="#">
                   <img class="qh cu" src="<?php echo Data::getPhotoUser(3); ?>">
                 </a>
                 <div class="qg">
-                  <strong>Jacon Thornton: </strong>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit .
-                  
+                  <strong>Name user: </strong>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </div>
               </li>
+            <?php } ?>
             </ul>
             
           </div>

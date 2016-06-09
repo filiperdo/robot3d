@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="iso-8859-1">
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href='<?php echo URL; ?>public/img/ico.ico' rel='shortcut icon' type='image/x-icon'>
@@ -87,7 +87,7 @@
           
           <li>
             <button class="cg fm ox anl" data-toggle="popover">
-              <img class="cu" src="<?php echo URL; ?>public/img/avatar-dhg.png">
+              <img class="cu" src="<?php echo Data::getPhotoUser( Session::get('userid') ); ?>">
             </button>
           </li>
           

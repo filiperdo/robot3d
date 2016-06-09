@@ -5,12 +5,12 @@
         
         <?php if( Session::get('loggedIn') ) { ?>
         
-          <a href="profile/index.html">
-            <img class="aoh" src="<?php echo URL; ?>public/img/avatar-dhg.png">
+          <a href="#">
+            <img class="aoh" src="<?php echo Data::getPhotoUser( Session::get('userid') ); ?>">
           </a>
 
           <h5 class="qy">
-            <a class="aku" href="profile/index.html"> Filipe Rodrigues</a>
+            <a class="aku" href="#"> <?php echo Session::get('user_name');?></a>
           </h5>
 
           <p class="alu">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
@@ -33,7 +33,7 @@
           
         <?php } else { ?>
         
-        <h4>O que e o Robo 3D?</h4>
+        <h4>O que é o Robo 3D?</h4>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt. <br>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.<p>
         

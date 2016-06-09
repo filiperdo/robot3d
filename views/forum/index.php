@@ -23,8 +23,8 @@
 		    		<a href="<?php echo URL . 'forum/item/' . $topic->getId_topic(); ?>">
 				    	<strong><?php echo $topic->getName(); ?></strong>
 				    </a><br>
-				    <?php echo $topic->getDescription(); ?>
-			    	
+				    <strong><?php echo $topic->getDescription(); ?></strong><br>
+			    	<small>Último post: hoje 04:33 | por @user_name</small>
 		    	</div>
 		    	<div class="col-md-1" style="text-align: center"><small>posts<br>345</small></div>
 		    	<div class="col-md-1" style="text-align: center"><small>topics	<br>3456</small></div>

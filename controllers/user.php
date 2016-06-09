@@ -45,12 +45,13 @@ class User extends Controller {
 		$this->view->render( "footer" );
 	}
 
-	public function dashboard()
+	public function dashboard( $id )
 	{
 		$this->view->title = "Dashboard";
 		
+		$this->view->obj = $this->model->obterUser( base64_decode( $id ) );
+		
 		$this->view->render( "header.inc" );
-		$this->view->render( "col-left" );
 		$this->view->render( "user/dashboard" );
 		$this->view->render( "footer.inc" );
 	}

@@ -17,6 +17,18 @@
 				<p class="alu"><?=$this->obj->getContent()?></p>
 			</div>
 		</li>
+		
+		<li class="qf b aml">
+			<div class="any" data-grid="images">
+            <?php foreach( glob('public/img/project/'. $this->obj->getId_project() .'/*.jpg') as $imagem ){ ?>
+            <?php list($width, $height, $type, $attr) = getimagesize( $imagem ); ?>
+              <div style="display: none">
+                <img data-action="zoom" data-width="<?php echo $width; ?>" data-height="<?php echo $height; ?>" src="<?php echo URL . $imagem; ?>">
+              </div>
+			<?php } ?>
+				
+            </div>
+		</li>
 	</ul>
 
 </div>
@@ -31,10 +43,12 @@
 	        <ul class="qo anx">
 	          <li class="qf alm">
 	            <a class="qj" href="#">
-	              <img class="qh cu" src="<?php echo URL; ?>public/img/avatar-fat.jpg">
+	              <img class="qh cu" src="<?php echo Data::getPhotoUser( $this->obj->getUser()->getId_user() ) ?>">
 	            </a>
 	            <div class="qg">
-	              <strong><?php echo $this->obj->getUser()->getName();?> </strong> @<?php echo $this->obj->getUser()->getLogin();?>
+	              <a href="<?php echo URL . 'user/dashboard/' . base64_encode( $this->obj->getUser()->getId_user() ); ?>">
+	              	<strong><?php echo $this->obj->getUser()->getName();?> </strong> @<?php echo $this->obj->getUser()->getLogin();?>
+	              </a>
 	              <p><small><a href="#">5 Projetos</a> | <a href="#">34 Seguidores</a></small></p>
 	              <div class="aoa">
 	                <button class="cg ts fx"><span class="h vc"></span> Seguir</button>
