@@ -50,17 +50,19 @@ class Replie extends Controller {
 	*/
 	public function create()
 	{
+		
+		Session::init();
+		
 		$data = array(
-			'content' => $_POST["content"], 
-			'date' => $_POST["date"], 
-			'id_item' => $_POST["id_item"], 
-			'replie_id_replie' => $_POST["replie_id_replie"], 
-			'id_user' => $_POST["id_user"], 
+			'content' 		=> $_POST["content"], 
+			'id_item' 		=> $_POST["id_item"], 
+			//'replie_id_replie' => $_POST["replie_id_replie"], 
+			'id_user' 		=> Session::get('userid'),
 		);
 
 		$this->model->create( $data ) ? $msg = base64_encode( "OPERACAO_SUCESSO" ) : $msg = base64_encode( "OPERACAO_ERRO" );
 
-		header("location: " . URL . "replie?st=".$msg);
+		header("location: " . URL . "forum/detail/". $_POST["id_item"] ."/?st=".$msg);
 	}
 
 	/** 

@@ -17,6 +17,8 @@
 			</div>
 		</div>
 		
+		<?php if (isset($_GET["st"])) { $objAlert = new Alerta($_GET["st"]); } ?>
+		
 		<table class="table table-striped sortable table-condensed">
 			<thead>
 			<tr>
@@ -33,6 +35,11 @@
 					<a href="<?php echo URL . 'forum/detail/' . $item->getId_item(); ?>">
 						<?php echo $item->getTitle(); ?>
 					</a>
+					
+					<?php if( Session::get('userid') == $item->getUser()->getId_user() ) {?>
+					<a href="<?php echo URL . 'forum/write/'. $this->objTopic->getId_topic() .'/' . $item->getId_item() ?>">[ <i class="glyphicon glyphicon-pencil"></i> ]</a>
+					<?php } ?>
+					
 				</td>
 				
 				<td><?php echo $item->getUser()->getLogin(); ?></td>

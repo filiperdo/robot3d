@@ -180,6 +180,21 @@ class Replie_Model extends Model
 
 		return $this->montarLista($result);
 	}
+	
+	/**
+	 * Metodo listReplieByItem
+	 * Retorna as respostas de um determinado item
+	 */
+	public function listReplieByItem( $id_item )
+	{
+		$sql  = 'select * ';
+		$sql .= 'from replie as r ';
+		$sql .= 'where r.id_item = :id_item ';
+		
+		$result = $this->db->select( $sql, array("id_item" => $id_item) );
+		
+		return $this->montarLista($result);
+	}
 
 	/** 
 	* Metodo montarLista

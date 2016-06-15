@@ -2,7 +2,7 @@
 
 	<ol class="breadcrumb bread-border">
 	  <li><a href="<?php echo URL?>">Home</a></li>
-	  <li><a href="<?php echo URL?>project">Projetos</a></li>
+	  <li><a href="<?php echo URL?>project">Blog</a></li>
 	  <li><?=$this->obj->getTitle()?></li>
 	</ol>
 
@@ -20,13 +20,12 @@
 		
 		<li class="qf b aml">
 			<div class="any" data-grid="images">
-            <?php foreach( glob('public/img/project/'. $this->obj->getId_project() .'/*.jpg') as $imagem ){ ?>
+            <?php foreach( glob('public/img/post/'. $this->obj->getId_post() .'/*.jpg') as $imagem ){ ?>
             <?php list($width, $height, $type, $attr) = getimagesize( $imagem ); ?>
               <div style="display: none">
                 <img data-action="zoom" data-width="<?php echo $width; ?>" data-height="<?php echo $height; ?>" src="<?php echo URL . $imagem; ?>">
               </div>
 			<?php } ?>
-				
             </div>
 		</li>
 	</ul>

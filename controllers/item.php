@@ -50,17 +50,18 @@ class Item extends Controller {
 	*/
 	public function create()
 	{
+		Session::init();
+		
 		$data = array(
-			'views' => $_POST["views"], 
-			'content' => $_POST["content"], 
-			'date' => $_POST["date"], 
-			'id_user' => $_POST["id_user"], 
-			'id_topic' => $_POST["id_topic"], 
+			'title'		=> $_POST['title'],
+			'content' 	=> $_POST["content"],
+			'id_user' 	=> Session::get('userid'),
+			'id_topic' 	=> $_POST["id_topic"],
 		);
 
 		$this->model->create( $data ) ? $msg = base64_encode( "OPERACAO_SUCESSO" ) : $msg = base64_encode( "OPERACAO_ERRO" );
 
-		header("location: " . URL . "item?st=".$msg);
+		header("location: " . URL . "forum/item/". $_POST["id_topic"] ."?st=".$msg);
 	}
 
 	/** 
@@ -69,16 +70,14 @@ class Item extends Controller {
 	public function edit( $id )
 	{
 		$data = array(
-			'views' => $_POST["views"], 
-			'content' => $_POST["content"], 
-			'date' => $_POST["date"], 
-			'id_user' => $_POST["id_user"], 
-			'id_topic' => $_POST["id_topic"], 
+			'title'		=> $_POST['title'],
+			'content' 	=> $_POST["content"], 
+			'id_topic' 	=> $_POST["id_topic"], 
 		);
 
 		$this->model->edit( $data, $id ) ? $msg = base64_encode( "OPERACAO_SUCESSO" ) : $msg = base64_encode( "OPERACAO_ERRO" );
 
-		header("location: " . URL . "item?st=".$msg);
+		header("location: " . URL . "forum/item/". $_POST["id_topic"] ."?st=".$msg);
 	}
 
 	/** 

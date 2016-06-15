@@ -19,23 +19,23 @@
 			<div class="row forum-item-detail" style="margin-bottom: 10px">
 				
 				<div class="col-md-12">
-					<form id="form1" name="form1" method="post" role="form" action="">
+					<form id="form1" name="form1" method="post" role="form" action="<?php echo URL?>item/<?php echo $this->action; ?>">
+					<input type="hidden" name="id_topic" value="<?php echo $this->objTopic->getId_topic(); ?>">
 					
 						<div class="form-group">
 							<label>Titulo</label> 
-							<input class="form-control" name="materiais" id="materiais" required="required" value="">
+							<input class="form-control" name="title" id="title" required="required" value="<?php echo $this->objItem->getTitle();?>">
 						</div>
 						<div class="form-group">
-							<textarea class="form-control" id="write_topic" name="write-topic" rows="10"></textarea>
+							<textarea class="form-control" id="write_topic" name="content" rows="10"><?php echo $this->objItem->getContent(); ?></textarea>
 						</div>
 						<div class="form-group">
 							<label>Anexo</label>
 							<input type="file" name="img"/>
 						</div>
 						<div class="form-group">
-							
 							<input type="submit" name="salvar" id="salvar" value="Publicar" class="btn btn-success" />
-							
+							<a href="<?php echo URL?>forum/item/<?php echo $this->objTopic->getId_topic(); ?>" class="btn btn-info ">Cancelar</a>
 						</div>
 					</form>
 				</div>

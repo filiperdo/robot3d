@@ -44,5 +44,12 @@ class Login extends Controller {
     	$this->model->logout();
     }
     
+    public function testeEmail()
+    {
+    	require_once 'util/email.class.php';
+    	
+    	$objEmail = new Email();
+    	$objEmail->teste_envio();
+    }
 
 }

@@ -65,6 +65,12 @@ class Forum extends Controller {
 		
 		$this->view->objItem = $objItem;
 		
+		require_once 'models/replie_model.php';
+		$objReplie = new Replie_Model();
+		
+		$this->view->objReplie = $objReplie;
+		
+		
 		$this->view->render( "header.inc" );
 		$this->view->render( "forum/detail" );
 		$this->view->render( "col-right" );
@@ -73,14 +79,26 @@ class Forum extends Controller {
 	}
 	
 	
-	public function write( $id_topic ) 
+	public function write( $id_topic, $id_item = NULL ) 
 	{
 		$this->view->title = "Forum";
+		$this->view->action = "create";
 		
 		require_once 'models/topic_model.php';
 		$objTopic = new Topic_Model();
 		$objTopic->obterTopic( $id_topic );
 		$this->view->objTopic = $objTopic;
+		
+		require_once 'models/item_model.php';
+		$objItem = new Item_Model();
+		
+		if( $id_item )
+		{
+			$this->view->action = "edit/".$id_item;
+			$objItem->obterItem( $id_item );
+		}
+		
+		$this->view->objItem = $objItem;
 		
 		$this->view->render( "header.inc" );
 		$this->view->render( "forum/write" );

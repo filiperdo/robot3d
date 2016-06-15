@@ -9,7 +9,7 @@
 class Alerta
 {
     const CLASSE_CSS = 'alert';
-    const LISTA_VAZIA = 'Sua lista está vazia.';
+    const LISTA_VAZIA = 'Sua lista estÃ¡ vazia.';
 
     private $arrayMsgOk;
     private $arrayMsgErro;
@@ -22,18 +22,17 @@ class Alerta
         // Mensagens de Ok
         $this->arrayMsgOk['OPERACAO_SUCESSO'] = "Opera&ccedil;&atilde;o realizada com sucesso!";
         $this->arrayMsgOk['SENHA_SUCESSO'] = "Senha atualizada com sucesso!";
-        $this->arrayMsgOk['EMAIL_REDEFINIR_SENHA'] = 'E-mail enviado!<br/>Por favor, confira seu e-mail e leia as instruções para redefinir sua senha.';
+        $this->arrayMsgOk['EMAIL_REDEFINIR_SENHA'] = 'E-mail enviado!<br/>Por favor, confira seu e-mail e leia as instruÃ§Ãµes para redefinir sua senha.';
 		$this->arrayMsgOk['CADASTRO_SUCESSO'] = 'Cadastro efetuado com sucesso!';
         
         
         // Mensagens de Erro
         $this->arrayMsgErro['OPERACAO_ERRO'] = "Erro ao executar a operacao!";
-        $this->arrayMsgErro['ERRO_DELETAR_MODULO'] = "Este módulo está sendo utilizado por um ou mais cursos!";
-        $this->arrayMsgErro['EXCLUIR_REGISTRO_REL'] = 'Não foi possível excluir este registro, porque ele está sendo utilizado!';
-        $this->arrayMsgErro['REL_EXISTENTE'] = "Este(s) relacionamento(s) já existe(m) no banco de dados!";
+        $this->arrayMsgErro['EXCLUIR_REGISTRO_REL'] = 'NÃ£o foi possÃ­vel excluir este registro, porque ele estÃ¡ sendo utilizado!';
+        $this->arrayMsgErro['REL_EXISTENTE'] = "Este(s) relacionamento(s) jÃ¡ existe(m) no banco de dados!";
         $this->arrayMsgErro['LOGIN_INCORRETO'] = "Dados incorretos!";
-        $this->arrayMsgErro['EMAIL_NAO_ENCONTRADO'] = 'O e-mail passado não foi encontrado no banco de dados!';
-        $this->arrayMsgErro['LOGIN_ERRO'] = "Erro ao executar a operacao! Login a ser cadastrado já existe no banco de dados!";
+        $this->arrayMsgErro['EMAIL_NAO_ENCONTRADO'] = 'O e-mail passado nÃ£o foi encontrado no banco de dados!';
+        $this->arrayMsgErro['LOGIN_ERRO'] = "Erro ao executar a operacao! Login a ser cadastrado jÃ¡ existe no banco de dados!";
 
         $this->obterAlerta( base64_decode( $msg ) );
     }
