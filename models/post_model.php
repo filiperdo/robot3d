@@ -6,6 +6,7 @@
  *
  * Data: 01/06/2016
  */ 
+require_once 'models/user_model.php';
 
 
 class Post_Model extends Model
@@ -19,6 +20,7 @@ class Post_Model extends Model
 	private $date;
 	private $views;
 	private $status;
+	private $user;
 
 	public function __construct()
 	{
@@ -30,6 +32,7 @@ class Post_Model extends Model
 		$this->date = '';
 		$this->views = '';
 		$this->status = '';
+		$this->user = new User_Model();
 	}
 
 	/** 
@@ -65,6 +68,11 @@ class Post_Model extends Model
 		$this->status = $status;
 	}
 
+	public function setUser( User_Model $user )
+	{
+		$this->user = $user;
+	}
+
 	/** 
 	* Metodos get's
 	*/
@@ -96,6 +104,11 @@ class Post_Model extends Model
 	public function getStatus()
 	{
 		return $this->status;
+	}
+
+	public function getUser()
+	{
+		return $this->user;
 	}
 
 
@@ -227,6 +240,10 @@ class Post_Model extends Model
 		$this->setDate( $row["date"] );
 		$this->setViews( $row["views"] );
 		$this->setStatus( $row["status"] );
+
+		$objUser = new User_Model();
+		$objUser->obterUser( $row['id_user'] );
+		$this->setUser( $objUser );
 
 		return $this;
 	}

@@ -20,6 +20,10 @@ class Blog extends Controller {
 		
 		$this->view->obj = $objPost;
 		
+		require_once 'models/category_model.php';
+		$objCategory = new Category_Model();
+		$this->view->listCategory = $objCategory->listCategoryByPost( $id_post );
+		
 		$this->view->render( "header.inc" );
 		$this->view->render( "blog/post" );
 		$this->view->render( "footer.inc" );

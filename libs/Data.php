@@ -90,6 +90,11 @@ class Data
 		return $senha; 
 	}
 	
+	/**
+	 * Obtem a imagem do perfil do usuario
+	 * Em formatos JPG ou PNG
+	 * @param unknown $id
+	 */
 	static public function getPhotoUser( $id )
 	{
 		$pasta = 'public/img/user/' . $id . '/';
@@ -117,6 +122,24 @@ class Data
 		else {
 			return $foto_padrao;
 		}
+	}
+	
+	/**
+	 * Obtem as imagens dos post ou projetos para exibir na home
+	 * @param unknown $type
+	 * @param unknown $id
+	 * @return unknown[]
+	 */
+	static public function getImgPost( $type, $id )
+	{
+		$array_img = array();
+		
+		foreach( glob('public/img/'. $type .'/'. $id .'/*.*' ) as $key => $imagem )
+		{
+			$array_img[] = $imagem;
+		}
+		
+		return $array_img;
 	}
 }
 

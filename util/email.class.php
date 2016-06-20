@@ -3,9 +3,6 @@
 require_once 'util/class.phpmailer.php'; 
 
 
-use Aws\S3;
-
-
 /**
  * Classe que configura todos os envios de emails do sistema
  * @author Filipe Rodrigues
@@ -27,18 +24,14 @@ class Email
         $this->mail->SMTPAuth = true; // Usar autenticação SMTP (obrigatório para smtp.seudomínio.com.br)
         $this->mail->Mailer = 'smtp';
         
-        $this->mail->Host = "tls://email-smtp.us-east-1.amazonaws.com"; // Endereço do servidor SMTP (caso queira utilizar a autenticação, utilize o host smtp.seudomínio.com.br)
-        $this->mail->Username = 'AKIAIERVICKP74WIRL2Q'; // Usuário do servidor SMTP (endereço de email)
-        $this->mail->Password = 'Atc7m3SubgXS+8xLGV1fsy5fZ96fR6Ek8obqZCq5WbJo'; // Senha do servidor SMTP (senha do email usado)
-        
-        //$this->mail->
-        
-        //$this->mail->SmtpConnect();
+        $this->mail->Host = AWS_HOST_SMTP; // Endereço do servidor SMTP (caso queira utilizar a autenticação, utilize o host smtp.seudomínio.com.br)
+        $this->mail->Username = AWS_USERNAME; // Usuário do servidor SMTP (endereço de email)
+        $this->mail->Password = AWS_PASSWORD; // Senha do servidor SMTP (senha do email usado)
+     
         $this->mail->isHTML(true);
-		//$this->mail->SMTPSecure = 'tls';
 		
-		$this->mail->SMTPDebug = 1;
-		$this->mail->Port = 465; // 587
+		$this->mail->SMTPDebug = 0;
+		$this->mail->Port = AWS_PORT; // 587
        
         // Define o remetente
         // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
@@ -93,15 +86,8 @@ class Email
     
     public function teste_envio()
     {
-    	/*require_once 'util/aws/aws-autoloader.php';
-    	
-    	$client = Aws\S3\S3Client([ 'version'=>'latest', 'region'=>'us-east-1' ]);
-    	
-    	$client->createS3();*/
-    	
-    	
     	$this->mail->Subject = "Teste Robo3D";
-    	$this->mail->AddAddress( 'filiperdo@gmail.com' );
+    	$this->mail->AddAddress( 'frodrigues@anacom.com.br' );
     	
     	// Envia uma copia do e-mail
     	//$this->mail->addBCC( '' );
@@ -117,7 +103,7 @@ class Email
     	$this->mail->Body .= "Endereço do portal: <a href='http://www.robo3d.com.br'>www.robo3d.com.br</a><br/>";
     	$this->mail->Body .= "Seu login: <strong>" . 'teste' . "</strong><br/>";
     	$this->mail->Body .= "Sua senha: <strong>" . 'teste' . "</strong> (pode ser alterada posteriormente)<br/><br/>";
-    	$this->mail->Body .= "Qualquer problema com acesso ao site, entre em contato através do e-mail: contato@robo3d.com.br";
+    	//$this->mail->Body .= "Qualquer problema com acesso ao site, entre em contato através do e-mail: contato@robo3d.com.br";
     	
     	$this->mail->Body .= $this->corpoRodape;
     	

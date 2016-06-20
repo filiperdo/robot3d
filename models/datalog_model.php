@@ -22,6 +22,7 @@ class Datalog_Model extends Model
 	private $post;
 	private $project;
 	private $item;
+	private $ip;
 
 	public function __construct()
 	{
@@ -33,6 +34,7 @@ class Datalog_Model extends Model
 		$this->post = new Post_Model();
 		$this->project = new Project_Model();
 		$this->item = new Item_Model();
+		$this->ip = '';
 	}
 
 	/** 
@@ -66,6 +68,11 @@ class Datalog_Model extends Model
 	public function setItem( Item_Model $item )
 	{
 		$this->item = $item;
+	}
+	
+	public function setIp( $ip )
+	{
+		$this->ip = $ip;
 	}
 
 	/** 
@@ -101,6 +108,10 @@ class Datalog_Model extends Model
 		return $this->item;
 	}
 
+	public function getIp()
+	{
+		return $this->ip;
+	}
 
 	/** 
 	* Metodo create
@@ -221,6 +232,8 @@ class Datalog_Model extends Model
 		$objItem = new Item_Model();
 		$objItem->obterItem( $row["id_item"] );
 		$this->setItem( $objItem );
+		
+		$this->setIp( $row["ip"] );
 
 		return $this;
 	}

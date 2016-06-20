@@ -28,6 +28,7 @@ class Login_Model extends Model
             Session::init();
             Session::set( 'loggedIn', true );
             Session::set( 'user_name', $data['name']);
+            Session::set( 'user_login', $data['login']);
             Session::set( 'userid', $data['id_user'] );
             header('location: ../index');
         }

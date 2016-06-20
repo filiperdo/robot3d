@@ -50,16 +50,26 @@ class Comment extends Controller {
 	*/
 	public function create()
 	{
+		Session::init();
+		
 		$data = array(
-			'content' 	=> $_POST["content"], 
-			'date' 		=> $_POST["date"], 
-			'id_user' 	=> $_POST["id_user"],
-			'id_post'	=> $_POST['id_post']
+			'content' 	=> $_POST["content"],
+			'id_user' 	=> Session::get('userid')
 		);
-
-		$this->model->create( $data ) ? $msg = base64_encode( "OPERACAO_SUCESSO" ) : $msg = base64_encode( "OPERACAO_ERRO" );
-
-		header("location: " . URL . "comment?st=".$msg);
+		
+		// Verifica e configura se eh um comment de um post ou project
+		$_POST['comment_type'] == 'post' ? $data['id_post'] = $_POST['id_item'] : $data['id_project'] = $_POST['id_item'];
+		
+		if( !$this->model->create( $data ) )
+		{
+			echo 'Erro! O sistema não conseguiu gravar seu comentário!';
+		}
+		else
+		{
+			echo '<a class="qj" href="#"><img class="qh cu" src="' . Data::getPhotoUser( Session::get('userid') ) . '"></a>';
+			echo '<div class="qg"><strong>' . Session::get('user_name') . ': </strong>' . $_POST["content"] . '</div>';
+		}
+		
 	}
 
 	/** 

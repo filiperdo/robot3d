@@ -19,6 +19,7 @@ class Comment_Model extends Model
 	private $date;
 	private $user;
 	private $id_post;
+	private $id_project;
 
 	public function __construct()
 	{
@@ -29,6 +30,7 @@ class Comment_Model extends Model
 		$this->date = '';
 		$this->user = new User_Model();
 		$this->id_post = '';
+		$this->id_project = '';
 	}
 
 	/** 
@@ -58,6 +60,11 @@ class Comment_Model extends Model
 	{
 		$this->id_post = $id_post;
 	}
+	
+	public function setId_project( $id_project )
+	{
+		$this->id_project = $id_project;
+	}
 
 	/** 
 	* Metodos get's
@@ -85,6 +92,11 @@ class Comment_Model extends Model
 	public function getId_post()
 	{
 		return $this->id_post;
+	}
+	
+	public function getId_project()
+	{
+		return $this->id_project;
 	}
 
 	/** 
@@ -167,6 +179,34 @@ class Comment_Model extends Model
 		return $this->montarLista($result);
 	}
 
+	/**
+	 * Lista os comentarios por tipo
+	 * Verifica se o tipo eh um post ou um projeto
+	 * @param unknown $type
+	 * @param unknown $id
+	 * @param unknown $limit
+	 */
+	public function listCommentByType( $type, $id, $limit = NULL )
+	{
+		$sql  = "select * ";
+		$sql .= "from comment as c ";
+		
+		if( $type == 'post' )
+			$sql .= "where c.id_post = :id ";
+		else 
+			$sql .= "where c.id_project = :id ";
+			
+		$sql .= "order by c.date desc ";
+		
+		if( $limit )
+			$sql .= "limit {$limit} ";
+		
+		$result = $this->db->select( $sql, array("id" => $id) );
+		
+		return $this->montarLista($result);
+	}
+	
+	
 	/** 
 	* Metodo montarLista
 	*/
@@ -200,7 +240,8 @@ class Comment_Model extends Model
 		$this->setUser( $objUser );
 		
 		$this->setId_post( $row['id_post'] );
-
+		$this->setId_project( $row['id_project'] );
+		
 		return $this;
 	}
 }

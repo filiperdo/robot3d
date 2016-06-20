@@ -10,13 +10,17 @@ class Index extends Controller {
     public function index() 
     {
         $this->view->title = 'Home';
-        	
+        $this->view->js[] = 'index.js';	
+        
         require_once 'models/post_model.php';
         require_once 'models/project_model.php';
+        require_once 'models/comment_model.php';
         
         $objPost = new Post_Model();
         
         $objProject = new Project_Model();
+        
+        $this->view->objComment = new Comment_Model();
         
         $list_home = array();
         

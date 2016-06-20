@@ -37,7 +37,7 @@
 		<div class="qv rc alu">
 	        <div class="qw">
 	        
-	        <h4 class="page-header"><?php echo $this->obj->getTitle();?></h4>
+	        <h4 class="page-header">Posts relacionados</h4>
 	        
 	        <ul class="qo anx">
 	          <li class="qf alm">
@@ -58,50 +58,30 @@
 	        
 	        </div>
 	        <div class="qz">
-	          Publicado em 30 de abril de 2016
+	          Publicado em <?php echo Data::formataDataHora( $this->obj->getDate() );?>
 	        </div>
 	      </div>
 		
-		<div class="qv rc aok">
-	        <div class="qw">
-	          <h4 class="page-header">Membros do projeto</h4>
-	          <?php for( $i=0; $i<5; $i++ ){?>
-	          <ul class="ano" style="display: inline-block;">
-	          	<li class="anp" style="margin: 0 4px">
-		          <a class="ttp" href="#" data-toggle="tooltip" data-placement="top" title="Name User">
-		              <img class="cu" src="<?php echo URL; ?>public/img/avatar-fat.jpg">
-		          </a>
-	          </li>
-	          </ul>
-	          <?php } ?>
-	        </div>
-	      </div>
+		
 	      
 	      <div class="row" style="margin-bottom: 20px;">
 	      	<div class="col-md-12">
 	      	
-	      		<p>
-	      		<?php for( $i=0; $i<5; $i++ ) {?>
-	      		<a href="#"><i class="glyphicon glyphicon-star"></i></a>
-	      		<?php } ?>
-	      		</p>
-	      	
-	      		<a class="cg ts fx ppv" tabindex="0" role="button" data-toggle="popover2" data-placement="top" data-trigger="focus" title="Titulo" data-content=" 1 - 2 - 3 - 4 - 5 ">
-	      			<i class="h aiw"></i> Gostei
-	      		</a>
-	      		<a href="#" class="cg ts fx"><i class="h ahf"></i> Compartilhar</a>
-	      		<a href="#" class="cg ts fx"><i class="h aja"></i> Eu fiz um</a>
+	      		<a href="#" class="cg ts fx"><i class="h aau"></i> </a>
+	      		<a href="#" class="cg ts fx"><i class="h ajo"></i> </a>
+	      		<a href="#" class="cg ts fx"><i class="h adr"></i> </a>
+	      		<a href="#" class="cg ts fx"><i class="h abx"></i> </a>
 	      	</div>
 	      </div>
 	      
 	      <div class="qv rc aok">
 	        <div class="qw">
-	          <h4 class="page-header">Componentes</h4>
-	          <?php foreach( $this->objComponent->listComponentByProject( $this->obj->getId_project() ) as $component ){?>
+	          <h4 class="page-header">Categorias</h4>
+	          <?php foreach( $this->listCategory as $categori ){?>
 	          <ul>
 	          	<li>
 		          <a href="#">
-		              <?php echo $component->getName();?>
+		              <?php echo $categori->getName();?>
 		          </a>
 	          </li>
 	          </ul>
