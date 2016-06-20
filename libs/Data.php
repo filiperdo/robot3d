@@ -141,6 +141,74 @@ class Data
 		
 		return $array_img;
 	}
+
+
+	static function timeAgo( $time_ago )
+	{
+		$cur_time   = time();
+		$time_elapsed   = $cur_time - $time_ago;
+		$seconds    = $time_elapsed ;
+		$minutes    = round($time_elapsed / 60 );
+		$hours      = round($time_elapsed / 3600);
+		$days       = round($time_elapsed / 86400 );
+		$weeks      = round($time_elapsed / 604800);
+		$months     = round($time_elapsed / 2600640 );
+		$years      = round($time_elapsed / 31207680 );
+		// Seconds
+		if($seconds <= 60){
+		    echo "$seconds segundos atrás";
+		}
+		//Minutes
+		else if($minutes <=60){
+		    if($minutes==1){
+		        echo "um minuto atrás";
+		    }
+		    else{
+		        echo "$minutes minutos atrás";
+		    }
+		}
+		//Hours
+		else if($hours <=24){
+		    if($hours==1){
+		        echo "uma hora atrás";
+		    }else{
+		        echo "$hours horas atrás";
+		    }
+		}
+		//Days
+		else if($days <= 7){
+		    if($days==1){
+		        echo "ontem";
+		    }else{
+		        echo "$days dias atrás";
+		    }
+		}
+		//Weeks
+		else if($weeks <= 4.3){
+		    if($weeks==1){
+		        echo "à uma semana";
+		    }else{
+		        echo "$weeks semanas atrás";
+		    }
+		}
+		//Months
+		else if($months <=12){
+		    if($months==1){
+		        echo "um mês atrás";
+		    }else{
+		        echo "$months meses atrás";
+		    }
+		}
+		//Years
+		else{
+		    if($years==1){
+		        echo "um ano atrás";
+		    }else{
+		        echo "$years anos atrás";
+		    }
+		}
+	}
+
 }
 
 ?>

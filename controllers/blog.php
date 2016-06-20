@@ -10,7 +10,7 @@ class Blog extends Controller {
 	/** 
 	* Metodo index
 	*/
-	public function post( $id_post )
+	public function index( $id_post )
 	{
 		$this->view->title = "Blog";
 		
@@ -25,7 +25,7 @@ class Blog extends Controller {
 		$this->view->listCategory = $objCategory->listCategoryByPost( $id_post );
 		
 		$this->view->render( "header.inc" );
-		$this->view->render( "blog/post" );
+		$this->view->render( "blog/index" );
 		$this->view->render( "footer.inc" );
 	}
 }

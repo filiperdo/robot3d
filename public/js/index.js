@@ -8,13 +8,13 @@ $(document).ready(function(){
 		
 		$( "#result-"+id ).css('display','');
 		
-		//alert('Content: ' + $('#comment_type-'+id).val() );
 		$.post( URL + "comment/create", { content: $('#content-'+id).val(), comment_type: $('#comment_type-'+id).val(), id_item: id }, function( data ) {
-			//alert( "Data Loaded: " + data );
-			$( "#result-"+id ).html( data );
+			
+			$( data ).insertAfter( "#result-"+id );
+			$('#content-'+id).val('');
+			$( "#result-"+id ).css('display','none');
+			
 		});
-		
-		
 		
 	});
 	
