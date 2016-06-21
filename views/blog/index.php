@@ -28,6 +28,46 @@
 			<?php } ?>
             </div>
 		</li>
+		
+		<li class="qf b aml">
+		
+		<h5 class="page-header">Comentários (<?php echo $this->objComment->getTotalComment( 'post', $this->obj->getId_post() ); ?>)</h5>
+		
+		<ul class="qo alm">
+		<?php if( Session::get('loggedIn' ) ) { ?>
+            <li class="qf">
+                <a class="qj" href="#">
+                  <img class="qh cu" src="<?php echo Data::getPhotoUser( Session::get('userid') ); ?>">
+                </a>
+                <div class="qg">
+                  <strong><?php echo Session::get('user_login'); ?>: </strong>
+                  
+                  <input type="hidden" id="comment_type-<?php echo $this->obj->getId_post() ?>" name="comment_type" value="post">
+                  
+                  <div class="row">
+					<div class="col-md-9"><input type="text" class="form-control" name="content" id="content-<?php echo $this->obj->getId_post() ?>" placeholder="Escrava um comentário" style="margin-bottom: 5px"></div>
+					
+					<div class="col-md-3"><a class="cg ts fx bt-sub-form" id="<?php echo $this->obj->getId_post() ?>"><span class="h aah"></span> Publicar</a></div>
+				  </div>
+                </div>
+            </li>
+            <?php } ?>
+            
+            <li class="qf" id="result-<?php echo $this->obj->getId_post(); ?>" style="display: none"><img alt="Carregando..." src="<?php echo URL?>public/img/loader.gif"> Carregando...</li>
+        
+            <?php foreach( $this->objComment->listCommentByType( 'post', $this->obj->getId_post() ) as $comment ) { ?>
+              <li class="qf">
+                <a class="qj" href="#">
+                  <img class="qh cu" src="<?php echo Data::getPhotoUser( $comment->getUser()->getId_user() ); ?>">
+                </a>
+                <div class="qg">
+                  <strong><a href="<?php echo URL . 'user/dashboard/'. base64_encode( $comment->getUser()->getId_user() )?>"><?php echo $comment->getUser()->getLogin()?>: </a></strong>
+                  <?php echo $comment->getContent();?>
+                </div>
+              </li>
+            <?php } ?>
+		</ul>
+		</li>
 	</ul>
 
 </div>

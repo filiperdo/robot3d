@@ -60,10 +60,4 @@ class Index extends Controller {
         $this->view->render('footer.inc');
     }
     
-    function docs()
-    {
-    	$this->view->title = 'Docsx';
-    	$this->view->render('index/index');
-    }
-    
 }

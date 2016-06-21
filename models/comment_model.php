@@ -206,6 +206,25 @@ class Comment_Model extends Model
 		return $this->montarLista($result);
 	}
 	
+	/**
+	 * Retorna o total de comentarios por post ou projeto
+	 * @param unknown $type
+	 * @param unknown $id
+	 * @return unknown
+	 */
+	public function getTotalComment( $type, $id )
+	{
+		$sql  = "select count(c.id_comment) as total ";
+		$sql .= "from comment as c ";
+		
+		if( $type == 'post' )
+			$sql .= "where c.id_post = :id ";
+		else 
+			$sql .= "where c.id_project = :id ";
+		
+		$result = $this->db->select( $sql, array("id" => $id) );
+		return $result[0]['total'];
+	}
 	
 	/** 
 	* Metodo montarLista

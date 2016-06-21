@@ -56,32 +56,72 @@ class User extends Controller {
 		$this->view->render( "footer.inc" );
 	}
 	
+	public function testeEmail( $email )
+	{
+		$this->model->checkUserExisting( trim( $email ) );
+	}
+	
 	/** 
 	* Metodo create
 	*/
 	public function create()
 	{
+		/**
+		 * Verifica a formatacao do email
+		 * Configura os dados de cadastro em uma sessao para retornar a view de cadastro
+		 */
+		if( filter_var( $_POST['email'], FILTER_VALIDATE_EMAIL ) === false )
+		{
+			Session::init();
+				
+			foreach( $_POST as $key => $valor )
+				Session::set('post_' . $key, $valor);
+					
+			$msg = base64_encode( 'EMAIL_ERRO_FORMATO' );
+			header("location: " . URL . "login/register/?st=".$msg);
+			exit();
+		}
 		
-		// VERIFICAR SE LOGIN JA EXISTE NO BANCO DE DADOS
+		/**
+		 * Verifica se o email ja exite
+		 * Configura os dados de cadastro em uma sessao para retornar a view de cadastro
+		 */
+		if( $this->model->checkUserExisting( trim( $_POST['email'] ) ) )
+		{
+			Session::init();
+			
+			foreach( $_POST as $key => $valor )
+				Session::set('post_' . $key, $valor);
+			
+			$msg = base64_encode( 'LOGIN_ERRO' );
+			header("location: " . URL . "login/register/?st=".$msg);
+			exit();
+		}
+		
+		$token = 'abc';
 		
 		$data = array(
-			//'name' 			=> $_POST["name"], 
 			'login' 		=> $_POST["login"], 
 			'password' 		=> $_POST["password"], 
 			'email' 		=> $_POST["email"], 
-			//'website' 		=> $_POST["website"], 
-			//'bio' 			=> $_POST["bio"], 
-			//'numlogin' 		=> $_POST["numlogin"], 
-			//'date' 			=> $_POST["date"], 
-			'linguage' 		=> 'PT', 
+			'linguage' 		=> 'PT',
 			'id_typeuser' 	=> 1, // Membro
-			//'lastlogin' 	=> $_POST["lastlogin"], 
-			'status' 		=> 'ACTIVE',
+			'status' 		=> 'INACTIVE',
+			'token'			=> $token
 		);
 
 		$this->model->create( $data ) ? $msg = base64_encode( "CADASTRO_SUCESSO" ) : $msg = base64_encode( "OPERACAO_ERRO" );
-
+		
+		/**
+		 * Envia um e-mail de validação
+		 =-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- */
+		require_once 'util/email.class.php';
+		$objEmail = new Email();
+		$objEmail->enviarValidacaoCadastro( $_POST["login"], $_POST["email"], $token );
+		// =-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+		
 		header("location: " . URL . "login?st=".$msg);
+		exit();
 	}
 
 	/** 

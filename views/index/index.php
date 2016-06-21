@@ -34,7 +34,7 @@
 			<?php //echo count( $array_img ) - 2 . ' Fotos '; ?>
             </div>
 			
-			<h5 class="page-header">Comentários (0)</h5>
+			<h5 class="page-header">Comentários (<?php echo $this->objComment->getTotalComment( $list['type'], $list['id'] ); ?>) </h5>
 			
             <ul class="qo alm">
             <?php if( Session::get('loggedIn' ) ) { ?>

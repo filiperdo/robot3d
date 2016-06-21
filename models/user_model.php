@@ -27,6 +27,7 @@ class User_Model extends Model
 	private $typeuser;
 	private $lastlogin;
 	private $status;
+	private $token;
 
 	public function __construct()
 	{
@@ -45,6 +46,7 @@ class User_Model extends Model
 		$this->typeuser = new Typeuser_Model();
 		$this->lastlogin = '';
 		$this->status = '';
+		$this->token = '';
 	}
 
 	/** 
@@ -114,6 +116,11 @@ class User_Model extends Model
 	{
 		$this->status = $status;
 	}
+	
+	public function setToken( $token )
+	{
+		$this->token = $token;
+	}
 
 	/** 
 	* Metodos get's
@@ -181,6 +188,11 @@ class User_Model extends Model
 	public function getStatus()
 	{
 		return $this->status;
+	}
+	
+	public function getToken()
+	{
+		return $this->token;
 	}
 
 
@@ -263,6 +275,24 @@ class User_Model extends Model
 
 		return $this->montarLista($result);
 	}
+	
+	/**
+	 * Verifica se o e-mail ja existe no banco de dados
+	 * @param unknown $email
+	 */
+	public function checkUserExisting( $email )
+	{
+		$sql  = 'select * ';
+		$sql .= 'from user as u ';
+		$sql .= "where u.email = :email ";
+		
+		$result = $this->db->select( $sql, array( "email" => $email ) );
+		
+		if( count( $result ) > 0 )
+			return true;
+		else
+			return false;
+	}
 
 	/** 
 	* Metodo montarLista
@@ -304,6 +334,7 @@ class User_Model extends Model
 		$this->setTypeuser( $objTypeuser );
 		$this->setLastlogin( $row["lastlogin"] );
 		$this->setStatus( $row["status"] );
+		$this->setToken( $row['token'] );
 
 		return $this;
 	}

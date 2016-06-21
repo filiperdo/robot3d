@@ -10,8 +10,8 @@ require_once 'util/class.phpmailer.php';
  */
 class Email
 {
-    private $mail;
-    private $corpoRodape;
+    public $mail;
+    public $corpoRodape;
     
     public function __construct()
     {
@@ -40,7 +40,7 @@ class Email
         
         $this->configurarDadosPadroes();
     }
-
+    
     /**
      * Configura alguns dados padrões dos e-mail de ações
      * do sistema, como assunto e rodapé do corpo do e-mail
@@ -58,7 +58,7 @@ class Email
      * Envia um e-mail de acordo com 
      * as configuração dos atributos
      */
-    private function enviar()
+    public function enviar()
     { 
         // Define os anexos (opcional)
         // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
@@ -84,7 +84,7 @@ class Email
         }
     }
     
-    public function teste_envio()
+    public function enviarBoasVindas()
     {
     	$this->mail->Subject = "Teste Robo3D";
     	$this->mail->AddAddress( 'frodrigues@anacom.com.br' );
@@ -112,60 +112,35 @@ class Email
     	return $enviar;
     	
     }
-
     
     /**
-     * Envia um e-mail de boas-vindas para o aluno
-	 * com os dados de acesso
-     * @param type $idEmpresa
-     * @return type
+     * Faz a validação do token para efetuar o cadastro
+     * @return unknown
      */
-    public function enviarBoasVindas( $id_pessoa )
+    public function enviarValidacaoCadastro( $login, $email, $token )
     {
-		$sql  = 'select ';
-		$sql .= 'a.nome, ';
-		$sql .= 'a.email, ';
-		$sql .= 'l.login, ';
-		$sql .= 'l.senha, ';
-		$sql .= 'e.nome as nome_educador ';
-		$sql .= 'from login as l ';
-		$sql .= 'inner join pessoa as a ';
-		$sql .= 'on a.id_login = l.id_login ';
-		$sql .= 'left join educador as e ';
-		$sql .= 'on e.id_educador = a.id_educador ';
-		$sql .= 'where a.id_pessoa = '. $id_pessoa .' ';
-        
-		$objBd = new BancodeDados();
-		$result = $objBd->executarSQL($sql);
-		$row = $result->fetch_array();
-		
-		$this->mail->Subject = "Seja bem vindo ao Pico!";
-        $this->mail->AddAddress( trim( $row['email'] ) );
-        
-		// Envia uma copia do e-mail
-		//$this->mail->addBCC( '' );
-		
-        // Configura o corpo do email
-        // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-        $this->mail->Body  = "Oi <strong>" . $row['nome'] . "</strong>, tudo bem?<br/>";
-        
-        $this->mail->Body .= "Seja bem vindo ao Programa de Integração do Conhecimento, o PICO!<br/>";
-        $this->mail->Body .= "Esperamos que você aproveite o máximo que este portal pode te oferecer.<br/><br/> ";
-        
-        $this->mail->Body .= "Para você não esquecer:<br/> ";
-		$this->mail->Body .= "Endereço do portal: <a href='http://www.programapico.com.br'>www.programapico.com.br</a><br/>";
-        $this->mail->Body .= "Seu login: <strong>" . $row['login'] . "</strong><br/>";
-        $this->mail->Body .= "Sua senha: <strong>" . $row['senha'] . "</strong> (pode ser alterada posteriormente)<br/><br/>";
-		$this->mail->Body .= "Qualquer problema com acesso ao site, entre em contato através do e-mail: contato@programapico.com.br";
-	
-        $this->mail->Body .= $this->corpoRodape;
-		
-        $enviar = $this->enviar();
-
-        return $enviar;
+    	$this->mail->Subject = "Robo3D - Confirmacao de cadastro";
+    	$this->mail->AddAddress( trim( $email ) );
+    	
+    	// Configura o corpo do email
+    	// =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+    	$this->mail->Body  = "Oi <strong>" . $login . "</strong>, tudo bem?<br/>";
+    	
+    	$this->mail->Body .= "Obrigado por se cadastrar na comunidade do Robo 3D!<br/><br/>";
+    	$this->mail->Body .= "Para ativar a sua conta, por favor clique no link abaixo:<br/> ";
+    	
+    	$this->mail->Body .= "<a href='".URL."user/activate/{$login}_{$token}' target='_blank'>".URL."user/activate/{$login}_{$token}</a><br/><br/>";
+    	
+    	$this->mail->Body .= "Agora você pode começar a usar nossos serviços.<br/> ";
+    	$this->mail->Body .= "Esperamos que você aproveite o máximo que este portal pode te oferecer. ";
+    	
+    	$this->mail->Body .= $this->corpoRodape;
+    	 
+    	$enviar = $this->enviar();
+    	 
+    	return $enviar;
     }
-    
-    
+
     /**
      * Envia a senha para o email vinculado
      * @param unknown $email

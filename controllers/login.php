@@ -18,7 +18,19 @@ class Login extends Controller {
     
     public function register()
     {
+    	Session::init();
+    	
     	$this->view->title = 'Cadastrar';
+    	
+    	if( isset( $_SESSION[ PREFIX_SESSION . 'post_email'] ) ) {
+    		$this->view->email = Session::get('post_email');
+    		$this->view->login = Session::get('post_login');
+    	}
+    	else {
+    		$this->view->email = '';
+    		$this->view->login = '';
+    	}
+    	
     	$this->view->render('header.inc');
     	$this->view->render('col-left');
     	$this->view->render('login/register');

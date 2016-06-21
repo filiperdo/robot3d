@@ -13,6 +13,7 @@ class Login_Model extends Model
     	$sql .= 'FROM user ';
     	$sql .= 'WHERE login = :login ';
     	$sql .= 'AND password = :password ';
+    	$sql .= 'AND status = "ACTIVE" ';
     	
         $sth = $this->db->prepare( $sql );
         $sth->execute(array(
