@@ -210,6 +210,34 @@ class Post_Model extends Model
 		return $this->montarLista($result);
 	}
 	
+	
+	/**
+	 * Metodo listPostRelated
+	 * Lista os post relacionados com outro post
+	 * Filtrando pela igualdade das categorias
+	 * @param array $category
+	 * @param unknown $limit
+	 */
+	public function listPostRelated( $id_post, Array $category, $limit = NULL )
+	{
+		$sql  = "select p.* ";
+		$sql .= "from post as p ";
+		$sql .= "inner join post_category as pc ";
+		$sql .= "on pc.id_post = p.id_post ";
+		$sql .= "where pc.id_category in (" . implode( ',', $category ) . ") ";
+		$sql .= "and p.status = 'PUBLISHED' ";
+		$sql .= "and p.id_post != {$id_post} ";
+		$sql .= "group by p.id_post ";
+		$sql .= "order by p.views desc ";
+		
+		if( $limit )
+			$sql .= "limit {$limit} ";
+		
+		$result = $this->db->select( $sql );
+		
+		return $this->montarLista($result);
+	}
+	
 	/** 
 	* Metodo montarLista
 	*/

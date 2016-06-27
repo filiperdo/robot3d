@@ -80,7 +80,7 @@
 
 <div class="col-md-4">
 <!-- The file upload form used as target for the file upload widget -->
-<form id="fileupload" action="../controller/educador-controle.php" method="POST" enctype="multipart/form-data" data-ng-app="demo" data-ng-controller="DemoFileUploadController" data-file-upload="options" data-ng-class="{'fileupload-processing': processing() || loadingFiles}">
+<form id="fileupload" action="//jquery-file-upload.appspot.com/" method="POST" enctype="multipart/form-data" data-ng-app="demo" data-ng-controller="DemoFileUploadController" data-file-upload="options" data-ng-class="{'fileupload-processing': processing() || loadingFiles}">
 	<h3 class="page-header">Fotos</h3>
 	<!-- Redirect browsers with JavaScript disabled to the origin page -->
         <noscript><input type="hidden" name="redirect" value="https://blueimp.github.io/jQuery-File-Upload/"></noscript>
@@ -92,7 +92,7 @@
                 <span class="btn btn-success fileinput-button " ng-class="{disabled: disabled}">
                     <i class="glyphicon glyphicon-plus"></i>
                     <span>Adicionar foto</span>
-                    <input type="file" name="files" ng-disabled="disabled">
+                    <input type="file" name="files" multiple="multiple" ng-disabled="disabled">
                 </span>
                 <button type="button" class="btn btn-primary start" data-ng-click="submit()">
                     <i class="glyphicon glyphicon-upload"></i>
@@ -118,9 +118,9 @@
             <tr data-ng-repeat="file in queue" data-ng-class="{'processing': file.$processing()}">
                 <td data-ng-switch data-on="!!file.thumbnailUrl">
                     <div class="preview" data-ng-switch-when="true">
-                        <!-- <a data-ng-href="{{file.url}}" title="{{file.name}}" download="{{file.name}}" data-gallery>  -->
+                        <a data-ng-href="{{file.url}}" title="{{file.name}}" download="{{file.name}}" data-gallery>
                         	<img data-ng-src="{{file.thumbnailUrl}}" alt="">
-                        <!-- </a>  -->
+                        </a>
                     </div>
                     <div class="preview" data-ng-switch-default data-file-upload-preview="file"></div>
                 </td>
@@ -134,22 +134,22 @@
                     </p>
                     <strong data-ng-show="file.error" class="error text-danger">{{file.error}}</strong>
                 </td>
-                <!-- <td>
+                <td>
                     <p class="size">{{file.size | formatFileSize}}</p>
                     <div class="progress progress-striped active fade" data-ng-class="{pending: 'in'}[file.$state()]" data-file-upload-progress="file.$progress()"><div class="progress-bar progress-bar-success" data-ng-style="{width: num + '%'}"></div></div>
-                </td> -->
+                </td>
                 <td>
-                    <!-- <button type="button" class="btn btn-primary start" data-ng-click="file.$submit()" data-ng-hide="!file.$submit || options.autoUpload" data-ng-disabled="file.$state() == 'pending' || file.$state() == 'rejected'">
+                    <button type="button" class="btn btn-primary start" data-ng-click="file.$submit()" data-ng-hide="!file.$submit || options.autoUpload" data-ng-disabled="file.$state() == 'pending' || file.$state() == 'rejected'">
                         <i class="glyphicon glyphicon-upload"></i>
-                        <span>Start</span>
+                        
                     </button>
                     <button type="button" class="btn btn-warning cancel" data-ng-click="file.$cancel()" data-ng-hide="!file.$cancel">
                         <i class="glyphicon glyphicon-ban-circle"></i>
-                        <span>Cancel</span>
-                    </button> -->
+                        
+                    </button>
                     <button data-ng-controller="FileDestroyController" type="button" class="btn btn-danger destroy" data-ng-click="file.$destroy()" data-ng-hide="!file.$destroy">
                         <i class="glyphicon glyphicon-trash"></i>
-                        <span>Excluir</span>
+                        
                     </button>
                 </td>
             </tr>
@@ -185,8 +185,7 @@
 <script src="<?php echo URL?>util/jquery-file-upload/load-image.all.min.js"></script>
 <!-- The Canvas to Blob plugin is included for image resizing functionality -->
 <script src="<?php echo URL?>util/jquery-file-upload/canvas-to-blob.min.js"></script>
-<!-- Bootstrap JS is not required, but included for the responsive demo navigation -->
-<script src="<?php echo URL?>util/jquery-file-upload/bootstrap.min.js"></script>
+
 <!-- blueimp Gallery script -->
 <script src="<?php echo URL?>util/jquery-file-upload/jquery.blueimp-gallery.min.js"></script>
 <!-- The Iframe Transport is required for browsers without support for XHR file uploads -->

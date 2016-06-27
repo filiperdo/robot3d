@@ -80,30 +80,27 @@
 	        <h4 class="page-header">Posts relacionados</h4>
 	        
 	        <ul class="qo anx">
+	          
+	          <?php foreach( $this->listPostRelated as $post ) { ?>
 	          <li class="qf alm">
 	            <a class="qj" href="#">
-	              <img class="qh cu" src="<?php echo Data::getPhotoUser( $this->obj->getUser()->getId_user() ) ?>">
+	              <img class="qh cu" src="<?php echo Data::getPhotoUser( 3 ) ?>">
 	            </a>
 	            <div class="qg">
-	              <a href="<?php echo URL . 'user/dashboard/' . base64_encode( $this->obj->getUser()->getId_user() ); ?>">
-	              	<strong><?php echo $this->obj->getUser()->getName();?> </strong> @<?php echo $this->obj->getUser()->getLogin();?>
+	              <a href="<?php echo URL?>blog/index/<?php echo $post->getId_post();?>">
+	              	<strong><?php echo $post->getTitle(); ?> </strong> 
 	              </a>
-	              <p><small><a href="#">5 Projetos</a> | <a href="#">34 Seguidores</a></small></p>
-	              <div class="aoa">
-	                <button class="cg ts fx"><span class="h vc"></span> Seguir</button>
-	              </div>
+	              <p><small><?php echo Data::timeAgo( strtotime( $post->getDate() ) );?> | <?php echo $post->getViews(); ?> Views</small></p>
 	            </div>
 	          </li>
+	          <?php } ?>
+	          
 	        </ul>
 	        
 	        </div>
-	        <div class="qz">
-	          Publicado em <?php echo Data::formataDataHora( $this->obj->getDate() );?>
-	        </div>
+	        
 	      </div>
-		
-		
-	      
+		  
 	      <div class="row" style="margin-bottom: 20px;">
 	      	<div class="col-md-12">
 	      	

@@ -18,7 +18,7 @@ $(function () {
     $('#fileupload').fileupload({
         // Uncomment the following to send cross-domain cookies:
         //xhrFields: {withCredentials: true},
-        url: '../util/jquery-file-upload/',
+        url: 'http://localhost/robot3d/util/jquery-file-upload/',
         
     });
 

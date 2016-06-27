@@ -25,6 +25,18 @@ class Blog extends Controller {
 		$objCategory = new Category_Model();
 		$this->view->listCategory = $objCategory->listCategoryByPost( $id_post );
 		
+		$ids_category = array();
+		
+		// Monta um array com os ids das categorias relacionadas ao post
+		foreach( $objCategory->listCategoryByPost( $id_post ) as $category )
+		{
+			$ids_category[] = $category->getId_category();
+		}
+		
+		
+		
+		$this->view->listPostRelated = $objPost->listPostRelated( $id_post, $ids_category, 3 );
+		
 		require_once 'models/comment_model.php';
 		$this->view->objComment = new Comment_Model();
 		

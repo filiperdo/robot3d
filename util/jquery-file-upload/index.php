@@ -1,5 +1,5 @@
 <?php
-session_start();
+//Session::init();
 /*
  * jQuery File Upload Plugin PHP Example
  * https://github.com/blueimp/jQuery-File-Upload
@@ -12,8 +12,8 @@ session_start();
  */
 
 $options = array(
-	'upload_dir'  => '../../img/perfil/'. $_SESSION['pic_id_user'] .'/',
-	'upload_url'  => '../img/perfil/'. $_SESSION['pic_id_user'] .'/'
+	'upload_dir'  => '../../public/img/post/2/',
+	'upload_url'  => '../../public/img/post/2/'
 );
 
 error_reporting(E_ALL | E_STRICT);
