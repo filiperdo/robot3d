@@ -22,7 +22,7 @@ class Alerta
         // Mensagens de Ok
         $this->arrayMsgOk['OPERACAO_SUCESSO'] = "Opera&ccedil;&atilde;o realizada com sucesso!";
         $this->arrayMsgOk['SENHA_SUCESSO'] = "Senha atualizada com sucesso!";
-        $this->arrayMsgOk['EMAIL_REDEFINIR_SENHA'] = 'E-mail enviado!<br/>Por favor, confira seu e-mail e leia as instruções para redefinir sua senha.';
+        $this->arrayMsgOk['EMAIL_REDEFINIR_SENHA'] = 'E-mail enviado!<br/>Por favor, confira seu e-mail para recuperar sua senha.';
 		$this->arrayMsgOk['CADASTRO_SUCESSO'] = 'Cadastro efetuado com sucesso!<br/>Acesse seu e-mail para concluir o cadastro.';
         
         
@@ -31,7 +31,7 @@ class Alerta
         $this->arrayMsgErro['EXCLUIR_REGISTRO_REL'] = 'Não foi possível excluir este registro, porque ele está sendo utilizado!';
         $this->arrayMsgErro['REL_EXISTENTE'] = "Este(s) relacionamento(s) já existe(m) no banco de dados!";
         $this->arrayMsgErro['LOGIN_INCORRETO'] = "Dados incorretos!";
-        $this->arrayMsgErro['EMAIL_NAO_ENCONTRADO'] = 'O e-mail passado não foi encontrado no banco de dados!';
+        $this->arrayMsgErro['EMAIL_NAO_ENCONTRADO'] = 'O e-mail não foi encontrado em nosso sistema!';
         $this->arrayMsgErro['LOGIN_ERRO'] = "Erro ao executar a operação! Este e-mail já existe!";
         $this->arrayMsgErro['EMAIL_ERRO_FORMATO'] = "Este e-mail está com incorreto!";
 

@@ -1,7 +1,7 @@
 <?php
 
 require_once 'util/class.phpmailer.php'; 
-
+require_once 'models/user_model.php';
 
 /**
  * Classe que configura todos os envios de emails do sistema
@@ -147,21 +147,20 @@ class Email
      * @param unknown $senha
      * @return boolean
      */
-    public function enviarSenhaRecuperada( $row )
+    public function enviarSenhaRecuperada( User_Model $user )
     {
-    	$this->mail->Subject = "Senha - robo 3d!";
-    	$this->mail->AddAddress( $row['email'] );
+    	$this->mail->Subject = "Robo3D - Senha!";
+    	$this->mail->AddAddress( $user->getEmail() );
     
     	// Configura o corpo do email
     	// =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-    	$this->mail->Body  = "Oi <strong>" . $row['nome'] . "</strong>, tudo bem?<br/>";
+    	$this->mail->Body  = "Oi <strong>" . $user->getLogin() . "</strong>, tudo bem?<br/>";
     	$this->mail->Body .= "Sua senha foi recuperada com sucesso!<br/><br/> ";
     
     	$this->mail->Body .= "Para você não esquecer:<br/> ";
-    	$this->mail->Body .= "Endereço do portal: ";
-    	$this->mail->Body .= "Seu login: <strong>" . $row['login'] . "</strong><br/>";
-    	$this->mail->Body .= "Sua senha: <strong>" . $row['senha'] . "</strong><br/><br/>";
-    	$this->mail->Body .= "Qualquer problema com acesso ao site, entre em contato através do e-mail: contato@robo3d.com.br";
+    	$this->mail->Body .= "Endereço do portal: <a href='".URL."'>" . URL . '</a><br/>';
+    	$this->mail->Body .= "Seu login: <strong>" . $user->getLogin() . "</strong><br/>";
+    	$this->mail->Body .= "Sua senha: <strong>" . $user->getPassword() . "</strong><br/>";
     
     	$this->mail->Body .= $this->corpoRodape;
     

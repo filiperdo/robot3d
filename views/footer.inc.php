@@ -261,67 +261,8 @@
 
 
 
-<div class="cd fade" id="userModal" tabindex="-1" role="dialog" aria-labelledby="userModal" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="d">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title">Users</h4>
-      </div>
 
-      <div class="modal-body amf">
-        <div class="uq">
-          <ul class="qo cj ca">
-            <li class="b">
-              <div class="qf">
-                <a class="qj" href="#">
-                  <img class="qh cu" src="<?php echo URL; ?>public/img/avatar-fat.jpg">
-                </a>
-                <div class="qg">
-                  <button class="cg fm fx eg">
-                    <span class="c aol"></span> Follow
-                  </button>
-                  <strong>Jacob Thornton</strong>
-                  <p>@fat - San Francisco</p>
-                </div>
-              </div>
-            </li>
-            <li class="b">
-              <div class="qf">
-                <a class="qj" href="#">
-                  <img class="qh cu" src="<?php echo URL; ?>public/img/avatar-dhg.png">
-                </a>
-                <div class="qg">
-                  <button class="cg fm fx eg">
-                    <span class="c aol"></span> Follow
-                  </button>
-                  <strong>Dave Gamache</strong>
-                  <p>@dhg - Palo Alto</p>
-                </div>
-              </div>
-            </li>
-            <li class="b">
-              <div class="qf">
-                <a class="qj" href="#">
-                  <img class="qh cu" src="<?php echo URL; ?>public/img/avatar-mdo.png">
-                </a>
-                <div class="qg">
-                  <button class="cg fm fx eg">
-                    <span class="c aol"></span> Follow
-                  </button>
-                  <strong>Mark Otto</strong>
-                  <p>@mdo - San Francisco</p>
-                </div>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-	<script src="<?php echo URL; ?>public/js/bootstrap.js"></script>
+	
     <script src="<?php echo URL; ?>public/js/chart.js"></script>
     <script src="<?php echo URL; ?>public/js/toolkit.js"></script>
     <script src="<?php echo URL; ?>public/js/application.js"></script>

@@ -256,6 +256,20 @@ class User_Model extends Model
 		$result = $this->db->select( $sql, array("id" => $id_user) );
 		return $this->montarObjeto( $result[0] );
 	}
+	
+	/**
+	 * Metodo obterUserByEmail
+	 * @param unknown $id_user
+	 */
+	public function obterUserByEmail( $email )
+	{
+		$sql  = "select * ";
+		$sql .= "from user as u ";
+		$sql .= "where u.email = :email ";
+	
+		$result = $this->db->select( $sql, array("email" => trim($email))  );
+		return $this->montarObjeto( $result[0] );
+	}
 
 	/** 
 	* Metodo listarUser

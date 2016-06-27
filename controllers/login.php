@@ -38,7 +38,37 @@ class Login extends Controller {
     	$this->view->render('footer.inc');
     }
     
-    
+    public function recover()
+    {
+    	require_once 'models/user_model.php';
+    	$objUser = new User_Model();
+    	
+    	/**
+    	 * Verifica se o email ja exite
+    	 * Configura os dados de cadastro em uma sessao para retornar a view de cadastro
+    	 */
+    	if( !$objUser->checkUserExisting( trim( $_POST['email'] ) ) )
+    	{
+    		$msg = base64_encode( 'EMAIL_NAO_ENCONTRADO' );
+    		header("location: " . URL . "login/?st=".$msg);
+    		exit();
+    	}
+    	
+    	
+    	$objUser->obterUserByEmail( $_POST['email'] );
+    	
+    	/**
+    	 * Envia um senha recuperada para o user
+    	 =-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- */
+    	require_once 'util/email.class.php';
+    	$objEmail = new Email();
+    	$objEmail->enviarSenhaRecuperada( $objUser );
+    	// =-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+    	
+    	$msg = base64_encode( 'EMAIL_REDEFINIR_SENHA' );
+    	header("location: " . URL . "login?st=".$msg);
+    	exit();
+    }
     
     function cadastro()
     {
