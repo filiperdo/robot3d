@@ -57,6 +57,8 @@ class Comment extends Controller {
 			'id_user' 	=> Session::get('userid')
 		);
 		
+		
+		
 		// Verifica e configura se eh um comment de um post ou project
 		$_POST['comment_type'] == 'post' ? $data['id_post'] = $_POST['id_item'] : $data['id_project'] = $_POST['id_item'];
 		

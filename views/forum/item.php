@@ -10,10 +10,22 @@
 		  <li class="active"><?php echo $this->objTopic->getName();?></li>
 		</ol>
 		
-		<div class="row" style="margin-bottom: 10px">
+		<div class="row" style="margin-bottom: 15px">
 			<div class="col-md-12" style="text-align: right;">
-				<a href="<?php echo URL; ?>forum/write/<?php echo $this->objTopic->getId_topic(); ?>" class="cg ts fx"><i class="glyphicon glyphicon-plus"></i> Novo topico</a>
-				<a href="" class="cg ts fx"><i class="glyphicon glyphicon-tag"></i> Não receber alertas</a>
+				<a href="<?php echo URL; ?>forum/write/<?php echo $this->objTopic->getId_topic(); ?>" class="cg ts fx"><i class="glyphicon glyphicon-plus"></i> Novo tópico</a>
+				
+				<button type="button" class="cg ts fx bt-notify" >
+				  <i class="glyphicon glyphicon-tag"></i> Não receber alertas ou e-mail
+				</button>
+				
+			</div>
+		</div>
+		
+		<div class="row" style="margin-bottom: 15px">
+			<div class="col-md-12">
+				<div style="background: #583F7E; color: #fff; padding: 10px; border-radius:4px" id="tes">
+					<?php echo $this->objTopic->getName();?>
+				</div>
 			</div>
 		</div>
 		
@@ -55,4 +67,42 @@
 	</li>
 
 </ul>
+</div>
+
+<style>
+.popover{
+	width: 550px;
+}
+</style>
+
+<div id="p-notify" style="display:none; font-size: 80%">
+
+	<p>
+		<a href="">
+			<strong>Não receber alertas ou e-mails</strong><br>
+			<small>Você não receberá nenhum e-mails ou alertas</small>
+		</a>
+	</p>
+	
+	<p>
+		<a href="">
+			<strong>Receber alertas</strong><br>
+			<small>Você receberá alertas para este tópico.</small>
+		</a>
+	</p>
+	
+	<p>
+		<a href="">
+			<strong>Receber e-mails</strong><br>
+			<small>Você receberá e-mails para este tópico.</small>
+		</a>
+	</p>
+	
+	<p>
+		<a href="">
+			<strong>Receber e-mails e alertas</strong><br>
+			<small>Você receberá ambos os alertas e e-mails para este tópico.</small>
+		</a>
+	</p>
+
 </div>

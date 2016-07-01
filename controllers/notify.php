@@ -1,6 +1,6 @@
 <?php 
 
-class Replie extends Controller {
+class Notify extends Controller {
 
 	public function __construct() {
 		parent::__construct();
@@ -12,11 +12,11 @@ class Replie extends Controller {
 	*/
 	public function index()
 	{
-		$this->view->title = "Replie";
-		$this->view->listarReplie = $this->model->listarReplie();
+		$this->view->title = "Notify";
+		$this->view->listarNotify = $this->model->listarNotify();
 
 		$this->view->render( "header" );
-		$this->view->render( "replie/index" );
+		$this->view->render( "notify/index" );
 		$this->view->render( "footer" );
 	}
 
@@ -25,15 +25,15 @@ class Replie extends Controller {
 	*/
 	public function form( $id = NULL )
 	{
-		$this->view->title = "Cadastrar Replie";
+		$this->view->title = "Cadastrar Notify";
 		$this->view->action = "create";
 		$this->view->obj = $this->model;
 
 		if( $id ) 
 		{
-			$this->view->title = "Editar Replie";
+			$this->view->title = "Editar Notify";
 			$this->view->action = "edit/".$id;
-			$this->view->obj = $this->model->obterReplie( $id );
+			$this->view->obj = $this->model->obterNotify( $id );
 
 			if ( empty( $this->view->obj ) ) {
 				die( "Valor invalido!" );
@@ -41,7 +41,7 @@ class Replie extends Controller {
 		}
 
 		$this->view->render( "header" );
-		$this->view->render( "replie/form" );
+		$this->view->render( "notify/form" );
 		$this->view->render( "footer" );
 	}
 
@@ -50,21 +50,15 @@ class Replie extends Controller {
 	*/
 	public function create()
 	{
-		
-		Session::init();
-		
 		$data = array(
-			'content' 		=> $_POST["content"], 
-			'id_item' 		=> $_POST["id_item"], 
-			//'replie_id_replie' => $_POST["replie_id_replie"], 
-			'id_user' 		=> Session::get('userid'),
+			'type' => $_POST["type"], 
+			'id_user' => $_POST["id_user"], 
+			'id_item' => $_POST["id_item"], 
 		);
 
-		// verificar usuarios que solicitaram alertas
-		
 		$this->model->create( $data ) ? $msg = base64_encode( "OPERACAO_SUCESSO" ) : $msg = base64_encode( "OPERACAO_ERRO" );
 
-		header("location: " . URL . "forum/detail/". $_POST["id_item"] ."/?st=".$msg);
+		header("location: " . URL . "notify?st=".$msg);
 	}
 
 	/** 
@@ -73,16 +67,14 @@ class Replie extends Controller {
 	public function edit( $id )
 	{
 		$data = array(
-			'content' => $_POST["content"], 
-			'date' => $_POST["date"], 
-			'id_item' => $_POST["id_item"], 
-			'replie_id_replie' => $_POST["replie_id_replie"], 
+			'type' => $_POST["type"], 
 			'id_user' => $_POST["id_user"], 
+			'id_item' => $_POST["id_item"], 
 		);
 
 		$this->model->edit( $data, $id ) ? $msg = base64_encode( "OPERACAO_SUCESSO" ) : $msg = base64_encode( "OPERACAO_ERRO" );
 
-		header("location: " . URL . "replie?st=".$msg);
+		header("location: " . URL . "notify?st=".$msg);
 	}
 
 	/** 
@@ -92,6 +84,6 @@ class Replie extends Controller {
 	{
 		$this->model->delete( $id ) ? $msg = base64_encode( "OPERACAO_SUCESSO" ) : $msg = base64_encode( "OPERACAO_ERRO" );
 
-		header("location: " . URL . "replie?st=".$msg);
+		header("location: " . URL . "notify?st=".$msg);
 	}
 }

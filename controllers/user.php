@@ -103,7 +103,8 @@ class User extends Controller {
 		$data = array(
 			'login' 		=> $_POST["login"], 
 			'password' 		=> $_POST["password"], 
-			'email' 		=> $_POST["email"], 
+			'email' 		=> $_POST["email"],
+			'date'			=> date('Y-m-d H:i:s'),
 			'linguage' 		=> 'PT',
 			'id_typeuser' 	=> 1, // Membro
 			'status' 		=> 'INACTIVE',

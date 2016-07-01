@@ -36,6 +36,7 @@ class Forum extends Controller {
 	public function item( $id_topic )
 	{
 		$this->view->title = "Forum";
+		$this->view->js[] = 'forum.js';
 		
 		require_once 'models/topic_model.php';
 		$objTopic = new Topic_Model();

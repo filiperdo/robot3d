@@ -9,7 +9,10 @@ class Database extends PDO
         parent::__construct(DB_TYPE.':host='.DB_HOST.';dbname='.DB_NAME, DB_USER, DB_PASS);
         
         //parent::setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTIONS);
-        
+        $this->exec("SET NAMES 'utf8'");
+        $this->exec('SET character_set_connection=utf8');
+        $this->exec('SET character_set_client=utf8');
+        $this->exec('SET character_set_results=utf8');
     }
     
     public static function getInstance() {
