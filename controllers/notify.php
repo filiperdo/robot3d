@@ -45,22 +45,65 @@ class Notify extends Controller {
 		$this->view->render( "footer" );
 	}
 
+	public function loadNotify()
+	{
+		Session::init();
+		
+		$icone = '<i class="glyphicon glyphicon-tag"></i> ';
+		
+		$obj = $this->model->searchNotify( $_POST["id_topic"], Session::get('userid') );
+		
+		if( $obj )
+		{
+			switch ( $obj->getType() )
+			{
+				case 'alert' 	: $txt = 'Receber alertas'; break;
+				case 'email' 	: $txt = 'Receber e-mails'; break;
+				case 'two' 		: $txt = 'Receber e-mails e alertas'; break;
+			}
+			
+			echo $icone . $txt;
+		}
+		else 
+			echo $icone . 'Não receber alertas ou e-mail.';
+	}
+	
 	/** 
 	* Metodo create
 	*/
 	public function create()
 	{
-		$data = array(
-			'type' => $_POST["type"], 
-			'id_user' => $_POST["id_user"], 
-			'id_item' => $_POST["id_item"], 
-		);
-
-		$this->model->create( $data ) ? $msg = base64_encode( "OPERACAO_SUCESSO" ) : $msg = base64_encode( "OPERACAO_ERRO" );
-
-		header("location: " . URL . "notify?st=".$msg);
+		Session::init();
+		
+		$obj = $this->model->searchNotify( $_POST["id_topic"], Session::get('userid') );
+		
+		if( $obj )
+			$this->delete( $obj->getId_notify() );
+		
+		$msg = 'DELETAR';
+			
+		if( $_POST["type"] != 1 )
+		{
+			switch ( $_POST["type"] )
+			{
+				case 2 : $type = 'alert'; break;
+				case 3 : $type = 'email'; break;
+				case 4 : $type = 'two'; break;
+			}
+			
+			$data = array(
+				'type' 		=> $type,
+				'id_user' 	=> Session::get('userid'),
+				'id_topic' 	=> $_POST["id_topic"],
+			);
+			
+			$this->model->create( $data ) ? $msg = "OPERACAO_SUCESSO" : $msg = "OPERACAO_ERRO";
+		}
+		// Debug
+		echo $msg;
 	}
 
+	
 	/** 
 	* Metodo edit
 	*/
@@ -68,8 +111,8 @@ class Notify extends Controller {
 	{
 		$data = array(
 			'type' => $_POST["type"], 
-			'id_user' => $_POST["id_user"], 
-			'id_item' => $_POST["id_item"], 
+			'id_user' => $_POST["id_user"],
+			'id_item' => $_POST["id_item"],
 		);
 
 		$this->model->edit( $data, $id ) ? $msg = base64_encode( "OPERACAO_SUCESSO" ) : $msg = base64_encode( "OPERACAO_ERRO" );
@@ -84,6 +127,6 @@ class Notify extends Controller {
 	{
 		$this->model->delete( $id ) ? $msg = base64_encode( "OPERACAO_SUCESSO" ) : $msg = base64_encode( "OPERACAO_ERRO" );
 
-		header("location: " . URL . "notify?st=".$msg);
+		//header("location: " . URL . "notify?st=".$msg);
 	}
 }

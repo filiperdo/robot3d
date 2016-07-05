@@ -35,6 +35,8 @@ class Forum extends Controller {
 	 */
 	public function item( $id_topic )
 	{
+		Session::init();
+		
 		$this->view->title = "Forum";
 		$this->view->js[] = 'forum.js';
 		
@@ -45,6 +47,17 @@ class Forum extends Controller {
 		
 		require_once 'models/item_model.php';
 		$this->view->objItem = new Item_Model();
+		
+		require_once 'models/notify_model.php';
+		$objNotify = new Notify_Model();
+		$obj = $objNotify->searchNotify( $id_topic, Session::get('userid') );
+		
+		$this->view->flag_notify = array( 'no' => '', 'alert' => '', 'email' => '', 'two' => '' );
+		
+		if( $obj )
+			$this->view->flag_notify[ $obj->getType() ] = '<i class="glyphicon glyphicon-ok"></i>';
+		else
+			$this->view->flag_notify[ 'no' ] = '<i class="glyphicon glyphicon-ok"></i>';
 		
 		$this->view->render( "header.inc" );
 		$this->view->render( "forum/item" );

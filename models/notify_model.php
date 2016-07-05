@@ -8,7 +8,7 @@
  */ 
 
 include_once 'user_model.php';
-include_once 'item_model.php';
+include_once 'topic_model.php';
 
 class Notify_Model extends Model
 {
@@ -18,7 +18,8 @@ class Notify_Model extends Model
 	private $id_notify;
 	private $type;
 	private $user;
-	private $item;
+	//private $item;
+	private $topic;
 
 	public function __construct()
 	{
@@ -27,7 +28,8 @@ class Notify_Model extends Model
 		$this->id_notify = '';
 		$this->type = '';
 		$this->user = new User_Model();
-		$this->item = new Item_Model();
+		//$this->item = new Item_Model();
+		$this->topic = new Topic_Model();
 	}
 
 	/** 
@@ -48,9 +50,14 @@ class Notify_Model extends Model
 		$this->user = $user;
 	}
 
-	public function setItem( Item_Model $item )
+	/*public function setItem( Item_Model $item )
 	{
 		$this->item = $item;
+	}*/
+	
+	public function setTopic( Topic_Model $topic )
+	{
+		$this->topic = $topic;
 	}
 
 	/** 
@@ -71,11 +78,16 @@ class Notify_Model extends Model
 		return $this->user;
 	}
 
-	public function getItem()
+	/*public function getItem()
 	{
 		return $this->item;
-	}
+	}*/
 
+	
+	public function getTopic()
+	{
+		return $this->topic;
+	}
 
 	/** 
 	* Metodo create
@@ -138,6 +150,27 @@ class Notify_Model extends Model
 		return $this->montarObjeto( $result[0] );
 	}
 
+	/**
+	 * Procura por uma notificacao
+	 * @param unknown $id_item
+	 * @param unknown $id_user
+	 * @param unknown $type
+	 */
+	public function searchNotify( $id_topic, $id_user, $type = NULL )
+	{
+		$sql  = "select * ";
+		$sql .= "from notify as n ";
+		$sql .= "where n.id_topic = :id_topic ";
+		$sql .= "and n.id_user = :id_user ";
+		//$sql .= "and n.type = :type ";
+		
+		$result = $this->db->select( $sql, array("id_topic" => $id_topic, "id_user" => $id_user ) );
+		if( !empty( $result ) )
+			return $this->montarObjeto( $result[0] );
+		else 
+			return false;
+	}
+	
 	/** 
 	* Metodo listarNotify
 	*/
@@ -188,9 +221,13 @@ class Notify_Model extends Model
 		$objUser->obterUser( $row["id_user"] );
 		$this->setUser( $objUser );
 
-		$objItem = new Item_Model();
+		/*$objItem = new Item_Model();
 		$objItem->obterItem( $row["id_item"] );
-		$this->setItem( $objItem );
+		$this->setItem( $objItem );*/
+		
+		$objTopic = new Topic_Model();
+		$objTopic->obterTopic( $row['id_topic'] );
+		$this->setTopic( $objTopic );
 
 		return $this;
 	}
