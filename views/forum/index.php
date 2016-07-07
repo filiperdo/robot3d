@@ -1,10 +1,10 @@
 <div class="hl">
 	
-	<ol class="breadcrumb bread-border">
+	<!-- <ol class="breadcrumb bread-border">
 	  <li><a href="<?php echo URL?>">Home</a></li>
-	  <li>Forum</li>
+	  <li>Fórum</li>
 	  
-	</ol>
+	</ol> -->
 	
 	<?php foreach ( $this->listarSubject as $subject ) { ?>
 	
@@ -24,10 +24,13 @@
 				    	<strong><?php echo $topic->getName(); ?></strong>
 				    </a><br>
 				    <strong><?php echo $topic->getDescription(); ?></strong><br>
-			    	<small>Último post: hoje 04:33 | por @user_name</small>
+				    <?php $objItem = $this->objItem->getLastItemByTopic( $topic->getId_topic() ); ?>
+				    <?php if( $objItem != false ){?>
+			    	<small>Último post: <?php echo Data::timeAgo( $objItem->getDate() );?> | por <?php echo $objItem->getUser()->getLogin();?> </small>
+			    	<?php } ?>
 		    	</div>
-		    	<div class="col-md-1" style="text-align: center"><small>posts<br>345</small></div>
-		    	<div class="col-md-1" style="text-align: center"><small>topics	<br>3456</small></div>
+		    	<div class="col-md-1" style="text-align: center"><small>posts<br><?php echo $this->objReplie->countReplieByTopic( $topic->getId_topic() )?></small></div>
+		    	<div class="col-md-1" style="text-align: center"><small>topics	<br><?php echo $this->objItem->countItemByTopic( $topic->getId_topic() )?></small></div>
 		    </div>
 		    
 		    <?php } ?>

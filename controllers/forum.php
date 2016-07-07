@@ -22,6 +22,14 @@ class Forum extends Controller {
 		require_once 'models/topic_model.php';
 		$this->view->objTopic = new Topic_Model();
 		
+		// Instancia do item_model
+		require_once 'models/item_model.php';
+		$this->view->objItem = new Item_Model();
+		
+		// Instancia do replie_model
+		require_once 'models/replie_model.php';
+		$this->view->objReplie = new Replie_Model();
+		
 		$this->view->render( "header.inc" );
 		$this->view->render( "forum/index" );
 		$this->view->render( "col-right" );
@@ -37,6 +45,9 @@ class Forum extends Controller {
 	{
 		Session::init();
 		
+		require_once 'util/time-ago/westsworld.datetime.class.php';
+		require_once 'util/time-ago/timeago.inc.php';
+		
 		$this->view->title = "Forum";
 		$this->view->js[] = 'forum.js';
 		
@@ -47,6 +58,10 @@ class Forum extends Controller {
 		
 		require_once 'models/item_model.php';
 		$this->view->objItem = new Item_Model();
+		
+		// Instancia do replie_model
+		require_once 'models/replie_model.php';
+		$this->view->objReplie = new Replie_Model();
 		
 		require_once 'models/notify_model.php';
 		$objNotify = new Notify_Model();

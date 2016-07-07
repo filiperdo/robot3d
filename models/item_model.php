@@ -189,6 +189,40 @@ class Item_Model extends Model
 
 		return $this->montarLista($result);
 	}
+	
+	/**
+	 * Conta quantos itens existem para um topico
+	 * @param unknown $id_topic
+	 * @return unknown
+	 */
+	public function countItemByTopic( $id_topic )
+	{
+		$sql  = "select count(i.id_item) as total ";
+		$sql .= "from item as i ";
+		$sql .= "where i.id_topic = :id ";
+		
+		$result = $this->db->select( $sql, array("id" => $id_topic) );
+		return $result[0]['total'];
+	}
+	
+	/**
+	 * Obtem o ultimo post de um topico.
+	 * @param unknown $id_topic
+	 */
+	public function getLastItemByTopic( $id_topic )
+	{
+		$sql  = "select * ";
+		$sql .= "from item as i ";
+		$sql .= "where i.id_topic = :id ";
+		$sql .= "order by i.date desc ";
+		$sql .= "limit 1 ";
+		
+		$result = $this->db->select( $sql, array("id" => $id_topic) );
+		if( !empty( $result ) )
+			return $this->montarObjeto( $result[0] );
+		else
+			return false;
+	}
 
 	/** 
 	* Metodo montarLista

@@ -60,10 +60,15 @@
 				
 				<td><?php echo $item->getUser()->getLogin(); ?></td>
 				<td align="center">
-					<div class="col-md-6"><small><strong><?php echo "23"; ?></strong><br>Respostas</small></div>
+					<div class="col-md-6"><small><strong><?php echo $this->objReplie->countReplieByItem( $item->getId_item() )?></strong><br>Respostas</small></div>
 					<div class="col-md-6"><small><strong><?php echo "87"; ?></strong><br>Visualizações</small></div>
 				</td>
-				<td><a href="">4 de Jun, 2016<br><small>por @user_name</small></a></td>
+				<td>
+					<?php $objReplie = $this->objReplie->getLastReplieByItem( $item->getId_item() );?>
+					<?php if( $objReplie != false ) { ?>
+					<small><?php echo Data::formatDateShort( $objReplie->getDate() );?><br>por <?php echo $objReplie->getUser()->getLogin()?></small>
+					<?php } ?>
+				</td>
 			</tr>
 			<?php } ?>
 			</tbody>

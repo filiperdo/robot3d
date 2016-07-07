@@ -10,7 +10,7 @@
           <div class="qg">
             <div class="qn">
            
-              <small class="eg dp"><?php echo Data::timeAgo( strtotime( $list['date'] ) ) ?></small>
+              <small class="eg dp"><?php echo Data::timeAgo( $list['date'] ) ?></small>
               <h4 class="page-header">
               	<?php if( $list['type'] == 'post' ) { ?>
               		<a href="<?php echo URL . 'blog/index/' . $list['id'];?>"><?php echo $list['title']; ?></a>
@@ -64,7 +64,8 @@
                   <img class="qh cu" src="<?php echo Data::getPhotoUser( $comment->getUser()->getId_user() ); ?>">
                 </a>
                 <div class="qg">
-                  <strong><a href="<?php echo URL . 'user/dashboard/'. base64_encode( $comment->getUser()->getId_user() )?>"><?php echo $comment->getUser()->getLogin()?>: </a></strong>
+                  <strong><a href="<?php echo URL . 'user/dashboard/'. base64_encode( $comment->getUser()->getId_user() )?>"><?php echo $comment->getUser()->getLogin()?> </a></strong>
+                  <small>(<?php echo Data::timeAgo( $comment->getDate() ); ?>)</small>:
                   <?php echo $comment->getContent();?>
                 </div>
               </li>

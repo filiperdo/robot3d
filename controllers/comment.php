@@ -69,8 +69,11 @@ class Comment extends Controller {
 		else
 		{
 			// <li> comentarios inseridos na home </i>
-			echo '<li class="qf"><a class="qj" href="#"><img class="qh cu" src="' . Data::getPhotoUser( Session::get('userid') ) . '"></a>';
-			echo '<div class="qg"><strong><a href="' . URL . 'user/dashboard/' . base64_encode( Session::get('userid') ) . ' ">' . Session::get('user_login') . ':</a> </strong>' . $_POST["content"] . '</div></li>';
+			echo '<li class="qf"><a class="qj" href="#"><img class="qh cu" src="' . Data::getPhotoUser( Session::get('userid') ) . '"></a> ';
+			
+			echo '<div class="qg"><strong><a href="' . URL . 'user/dashboard/' . base64_encode( Session::get('userid') ) . ' ">' . Session::get('user_login') . ':</a> </strong>';
+			echo '<small>('. Data::timeAgo( 'now' ) .')</small>: ';
+			echo $_POST["content"] . '</div></li>';
 		}
 		
 	}

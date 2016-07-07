@@ -33,7 +33,7 @@
 					</div>
 				</div>
 				<div class="col-md-10">
-					<p class="page-header"><strong><?php echo $this->objItem->getTitle();?></strong><span style="float: right;"><small><?php echo Data::formataDataHora( $this->objItem->getDate() );?></small></span></p>
+					<p class="page-header"><strong><?php echo $this->objItem->getTitle();?></strong><span style="float: right;"><small><?php echo Data::timeAgo( $this->objItem->getDate() );?></small></span></p>
 					<?php echo $this->objItem->getContent(); ?>
 				</div>
 			</div>
@@ -67,7 +67,7 @@
 					</div>
 				</div>
 				<div class="col-md-10">
-					<small><strong><?php echo Data::formataDataHora( $replie->getDate() );?></strong></small><br>
+					<small><strong><?php echo Data::timeAgo( $replie->getDate() );?></strong></small><br>
 					<small><?php echo 'Re: ' . $this->objItem->getTitle();?></small><hr>
 					<?php echo $replie->getContent(); ?>
 				</div>

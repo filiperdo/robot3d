@@ -195,7 +195,58 @@ class Replie_Model extends Model
 		
 		return $this->montarLista($result);
 	}
+	
+	/**
+	 * Conta quantas repsostas existem para cada item
+	 * @param unknown $id_item
+	 */
+	public function countReplieByItem( $id_item )
+	{
+		$sql  = "select count(r.id_replie) as total ";
+		$sql .= "from replie as r ";
+		$sql .= "where r.id_item = :id ";
+	
+		$result = $this->db->select( $sql, array("id" => $id_item) );
+		return $result[0]['total'];
+	}
+	
+	/**
+	 * Conta quantas resposta exitem dentro de um topico
+	 * @param unknown $id_topic
+	 * @return unknown
+	 */
+	public function countReplieByTopic( $id_topic )
+	{
+		$sql  = "select count(r.id_replie) as total ";
+		$sql .= "from replie as r ";
+		$sql .= "inner join item as i ";
+		$sql .= "on i.id_item = r.id_item ";
+		$sql .= "where i.id_topic = :id ";
+		
+		$result = $this->db->select( $sql, array( "id" => $id_topic ) );
+		return $result[0]['total'];
+	}
 
+	/**
+	 * Obtem a ultima resposta de um item
+	 * @param unknown $id_item
+	 * @return Replie_Model|boolean
+	 */
+	public function getLastReplieByItem( $id_item )
+	{
+		$sql  = "select * ";
+		$sql .= "from replie as r ";
+		$sql .= "where r.id_item = :id ";
+		$sql .= "order by r.date desc ";
+		$sql .= "limit 1 ";
+		
+		$result = $this->db->select( $sql, array("id" => $id_item) );
+		if( !empty( $result ) )
+			return $this->montarObjeto( $result[0] );
+		else
+			return false;
+	}
+	
 	/** 
 	* Metodo montarLista
 	*/
