@@ -206,6 +206,20 @@ class Item_Model extends Model
 	}
 	
 	/**
+	 * Conta quantos itens existem para um usuario
+	 * @param unknown $id_user
+	 */
+	public function countItemByUser( $id_user )
+	{
+		$sql  = "select count(i.id_item) as total ";
+		$sql .= "from item as i ";
+		$sql .= "where i.id_user = :id ";
+	
+		$result = $this->db->select( $sql, array("id" => $id_user) );
+		return $result[0]['total'];
+	}
+	
+	/**
 	 * Obtem o ultimo post de um topico.
 	 * @param unknown $id_topic
 	 */

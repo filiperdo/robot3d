@@ -211,6 +211,20 @@ class Replie_Model extends Model
 	}
 	
 	/**
+	 * Conta quantas respostas existem para um usuario
+	 * @param unknown $id_user
+	 */
+	public function countReplieByUser( $id_user )
+	{
+		$sql  = "select count(r.id_replie) as total ";
+		$sql .= "from replie as r ";
+		$sql .= "where r.id_user = :id ";
+		
+		$result = $this->db->select( $sql, array("id" => $id_user) );
+		return $result[0]['total'];
+	}
+	
+	/**
 	 * Conta quantas resposta exitem dentro de um topico
 	 * @param unknown $id_topic
 	 * @return unknown

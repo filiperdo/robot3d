@@ -10,27 +10,32 @@
 			  <li><a href="<?php echo URL . 'forum/item/' . $this->objItem->getTopic()->getId_topic(); ?>"><?php echo $this->objItem->getTopic()->getName();?></a></li>
 			  <li class="active"><?php echo $this->objItem->getTitle(); ?></li>
 			</ol>
-		
+			
+			<?php if( Session::get('loggedIn') ) { ?>
 			<div class="row" style="margin-bottom: 10px">
 				<div class="col-md-12" style="text-align: right;">
 					<a href="#repl" class="cg ts fx"><i class="glyphicon glyphicon-pencil"></i> Responder</a>
 				</div>
 			</div>
-		
+			<?php } ?>
+			
 			<div class="forum-item-detail" style="margin-bottom: 10px">
 				<div class="col-md-2">
 					<div class="row">
 						<a href="#"><strong><?php echo $this->objItem->getUser()->getLogin(); ?></strong></a>
 					</div>
 					<div class="row" style="margin-top: 10px">
-						<a class="qj" href="#">
-		                  <img class="qh cu" src="<?php echo Data::getPhotoUser( $this->objItem->getUser()->getId_user() ); ?>">
-		                </a>
+						<div style="float: left; width: 66px">
+							<a class="qj" href="#">
+			                  <img class="qh cu" src="<?php echo Data::getPhotoUser( $this->objItem->getUser()->getId_user() ); ?>">
+			                </a>
+			            </div>
+			            <div style="float: left">
+		                	<small><small>Posts <?php echo $this->objItem->countItemByUser( $this->objItem->getUser()->getId_user() )?></small></small><br>
+							<small><small>Respostas <?php echo $this->objReplie->countReplieByUser( $this->objItem->getUser()->getId_user() );?></small></small><br>
+		                </div>
 					</div>
-					<div class="row" style="margin-top: 10px">
-						<small>Posts 34</small><br>
-						<small>Projetos 7</small>
-					</div>
+					
 				</div>
 				<div class="col-md-10">
 					<p class="page-header"><strong><?php echo $this->objItem->getTitle();?></strong><span style="float: right;"><small><?php echo Data::timeAgo( $this->objItem->getDate() );?></small></span></p>
@@ -41,8 +46,6 @@
 		</li>
 	
 	</ul>
-	
-	
 	
 	<?php foreach( $this->objReplie->listReplieByItem( $this->objItem->getId_item() ) as $replie ) {?>
 	<ul class="ca qo anx forum-ul-resposta">
@@ -60,9 +63,8 @@
 			                </a>
 		                </div>
 		                <div style="float: left">
-		                	<small><small>Posts 343</small></small><br>
-							<small><small>Respostas 343</small></small><br>
-							<small><small>Projetos 733</small></small>
+		                	<small><small>Posts <?php echo $this->objItem->countItemByUser( $replie->getUser()->getId_user() )?></small></small><br>
+							<small><small>Respostas <?php echo $this->objReplie->countReplieByUser( $replie->getUser()->getId_user() );?></small></small><br>
 		                </div>
 					</div>
 				</div>
@@ -78,6 +80,7 @@
 	<?php } ?>
 	
 	<!-- Verificar se esta logado -->
+	<?php if( Session::get('loggedIn') ) { ?>
 	<ul class="ca qo anx forum-ul-resposta">
 	
 		<li class="qf b aml row">
@@ -100,7 +103,8 @@
 		</li>
 		
 	</ul>
-
+	<?php } ?>
+	
 </div>
 
 <script src='<?php echo URL; ?>util/tinymce/tinymce.min.js'></script>
