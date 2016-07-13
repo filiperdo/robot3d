@@ -23,8 +23,10 @@ class Post extends Controller {
 	/** 
 	* Metodo editForm
 	*/
-	public function form( $id = NULL )
+	public function form( $id_post = NULL )
 	{
+		Session::init();
+		
 		$this->view->title = "Cadastrar Post";
 		$this->view->action = "create";
 		$this->view->obj = $this->model;
@@ -34,25 +36,45 @@ class Post extends Controller {
 		$objCategoria = new Category_Model();
 		$this->view->listCategory = $objCategoria->listarCategory();
 		
-		if( $id ) 
+		$this->view->path = '';
+		
+		if( $id_post == NULL )
 		{
-			$this->view->title = "Editar Post";
-			$this->view->action = "edit/".$id;
-			$this->view->obj = $this->model->obterPost( $id );
-
+			if( !Session::get('path_post') )
+			{
+				Session::set( 'path_post', 'img_post_' . date('Ymd_his') );
+			}
+				
+			$this->view->path = Session::get('path_post');
+		}
+		else
+		{
+			$this->view->title = "Editar Post: " . $id_post;
+			$this->view->action = "edit/".$id_post;
+			$this->view->obj = $this->model->obterPost( $id_post );
+			$this->view->path = $this->view->obj->getPath();
+			
 			if ( empty( $this->view->obj ) ) {
 				die( "Valor invalido!" );
 			}
 			
 			// Monta o array com as categorias vinculadas ao post
-			foreach ( $objCategoria->listCategoryByPost( $id ) as $category )
+			foreach ( $objCategoria->listCategoryByPost( $id_post ) as $category )
 			{
 				$this->view->array_category[] = $category->getId_category();
 			}
 		}
-
+		
+		// debug
+		$this->view->title = 'Session: ' . Session::get('path_post');
+		
 		$this->view->render( "header" );
+		
+		// debug
+		var_dump( $id_post );
+		
 		$this->view->render( "post/form" );
+		
 		$this->view->render( "footer" );
 	}
 
@@ -61,18 +83,22 @@ class Post extends Controller {
 	*/
 	public function create()
 	{
+		Session::init();
+		
 		$this->model->db->beginTransaction();
 		
 		/**
 		 * Cadastra o post
 		 * @var unknown
-		 */
+		 */	
 		$data = array(
 			'title' 		=> $_POST["title"], 
 			'content' 		=> $_POST["content"], 
-			'status' 		=> $_POST["status"], 
+			'status' 		=> $_POST["status"],
+			'path'			=> $_POST['path'],
+			'id_user'		=> Session::get('userid')
 		);
-
+		
 		if( !$id_post = $this->model->create( $data ) )
 		{
 			$this->model->db->rollBack();
@@ -97,6 +123,9 @@ class Post extends Controller {
 				header("location: " . URL . "post?st=".$msg);
 			}
 		}
+		
+		// Destruir sessao do path do post
+		Session::destroy('path_post');
 		
 		/**
 		 * Realiza o commit e retorna a view
@@ -155,6 +184,7 @@ class Post extends Controller {
 		 * Realiza o commit e retorna a view
 		 */
 		$this->model->db->commit();
+		
 		$msg = base64_encode( "OPERACAO_SUCESSO" );
 		header("location: " . URL . "post?st=".$msg);
 	}
@@ -164,15 +194,20 @@ class Post extends Controller {
 	*/
 	public function delete( $id )
 	{
+		// deletar primeiro os ids da tabela post_categor
 		
 		$this->model->delete( $id ) ? $msg = base64_encode( "OPERACAO_SUCESSO" ) : $msg = base64_encode( "OPERACAO_ERRO" );
 
 		header("location: " . URL . "post?st=".$msg);
 	}
 	
-	
+	/**
+	 * Faz o upload das imagens recebidas de um form
+	 */
 	public function wideimage_ajax()
 	{
+		Session::init();
+		
 		require_once 'util/wideimage/WideImage.php';
 		
 		date_default_timezone_set("Brazil/East");
@@ -180,9 +215,9 @@ class Post extends Controller {
 		$name 	= $_FILES['fileUpload']['name'];
 		$tmp_name = $_FILES['fileUpload']['tmp_name'];
 		
-		$allowedExts = array(".gif", ".jpeg", ".jpg", ".png", ".bmp");
+		$allowedExts = array(".gif", ".jpeg", ".jpg", ".png");
 		
-		$dir = URL . 'public/img/post/';
+		$dir = 'public/img/post/'.Session::get('path_post').'/';
 		
 		for($i = 0; $i < count($tmp_name); $i++)
 		{
@@ -190,16 +225,36 @@ class Post extends Controller {
 			
 			if(in_array($ext, $allowedExts))
 			{
-				$new_name = date("Y.m.d-H.i.s") ."-". $i . $ext;
+				$new_name = strtolower( PREFIX_SESSION ).date('Ymd_his').'_'.$name[$i];
 				
-				$image = WideImage::load($tmp_name[$i]);
+				// cria a img default =========================================
+				$image = WideImage::load( $tmp_name[$i] );
+				$image = $image->resize(800, 600, 'inside');
+				//$image = $image->crop('center', 'center', 170, 180);
 		
-				$image = $image->resize(170, 180, 'outside');
-				$image = $image->crop('center', 'center', 170, 180);
-		
-				$image->saveToFile($dir.$new_name);
+				// verifica so o diretorio existe
+				// caso contrario, criamos o diretorio com permissao para escrita
+				if( !is_dir( $dir ) )
+					mkdir( $dir, 0777);
+				
+				$image->saveToFile( $dir . $new_name );
+				
+				// cria a img thumb ==========================================
+				$image_thumb = WideImage::load( $tmp_name[$i] );
+				$image_thumb = $image_thumb->resize(170, 150, 'outside');
+				$image_thumb = $image_thumb->crop('center', 'center', 170, 150);
+				
+				$dir_thumb = $dir.'thumb/';
+				// verifica so o diretorio existe
+				// caso contrario, criamos o diretorio com permissao para escrita
+				if( !is_dir( $dir_thumb ) )
+					mkdir( $dir_thumb, 0777);
+				
+				$image_thumb->saveToFile( $dir_thumb . $new_name );
 			}
 		}
+		
+		//echo 'ok';
 	}
 	
 }

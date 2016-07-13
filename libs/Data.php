@@ -145,14 +145,24 @@ class Data
 	 * @param unknown $id
 	 * @return unknown[]
 	 */
-	static public function getImgPost( $type, $id )
+	static public function getImgPost( $type, $path, $thumb = NULL )
 	{
 		$array_img = array();
 		
-		foreach( glob('public/img/'. $type .'/'. $id .'/*.*' ) as $key => $imagem )
+		if( $thumb )
 		{
-			$array_img[] = $imagem;
+			foreach( glob('public/img/'. $type .'/'. $path .'/thumb/*.*' ) as $key => $imagem )
+			{
+				$array_img[] = $imagem;
+			}
 		}
+		else {
+			foreach( glob('public/img/'. $type .'/'. $path .'/*.*' ) as $key => $imagem )
+			{
+				$array_img[] = $imagem;
+			}
+		}
+		
 		
 		return $array_img;
 	}

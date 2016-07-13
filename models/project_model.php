@@ -2,7 +2,7 @@
 
 /** 
  * Classe Project
- * @author __ 
+ * @author __ Filipe Rodrigues | filiperdo@gmail.com
  *
  * Data: 01/06/2016
  */ 
@@ -22,6 +22,7 @@ class Project_Model extends Model
 	private $level;
 	private $date;
 	private $user;
+	private $path;	
 
 	public function __construct()
 	{
@@ -35,6 +36,7 @@ class Project_Model extends Model
 		$this->level = '';
 		$this->date = '';
 		$this->user = new User_Model();
+		$this->path = '';
 	}
 
 	/** 
@@ -80,6 +82,11 @@ class Project_Model extends Model
 		$this->user = $user;
 	}
 
+	public function setPath( $path )
+	{
+		$this->path = $path;
+	}
+
 	/** 
 	* Metodos get's
 	*/
@@ -121,6 +128,11 @@ class Project_Model extends Model
 	public function getUser()
 	{
 		return $this->user;
+	}
+
+	public function getPath()
+	{
+		return $this->path;
 	}
 
 
@@ -256,6 +268,8 @@ class Project_Model extends Model
 		$objUser = new User_Model();
 		$objUser->obterUser( $row["id_user"] );
 		$this->setUser( $objUser );
+
+		$this->setPath( $row['path'] ) ;
 
 		return $this;
 	}

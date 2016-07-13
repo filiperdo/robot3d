@@ -21,6 +21,7 @@ class Post_Model extends Model
 	private $views;
 	private $status;
 	private $user;
+	private $path;
 
 	public function __construct()
 	{
@@ -33,6 +34,7 @@ class Post_Model extends Model
 		$this->views = '';
 		$this->status = '';
 		$this->user = new User_Model();
+		$this->path = '';
 	}
 
 	/** 
@@ -73,6 +75,11 @@ class Post_Model extends Model
 		$this->user = $user;
 	}
 
+	public function setPath( $path )
+	{
+		$this->path = $path;
+	}
+
 	/** 
 	* Metodos get's
 	*/
@@ -109,6 +116,11 @@ class Post_Model extends Model
 	public function getUser()
 	{
 		return $this->user;
+	}
+
+	public function getPath()
+	{
+		return $this->path;
 	}
 
 
@@ -272,6 +284,8 @@ class Post_Model extends Model
 		$objUser = new User_Model();
 		$objUser->obterUser( $row['id_user'] );
 		$this->setUser( $objUser );
+
+		$this->setPath( $row['path'] ) ;
 
 		return $this;
 	}

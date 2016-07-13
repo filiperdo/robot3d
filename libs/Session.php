@@ -19,12 +19,21 @@ class Session
         return $_SESSION[ PREFIX_SESSION . $key ];
     }
     
-    public static function destroy()
+    public static function destroy( $key = NULL )
     {
-        unset($_SESSION[ PREFIX_SESSION . 'loggedIn']);
-        unset($_SESSION[ PREFIX_SESSION . 'user_name']);
-        unset($_SESSION[ PREFIX_SESSION . 'userid']);
-        session_destroy();
+    	if( $key )
+    	{
+    		unset($_SESSION[ PREFIX_SESSION . $key ]);
+    	}
+    	else 
+    	{
+    		unset($_SESSION[ PREFIX_SESSION . 'loggedIn']);
+	        unset($_SESSION[ PREFIX_SESSION . 'user_name']);
+	        unset($_SESSION[ PREFIX_SESSION . 'userid']);
+	        unset($_SESSION[ PREFIX_SESSION . 'id_post_created']);
+	        session_destroy();
+    	}
+        
     }
     
 }
