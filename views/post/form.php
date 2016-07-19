@@ -16,7 +16,7 @@
 <div class="row">
 
 <div class="col-md-8">
-<form id="form1" name="form1" method="post" action="<?php echo URL;?>post/<?php echo $this->action;?>/" class="form-horizontal">
+<form id="form1" name="form1" method="post" action="<?php echo URL;?>post/<?php echo $this->action;?>" class="form-horizontal" enctype="multipart/form-data">
 <input type="hidden" name="idPost" value="<?=$this->obj->getId_post()?>" />
 <input type="hidden" name="path" value="<?=$this->path?>" />
 
@@ -29,11 +29,21 @@
 
 <div class="form-group">
 	<label for="status" class="col-sm-2 control-label">Status</label> 
-	<div class="col-sm-10"> 
+	<div class="col-sm-3"> 
 		<select name="status" class="form-control">
 			<option value="DRAFT" <?php if( $this->obj->getStatus() == 'DRAFT' ){?>selected="selected"<?php }?>>Rascunho</option>
 			<option value="PUBLISHED" <?php if( $this->obj->getStatus() == 'PUBLISHED' ){?>selected="selected"<?php }?>>Publicado</option>
 		</select>
+	</div>
+	
+	<div class="col-sm-7"> 
+		
+		<div class="input-group">
+		  <span class="input-group-addon" id="basic-addon1"><i class="glyphicon glyphicon-picture"></i></span>
+		  
+		  <input type="text" name="mainpicture" id="mainpicture" placeholder="Link da imagem de capa" class="form-control" value="<?php echo $this->obj->getMainpicture(); ?>" />
+		</div>
+	
 	</div>
 </div>
 
@@ -84,7 +94,8 @@
 			<div class="row" style="margin-bottom: 12px">
 				<div class="col-md-4"><img alt="" src="<?=URL.$img?>" width="100px"></div>
 				<div class="col-md-6">
-					<a href="" class="btn btn-primary btn-sm"><i class="glyphicon glyphicon-link"></i> Link</a>
+					<?php $link_img = str_replace('/thumb/', '/', $img);?>
+					<button class="bt-copy btn btn-primary btn-sm" data-clipboard-action="copy" data-clipboard-text="<?='../../'.$link_img?>"><i class="glyphicon glyphicon-link"></i> Copy</button>
 					<a href="" class="btn btn-danger btn-sm"><i class="glyphicon glyphicon-trash"></i> Deletar</a>
 				</div>
 			</div>
@@ -127,7 +138,16 @@
 		alert('ok');
 		//$('#output-files').load('http://localhost/robot3d/post/teste');
 	}
-	
+
+	var clipboard = new Clipboard('.bt-copy');
+
+    clipboard.on('success', function(e) {
+        console.log(e);
+    });
+
+    clipboard.on('error', function(e) {
+        console.log(e);
+    });
 	
 </script>
 
@@ -138,6 +158,7 @@
 	  selector: '#content',
 	  theme: 'modern',
 	  menubar:false,
+	  image_prepend_url: "http://localhost/robot3d/",
 	  plugins: [
 	    'advlist autolink lists link image charmap print preview hr anchor pagebreak',
 	    'searchreplace wordcount visualblocks visualchars code fullscreen',

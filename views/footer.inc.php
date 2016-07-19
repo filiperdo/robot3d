@@ -2,7 +2,6 @@
 </div><!-- gc -->
 </div><!-- by amt -->
 
-
 <div class="cd fade" id="msgModal" tabindex="-1" role="dialog" aria-labelledby="msgModal" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">

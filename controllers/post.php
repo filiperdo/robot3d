@@ -29,6 +29,7 @@ class Post extends Controller {
 		
 		$this->view->title = "Cadastrar Post";
 		$this->view->action = "create";
+		$this->view->js[] = 'clipboard.min.js';
 		$this->view->obj = $this->model;
 		$this->view->array_category = array();
 		
@@ -44,7 +45,7 @@ class Post extends Controller {
 			{
 				Session::set( 'path_post', 'img_post_' . date('Ymd_his') );
 			}
-				
+			Session::set('act_post', 'create');
 			$this->view->path = Session::get('path_post');
 		}
 		else
@@ -52,7 +53,10 @@ class Post extends Controller {
 			$this->view->title = "Editar Post: " . $id_post;
 			$this->view->action = "edit/".$id_post;
 			$this->view->obj = $this->model->obterPost( $id_post );
+			
 			$this->view->path = $this->view->obj->getPath();
+			Session::set( 'path_edit_post', $this->view->obj->getPath() );
+			Session::set('act_post', 'edit');
 			
 			if ( empty( $this->view->obj ) ) {
 				die( "Valor invalido!" );
@@ -66,12 +70,13 @@ class Post extends Controller {
 		}
 		
 		// debug
-		$this->view->title = 'Session: ' . Session::get('path_post');
+		if( Session::get('act_post') == 'create' )
+			$this->view->title = 'Session: ' . Session::get('act_post').': '.Session::get('path_post');
+		else
+			$this->view->title = 'Session: ' . Session::get('act_post').': '.Session::get('path_edit_post');
+		// end debug -------------------------------------
 		
 		$this->view->render( "header" );
-		
-		// debug
-		var_dump( $id_post );
 		
 		$this->view->render( "post/form" );
 		
@@ -96,6 +101,7 @@ class Post extends Controller {
 			'content' 		=> $_POST["content"], 
 			'status' 		=> $_POST["status"],
 			'path'			=> $_POST['path'],
+			'mainpicture'	=> str_replace('../', '', $_POST['mainpicture']),
 			'id_user'		=> Session::get('userid')
 		);
 		
@@ -149,9 +155,10 @@ class Post extends Controller {
 		$data = array(
 			'title' 		=> $_POST["title"], 
 			'content' 		=> $_POST["content"], 
-			'status' 		=> $_POST["status"], 
+			'status' 		=> $_POST["status"],
+			'mainpicture'	=> str_replace('../', '', $_POST['mainpicture'])
 		);
-
+		
 		if( !$this->model->edit( $data, $id ) )
 		{
 			$this->model->db->rollBack();
@@ -163,7 +170,7 @@ class Post extends Controller {
 		 * Cadastra as categorias do post
 		 */
 		// Deleta todas as categorias vinculadas ao post
-		$this->model->db->deleteComposityKey('post_category', "id_post = {$id}" );
+		$this->model->db->deleteComposityKey( 'post_category', "id_post = {$id}" );
 		
 		foreach( $_POST['categoria'] as $id_categoria )
 		{
@@ -180,6 +187,11 @@ class Post extends Controller {
 			}
 		}
 		
+		
+		
+		// Destruir sessao do path do post
+		Session::destroy('path_post');
+		
 		/**
 		 * Realiza o commit e retorna a view
 		 */
@@ -195,6 +207,9 @@ class Post extends Controller {
 	public function delete( $id )
 	{
 		// deletar primeiro os ids da tabela post_categor
+		
+		// estudar o que fazer com as imagens
+		// talvez deixar a opcao para selecionar opcionalmente para deletar o post e as imagens
 		
 		$this->model->delete( $id ) ? $msg = base64_encode( "OPERACAO_SUCESSO" ) : $msg = base64_encode( "OPERACAO_ERRO" );
 
@@ -217,7 +232,10 @@ class Post extends Controller {
 		
 		$allowedExts = array(".gif", ".jpeg", ".jpg", ".png");
 		
-		$dir = 'public/img/post/'.Session::get('path_post').'/';
+		// Verifica a acao para pegar a variavel do path correta
+		Session::get('act_post') == 'create' ? $var_path = Session::get('path_post') : $var_path = Session::get('path_edit_post');
+		
+		$dir = 'public/img/post/'. $var_path .'/';
 		
 		for($i = 0; $i < count($tmp_name); $i++)
 		{

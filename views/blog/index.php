@@ -6,15 +6,18 @@
 	  <li><?=$this->obj->getTitle()?></li>
 	</ol>
 
+	<?php if( !empty( $this->obj->getMainpicture() ) ) { ?>
 	<div class="qv rc aog alu">
-		<div class="qx" style="background-image: url(<?php echo URL; ?>public/img/unsplash_1.jpg); height: 350px;"></div>
+		<div class="qx" style="background: url(<?php echo URL . $this->obj->getMainpicture(); ?>) center center; height: 250px;"></div>
 	</div>
+	<?php } ?>
 
 	<ul class="ca qo anx">
 		<li class="qf b aml">
 	        <div class="qw dj">
-	        	<h5 class="qy"><?=$this->obj->getTitle()?></h5>
-				<p class="alu"><?=$this->obj->getContent()?></p>
+	        	<h3 ><?=$this->obj->getTitle()?></h3>
+	        	<p class="alu"><small><?=Data::formatDateShort($this->obj->getDate())?></small></p>
+				<p><?=$this->obj->getContent()?></p>
 			</div>
 		</li>
 		
@@ -90,7 +93,7 @@
 	              <a href="<?php echo URL?>blog/index/<?php echo $post->getId_post();?>">
 	              	<strong><?php echo $post->getTitle(); ?> </strong> 
 	              </a>
-	              <p><small><?php echo Data::timeAgo( strtotime( $post->getDate() ) );?> | <?php echo $post->getViews(); ?> Views</small></p>
+	              <p><small><?php echo Data::timeAgo( $post->getDate() );?> | <?php echo $post->getViews(); ?> Views</small></p>
 	            </div>
 	          </li>
 	          <?php } ?>

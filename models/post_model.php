@@ -22,6 +22,7 @@ class Post_Model extends Model
 	private $status;
 	private $user;
 	private $path;
+	private $mainpicture;
 
 	public function __construct()
 	{
@@ -35,6 +36,7 @@ class Post_Model extends Model
 		$this->status = '';
 		$this->user = new User_Model();
 		$this->path = '';
+		$this->mainpicture = '';
 	}
 
 	/** 
@@ -80,6 +82,11 @@ class Post_Model extends Model
 		$this->path = $path;
 	}
 
+	public function setMainpicture( $mainpicture )
+	{
+		$this->mainpicture = $mainpicture;
+	}
+
 	/** 
 	* Metodos get's
 	*/
@@ -123,6 +130,10 @@ class Post_Model extends Model
 		return $this->path;
 	}
 
+	public function getMainpicture()
+	{
+		return $this->mainpicture;
+	}
 
 	/** 
 	* Metodo create
@@ -195,11 +206,15 @@ class Post_Model extends Model
 
 		if ( isset( $_POST["like"] ) )
 		{
-			$sql .= "where id_post like :id "; // Configurar o like com o campo necessario da tabela 
+			$sql .= "where title like :id "; // Configurar o like com o campo necessario da tabela 
+			$sql .= "order by date desc ";
 			$result = $this->db->select( $sql, array("id" => "%{$_POST["like"]}%") );
 		}
 		else
+		{
+			$sql .= "order by date desc ";
 			$result = $this->db->select( $sql );
+		}
 
 		return $this->montarLista($result);
 	}
@@ -286,6 +301,7 @@ class Post_Model extends Model
 		$this->setUser( $objUser );
 
 		$this->setPath( $row['path'] ) ;
+		$this->setMainpicture( $row['mainpicture'] );
 
 		return $this;
 	}

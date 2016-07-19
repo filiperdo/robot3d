@@ -23,7 +23,8 @@ class Session
     {
     	if( $key )
     	{
-    		unset($_SESSION[ PREFIX_SESSION . $key ]);
+    		if( isset( $_SESSION[ PREFIX_SESSION . $key ] ) )
+    			unset($_SESSION[ PREFIX_SESSION . $key ]);
     	}
     	else 
     	{
@@ -37,3 +38,4 @@ class Session
     }
     
 }
+

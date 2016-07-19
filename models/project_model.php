@@ -22,7 +22,8 @@ class Project_Model extends Model
 	private $level;
 	private $date;
 	private $user;
-	private $path;	
+	private $path;
+	private $mainpicture;
 
 	public function __construct()
 	{
@@ -37,6 +38,7 @@ class Project_Model extends Model
 		$this->date = '';
 		$this->user = new User_Model();
 		$this->path = '';
+		$this->mainpicture = '';
 	}
 
 	/** 
@@ -87,6 +89,11 @@ class Project_Model extends Model
 		$this->path = $path;
 	}
 
+	public function setMainpicture( $mainpicture )
+	{
+		$this->mainpicture = $mainpicture;
+	}
+
 	/** 
 	* Metodos get's
 	*/
@@ -133,6 +140,11 @@ class Project_Model extends Model
 	public function getPath()
 	{
 		return $this->path;
+	}
+
+	public function getMainpicture()
+	{
+		return $this->mainpicture;
 	}
 
 
@@ -268,8 +280,9 @@ class Project_Model extends Model
 		$objUser = new User_Model();
 		$objUser->obterUser( $row["id_user"] );
 		$this->setUser( $objUser );
-
+		
 		$this->setPath( $row['path'] ) ;
+		$this->setMainpicture( $row['mainpicture'] );
 
 		return $this;
 	}
