@@ -7,7 +7,7 @@
 	</ol>
 
 	<div class="qv rc aog alu">
-		<div class="qx" style="background-image: url(<?php echo URL; ?>public/img/unsplash_1.jpg); height: 350px;"></div>
+		<div class="qx" style="background: url(<?php echo URL . $this->obj->getMainpicture() ; ?>) center center; background-size:100%; height: 350px;"></div>
 	</div>
 
 	<ul class="ca qo anx">
@@ -49,7 +49,7 @@
 	              <a href="<?php echo URL . 'user/dashboard/' . base64_encode( $this->obj->getUser()->getId_user() ); ?>">
 	              	<strong><?php echo $this->obj->getUser()->getName();?> </strong> @<?php echo $this->obj->getUser()->getLogin();?>
 	              </a>
-	              <p><small><a href="#">5 Projetos</a> | <a href="#">34 Seguidores</a></small></p>
+	              <p><small><a href="#"><?php echo $this->obj->getTotalProjectByUser( $this->obj->getUser()->getId_user() );?> Projetos</a> | <a href="#">34 Seguidores</a></small></p>
 	              <div class="aoa">
 	                <button class="cg ts fx"><span class="h vc"></span> Seguir</button>
 	              </div>
@@ -59,7 +59,7 @@
 	        
 	        </div>
 	        <div class="qz">
-	          Publicado em 30 de abril de 2016
+	          Publicado em <?php echo Data::formatDateShort( $this->obj->getDate() );?>
 	        </div>
 	      </div>
 		
@@ -69,7 +69,7 @@
 	          <?php for( $i=0; $i<5; $i++ ){?>
 	          <ul class="ano" style="display: inline-block;">
 	          	<li class="anp" style="margin: 0 4px">
-		          <a class="ttp" href="#" data-toggle="tooltip" data-placement="top" title="Name User">
+		          <a class="ttp" data-toggle="tooltip" data-placement="top" title="Name User">
 		              <img class="cu" src="<?php echo URL; ?>public/img/avatar-fat.jpg">
 		          </a>
 	          </li>
@@ -80,17 +80,10 @@
 	      
 	      <div class="row" style="margin-bottom: 20px;">
 	      	<div class="col-md-12">
-	      	
-	      		<p>
-	      		<?php for( $i=0; $i<5; $i++ ) {?>
-	      		<a href="#"><i class="glyphicon glyphicon-star"></i></a>
-	      		<?php } ?>
-	      		</p>
-	      	
-	      		<a class="cg ts fx ppv" tabindex="0" role="button" data-toggle="popover2" data-placement="top" data-trigger="focus" title="Titulo" data-content=" 1 - 2 - 3 - 4 - 5 ">
+	      		<!--<a class="cg ts fx ppv" tabindex="0" role="button" data-toggle="popover2" data-placement="top" data-trigger="focus" title="Titulo" data-content=" 1 - 2 - 3 - 4 - 5 ">
 	      			<i class="h aiw"></i> Gostei
-	      		</a>
-	      		<a href="#" class="cg ts fx"><i class="h ahf"></i> Compartilhar</a>
+	      		</a>-->
+	      		<a href="#" class="cg ts fx btshare"><i class="h ahf "></i> Compartilhar</a>&ensp;
 	      		<a href="#" class="cg ts fx"><i class="h aja"></i> Eu fiz um</a>
 	      	</div>
 	      </div>
@@ -111,16 +104,82 @@
 	        </div>
 	      </div>
 
-    </div><!-- .gn Coluna direita -->
 
+	      <div class="row" style="margin-bottom: 20px;">
+	      	<div class="col-md-12">
+	      		
+	      		<div class="row">
+	      			<div class="col-md-12">
+	      				<strong>Sua avaliação</strong>
+	      			</div>
+		      		<div class="col-md-12">
+			      		<div class="star-box first">
+				      		<a href="#">
+				      			<i class="glyphicon glyphicon-star-empty"></i>
+				      		</a>
+			      		</div>
+
+			      		<div class="star-box meio">				      		
+				      		<a href="#">
+				      			<i class="glyphicon glyphicon-star-empty"></i>
+				      			<i class="glyphicon glyphicon-star-empty"></i>
+				      		</a>
+			      		</div>
+
+			      		<div class="star-box meio">
+				      		<a href="#">
+				      			<i class="glyphicon glyphicon-star-empty"></i>
+				      			<i class="glyphicon glyphicon-star-empty"></i>
+				      			<i class="glyphicon glyphicon-star-empty"></i>
+				      		</a>
+			      		</div>
+
+			      		<div class="star-box meio">
+			      			<a href="#">
+			      				<i class="glyphicon glyphicon-star-empty"></i>
+			      				<i class="glyphicon glyphicon-star-empty"></i>
+			      				<i class="glyphicon glyphicon-star-empty"></i>
+			      				<i class="glyphicon glyphicon-star-empty"></i>
+			      			</a>
+			      		</div>
+
+			      		<div class="star-box last">
+			      			<a href="#">
+			      				<i class="glyphicon glyphicon-star-empty"></i>
+			      				<i class="glyphicon glyphicon-star-empty"></i>
+			      				<i class="glyphicon glyphicon-star-empty"></i>
+			      				<i class="glyphicon glyphicon-star-empty"></i>
+			      				<i class="glyphicon glyphicon-star-empty"></i>
+			      			</a>
+			      		</div>
+		      		</div>
+	      		</div>
+	      	
+	      		
+	      	</div>
+	      </div>
+
+    </div><!-- .gn Coluna direita -->
 
 <script>
 
 	$(function () {
 	  $('.ttp').tooltip();
 
-	  $('.ppv').popover();
+	  //$('.ppv').popover();
+
+	  $('.btshare').popover({ html: true, trigger: 'focus', placement: 'top', content: $('#pshare').html() }); 
+	  
 	});
 
 </script>
+
+
+<div id="pshare" style="display: none">
+	<a href=""><i class="h aau" style="font-size: 22px"></i></a>&ensp;
+	<a href=""><i class="h ajo" style="font-size: 22px"></i></a>&ensp;
+	<a href=""><i class="h aft" style="font-size: 22px"></i></a>&ensp;
+	<a href=""><i class="h abx" style="font-size: 22px"></i></a>
+</div>
+
     

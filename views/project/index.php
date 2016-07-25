@@ -15,7 +15,7 @@
 	<?php foreach( $this->listarProject as $project ) { ?>
 	<div class="col-md-4">
       <div class="qv rc aog alu">
-        <div class="qx" style="background-image: url(<?php echo URL; ?>public/img/unsplash_1.jpg);"></div>
+        <div class="qx" style="background: url(<?php echo URL . $project->getMainpicture(); ?>) center center; background-size: 100%; overflow: hidden;"></div>
         
         <div class="qw dj">
 			

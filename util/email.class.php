@@ -72,6 +72,7 @@ class Email
         $this->mail->ClearAllRecipients();
         $this->mail->ClearAttachments();
 
+        
         if ($enviado)
         {
             echo 'Enviou';
@@ -82,6 +83,7 @@ class Email
             echo 'Não enviou';
             //return false;
         }
+
     }
     
     public function enviarBoasVindas()
@@ -129,9 +131,9 @@ class Email
     	$this->mail->Body .= "Obrigado por se cadastrar na comunidade do Robo 3D!<br/><br/>";
     	$this->mail->Body .= "Para ativar a sua conta, por favor clique no link abaixo:<br/> ";
     	
-    	$this->mail->Body .= "<a href='".URL."user/activate/{$login}_{$token}' target='_blank'>".URL."user/activate/{$login}_{$token}</a><br/><br/>";
+    	$this->mail->Body .= "<a href='".URL."user/activate/{$token}' target='_blank'>".URL."user/activate/{$token}</a><br/><br/>";
     	
-    	$this->mail->Body .= "Agora você pode começar a usar nossos serviços.<br/> ";
+    	$this->mail->Body .= "Agora você pode começar a usar todos os nossos serviços.<br/> ";
     	$this->mail->Body .= "Esperamos que você aproveite o máximo que este portal pode te oferecer. ";
     	
     	$this->mail->Body .= $this->corpoRodape;
@@ -149,6 +151,7 @@ class Email
      */
     public function enviarSenhaRecuperada( User_Model $user )
     {
+    	
     	$this->mail->Subject = "Robo3D - Senha!";
     	$this->mail->AddAddress( $user->getEmail() );
     
@@ -166,6 +169,29 @@ class Email
     
     	$enviar = $this->enviar();
     
+    	return $enviar;
+    	
+    }
+    
+    
+    /**
+     * Teste de envio
+     * @return unknown
+     */
+    public function teste_envio()
+    {
+    	$this->mail->Subject = "Robo3D - Teste!";
+    	$this->mail->AddAddress( 'filiperdo@gmail.com' );
+    	
+    	// Configura o corpo do email
+    	// =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+    	$this->mail->Body  = "Oi <br/>";
+    	
+    	
+    	$this->mail->Body .= $this->corpoRodape;
+    	
+    	$enviar = $this->enviar();
+    	
     	return $enviar;
     }
 

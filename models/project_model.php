@@ -228,6 +228,26 @@ class Project_Model extends Model
 	}
 
 	/**
+	 * lista os projetos publicados por um usuario
+	 * @param unknown $id_user
+	 * @param unknown $limit
+	 */
+	public function listarProjectByUser( $id_user, $limit = NULL )
+	{
+		$sql  = "select * ";
+		$sql .= "from project as p ";
+		$sql .= "where p.id_user = :id ";
+		$sql .= "order by p.date desc ";
+		
+		if( $limit )
+			$sql .= "limit {$limit} ";
+		
+		$result = $this->db->select( $sql, array( "id" => $id_user ) );
+		
+		return $this->montarLista($result);
+	}
+	
+	/**
 	 * lista os projetos para a home unindo com os posts
 	 * @param unknown $limit
 	 */
@@ -243,6 +263,20 @@ class Project_Model extends Model
 		$result = $this->db->select($sql);
 	
 		return $this->montarLista($result);
+	}
+	
+	/**
+	 * Conta quantos projetos foram publicados por um usuario
+	 * @param unknown $id_user
+	 */
+	public function getTotalProjectByUser( $id_user )
+	{
+		$sql  = "select count(p.id_project) as total ";
+		$sql .= "from project as p ";
+		$sql .= "where p.id_user = :id ";
+		
+		$result = $this->db->select( $sql, array("id" => $id_user) );
+		return $result[0]['total'];
 	}
 	
 	/** 

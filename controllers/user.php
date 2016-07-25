@@ -49,11 +49,34 @@ class User extends Controller {
 	{
 		$this->view->title = "Dashboard";
 		
+		require_once 'models/project_model.php';
+		$objProject = new Project_Model();
+		
+		$this->view->listProject = $objProject->listarProjectByUser( base64_decode( $id ) );
+		
 		$this->view->obj = $this->model->obterUser( base64_decode( $id ) );
 		
 		$this->view->render( "header.inc" );
 		$this->view->render( "user/dashboard" );
 		$this->view->render( "footer.inc" );
+	}
+	
+	/**
+	 * Metodo activate
+	 * Responsavel por efetivar a ativacao do login
+	 * @param unknown $token
+	 */
+	public function activate( $token )
+	{
+		$objUser = $this->model->obterUserByToken( $token );
+		
+		$data = array(
+			'status' => 'ACTIVE'
+		);
+	
+		$this->model->edit( $data, $objUser->getId_user() ) ? $msg = base64_encode( "CADATRO_ATIVADO" ) : $msg = base64_encode( "OPERACAO_ERRO" );
+	
+		header("location: " . URL . "login/?st=".$msg);
 	}
 	
 	public function testeEmail( $email )
@@ -66,6 +89,33 @@ class User extends Controller {
 	*/
 	public function create()
 	{
+		/**
+		 * Inicio Recaptcha
+		 */
+		$url_test = "https://www.google.com/recaptcha/api/siteverify";
+		$private_key = "6LfdryUTAAAAAKZvVxny-vvA-7GeSlorCYlqOayG";
+		
+		$response = file_get_contents($url_test."?secret=".$private_key."&response=".$_POST['g-recaptcha-response']."&remoteip=".$_SERVER['REMOTE_ADDR']);
+		
+		$data = json_decode( $response );
+		
+		if( $data->success == false )
+		{
+			Session::init();
+		
+			foreach( $_POST as $key => $valor )
+				Session::set('post_' . $key, $valor);
+			
+			$msg = base64_encode( 'RECAPTCHA_INCORRETO' );
+			header("location: " . URL . "login/register/?st=".$msg);
+			exit();
+		}
+		/**
+		 * -------------------------------------------------------------------
+		 * -------------------------------------------------------------------
+		 */
+		
+		
 		/**
 		 * Verifica a formatacao do email
 		 * Configura os dados de cadastro em uma sessao para retornar a view de cadastro
@@ -98,7 +148,9 @@ class User extends Controller {
 			exit();
 		}
 		
-		$token = 'abc';
+		// gera o token com a funcao uniqid
+		// isto irá criar um identificador de 32 caracteres
+		$token = md5(uniqid(rand(), true));
 		
 		$data = array(
 			'login' 		=> $_POST["login"], 
@@ -121,7 +173,8 @@ class User extends Controller {
 		$objEmail->enviarValidacaoCadastro( $_POST["login"], $_POST["email"], $token );
 		// =-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 		
-		header("location: " . URL . "login?st=".$msg);
+		//header("location: " . URL . "login?st=".$msg);
+		echo "<script>window.location='".URL."login?st=". $msg ."'</script>";
 		exit();
 	}
 

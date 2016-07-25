@@ -270,6 +270,20 @@ class User_Model extends Model
 		$result = $this->db->select( $sql, array("email" => trim($email))  );
 		return $this->montarObjeto( $result[0] );
 	}
+	
+	/**
+	 * Metodo obterUserByToken
+	 * @param unknown $id_user
+	 */
+	public function obterUserByToken( $token )
+	{
+		$sql  = "select * ";
+		$sql .= "from user as u ";
+		$sql .= "where u.token = :token ";
+	
+		$result = $this->db->select( $sql, array("token" => trim($token))  );
+		return $this->montarObjeto( $result[0] );
+	}
 
 	/** 
 	* Metodo listarUser

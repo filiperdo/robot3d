@@ -12,3 +12,25 @@
 .forum-ul-resposta{
 	margin-top: -14px;
 }
+
+.star-box{
+	float: left;
+	margin: 10px 0;
+}
+.star-box.first{
+	border-right: 1px solid #999;
+	padding-right: 10px;
+}
+.star-box.meio{
+	border-right: 1px solid #999;
+	padding: 0 10px;
+}
+.star-box.last{
+	padding-left: 10px;
+}
+
+
+.mainpicture-list-project{
+	width: 100%;
+	max-height: 100px;
+}

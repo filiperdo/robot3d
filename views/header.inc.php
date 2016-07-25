@@ -43,7 +43,9 @@
       	border:1px solid #f00;
       }
     </style>
-
+    
+	<script src='https://www.google.com/recaptcha/api.js'></script>
+	
   </head>
 
 <body class="ang">

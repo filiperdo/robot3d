@@ -14,7 +14,9 @@
           </h5>
 
           <p class="alu">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
-
+		  
+		  <p><button class="cg ts fx"><span class="h aah"></span> Editar perfil</button></p>
+          
           <ul class="aoi">
             <li class="aoj">
               <a href="#userModal" class="aku" data-toggle="modal">
@@ -30,6 +32,8 @@
               </a>
             </li>
           </ul>
+          
+          
           
         <?php } else { ?>
         

@@ -51,6 +51,14 @@
             
           </div>
           
+          
+          <div class="input-group" style="margin-top: 10px">
+          	
+            <div class="g-recaptcha" data-sitekey="6LfdryUTAAAAAIldRHtQbtNtc4GFGfJYLPj8w1rG"></div>
+            
+          </div>
+          
+          
           <div class="form-group" style="margin-top: 15px">
               <button type="submit" class="cg fp"><i class="h aju"></i> Cadastrar</button>
               <a href="<?php echo URL?>login" class="cg tu"><i class="h aak"></i> Login</a>

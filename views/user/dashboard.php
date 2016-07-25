@@ -82,14 +82,14 @@
               <h3 class="alc page-header">Projetos publicados</h3>
               
               <div class="row" style="margin-top: 20px">
-              <?php for( $i=0; $i<3; $i++ ){?>
+              <?php foreach( $this->listProject as $project ){?>
                 <div class="col-md-4">
                   <div class="qv rc aog">
-                    <div class="qx" style="background-image: url(../assets/img/instagram_4.jpg);"></div>
+                    <div class="qx" style="background: url(<?php echo URL . $project->getMainpicture() ; ?>) center center; background-size:100%; "></div>
                     <div class="qw dj">
 
-                      <h5 class="qy"><a href="#">Titulo projeto</a></h5>
-                      <p class="alu">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                      <h5 class="qy"><a href="<?php echo URL?>project/detail/<?php echo $project->getId_project(); ?>"><?php echo $project->getTitle(); ?></a></h5>
+                      <p class="alu"><?php echo $project->getContent(); ?></p>
 
                       <div class="row">
 						<div class="col-md-4 col-xs-4"><small><strong>456</strong><br>Views</small></div>
