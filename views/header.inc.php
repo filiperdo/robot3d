@@ -115,7 +115,8 @@
           </li>
           <?php } ?>
           <?php if( Session::get( 'loggedIn' ) ){?>
-          <li><a href="<?php echo URL?>login/logout"><i class="glyphicon glyphicon-off"></i> Logout</a></li>
+          <li><a href="<?php echo URL?>user/form/<?php echo base64_encode(Session::get('userid')); ?>"><i class="glyphicon glyphicon-pencil"></i> Editar Perfil</a></li>
+          <li><a href="<?php echo URL?>login/logout"><i class="glyphicon glyphicon-off"></i> Logout</a></li>          
           <?php } else { ?>
           <li><a href="<?php echo URL; ?>login">Login</a></li>
           <li><a href="<?php echo URL?>login/register">Cadastrar</a></li>
@@ -124,7 +125,8 @@
         
         <ul class="nav navbar-nav hidden"> 
           <!-- <li><a href="#" data-action="growl">Growl</a></li> -->
-          <li><a href="<?php echo URL?>login/logout"><i class="glyphicon glyphicon-off"></i> Logout</a></li>
+          <li><a href="<?php echo URL?>user/form/<?php echo base64_encode(Session::get('userid')); ?>"><i class="glyphicon glyphicon-pencil"></i> Editar Perfil</a></li>
+          <li><a href="<?php echo URL?>login/logout"><i class="glyphicon glyphicon-off"></i> Logout</a></li>          
         </ul>
         
       </div>

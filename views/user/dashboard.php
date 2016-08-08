@@ -9,11 +9,18 @@
             <a class="aku" href="profile/index.html"> <?php echo $this->obj->getName();?></a>
           </h5>
 
-          <p ><?php echo $this->obj->getBio(); ?></p>
+          <p><?php echo $this->obj->getBio(); ?></p>
 
           <div class="aoa">
-                <button class="cg ts fx"><span class="h vc"></span> Seguir</button>
-              </div>
+          	<?php if( Session::get('loggedIn') ) { ?>
+	          	<?php if( Session::get('userid') == $this->obj->getId_user() ) {?>
+	          		<a href="<?php echo URL?>user/form/<?php echo base64_encode(Session::get('userid')); ?>" class="cg ts fx"><span class="h aah"></span> Editar perfil</a>
+	          	<?php } else {?>
+	          		<button class="cg ts fx"><span class="h vc"></span> Seguir</button>
+	          	<?php } ?>
+          	<?php } ?>
+          	
+          </div>
         
         </div>
       </div>

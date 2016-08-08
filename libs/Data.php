@@ -115,6 +115,8 @@ class Data
 		$pasta = 'public/img/user/' . $id . '/';
 		$foto_padrao = URL . 'public/img/avatar-fat.jpg';
 		
+		$allowedExts = array(".gif", ".jpeg", ".jpg", ".png");
+		
 		if ( is_dir( $pasta ) )
 		{
 			$diretorio = dir($pasta);
@@ -123,7 +125,7 @@ class Data
 			while(($arquivo = $diretorio->read()) !== false)
 			{
 				$tipo = substr($arquivo,-4);
-				if( $tipo == ".jpg" || $tipo == ".png" )
+				if(in_array($tipo, $allowedExts)) // if( $tipo == ".jpg" || $tipo == ".png" )
 				{
 					return URL . $pasta . $arquivo ;
 					$retorno = true;
@@ -166,7 +168,6 @@ class Data
 		
 		return $array_img;
 	}
-
 
 	static function timeAgo( $timestamp )
 	{

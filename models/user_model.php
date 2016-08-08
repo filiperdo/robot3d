@@ -28,6 +28,8 @@ class User_Model extends Model
 	private $lastlogin;
 	private $status;
 	private $token;
+	private $github;
+	private $path;
 
 	public function __construct()
 	{
@@ -47,6 +49,8 @@ class User_Model extends Model
 		$this->lastlogin = '';
 		$this->status = '';
 		$this->token = '';
+		$this->github = '';
+		$this->path = '';
 	}
 
 	/** 
@@ -122,6 +126,16 @@ class User_Model extends Model
 		$this->token = $token;
 	}
 
+	public function setGithub( $github )
+	{
+		$this->github = $github;
+	}
+	
+	public function setPath( $path )
+	{
+		$this->path = $path;
+	}
+
 	/** 
 	* Metodos get's
 	*/
@@ -195,6 +209,15 @@ class User_Model extends Model
 		return $this->token;
 	}
 
+	public function getGithub()
+	{
+		return $this->github;
+	}
+
+	public function getPath()
+	{
+		return $this->path;
+	}
 
 	/** 
 	* Metodo create
@@ -363,6 +386,8 @@ class User_Model extends Model
 		$this->setLastlogin( $row["lastlogin"] );
 		$this->setStatus( $row["status"] );
 		$this->setToken( $row['token'] );
+		$this->setGithub( $row['github'] );
+		$this->setPath( $row['path'] );
 
 		return $this;
 	}

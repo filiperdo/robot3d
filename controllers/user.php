@@ -25,12 +25,21 @@ class User extends Controller {
 	*/
 	public function form( $id = NULL )
 	{
+		Session::init();
+		
 		$this->view->title = "Cadastrar User";
 		$this->view->action = "create";
 		$this->view->obj = $this->model;
 
 		if( $id )
 		{
+			$id = base64_decode($id);
+			if( Session::get('userid') != $id )
+			{
+				// verifica se e diferente para impedir que alguem altere os dados de outro user
+				header('Location: ' . URL );
+			}
+				
 			$this->view->title = "Editar User";
 			$this->view->action = "edit/".$id;
 			$this->view->obj = $this->model->obterUser( $id );
@@ -39,12 +48,17 @@ class User extends Controller {
 				die( "Valor invalido!" );
 			}
 		}
-
-		$this->view->render( "header" );
+		
+		$this->view->render( "header.inc" );
+		$this->view->render( "col-left" );
 		$this->view->render( "user/form" );
-		$this->view->render( "footer" );
+		$this->view->render( "footer.inc" );
 	}
 
+	/**
+	 * Metodo dashboard
+	 * @param unknown $id
+	 */
 	public function dashboard( $id )
 	{
 		$this->view->title = "Dashboard";
@@ -91,7 +105,7 @@ class User extends Controller {
 	{
 		/**
 		 * Inicio Recaptcha
-		 */
+		  =-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- */
 		$url_test = "https://www.google.com/recaptcha/api/siteverify";
 		$private_key = "6LfdryUTAAAAAKZvVxny-vvA-7GeSlorCYlqOayG";
 		
@@ -110,14 +124,12 @@ class User extends Controller {
 			header("location: " . URL . "login/register/?st=".$msg);
 			exit();
 		}
-		/**
-		 * -------------------------------------------------------------------
-		 * -------------------------------------------------------------------
-		 */
+		// =-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+		// =-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 		
 		
 		/**
-		 * Verifica a formatacao do email
+		 * Verifica se o formato do email e um formato valido
 		 * Configura os dados de cadastro em uma sessao para retornar a view de cadastro
 		 */
 		if( filter_var( $_POST['email'], FILTER_VALIDATE_EMAIL ) === false )
@@ -185,22 +197,24 @@ class User extends Controller {
 	{
 		$data = array(
 			'name' 				=> $_POST["name"], 
-			'login' 			=> $_POST["login"], 
-			'password' 			=> $_POST["password"], 
 			'email' 			=> $_POST["email"], 
 			'website' 			=> $_POST["website"], 
 			'bio' 				=> $_POST["bio"], 
-			'numlogin' 			=> $_POST["numlogin"], 
-			'date' 				=> $_POST["date"], 
-			'linguage' 			=> $_POST["linguage"], 
-			'id_typeuser' 		=> $_POST["id_typeuser"], 
-			'lastlogin' 		=> $_POST["lastlogin"], 
-			'status' 			=> $_POST["status"], 
+			'linguage' 			=> $_POST["linguage"],
+			'github' 			=> $_POST["github"]
 		);
 
 		$this->model->edit( $data, $id ) ? $msg = base64_encode( "OPERACAO_SUCESSO" ) : $msg = base64_encode( "OPERACAO_ERRO" );
 
-		header("location: " . URL . "user?st=".$msg);
+		$id = base64_encode($id);
+		
+		header("location: " . URL . "user/form/{$id}/?st=".$msg);
+	}
+	
+	public function editPass( $id )
+	{
+		// verificar o pass antigo
+		// verificar o pess novo e sua confirmacao
 	}
 
 	/** 
@@ -212,4 +226,89 @@ class User extends Controller {
 
 		header("location: " . URL . "user?st=".$msg);
 	}
+	
+	/**
+	 * Metodo upload_fotoperfil
+	 * Responsavel por fazer o upload da imagem do perfil do user
+	 */
+	public function upload_fotoperfil()
+	{
+		Session::init();
+		
+		require_once 'util/wideimage/WideImage.php';
+		
+		date_default_timezone_set("Brazil/East");
+		
+		$name 	= $_FILES['fileUpload']['name'];
+		$tmp_name = $_FILES['fileUpload']['tmp_name'];
+		
+		$allowedExts = array(".gif", ".jpeg", ".jpg", ".png");
+		
+		// Verifica a acao para pegar a variavel do path correta
+		Session::get('act_post') == 'create' ? $var_path = Session::get('path_post') : $var_path = Session::get('path_edit_post');
+		
+		$dir = 'public/img/user/'. Session::get('userid') .'/';
+		
+		for($i = 0; $i < count($tmp_name); $i++)
+		{
+			$ext = strtolower(substr($name[$i],-4));
+				
+			if(in_array($ext, $allowedExts))
+			{
+				$new_name = strtolower( PREFIX_SESSION ).date('Ymd_his').'_'.$name[$i];
+		
+				// cria a img default =========================================
+				$image = WideImage::load( $tmp_name[$i] );
+				$image = $image->resize(600, 600, 'inside');
+				//$image = $image->crop('center', 'center', 170, 180);
+		
+				// verifica so o diretorio existe
+				// caso contrario, criamos o diretorio com permissao para escrita
+				if( !is_dir( $dir ) )
+					mkdir( $dir, 0777);
+		
+				$image->saveToFile( $dir . $new_name );
+	
+				// cria a img thumb ==========================================
+				$image_thumb = WideImage::load( $tmp_name[$i] );
+				$image_thumb = $image_thumb->resize(170, 170, 'outside');
+				$image_thumb = $image_thumb->crop('center', 'center', 170, 170);
+	
+				$dir_thumb = $dir.'thumb/';
+				
+				// verifica so o diretorio existe
+				// caso contrario, criamos o diretorio com permissao para escrita
+				if( !is_dir( $dir_thumb ) )
+					mkdir( $dir_thumb, 0777);
+	
+				$image_thumb->saveToFile( $dir_thumb . $new_name );
+			}
+		}
+		
+		//echo 'ok';
+	}
+	
+	public function delete_fotoperfil()
+	{
+		Session::init();
+		$dir = 'public/img/user/'. Session::get('userid') .'/';
+		
+		// Varre a pasta apagando os arquivos
+		foreach( glob( $dir . "/*.*" ) as $foto )
+		{
+			if( file_exists( $foto ) )
+			{
+				unlink( $foto );
+				//echo 'Removeu ' . $foto.'<br>';
+			}
+		}
+		 
+		// Remove o diretorio
+		if( is_dir( $dir ) )
+			rmdir( $dir );
+		
+		header('Location: ' . URL . 'user/form/' . base64_encode( Session::get('userid') ));
+		//echo 'deletou diretorio : ' . $dir;
+	}
+	
 }

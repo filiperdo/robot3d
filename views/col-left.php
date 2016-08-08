@@ -1,3 +1,9 @@
+<?php 
+include_once 'models/user_model.php';
+$objUser = new User_Model();
+$objUser->obterUser( Session::get('userid') );
+?>	
+	
 	<div class="gn"><!-- gn Coluna da esquerda -->
       <div class="qv rc aog alu">
         <div class="qx" style="background-image: url(<?php echo URL; ?>public/img/iceland.jpg);"></div>
@@ -6,16 +12,15 @@
         <?php if( Session::get('loggedIn') ) { ?>
         
           <a href="#">
-            <img class="aoh" src="<?php echo Data::getPhotoUser( Session::get('userid') ); ?>">
+            <a href="<?php echo URL . 'user/dashboard/' . base64_encode( Session::get('userid') )?>"><img class="aoh" src="<?php echo Data::getPhotoUser( Session::get('userid') ); ?>"></a>
           </a>
 
           <h5 class="qy">
-            <a class="aku" href="#"> <?php echo Session::get('user_name');?></a>
+            <a class="aku" href="<?php echo URL . 'user/dashboard/' . base64_encode( Session::get('userid') )?>"> <?php echo Session::get('user_name');?></a>
           </h5>
-
-          <p class="alu">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+          <p class="alu"><?php echo $objUser->getBio(); ?></p>
 		  
-		  <p><button class="cg ts fx"><span class="h aah"></span> Editar perfil</button></p>
+		  <p><a href="<?php echo URL?>user/form/<?php echo base64_encode(Session::get('userid')); ?>" class="cg ts fx"><span class="h aah"></span> Editar perfil</a></p>
           
           <ul class="aoi">
             <li class="aoj">
@@ -32,8 +37,6 @@
               </a>
             </li>
           </ul>
-          
-          
           
         <?php } else { ?>
         
