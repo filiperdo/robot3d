@@ -23,6 +23,7 @@ class Post_Model extends Model
 	private $user;
 	private $path;
 	private $mainpicture;
+	private $slug;
 
 	public function __construct()
 	{
@@ -37,6 +38,7 @@ class Post_Model extends Model
 		$this->user = new User_Model();
 		$this->path = '';
 		$this->mainpicture = '';
+		$this->slug = '';
 	}
 
 	/** 
@@ -87,6 +89,11 @@ class Post_Model extends Model
 		$this->mainpicture = $mainpicture;
 	}
 
+	public function setSlug( $slug )
+	{
+		$this->slug = $slug;
+	}
+
 	/** 
 	* Metodos get's
 	*/
@@ -133,6 +140,11 @@ class Post_Model extends Model
 	public function getMainpicture()
 	{
 		return $this->mainpicture;
+	}
+
+	public function getSlug()
+	{
+		return $this->slug();
 	}
 
 	/** 
@@ -220,7 +232,8 @@ class Post_Model extends Model
 	}
 
 	/**
-	 * Lista os posts para a home unindo com os projetos
+	 * Lista os posts para a home
+	 * filtrando apenas os publicados
 	 */
 	public function listPostHome( $limit = false )
 	{
@@ -302,6 +315,7 @@ class Post_Model extends Model
 
 		$this->setPath( $row['path'] ) ;
 		$this->setMainpicture( $row['mainpicture'] );
+		$this->setSlug( $row['slug'] );
 
 		return $this;
 	}

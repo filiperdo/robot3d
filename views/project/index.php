@@ -15,17 +15,24 @@
 	<?php foreach( $this->listarProject as $project ) { ?>
 	<div class="col-md-4">
       <div class="qv rc aog alu">
-        <div class="qx" style="background: url(<?php echo URL . $project->getMainpicture(); ?>) center center; background-size: 100%; overflow: hidden;"></div>
+        <div class="qx" style="background: url(<?php echo URL . $project->getMainpicture(); ?>) center center no-repeat #000; background-size: 100%; overflow: hidden; height:200px"></div>
         
         <div class="qw dj">
 			
 			<div class="row">
 				<div class="col-md-12">
 		        	<h5 class="qy">
-		        		<a class="aku" href="<?php echo URL?>project/detail/<?php echo $project->getId_project(); ?>"> <?php echo $project->getTitle(); ?></a>
+		        		<a class="aku" href="<?php echo URL?>project/detail/<?php echo $project->getId_project(); ?>">
+							<?php echo $project->getTitle() ; ?> 
+						</a>
 		        	</h5>
-	
-	        		<p class="alu"><?php echo $project->getContent(); ?></p>
+					
+					<p style="font-size: 90%">
+					<span style="font-size: 90%"><?php echo Data::formatDateShort( $project->getDate() ) ?></span><br>
+					by <a href="<?php echo URL . 'user/dashboard/'.base64_encode( $project->getUser()->getId_user() );?>"><?php echo $project->getUser()->getLogin();?></a>
+					</p>
+					
+	        		<!-- <p class="alu"><?php echo $project->getContent(); ?></p> -->
         		</div>
 			</div>
 			

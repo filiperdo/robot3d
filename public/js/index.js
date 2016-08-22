@@ -2,6 +2,10 @@ $(document).ready(function(){
 	
 	var URL = 'http://localhost/robot3d/';
 	
+	// Ajusta as imagens do conteudo dos posts
+	$('div.post-content img').attr('data-action', 'zoom');
+	$('div.post-content img').css('max-width', '100%');
+	
 	$('.bt-sub-form').click(function(){
 		
 		var id = $(this).attr('id');

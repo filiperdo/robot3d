@@ -179,6 +179,18 @@ class Data
 		$timeAgo = new TimeAgo( NULL, 'pt-BR' );
 		return $timeAgo->inWords( $timestamp );
 	}
+	
+	/**
+	 * Metodo para gerar um slug de qualquer string
+	 * @param unknown $str
+	 */
+	static function formatSlug($str)
+	{
+		$str = strtolower(trim($str));
+		$str = preg_replace('/[^a-z0-9-]/', '-', $str);
+		$str = preg_replace('/-+/', "-", $str);
+		return $str;
+	}
 
 }
 

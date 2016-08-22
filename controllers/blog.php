@@ -7,10 +7,33 @@ class Blog extends Controller {
 		//Auth::handleLogin();
 	}
 
+	/**
+	 * Metodo index
+	 */
+	public function index()
+	{
+		$this->view->title = "Blog";
+		$this->view->js[] = 'index.js';
+	
+		require_once 'models/post_model.php';
+		$objPost = new Post_Model();
+		$this->view->listarPost = $objPost->listPostHome();
+	
+		require_once 'models/category_model.php';
+		$objCategory = new Category_Model();
+		$this->view->listCategory = $objCategory->listarCategory();
+		
+		$ids_category = array();
+	
+		$this->view->render( "header.inc" );
+		$this->view->render( "blog/index" );
+		$this->view->render( "footer.inc" );
+	}
+	
 	/** 
-	* Metodo index
+	* Metodo post
 	*/
-	public function index( $id_post )
+	public function post( $id_post )
 	{
 		$this->view->title = "Blog";
 		$this->view->js[] = 'index.js';
@@ -33,15 +56,13 @@ class Blog extends Controller {
 			$ids_category[] = $category->getId_category();
 		}
 		
-		
-		
 		$this->view->listPostRelated = $objPost->listPostRelated( $id_post, $ids_category, 3 );
 		
 		require_once 'models/comment_model.php';
 		$this->view->objComment = new Comment_Model();
 		
 		$this->view->render( "header.inc" );
-		$this->view->render( "blog/index" );
+		$this->view->render( "blog/post" );
 		$this->view->render( "footer.inc" );
 	}
 }

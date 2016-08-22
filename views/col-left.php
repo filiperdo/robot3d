@@ -1,7 +1,9 @@
 <?php 
-include_once 'models/user_model.php';
-$objUser = new User_Model();
-$objUser->obterUser( Session::get('userid') );
+if( Session::get('loggedIn') ) {
+	include_once 'models/user_model.php';
+	$objUser = new User_Model();
+	$objUser->obterUser( Session::get('userid') );
+}
 ?>	
 	
 	<div class="gn"><!-- gn Coluna da esquerda -->
