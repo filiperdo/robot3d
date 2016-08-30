@@ -24,6 +24,8 @@ class Post_Model extends Model
 	private $path;
 	private $mainpicture;
 	private $slug;
+	private $author;
+	private $source;
 
 	public function __construct()
 	{
@@ -39,6 +41,8 @@ class Post_Model extends Model
 		$this->path = '';
 		$this->mainpicture = '';
 		$this->slug = '';
+		$this->author = '';
+		$this->source = '';
 	}
 
 	/** 
@@ -94,6 +98,16 @@ class Post_Model extends Model
 		$this->slug = $slug;
 	}
 
+	private function setAuthor( $author )
+	{
+		$this->author = $author;
+	}
+
+	private function setSource( $source )
+	{
+		$this->source = $source;
+	}
+
 	/** 
 	* Metodos get's
 	*/
@@ -145,6 +159,16 @@ class Post_Model extends Model
 	public function getSlug()
 	{
 		return $this->slug();
+	}
+
+	public function getAuthor()
+	{
+		return $this->author;
+	}
+
+	public function getSource()
+	{
+		return $this->source;
 	}
 
 	/** 
@@ -228,6 +252,25 @@ class Post_Model extends Model
 			$result = $this->db->select( $sql );
 		}
 
+		return $this->montarLista($result);
+	}
+	
+	/**
+	 * Lista os posts mais lidos
+	 * @param unknown $limit
+	 */
+	public function listTopPost( $limit = NULL )
+	{
+		$sql  = "select * ";
+		$sql .= "from post as p ";
+		$sql .= "where p.status = 'PUBLISHED' ";
+		$sql .= "order by p.`views` desc ";
+		
+		if( $limit )
+			$sql .= "limit {$limit} ";
+		
+		$result = $this->db->select( $sql );
+	
 		return $this->montarLista($result);
 	}
 
@@ -316,6 +359,8 @@ class Post_Model extends Model
 		$this->setPath( $row['path'] ) ;
 		$this->setMainpicture( $row['mainpicture'] );
 		$this->setSlug( $row['slug'] );
+		$this->setAuthor( $row['author'] );
+		$this->setSource( $row['source'] );
 
 		return $this;
 	}

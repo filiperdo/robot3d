@@ -3,18 +3,24 @@
 	<ol class="breadcrumb bread-border">
 	  <li><a href="<?php echo URL?>">Home</a></li>
 	  <li><a href="<?php echo URL?>blog">Blog</a></li>
-	  <li><?=$this->obj->getTitle()?></li>
+	  <li><span class="text-uppercase"><?php echo $this->obj->getTitle();?></span></li>
 	</ol>
 
 	<ul class="ca qo anx">
 		<li class="qf b aml">
 	        <div class="qw dj " style="padding-top: 0">
-	        	<h3 class=""><?=$this->obj->getTitle()?></h3>
-	        	<p class="alu"><small><?=Data::formatDateShort($this->obj->getDate())?></small></p>
+	        	<h3 class="text-uppercase"><?php echo $this->obj->getTitle(); ?></h3>
+	        	<p class="alu">
+		        	<small><?=Data::formatDateShort($this->obj->getDate())?> 
+		        	<?php if( !empty($this->obj->getAuthor()) ){ echo ' | por ' . $this->obj->getAuthor(); } ?>
+		        	</small>
+		        	</p>
 	        	<?php if( !empty( $this->obj->getMainpicture() ) ) { ?>
 	        	<p><img alt="" src="<?php echo URL . $this->obj->getMainpicture(); ?>" width="100%"></p>
 	        	<?php } ?>
-				<div class="post-content"><?=$this->obj->getContent()?></div>
+				<div class="post-content text-justify"><p class=""><?=$this->obj->getContent()?></p></div>
+				
+				<div class="text-left"><small>Fonte: <a href="<?php echo $this->obj->getSource(); ?>" target="_blank"><?php echo substr($this->obj->getSource(), 0,40).'...'; ?></a></small></div>
 			</div>
 		</li>
 		
@@ -77,13 +83,18 @@
 		<div class="qv rc alu">
 	        <div class="qw">
 	        
-	        <h4 class="page-header">Posts relacionados</h4>
+	        <h4 class="page-header">Artigos relacionados</h4>
 	        
 	        <?php foreach( $this->listPostRelated as $post ) { ?>
 	         
 	          <div class="row" >
 	            <div class="col-md-3" style="padding-left: 15px; padding-right: 0">
-	              <img data-action="zoom" alt="" src="<?php echo URL . $post->getMainpicture();?>" width="100%" height="70px">
+	            	<?php if( !empty( $post->getMainpicture() ) ){?>
+	            	<div class="" style="background: url(<?php echo URL . $post->getMainpicture(); ?>) center center no-repeat #000; background-size: 130%; overflow: hidden; height:60px"></div>
+	            	<?php } else { ?>
+	            	<?php $array_img = Data::getImgPost( 'post', $post->getPath() ); ?>
+	            	<div class="" style="background: url(<?php echo URL . $array_img[0]; ?>) center center no-repeat #000; background-size: 130%; overflow: hidden; height:60px"></div>
+	            	<?php } ?>
 	            </div>
 	            <div class="col-md-9">
 	              <a href="<?php echo URL?>blog/post/<?php echo $post->getId_post();?>">
@@ -96,8 +107,6 @@
 	          
 	          <div class="row" style="border-bottom: 1px solid #eaeaea; margin: 8px 0"></div>
 	          <?php } ?>
-	        
-	        
 	        
 	        </div>
 	        

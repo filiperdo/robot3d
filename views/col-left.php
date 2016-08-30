@@ -92,7 +92,7 @@ if( Session::get('loggedIn') ) {
               </div>
             </div>
           </li>
-           <?php } ?>
+          <?php } ?>
         </ul>
         
         

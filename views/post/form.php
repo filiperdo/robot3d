@@ -48,6 +48,22 @@
 </div>
 
 <div class="form-group">
+	<label for="status" class="col-sm-2 control-label">Autor</label> 
+	<div class="col-sm-3"> 
+		<input type="text" name="author" class="form-control" value="<?php echo $this->obj->getAuthor(); ?>" />
+	</div>
+	
+	<div class="col-sm-7"> 
+		
+		<div class="input-group">
+		  <span class="input-group-addon" id="basic-addon1"><i class="glyphicon glyphicon-link"></i></span>
+		  <input type="text" name="source" id="source" placeholder="Link de origem" class="form-control" value="<?php echo $this->obj->getSource(); ?>" />
+		</div>
+	
+	</div>
+</div>
+
+<div class="form-group">
 	<label for="content" class="col-sm-2 control-label">Content</label> 
 	<div class="col-sm-10"> 
 		<textarea class="form-control" id="content" name="content" rows="13"><?=$this->obj->getContent()?></textarea>
@@ -106,6 +122,7 @@
 </div><!-- col-md-4 -->
 
 </div>
+
 
 <script src="http://malsup.github.com/jquery.form.js"></script>
 

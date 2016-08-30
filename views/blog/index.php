@@ -8,12 +8,19 @@
         <div class="qv rc aog alu">
         	<?php foreach( $this->listarPost as $post ) { ?>
 				<div class="row" style="padding: 25px">
-					<div class="col-md-4" ><img data-action="zoom" alt="" src="<?php echo URL . $post->getMainpicture();?>" width="100%"></div>
+					<div class="col-md-4">
+						<?php if( !empty( $post->getMainpicture() ) ){?>
+						<div class="" style="background: url(<?php echo URL . $post->getMainpicture(); ?>) center center no-repeat #000; background-size: 140%; overflow: hidden; height:150px"></div>
+						<?php } else { ?>
+						<?php $array_img = Data::getImgPost( 'post', $post->getPath() ); ?>
+						<div class="" style="background: url(<?php echo URL . $array_img[0]; ?>) center center no-repeat #000; background-size: 140%; overflow: hidden; height:150px"></div>
+						<?php } ?>
+					</div>
 					<div class="col-md-8" style="">
 						<p>
-							<span class="title-post"><a href="<?php echo URL . 'blog/post/' . $post->getId_post(); ?>">
-							<?php echo strtoupper( $post->getTitle() ); ?></a></span><br>
-							<small><?php echo Data::formatDateShort( $post->getDate() );?> | <?php echo $post->getViews(); ?> Views | 0 comentários</small>
+							<span class="title-post text-uppercase"><a href="<?php echo URL . 'blog/post/' . $post->getId_post(); ?>">
+							<?php echo $post->getTitle(); ?></a></span><br>
+							<small><?php echo Data::formatDateShort( $post->getDate() );?> | <?php echo $post->getViews(); ?> Views | <?php echo $this->comment->getTotalComment('post',$post->getId_post());?> comentários</small>
 						</p>
 						<p style="color:#666"><?php echo substr(strip_tags( $post->getContent() ), 0, 300)."..."; ?></p>
 						
@@ -32,17 +39,22 @@
 	        <div class="qw">
 	        
 			  <h4 class="page-header">Mais lidas</h4>  
-	          <?php foreach( $this->listarPost as $post ) { ?>
+	          <?php foreach( $this->listTopPost as $post ) { ?>
 	         
 	          <div class="row" >
-	            <div class="col-md-3" style="padding-left: 15px; padding-right: 0">
-	              <img data-action="zoom" alt="" src="<?php echo URL . $post->getMainpicture();?>" width="100%" height="70px">
+	            <div class="col-md-3 col-sm-3 col-xs-3 ">
+	            <?php if( !empty( $post->getMainpicture() ) ){?>
+	            	<div class="" style="background: url(<?php echo URL . $post->getMainpicture(); ?>) center center no-repeat #000; background-size: 130%; overflow: hidden; height:60px"></div>
+	            <?php } else { ?>
+	            <?php $array_img = Data::getImgPost( 'post', $post->getPath() ); ?>
+	            	<div class="" style="background: url(<?php echo URL . $array_img[0]; ?>) center center no-repeat #000; background-size: 130%; overflow: hidden; height:60px"></div>
+	            <?php } ?>
 	            </div>
-	            <div class="col-md-9">
+	            <div class="col-md-9 col-sm-9 col-xs-9">
 	              <a href="<?php echo URL?>blog/post/<?php echo $post->getId_post();?>">
-	              	<strong><?php echo strtoupper( $post->getTitle() ); ?> </strong> 
+	              	<span class="text-uppercase"><strong><?php echo $post->getTitle(); ?> </strong></span> 
 	              </a>
-	              <p><small><?php echo Data::formatDateShort( $post->getDate() );?> </small></p>
+	              <p><small><?php echo Data::formatDateShort( $post->getDate() );?> | <?php echo $post->getViews(); ?> Views | <?php echo $this->comment->getTotalComment('post',$post->getId_post());?> comentários </small></p>
 	              <!-- <p><?php echo substr(strip_tags( $post->getContent() ), 0, 80)."..."; ?></p> -->
 	            </div>
 	          </div>

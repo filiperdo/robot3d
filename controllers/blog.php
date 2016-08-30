@@ -18,13 +18,18 @@ class Blog extends Controller {
 		require_once 'models/post_model.php';
 		$objPost = new Post_Model();
 		$this->view->listarPost = $objPost->listPostHome();
+		$this->view->listTopPost = $objPost->listTopPost(6);
 	
 		require_once 'models/category_model.php';
 		$objCategory = new Category_Model();
 		$this->view->listCategory = $objCategory->listarCategory();
 		
+		require_once 'models/comment_model.php';
+		$objComment = new Comment_Model();
+		$this->view->comment = $objComment;
+		
 		$ids_category = array();
-	
+		
 		$this->view->render( "header.inc" );
 		$this->view->render( "blog/index" );
 		$this->view->render( "footer.inc" );
@@ -56,7 +61,7 @@ class Blog extends Controller {
 			$ids_category[] = $category->getId_category();
 		}
 		
-		$this->view->listPostRelated = $objPost->listPostRelated( $id_post, $ids_category, 3 );
+		$this->view->listPostRelated = $objPost->listPostRelated( $id_post, $ids_category, 5 );
 		
 		require_once 'models/comment_model.php';
 		$this->view->objComment = new Comment_Model();

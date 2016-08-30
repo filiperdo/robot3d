@@ -34,7 +34,7 @@
 <table class="table table-striped sortable table-condensed">
 	<thead>
 	<tr>
-		<th>Id_post </th>
+		<th>Id </th>
 		<th>Title </th>
 		<th>Date </th>
 		<th>Views </th>
@@ -46,10 +46,10 @@
 	<?php foreach( $this->listarPost as $post ) { ?>
 	<tr>
  		<td><?php echo $post->getId_post(); ?></td>
-		<td><?php echo $post->getTitle(); ?></td>
-		<td><?php echo Data::formataDataHora( $post->getDate() ); ?></td>
+		<td><span class="text-uppercase"><a href="<?php echo URL . 'blog/post/' . $post->getId_post(); ?>" target="_blank"><?php echo $post->getTitle(); ?></a></span></td>
+		<td><?php echo Data::formatDateShort( $post->getDate() ); ?></td>
 		<td><?php echo $post->getViews(); ?></td>
-		<td><?php echo $post->getStatus(); ?></td>
+		<td><?php echo $post->getStatus() == 'DRAFT' ? '<span class="label label-default">Rascunho</span>' : '<span class="label label-success">Publicado</span>'; ?></td>
 		<td align="right">
 			<a href="<?php echo URL;?>post/form/<?php echo $post->getId_post();?>" class="btn btn-info btn-sm"><i class="glyphicon glyphicon-pencil"></i></a>
 			<a href="<?php echo URL;?>post/delete/<?php echo $post->getId_post();?>" class="delete btn btn-danger btn-sm"><i class="glyphicon glyphicon-trash"></i></a>

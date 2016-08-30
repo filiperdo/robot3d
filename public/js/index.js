@@ -1,9 +1,12 @@
 $(document).ready(function(){
 	
-	var URL = 'http://localhost/robot3d/';
+	//var URL = 'http://localhost/robot3d/';
+	var URL = 'http://www.robo3d.com.br/new/';
 	
 	// Ajusta as imagens do conteudo dos posts
 	$('div.post-content img').attr('data-action', 'zoom');
+	$('div.post-content img').removeAttr('height');
+	$('div.post-content img').removeAttr('width');
 	$('div.post-content img').css('max-width', '100%');
 	
 	$('.bt-sub-form').click(function(){

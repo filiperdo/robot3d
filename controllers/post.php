@@ -70,10 +70,10 @@ class Post extends Controller {
 		}
 		
 		// debug
-		if( Session::get('act_post') == 'create' )
-			$this->view->title = 'Session: ' . Session::get('act_post').': '.Session::get('path_post');
-		else
-			$this->view->title = 'Session: ' . Session::get('act_post').': '.Session::get('path_edit_post');
+// 		if( Session::get('act_post') == 'create' )
+// 			$this->view->title = 'Session: ' . Session::get('act_post').': '.Session::get('path_post');
+// 		else
+// 			$this->view->title = 'Session: ' . Session::get('act_post').': '.Session::get('path_edit_post');
 		// end debug -------------------------------------
 		
 		$this->view->render( "header" );
@@ -98,11 +98,14 @@ class Post extends Controller {
 		 */	
 		$data = array(
 			'title' 		=> $_POST["title"], 
+			'slug'			=> Data::formatSlug($_POST["title"]),
 			'content' 		=> $_POST["content"], 
 			'status' 		=> $_POST["status"],
 			'path'			=> $_POST['path'],
 			'mainpicture'	=> str_replace('../', '', $_POST['mainpicture']),
-			'id_user'		=> Session::get('userid')
+			'id_user'		=> Session::get('userid'),
+			'author'		=> $_POST['author'],
+			'source'		=> $_POST['source']
 		);
 		
 		if( !$id_post = $this->model->create( $data ) )
@@ -115,18 +118,21 @@ class Post extends Controller {
 		/**
 		 * Cadastra as categorias do post
 		 */
-		foreach( $_POST['categoria'] as $id_categoria )
+		if( isset($_POST['categoria']) )
 		{
-			$data_category = array(
-				'id_post'		=> $id_post,
-				'id_category'	=> $id_categoria
-			);
-			
-			if( !$this->model->db->insert( "post_category", $data_category, false ) )
+			foreach( $_POST['categoria'] as $id_categoria )
 			{
-				$this->model->db->rollBack();
-				$msg = base64_encode( "OPERACAO_ERRO" );
-				header("location: " . URL . "post?st=".$msg);
+				$data_category = array(
+					'id_post'		=> $id_post,
+					'id_category'	=> $id_categoria
+				);
+				
+				if( !$this->model->db->insert( "post_category", $data_category, false ) )
+				{
+					$this->model->db->rollBack();
+					$msg = base64_encode( "OPERACAO_ERRO" );
+					header("location: " . URL . "post?st=".$msg);
+				}
 			}
 		}
 		
@@ -153,10 +159,13 @@ class Post extends Controller {
 		 * @var unknown
 		 */
 		$data = array(
-			'title' 		=> $_POST["title"], 
+			'title' 		=> $_POST["title"],
+			'slug'			=> Data::formatSlug($_POST["title"]),
 			'content' 		=> $_POST["content"], 
 			'status' 		=> $_POST["status"],
-			'mainpicture'	=> str_replace('../', '', $_POST['mainpicture'])
+			'mainpicture'	=> str_replace('../', '', $_POST['mainpicture']),
+			'author'		=> $_POST['author'],
+			'source'		=> $_POST['source']
 		);
 		
 		if( !$this->model->edit( $data, $id ) )
@@ -172,22 +181,23 @@ class Post extends Controller {
 		// Deleta todas as categorias vinculadas ao post
 		$this->model->db->deleteComposityKey( 'post_category', "id_post = {$id}" );
 		
-		foreach( $_POST['categoria'] as $id_categoria )
+		if( isset($_POST['categoria']) )
 		{
-			$data_category = array(
-				'id_post'		=> $id,
-				'id_category'	=> $id_categoria
-			);
-			
-			if( !$this->model->db->insert( "post_category", $data_category, false ) )
+			foreach( $_POST['categoria'] as $id_categoria )
 			{
-				$this->model->db->rollBack();
-				$msg = base64_encode( "OPERACAO_ERRO" );
-				header( "location: " . URL . "post?st=".$msg."&erro=3" );
+				$data_category = array(
+					'id_post'		=> $id,
+					'id_category'	=> $id_categoria
+				);
+				
+				if( !$this->model->db->insert( "post_category", $data_category, false ) )
+				{
+					$this->model->db->rollBack();
+					$msg = base64_encode( "OPERACAO_ERRO" );
+					header( "location: " . URL . "post?st=".$msg."&erro=3" );
+				}
 			}
 		}
-		
-		
 		
 		// Destruir sessao do path do post
 		Session::destroy('path_post');
@@ -272,7 +282,7 @@ class Post extends Controller {
 			}
 		}
 		
-		//echo 'ok';
+		echo 'Funfou';
 	}
 	
 }

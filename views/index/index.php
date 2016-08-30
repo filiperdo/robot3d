@@ -13,11 +13,11 @@
               <small class="eg dp"><?php echo Data::timeAgo( $list['date'] ) ?></small>
               <h4 class="title-post-home" style="text-transform: uppercase;">
               	<?php if( $list['tipo'] == 'post' ) { ?>
-              	<?php $link = URL . 'blog/index/' . $list['id'];?>
-              		<a href="<?php echo $link; ?>"><?php echo $list['title']; ?></a>
+              	<?php $link = URL . 'blog/post/' . $list['id'];?>
+              		<a href="<?php echo $link; ?>"><?php echo strtoupper($list['title']); ?></a>
               	<?php } else { ?>
               	<?php $link = URL . 'project/detail/' . $list['id'];?>
-              		<a href="<?php echo $link; ?>"><?php echo $list['title']; ?></a>
+              		<a href="<?php echo $link; ?>"><?php echo strtoupper($list['title']); ?></a>
               	<?php } ?>
               	
               </h4>
@@ -37,13 +37,16 @@
 			
             <div class="any" data-grid="images">
             <?php $array_img = Data::getImgPost( $list['tipo'], $list['path'] ); ?>
-            <?php for(  $i = 0; $i<2; $i++ ){ ?>
-            <?php list($width, $height, $type, $attr) = getimagesize( $array_img[$i] ); ?>
+            
+            <?php foreach( $array_img as $key => $img ){ ?>
+            
+            <?php if( $key < 2 && $img != $list['mainpicture'] ) { ?>
+            <?php list($width, $height, $type, $attr) = getimagesize( $img ); ?>
               <div style="display: none">
-                <img data-action="zoom" data-width="<?php echo $width; ?>" data-height="<?php echo $height; ?>" src="<?php echo $array_img[$i]; ?>">
+                <img data-action="zoom" data-width="<?php echo $width; ?>" data-height="<?php echo $height; ?>" src="<?php echo $img; ?>">
               </div>
-			<?php } ?>
-			<?php //echo count( $array_img ) - 2 . ' Fotos '; ?>
+			<?php } // fim if ?>
+			<?php } // fim foreach ?>
             </div>
 			
 			<h5 class="page-header">Comentários (<?php echo $this->objComment->getTotalComment( $list['tipo'], $list['id'] ); ?>) </h5>
