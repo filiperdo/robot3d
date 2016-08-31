@@ -70,10 +70,10 @@ class Post extends Controller {
 		}
 		
 		// debug
-// 		if( Session::get('act_post') == 'create' )
-// 			$this->view->title = 'Session: ' . Session::get('act_post').': '.Session::get('path_post');
-// 		else
-// 			$this->view->title = 'Session: ' . Session::get('act_post').': '.Session::get('path_edit_post');
+ 		if( Session::get('act_post') == 'create' )
+ 			$this->view->title = 'Session: ' . Session::get('act_post').': '.Session::get('path_post');
+		else
+ 			$this->view->title = 'Session: ' . Session::get('act_post').': '.Session::get('path_edit_post');
 		// end debug -------------------------------------
 		
 		$this->view->render( "header" );

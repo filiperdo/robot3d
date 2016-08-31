@@ -14,6 +14,7 @@
 
     <title><?=(isset($this->title)) ? $this->title : SYSTEM_NAME; ?></title>
 
+	<script src="<?php echo URL; ?>public/js/config.js"></script>
     <!-- jQuery -->
     <script src="<?php echo URL; ?>public/js/jquery.min.js"></script>
     <script src="<?php echo URL; ?>public/js/angular.min.js"></script>

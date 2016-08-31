@@ -18,7 +18,7 @@
     <link href="<?php echo URL; ?>public/css/toolkit.css" rel="stylesheet">
     <link href="<?php echo URL; ?>public/css/style.css" rel="stylesheet">
     <link href="<?php echo URL; ?>public/css/application.css" rel="stylesheet">
-	
+	<script src="<?php echo URL; ?>public/js/config.js"></script>
 	<script src="<?php echo URL; ?>public/js/jquery.min.js"></script>
 	
 	<?php

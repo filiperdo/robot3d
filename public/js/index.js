@@ -1,7 +1,13 @@
 $(document).ready(function(){
 	
-	//var URL = 'http://localhost/robot3d/';
-	var URL = 'http://www.robo3d.com.br/new/';
+	if( window.location.hostname == 'localhost' )
+	{
+		var URL = 'http://localhost/robot3d/';
+	}
+	else
+	{
+		var URL = 'http://www.robo3d.com.br/new/';
+	}
 	
 	// Ajusta as imagens do conteudo dos posts
 	$('div.post-content img').attr('data-action', 'zoom');

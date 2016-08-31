@@ -128,11 +128,20 @@
 
 <script>
 
+	if( window.location.hostname == 'localhost' )
+	{
+		var URL = 'http://localhost/robot3d/';
+	}
+	else
+	{
+		var URL = 'http://www.robo3d.com.br/new/';
+	}
+
 	var options = {
         //target:        '#output-files',   // target element(s) to be updated with server response 
         //beforeSubmit:  showRequest,  // pre-submit callback 
         success : showResponse,  // post-submit callback 
-        url  	: 'http://localhost/robot3d/post/wideimage_ajax',
+        url  	: URL + 'post/wideimage_ajax',
 		type 	: 'POST'
         // other available options: 
         //dataType:  null        // 'xml', 'script', or 'json' (expected server response type) 
