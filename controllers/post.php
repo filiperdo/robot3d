@@ -7,6 +7,10 @@ class Post extends Controller {
 		//Auth::handleLogin();
 	}
 
+	public function slug()
+	{
+		echo Data::formatSlug('RASPBERRY PI 3 RECEBE NOÇO UPDATE DE ANIVERSÁRIO DO WINDOWS 10');
+	}
 	/** 
 	* Metodo index
 	*/
@@ -153,7 +157,7 @@ class Post extends Controller {
 	public function edit( $id )
 	{
 		$this->model->db->beginTransaction();
-		
+
 		/**
 		 * Edita os dados do post
 		 * @var unknown

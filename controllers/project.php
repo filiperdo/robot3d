@@ -63,6 +63,24 @@ class Project extends Controller {
 		require_once 'models/component_model.php';
 		$this->view->objComponent = new Component_Model();
 		
+		// Inicio Data log
+		// ------------------------------------------------------------
+		require_once 'models/datalog_model.php';
+		$objDataLog = new Datalog_Model();
+		
+		// Configura as variaveis para efetuar a pesquisa do log
+		$dados = array( 'id' => $id_project, 'ip' => $_SERVER["REMOTE_ADDR"], 'type' => 'id_project' );
+		
+		// Verifica se ja existe o log especifico
+		if(!$objDataLog->getDataLog($dados))
+		{
+			// configura o id do item correto do log
+			$dados['id_project'] = $id_project;
+			$result = $objDataLog->create($dados);	
+		}
+		// ------------------------------------------------------------
+		// Fim datalog
+		
 		$this->view->render( "header.inc" );
 		$this->view->render( "project/detail" );
 		//$this->view->render( "col-right" );

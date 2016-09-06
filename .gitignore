@@ -4,4 +4,5 @@ _files
 .buildpath
 config.php
 builder.php
+public/files
 public/img

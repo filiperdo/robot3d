@@ -57,9 +57,9 @@ class Login extends Controller {
     	
     	$objUser->obterUserByEmail( $_POST['email'] );
     	
-    	/**
-    	 * Envia um senha recuperada para o user
-    	 =-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- */
+    	//
+    	// Envia um senha recuperada para o user
+    	// =-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- 
     	require_once 'util/email.class.php';
     	$objEmail = new Email();
     	$objEmail->enviarSenhaRecuperada( $objUser );

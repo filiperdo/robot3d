@@ -105,7 +105,7 @@ class User extends Controller {
 	{
 		/**
 		 * Inicio Recaptcha
-		  =-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- */
+		 */
 		$url_test = "https://www.google.com/recaptcha/api/siteverify";
 		$private_key = "6LfdryUTAAAAAKZvVxny-vvA-7GeSlorCYlqOayG";
 		
@@ -179,7 +179,7 @@ class User extends Controller {
 		
 		/**
 		 * Envia um e-mail de validação
-		 =-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- */
+		 */
 		require_once 'util/email.class.php';
 		$objEmail = new Email();
 		$objEmail->enviarValidacaoCadastro( $_POST["login"], $_POST["email"], $token );

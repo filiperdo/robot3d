@@ -66,8 +66,27 @@ class Blog extends Controller {
 		require_once 'models/comment_model.php';
 		$this->view->objComment = new Comment_Model();
 		
+		// Inicio Data log
+		// ------------------------------------------------------------
+		require_once 'models/datalog_model.php';
+		$objDataLog = new Datalog_Model();
+		
+		// Configura as variaveis para efetuar a pesquisa do log
+		$dados = array( 'id' => $id_post, 'ip' => $_SERVER["REMOTE_ADDR"], 'type' => 'id_post' );
+		
+		// Verifica se ja existe o log especifico
+		if(!$objDataLog->getDataLog($dados))
+		{
+			// configura o id do item correto do log
+			$dados['id_post'] = $id_post;
+			$result = $objDataLog->create($dados);
+		}
+		// ------------------------------------------------------------
+		// Fim datalog
+		
 		$this->view->render( "header.inc" );
 		$this->view->render( "blog/post" );
 		$this->view->render( "footer.inc" );
+		
 	}
 }

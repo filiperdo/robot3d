@@ -22,6 +22,8 @@ class Download
 		
 		// Envia o arquivo para o cliente
 		readfile( $file );
+		
+		header('Location: ' . URL . 'downloads');
 	}
 }
 

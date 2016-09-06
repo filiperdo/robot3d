@@ -48,16 +48,8 @@ class Datalog extends Controller {
 	/** 
 	* Metodo create
 	*/
-	public function create()
+	public function create($data)
 	{
-		$data = array(
-			'date' => $_POST["date"], 
-			'user_id_user' => $_POST["user_id_user"], 
-			'id_post' => $_POST["id_post"], 
-			'id_project' => $_POST["id_project"], 
-			'id_item' => $_POST["id_item"], 
-		);
-
 		$this->model->create( $data ) ? $msg = base64_encode( "OPERACAO_SUCESSO" ) : $msg = base64_encode( "OPERACAO_ERRO" );
 
 		header("location: " . URL . "datalog?st=".$msg);
@@ -69,8 +61,8 @@ class Datalog extends Controller {
 	public function edit( $id )
 	{
 		$data = array(
-			'date' => $_POST["date"], 
-			'user_id_user' => $_POST["user_id_user"], 
+			'date' 			=> $_POST["date"], 
+			'id_user' => $_POST["id_user"], 
 			'id_post' => $_POST["id_post"], 
 			'id_project' => $_POST["id_project"], 
 			'id_item' => $_POST["id_item"], 

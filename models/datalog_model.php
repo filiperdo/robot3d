@@ -10,6 +10,7 @@
 include_once 'post_model.php';
 include_once 'project_model.php';
 include_once 'item_model.php';
+include_once 'user_model.php';
 
 class Datalog_Model extends Model
 {
@@ -18,11 +19,12 @@ class Datalog_Model extends Model
 	*/
 	private $id_datalog;
 	private $date;
-	private $user_id_user;
+	private $user;
 	private $post;
 	private $project;
 	private $item;
 	private $ip;
+	private $source;
 
 	public function __construct()
 	{
@@ -30,11 +32,12 @@ class Datalog_Model extends Model
 
 		$this->id_datalog = '';
 		$this->date = '';
-		$this->user_id_user = '';
+		$this->user = new User_Model();
 		$this->post = new Post_Model();
 		$this->project = new Project_Model();
 		$this->item = new Item_Model();
 		$this->ip = '';
+		$this->source = '';
 	}
 
 	/** 
@@ -50,9 +53,9 @@ class Datalog_Model extends Model
 		$this->date = $date;
 	}
 
-	public function setUser_id_user( $user_id_user )
+	public function setUser( User_Model $user )
 	{
-		$this->user_id_user = $user_id_user;
+		$this->user = $user;
 	}
 
 	public function setPost( Post_Model $post )
@@ -74,6 +77,11 @@ class Datalog_Model extends Model
 	{
 		$this->ip = $ip;
 	}
+	
+	public function setSource( $source )
+	{
+		$this->source = $source;
+	}
 
 	/** 
 	* Metodos get's
@@ -88,9 +96,9 @@ class Datalog_Model extends Model
 		return $this->date;
 	}
 
-	public function getUser_id_user()
+	public function getUser()
 	{
-		return $this->user_id_user;
+		return $this->user;
 	}
 
 	public function getPost()
@@ -112,6 +120,11 @@ class Datalog_Model extends Model
 	{
 		return $this->ip;
 	}
+	
+	public function getSource()
+	{
+		return $this->source;
+	}
 
 	/** 
 	* Metodo create
@@ -120,6 +133,23 @@ class Datalog_Model extends Model
 	{
 		$this->db->beginTransaction();
 
+		// Retira estas chaves do array, foram utilizadas para 
+		// efetuar a pesquisa de um data log especifico antes de gravar
+		unset( $data['id'] );
+		unset( $data['date'] );
+		unset( $data['type'] );
+		
+		// Configura a origem do acesso
+		$data['source'] = $_SERVER['HTTP_REFERER'];
+		
+		// Verifica se o user esta logado para gravar o id
+		Session::init();
+		if( Session::get('userid') )
+		{
+			$data['id_user'] = Session::get('userid');
+		}
+		
+		//var_dump( $data );
 		if( !$id = $this->db->insert( "datalog", $data ) ){
 			$this->db->rollBack();
 			return false;
@@ -143,7 +173,7 @@ class Datalog_Model extends Model
 
 		$this->db->commit();
 		return $update;
-	}
+	}	
 
 	/** 
 	* Metodo delete
@@ -172,6 +202,26 @@ class Datalog_Model extends Model
 
 		$result = $this->db->select( $sql, array("id" => $id_datalog) );
 		return $this->montarObjeto( $result[0] );
+	}
+	
+	/**
+	 * Verifica se ja existe um log expecifico
+	 * @param unknown $dados
+	 */
+	public function getDataLog( $dados ) // $id, $ip, $data, $type
+	{
+		$sql  = "select * ";
+		$sql .= "from datalog as d ";
+		$sql .= 'where ip = "'. $dados['ip'] . '" ';
+		$sql .= "and date(d.date) = '" . date('Y-m-d') . "' ";
+		$sql .= "and {$dados['type']} = '{$dados['id']}' ";
+		
+		$result = $this->db->select( $sql );
+		
+		if( !empty( $result ) )
+			return true;
+		else 
+			return false;
 	}
 
 	/** 
@@ -219,7 +269,10 @@ class Datalog_Model extends Model
 	{
 		$this->setId_datalog( $row["id_datalog"] );
 		$this->setDate( $row["date"] );
-		$this->setUser_id_user( $row["user_id_user"] );
+		
+		$objUser = new User_Model();
+		$objUser->obterUser( $row["id_user"] );
+		$this->setUser( $objUser );
 
 		$objPost = new Post_Model();
 		$objPost->obterPost( $row["id_post"] );
@@ -234,7 +287,8 @@ class Datalog_Model extends Model
 		$this->setItem( $objItem );
 		
 		$this->setIp( $row["ip"] );
-
+		$this->setSource( $row['source'] );
+		
 		return $this;
 	}
 }
