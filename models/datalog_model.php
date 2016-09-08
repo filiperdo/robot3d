@@ -224,6 +224,22 @@ class Datalog_Model extends Model
 			return false;
 	}
 
+	/**
+	 * Conta quantas visualizações exitem 
+	 * para um determinado item
+	 * @param unknown $id
+	 * @param unknown $type
+	 */
+	public function countDataLog( $id, $type )
+	{
+		$sql  = "select count(id_datalog) as total "; 
+		$sql .= "from datalog ";
+		$sql .= "where id_{$type} = :id ";
+		
+		$result = $this->db->select( $sql, array("id" => $id) );
+		return $result[0]['total'];
+	}
+	
 	/** 
 	* Metodo listarDatalog
 	*/

@@ -61,7 +61,7 @@
 				<td><?php echo $item->getUser()->getLogin(); ?></td>
 				<td align="center">
 					<div class="col-md-6"><small><strong><?php echo $this->objReplie->countReplieByItem( $item->getId_item() )?></strong><br>Respostas</small></div>
-					<div class="col-md-6"><small><strong><?php echo "87"; ?></strong><br>Visualizações</small></div>
+					<div class="col-md-6"><small><strong><?php echo $this->datalog->countDataLog($item->getId_item(),'item'); ?></strong><br>Views</small></div>
 				</td>
 				<td>
 					<?php $objReplie = $this->objReplie->getLastReplieByItem( $item->getId_item() );?>

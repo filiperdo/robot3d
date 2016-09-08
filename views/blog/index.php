@@ -20,7 +20,7 @@
 						<p>
 							<span class="title-post text-uppercase"><a href="<?php echo URL . 'blog/post/' . $post->getId_post(); ?>">
 							<?php echo $post->getTitle(); ?></a></span><br>
-							<small><?php echo Data::formatDateShort( $post->getDate() );?> | <?php echo $post->getViews(); ?> Views | <?php echo $this->comment->getTotalComment('post',$post->getId_post());?> comentários</small>
+							<small><?php echo Data::formatDateShort( $post->getDate() );?> | <?php echo $this->comment->getTotalComment('post',$post->getId_post());?> comentários</small>
 						</p>
 						<p style="color:#666"><?php echo substr(strip_tags( $post->getContent() ), 0, 300)."..."; ?></p>
 						
@@ -54,7 +54,7 @@
 	              <a href="<?php echo URL?>blog/post/<?php echo $post->getId_post();?>">
 	              	<span class="text-uppercase"><strong><?php echo $post->getTitle(); ?> </strong></span> 
 	              </a>
-	              <p><small><?php echo Data::formatDateShort( $post->getDate() );?> | <?php echo $post->getViews(); ?> Views | <?php echo $this->comment->getTotalComment('post',$post->getId_post());?> comentários </small></p>
+	              <p><small><?php echo Data::formatDateShort( $post->getDate() );?> | <?php echo $this->comment->getTotalComment('post',$post->getId_post());?> comentários </small></p>
 	              <!-- <p><?php echo substr(strip_tags( $post->getContent() ), 0, 80)."..."; ?></p> -->
 	            </div>
 	          </div>

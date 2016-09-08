@@ -260,11 +260,13 @@ class Post_Model extends Model
 	 * @param unknown $limit
 	 */
 	public function listTopPost( $limit = NULL )
-	{
-		$sql  = "select * ";
+	{	
+		$sql  = "select ";
+		$sql .= "p.*, ";
+		$sql .= "(select count(d.id_post) from datalog as d where d.id_post = p.id_post) as total ";
 		$sql .= "from post as p ";
 		$sql .= "where p.status = 'PUBLISHED' ";
-		$sql .= "order by p.`views` desc ";
+		$sql .= "order by total desc ";
 		
 		if( $limit )
 			$sql .= "limit {$limit} ";

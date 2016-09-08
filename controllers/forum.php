@@ -74,6 +74,9 @@ class Forum extends Controller {
 		else
 			$this->view->flag_notify[ 'no' ] = '<i class="glyphicon glyphicon-ok"></i>';
 		
+		require_once 'models/datalog_model.php';
+		$this->view->datalog = new Datalog_Model();
+			
 		$this->view->render( "header.inc" );
 		$this->view->render( "forum/item" );
 		$this->view->render( "col-right" );

@@ -49,7 +49,7 @@
 			<?php } // fim foreach ?>
             </div>
 			
-			<p class="page-header"><?php echo $this->objComment->getTotalComment( $list['tipo'], $list['id'] ); ?> <i class="glyphicon glyphicon-comment"></i> <small>Comentátios</small> </p>
+			<p class="page-header"><?php echo $this->objComment->getTotalComment( $list['tipo'], $list['id'] ); ?> <small>Comentátios</small> <i class="glyphicon glyphicon-comment"></i></p>
 			
             <ul class="qo alm">
             <?php if( Session::get('loggedIn' ) ) { ?>
