@@ -104,7 +104,7 @@
 
         <form class="ow og i" role="search">
           <div class="et">
-            <input type="text" class="form-control" data-action="grow" placeholder="Search">
+            <input type="text" class="form-control" data-action="grow" disabled="disabled" placeholder="Search">
           </div>
         </form>
 

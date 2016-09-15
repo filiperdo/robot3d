@@ -37,8 +37,8 @@
 			</div>
 			
 			<div class="row">
-				<div class="col-md-4 col-xs-4"><small><strong>456</strong><br>Views</small></div>
-				<div class="col-md-4 col-xs-4"><small><strong>34</strong><br>Comments</small></div>
+				<div class="col-md-4 col-xs-4"><small><strong><?php echo $this->datalog->countDataLog($project->getId_project(), 'project')?></strong><br>Views</small></div>
+				<div class="col-md-4 col-xs-4"><small><strong><?php echo $this->comment->getTotalComment('project', $project->getId_project());?></strong><br>Comments</small></div>
 				<div class="col-md-4 col-xs-4"><small><strong>100</strong><br>Likes</small></div>
 			</div>
 			

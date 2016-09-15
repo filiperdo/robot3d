@@ -15,6 +15,12 @@ class Project extends Controller {
 		$this->view->title = "Project";
 		$this->view->listarProject = $this->model->listarProject();
 
+		require_once 'models/datalog_model.php';
+		$this->view->datalog = new Datalog_Model();
+		
+		require_once 'models/comment_model.php';
+		$this->view->comment = new Comment_Model();
+		
 		$this->view->render( "header.inc" );
 		$this->view->render( "project/index" );
 		$this->view->render( "col-right" );

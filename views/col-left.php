@@ -28,14 +28,14 @@ if( Session::get('loggedIn') ) {
             <li class="aoj">
               <a href="#userModal" class="aku" data-toggle="modal">
                 Seguindo
-                <h5 class="ali">12</h5>
+                <h5 class="ali">0</h5>
               </a>
             </li>
 
             <li class="aoj">
               <a href="#userModal" class="aku" data-toggle="modal">
                 Seguidores
-                <h5 class="ali">132</h5>
+                <h5 class="ali">0</h5>
               </a>
             </li>
           </ul>
@@ -46,7 +46,7 @@ if( Session::get('loggedIn') ) {
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt. <br>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.<p>
         
-        <h5 class="ald"><small> <a href="#">Saiba mais</a></small></h5>
+        <h5 class="ald"><small> <a href="<?php echo URL?>about">Saiba mais</a></small></h5>
         
         <?php } ?>
         </div>
@@ -62,8 +62,8 @@ if( Session::get('loggedIn') ) {
             <!-- <li><span class="dp h xh all"></span>Went to <a href="#">Oh, Canada</a> -->
             <li><span class="dp h ajw all"></span>Se tornou amigo <a href="#"> Lorem ipsum </a>
             <li><span class="dp h abu all"></span>Projetos <a href="#">Github</a>
-            <li><span class="dp h ack all"></span>Mora em <a href="#">Santo André, SP</a>
-            <li><span class="dp h adt all"></span>Posts <a href="#">145</a>
+            <li><span class="dp h ack all"></span>Mora em <a href="#">Lorem ipsum, SP</a>
+            <li><span class="dp h adt all"></span>Posts <a href="#">0</a>
           </ul>
         </div>
       </div>
@@ -86,7 +86,7 @@ if( Session::get('loggedIn') ) {
               <img class="qh cu" src="<?php echo URL; ?>public/img/instagram_10.jpg">
             </a>
             <div class="qg">
-              <strong><a href="<?php echo URL . 'project/detail/' . $project->getId_project(); ?>"><?php echo $project->getTitle(); ?></a> </strong> @<?php echo $project->getUser()->getLogin(); ?>
+              <strong><a href="<?php echo URL . 'project/detail/' . $project->getId_project(); ?>"><?php echo $project->getTitle(); ?></a> </strong> <small>| <?php echo $project->getUser()->getLogin(); ?></small>
               <div class="aoa ">
                 <p><small><?php echo substr($project->getContent(), 0,50); ?></small></p>
               </div>
@@ -95,36 +95,6 @@ if( Session::get('loggedIn') ) {
           <?php } ?>
         </ul>
         
-        
-          <!--  
-          <div data-grid="images" data-target-height="150">
-            <div>
-              <img data-width="640" data-height="640" data-action="zoom" src="<?php echo URL; ?>public/img/instagram_5.jpg">
-            </div>
-
-            <div>
-              <img data-width="640" data-height="640" data-action="zoom" src="<?php echo URL; ?>public/img/instagram_6.jpg">
-            </div>
-
-            <div>
-              <img data-width="640" data-height="640" data-action="zoom" src="<?php echo URL; ?>public/img/instagram_7.jpg">
-            </div>
-
-            <div>
-              <img data-width="640" data-height="640" data-action="zoom" src="<?php echo URL; ?>public/img/instagram_8.jpg">
-            </div>
-
-            <div>
-              <img data-width="640" data-height="640" data-action="zoom" src="<?php echo URL; ?>public/img/instagram_9.jpg">
-            </div>
-
-            <div>
-              <img data-width="640" data-height="640" data-action="zoom" src="<?php echo URL; ?>public/img/instagram_10.jpg">
-            </div>
-          </div>
-          -->
-          
-          
         </div>
       </div>
     </div><!-- .gn Coluna da esquerda -->

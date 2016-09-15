@@ -6,7 +6,7 @@ $(document).ready(function(){
 	}
 	else
 	{
-		var URL = 'http://www.robo3d.com.br/new/';
+		var URL = 'http://www.robo3d.com.br/';
 	}
 	
 	// Ajusta as imagens do conteudo dos posts
