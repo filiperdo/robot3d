@@ -43,8 +43,7 @@ if( Session::get('loggedIn') ) {
         <?php } else { ?>
         
         <h4>O que é o Robo 3D?</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt. <br>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.<p>
+        <p>Robô 3D é uma comunidade com o objetivo de compartilhar conhecimento na área de Robótica e Impressão 3D.<p>
         
         <h5 class="ald"><small> <a href="<?php echo URL?>about">Saiba mais</a></small></h5>
         
@@ -82,9 +81,8 @@ if( Session::get('loggedIn') ) {
           <ul class="qo anx"><!-- listar os ultimos 5 projetos ou os mais curtidos -->
           <?php foreach( $objProject->listarProject( 4 ) as $project ) {?>
           <li class="qf alm">
-            <a class="qj" href="<?php echo URL . 'project/detail/' . $project->getId_project(); ?>">
-              <img class="qh cu" src="<?php echo URL; ?>public/img/instagram_10.jpg">
-            </a>
+          	<div class="" style="float:left; margin-right:10px; width:80px; background: url(<?php echo URL . $project->getMainpicture(); ?>) center center no-repeat #000; background-size: 100%; overflow: hidden; height:50px"></div>
+            
             <div class="qg">
               <strong><a href="<?php echo URL . 'project/detail/' . $project->getId_project(); ?>"><?php echo $project->getTitle(); ?></a> </strong> <small>| <?php echo $project->getUser()->getLogin(); ?></small>
               <div class="aoa ">

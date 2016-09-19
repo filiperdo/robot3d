@@ -255,12 +255,6 @@
     </div>
   </div>
 </div>
-
-
-
-
-
-
 	
     <script src="<?php echo URL; ?>public/js/chart.js"></script>
     <script src="<?php echo URL; ?>public/js/toolkit.js"></script>
