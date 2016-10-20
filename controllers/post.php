@@ -4,13 +4,9 @@ class Post extends Controller {
 
 	public function __construct() {
 		parent::__construct();
-		Auth::handleLogin();
+		//Auth::handleLogin();
 	}
 
-	public function slug()
-	{
-		echo Data::formatSlug('RASPBERRY PI 3 RECEBE NOÇO UPDATE DE ANIVERSÁRIO DO WINDOWS 10');
-	}
 	/** 
 	* Metodo index
 	*/
@@ -34,6 +30,8 @@ class Post extends Controller {
 		$this->view->title = "Cadastrar Post";
 		$this->view->action = "create";
 		$this->view->js[] = 'clipboard.min.js';
+		$this->view->method_upload = URL . 'post/wideimage_ajax/';
+		
 		$this->view->obj = $this->model;
 		$this->view->array_category = array();
 		
@@ -267,7 +265,7 @@ class Post extends Controller {
 				// verifica so o diretorio existe
 				// caso contrario, criamos o diretorio com permissao para escrita
 				if( !is_dir( $dir ) )
-					mkdir( $dir, 0777);
+					mkdir( $dir, 0777, true);
 				
 				$image->saveToFile( $dir . $new_name );
 				
@@ -280,13 +278,13 @@ class Post extends Controller {
 				// verifica so o diretorio existe
 				// caso contrario, criamos o diretorio com permissao para escrita
 				if( !is_dir( $dir_thumb ) )
-					mkdir( $dir_thumb, 0777);
+					mkdir( $dir_thumb, 0777, true);
 				
 				$image_thumb->saveToFile( $dir_thumb . $new_name );
 			}
 		}
 		
-		echo 'Funfou';
+		echo json_encode($new_name);
 	}
 	
 }

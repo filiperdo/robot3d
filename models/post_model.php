@@ -280,7 +280,7 @@ class Post_Model extends Model
 	 * Lista os posts para a home
 	 * filtrando apenas os publicados
 	 */
-	public function listPostHome( $limit = false )
+	public function listPostHome( $limit = NULL )
 	{
 		$sql  = "select * ";
 		$sql .= "from post as p ";
@@ -293,6 +293,23 @@ class Post_Model extends Model
 		$result = $this->db->select( $sql );
 		
 		return $this->montarLista($result);
+	}
+	
+	
+	/**
+	 * Lista os posts para a home
+	 * filtrando apenas os publicados
+	 */
+	public function listPostJson()
+	{
+		$sql  = "select p.id_post, p.title, p.date ";
+		$sql .= "from post as p ";
+		$sql .= "where p.status = 'PUBLISHED' ";
+		$sql .= "order by p.date desc ";
+	
+		$result = $this->db->select( $sql );
+
+		echo json_encode($result);
 	}
 	
 	

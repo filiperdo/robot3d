@@ -123,11 +123,11 @@
           <div class="qg">
             
             <div class="qn">
-              <a href="#"><strong>Seguidores</strong></a> <small>(3 novos)</small>
+              <a href="#"><strong>Seguidores</strong></a> <!-- <small>(3 novos)</small> -->
             </div>
             <ul class="ano">
-            <?php for( $i=0; $i<7; $i++ ){?>
-              <li class="anp"><img class="cu" src="<?php echo Data::getPhotoUser($i);?>"></li>
+            <?php foreach( $this->follow->listFollowers($this->obj->getId_user()) as $followers ){?>
+              <li class="anp"><img class="cu" src="<?php echo Data::getPhotoUser($followers->getFollower()->getId_user());?>"></li>
             <?php } ?>
             </ul>
           </div>
@@ -144,8 +144,8 @@
               <a href="#"><strong>Seguindo</strong></a>
             </div>
             <ul class="ano">
-            <?php for( $i=0; $i<17; $i++ ){?>
-              <li class="anp"><img class="cu" src="<?php echo Data::getPhotoUser($i);?>"></li>
+            <?php foreach( $this->follow->listFollowing($this->obj->getId_user()) as $following ){?>
+              <li class="anp"><img class="cu" src="<?php echo Data::getPhotoUser($following->getUser()->getId_user());?>"></li>
             <?php } ?>
             </ul>
           </div>
@@ -157,10 +157,6 @@
           <div data-grid="images" data-target-height="150" style="margin-top: 20px">
             <div>
               <img data-width="640" data-height="640" data-action="zoom" src="<?php echo URL; ?>public/img/instagram_5.jpg">
-            </div>
-
-            <div>
-              <img data-width="640" data-height="640" data-action="zoom" src="<?php echo URL; ?>public/img/instagram_6.jpg">
             </div>
 
             <div>

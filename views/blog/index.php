@@ -72,8 +72,8 @@
 	          <?php foreach( $this->listCategory as $categori ){?>
 	          <ul>
 	          	<li>
-		          <a href="#">
-		              <?php echo $categori->getName();?>
+		          <a href="#" class="text-capitalize">
+		              <?php echo strtolower($categori->getName());?>
 		          </a>
 	          </li>
 	          </ul>

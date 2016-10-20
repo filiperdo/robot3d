@@ -115,18 +115,27 @@ class Category_Model extends Model
 	/** 
 	* Metodo listarCategory
 	*/
-	public function listarCategory()
+	public function listarCategory( $limit = NULL )
 	{
 		$sql  = "select * ";
 		$sql .= "from category ";
 
 		if ( isset( $_POST["like"] ) )
 		{
-			$sql .= "where id_category like :id "; // Configurar o like com o campo necessario da tabela 
+			$sql .= "where id_category like :id "; // Configurar o like com o campo necessario da tabela
+			
+			if( $limit )
+				$sql .= "limit {$limit} "; 
+				
 			$result = $this->db->select( $sql, array("id" => "%{$_POST["like"]}%") );
 		}
 		else
+		{
+			if( $limit )
+				$sql .= "limit {$limit} ";
+			
 			$result = $this->db->select( $sql );
+		}
 
 		return $this->montarLista($result);
 	}

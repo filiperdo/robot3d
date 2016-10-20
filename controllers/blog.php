@@ -30,10 +30,14 @@ class Blog extends Controller {
 		
 		$ids_category = array();
 		
+		$this->view->obj = $objPost;
+		
 		$this->view->render( "header.inc" );
 		$this->view->render( "blog/index" );
 		$this->view->render( "footer.inc" );
 	}
+	
+	
 	
 	/** 
 	* Metodo post

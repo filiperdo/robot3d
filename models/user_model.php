@@ -136,6 +136,7 @@ class User_Model extends Model
 		$this->path = $path;
 	}
 
+
 	/** 
 	* Metodos get's
 	*/
@@ -307,6 +308,33 @@ class User_Model extends Model
 		$result = $this->db->select( $sql, array("token" => trim($token))  );
 		return $this->montarObjeto( $result[0] );
 	}
+	
+	/**
+	 * Metodo listarUser
+	 */
+	public function listarUserTeste($return = NULL)
+	{
+		// 
+		$quantidade = 2;
+		$page = isset($_GET['page']) && $_GET['page'] > 0 ? $_GET['page'] : 1;
+		$inicio = ( $page * $quantidade ) - $quantidade;
+		
+		$sql  = "select * ";
+		$sql .= "from user ";
+		$sql .= "limit {$inicio},{$quantidade} ";
+		//$sql .= "order by ";
+	
+		$result = $this->db->select( $sql );
+		
+		if( $return )
+		{
+			echo json_encode( $result );
+		}
+		else 
+		{
+			return $this->montarLista($result);
+		}
+	}
 
 	/** 
 	* Metodo listarUser
@@ -324,6 +352,23 @@ class User_Model extends Model
 		else
 			$result = $this->db->select( $sql );
 
+		return $this->montarLista($result);
+	}
+	
+	/**
+	 * Lista o ultimos usuarios cadastrados
+	 * @param unknown $limit
+	 */
+	public function listUserRecent( $limit = NULL )
+	{
+		$sql  = "select * ";
+		$sql .= "from user as u ";
+		$sql .= "order by u.id_user desc ";
+		
+		if( $limit )
+			$sql .= "limit {$limit} ";
+		
+		$result = $this->db->select( $sql );
 		return $this->montarLista($result);
 	}
 	

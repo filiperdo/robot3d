@@ -1,7 +1,10 @@
 <!-- Page Heading -->
 <div class="row">
-	<div class="col-lg-12">
-		<h1 class="page-header"><?php echo $this->title; ?></h1>
+	<div class="col-md-12 col-sm-12 col-xs-12">
+	<div class="x_panel">
+	<div class="x_title">
+		<h2 class="page-header"><?php echo $this->title; ?></h2>
+		<div class="clearfix"></div>
 		<div class="row">
 			<div class="col-lg-6 col-md-6">
 				<ol class="breadcrumb">
@@ -26,12 +29,12 @@
 			</div>
 		</div>
 	</div>
-</div>
-<!-- /.row -->
+
+<div class="x_content">
 
 <?php if (isset($_GET["st"])) { $objAlert = new Alerta($_GET["st"]); } ?>
 
-<table class="table table-striped sortable table-condensed">
+<table id="datatable-responsive" class="table table-striped" cellspacing="0" width="100%">
 	<thead>
 	<tr>
 		<th>Id </th>
@@ -58,6 +61,11 @@
 	<?php } ?>
 	</tbody>
 </table>
+
+</div>
+</div>
+</div>
+</div>
 
 <script>
 $(function() {

@@ -7,7 +7,6 @@
  * Data: 01/06/2016
  */ 
 
-include_once 'follower_model.php';
 include_once 'user_model.php';
 
 class Follow_Model extends Model
@@ -22,14 +21,14 @@ class Follow_Model extends Model
 	{
 		parent::__construct();
 
-		$this->follower = new Follower_Model();
+		$this->follower = new User_Model();
 		$this->user = new User_Model();
 	}
 
 	/** 
 	* Metodos set's
 	*/
-	public function setFollower( Follower_Model $follower )
+	public function setFollower( User_Model $follower )
 	{
 		$this->follower = $follower;
 	}
@@ -59,8 +58,8 @@ class Follow_Model extends Model
 	public function create( $data )
 	{
 		$this->db->beginTransaction();
-
-		if( !$id = $this->db->insert( "follow", $data ) ){
+		
+		if( !$id = $this->db->insert( "follow", $data, false ) ){
 			$this->db->rollBack();
 			return false;
 		}
@@ -88,11 +87,13 @@ class Follow_Model extends Model
 	/** 
 	* Metodo delete
 	*/
-	public function delete( $id )
+	public function delete( $id_user, $id_follower )
 	{
 		$this->db->beginTransaction();
 
-		if( !$delete = $this->db->delete("follow", "id_follow = {$id} ") ){ 
+		$where = "id_follower = {$id_follower} and id_user = {$id_user}";
+		
+		if( !$delete = $this->db->delete("follow", $where) ){ 
 			$this->db->rollBack();
 			return false;
 		}
@@ -114,10 +115,72 @@ class Follow_Model extends Model
 		return $this->montarObjeto( $result[0] );
 	}
 
+
+	/**
+	 * Lista os seguidores do user selecionado
+	 */
+	public function listFollowers( $id_user )
+	{
+		$sql  = 'select * ';
+		$sql .= 'from follow ';
+		$sql .= 'where id_user = :id ';
+	
+		$result = $this->db->select( $sql, array("id" => $id_user) );
+		
+		return $this->montarLista($result);
+	}
+	
+	/**
+	 * Lista as pessoas que o user selecionado esta seguindo
+	 */
+	public function listFollowing( $id_user )
+	{
+		$sql  = 'select * ';
+		$sql .= 'from follow ';
+		$sql .= 'where id_follower = :id ';
+	
+		$result = $this->db->select( $sql, array("id" => $id_user) );
+		
+		return $this->montarLista($result);
+	}
+	
+	/**
+	 * Conta a quantidade de pessoas que o
+	 * user logado esta seguindo
+	 * @param unknown $id_pessoa
+	 * @return unknown|number
+	 */
+	public function countFollowing( $id_user )
+	{
+		$sql  = 'select count( distinct id_user ) as total ';
+		$sql .= 'from follow ';
+		$sql .= 'where id_follower = :id';
+	
+		$result = $this->db->select( $sql, array("id" => $id_user) );
+		return $result[0]['total'];
+		
+	}
+	
+	/**
+	 * Retorna a quantia de followers
+	 * @param unknown $id_pessoa
+	 * @return unknown|number
+	 */
+	public function countFollowers( $id_user )
+	{
+		$sql  = 'select count( distinct id_follower ) as total ';
+		$sql .= 'from following ';
+		$sql .= 'where id_pessoa = :id ';
+	
+		$result = $this->db->select( $sql, array("id" => $id_user) );
+		return $result[0]['total'];
+	}
+	
+	
 	/** 
 	* Metodo listarFollow
 	*/
-	public function listarFollow()
+	/*public function listarFollow()
 	{
 		$sql  = "select * ";
 		$sql .= "from follow ";
@@ -131,7 +194,7 @@ class Follow_Model extends Model
 			$result = $this->db->select( $sql );
 
 		return $this->montarLista($result);
-	}
+	}*/
 
 	/** 
 	* Metodo montarLista
@@ -157,9 +220,8 @@ class Follow_Model extends Model
 	*/
 	private function montarObjeto( $row )
 	{
-
-		$objFollower = new Follower_Model();
-		$objFollower->obterFollower( $row["id_follower"] );
+		$objFollower = new User_Model();
+		$objFollower->obterUser( $row["id_follower"] );
 		$this->setFollower( $objFollower );
 
 		$objUser = new User_Model();

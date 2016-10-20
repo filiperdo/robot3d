@@ -20,6 +20,25 @@ class User extends Controller {
 		$this->view->render( "footer" );
 	}
 
+	public function whotofollow()
+	{
+		$this->view->title = "User";
+		$this->view->listarUser = $this->model->listarUser();
+		
+		$this->view->js[] = 'whotofollow.js';
+		
+		$this->view->render( "header.inc" );
+		$this->view->render( "col-left" );
+		$this->view->render( "user/list" );
+		$this->view->render( "col-right" );
+		$this->view->render( "footer.inc" );
+	}
+	
+	public function listTest()
+	{
+		$this->model->listarUserTeste('json');
+	}
+	
 	/** 
 	* Metodo editForm
 	*/
@@ -69,6 +88,9 @@ class User extends Controller {
 		$this->view->listProject = $objProject->listarProjectByUser( base64_decode( $id ) );
 		
 		$this->view->obj = $this->model->obterUser( base64_decode( $id ) );
+		
+		require_once 'models/follow_model.php';
+		$this->view->follow = new Follow_Model(); 
 		
 		$this->view->render( "header.inc" );
 		$this->view->render( "user/dashboard" );

@@ -45,6 +45,39 @@ class Follow extends Controller {
 		$this->view->render( "footer" );
 	}
 
+	/**
+	 * Metodo followUser
+	 * @param unknown $id_user
+	 */
+	public function followUser( $id_user )
+	{
+		Session::init();
+		
+		$data = array(
+			'id_follower' 	=> Session::get('userid'),
+			'id_user' 		=> $id_user,
+		);
+		
+		if( $this->model->create( $data ) )
+			echo 'Seguindo';
+		
+		//header("location: " . URL . "follow?st=".$msg);
+	}
+	
+	
+	/**
+	 * Metodo unfollowUser
+	 * @param unknown $id
+	 */
+	public function unfollowUser( $id_user )
+	{
+		Session::init();
+		
+		$this->model->delete( $id_user, Session::get('userid') );
+	
+		//header("location: " . URL . "follow?st=".$msg);
+	}
+	
 	/** 
 	* Metodo create
 	*/
