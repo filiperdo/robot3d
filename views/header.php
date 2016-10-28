@@ -1,5 +1,5 @@
 <?php Session::init(); ?>
-<?php include_once 'menu-admin.php';?>   
+<?php include_once 'menu-admin.php';?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +9,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
+  
   <title><?=(isset($this->title)) ? $this->title : SYSTEM_NAME; ?> </title>
 
   <!-- Bootstrap core CSS -->
@@ -28,8 +28,8 @@
   <script src="<?php echo URL?>public/js/nprogress.js"></script>
   <script src="<?php echo URL?>public/js/khas.js"></script>
 
-	<?php 
-    if (isset($this->js)) 
+	<?php
+    if (isset($this->js))
     {
         foreach ($this->js as $js)
         {
@@ -44,7 +44,7 @@
     	}
     }
     ?>
-    
+
   <!--[if lt IE 9]>
         <script src="../assets/js/ie8-responsive-file-warning.js"></script>
         <![endif]-->
@@ -91,20 +91,20 @@
           <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
 
             <div class="menu_section">
-              
+
               <ul class="nav side-menu">
-                
+
                 <?php foreach( $menu_admin as $item ) { ?>
 			        <li>
 			        	<a href="<?php echo URL . $item['link']; ?>">
-			        		<i class="<?php echo $item['icon']?>"></i> <?php echo $item['label']; ?> 
+			        		<i class="<?php echo $item['icon']?>"></i> <?php echo $item['label']; ?>
 			        	</a>
 			        </li>
 		        <?php } ?>
 
               </ul>
             </div>
-            
+
           </div>
           <!-- /sidebar menu -->
 
@@ -139,13 +139,13 @@
             <ul class="nav navbar-nav navbar-right">
               <li class="">
                 <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                  <img src="<?php echo Data::getPhotoUser( Session::get('userid') ); ?>" alt=""><?php echo Session::get('user_name'); ?> 
+                  <img src="<?php echo Data::getPhotoUser( Session::get('userid') ); ?>" alt=""><?php echo Session::get('user_name'); ?>
                   <span class=" fa fa-angle-down"></span>
                 </a>
                 <ul class="dropdown-menu dropdown-usermenu animated fadeInDown pull-right">
                   <li><a href="javascript:;">  Meus dados</a>
                   </li>
-                  
+
                   <li>
                     <a href="javascript:;">Suporte</a>
                   </li>
@@ -153,8 +153,6 @@
                   </li>
                 </ul>
               </li>
-
-              
 
             </ul>
           </nav>
@@ -166,5 +164,3 @@
 
       <!-- page content -->
       <div class="right_col" role="main">
-      
-		

@@ -1,5 +1,5 @@
 	<div class="gn"><!-- gn Coluna direita -->
-    
+
       <!-- <div class="alert pv alert-dismissible ss" role="alert">
         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <a class="pr" href="profile/index.html">Visit your profile!</a> Check your self, you aren't looking too good.
@@ -7,7 +7,7 @@
 
       <div class="qv rc alu ss">
         <div class="qw">
-	
+
 		<div id="fb-root"></div>
 		<script>(function(d, s, id) {
 		  var js, fjs = d.getElementsByTagName(s)[0];
@@ -16,9 +16,9 @@
 		  js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.7";
 		  fjs.parentNode.insertBefore(js, fjs);
 		}(document, 'script', 'facebook-jssdk'));</script>
-		
+
 		<div class="fb-page" data-href="https://www.facebook.com/robo3doficial/" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/robo3doficial/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/robo3doficial/">Robô 3D</a></blockquote></div>
-		
+
           <!-- <h5 class="ald">Titulo</h5>
           <div data-grid="images" data-target-height="150">
             <img class="qh" data-width="640" data-height="640" data-action="zoom" src="<?php echo URL; ?>public/img/instagram_2.jpg">
@@ -27,7 +27,7 @@
           <button class="cg ts fx">Loren ipsum</button> -->
         </div>
       </div>
-<?php 
+<?php
 require_once 'models/user_model.php';
 $objUserModel = new User_Model();
 ?>
@@ -43,7 +43,11 @@ $objUserModel = new User_Model();
             <div class="qg">
               <strong><a href="<?php echo URL . 'user/dashboard/'. base64_encode( $user->getId_user() )?>"><?php echo $user->getLogin()?></a></strong>
               <div class="aoa">
+				<?php if( Session::get('loggedIn') == true ) { ?>
                 <button class="cg ts fx bt-seguir" id="<?php echo $user->getId_user(); ?>"><span class="h vc"></span> Seguir</button>
+				<?php } else { ?>
+				<button class="cg ts fx disabled"><span class="h vc"></span> Seguir</button>
+				<?php } ?>
               </div>
               <div id="result"></div>
             </div>
@@ -57,25 +61,23 @@ $objUserModel = new User_Model();
       </div>
 
 
-<?php 
-require_once 'models/category_model.php';
-$objCategoryModel = new Category_Model();
-?>
+	<?php
+		require_once 'models/category_model.php';
+		$objCategoryModel = new Category_Model();
+	?>
       <div class="qv rc aok">
         <div class="qw">
           <?php echo date('Y');?> Robo3D
-			
+
 		  <?php foreach( $objCategoryModel->listarCategory(15) as $category ){?>
           <a href="#" class="text-lowercase"><?php echo $category->getName();?></a>
           <?php } ?>
-         
+
         </div>
       </div>
-      
-      
     </div><!-- .gn Coluna direita -->
-    
-    
+
+
 <script>
 $(document).ready(function(){
 
@@ -87,7 +89,7 @@ $(document).ready(function(){
 	{
 		var URL = 'http://www.robo3d.com.br/';
 	}
-	
+
 	$(".bt-seguir").click(function(){
 		$target = $(this);
 		$($target).html('Garregando...');
@@ -96,6 +98,6 @@ $(document).ready(function(){
 		    $($target).html(data);
 		});
 	});
-	
+
 });
 </script>

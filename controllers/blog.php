@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 class Blog extends Controller {
 
@@ -14,70 +14,72 @@ class Blog extends Controller {
 	{
 		$this->view->title = "Blog";
 		$this->view->js[] = 'index.js';
-	
+
 		require_once 'models/post_model.php';
 		$objPost = new Post_Model();
 		$this->view->listarPost = $objPost->listPostHome();
 		$this->view->listTopPost = $objPost->listTopPost(6);
-	
+
 		require_once 'models/category_model.php';
 		$objCategory = new Category_Model();
 		$this->view->listCategory = $objCategory->listarCategory();
-		
+
 		require_once 'models/comment_model.php';
 		$objComment = new Comment_Model();
 		$this->view->comment = $objComment;
-		
+
 		$ids_category = array();
-		
+
 		$this->view->obj = $objPost;
-		
+
 		$this->view->render( "header.inc" );
 		$this->view->render( "blog/index" );
 		$this->view->render( "footer.inc" );
 	}
-	
-	
-	
-	/** 
+
+
+
+	/**
 	* Metodo post
 	*/
-	public function post( $id_post )
+	public function post( $slug )
 	{
 		$this->view->title = "Blog";
 		$this->view->js[] = 'index.js';
-		
+
 		require_once 'models/post_model.php';
 		$objPost = new Post_Model();
-		$objPost->obterPost( $id_post );
-		
+
+		$objPost->obterPostBySlug( $slug );
+		$id_post = $objPost->getId_post();
+
 		$this->view->obj = $objPost;
-		
+
 		require_once 'models/category_model.php';
 		$objCategory = new Category_Model();
 		$this->view->listCategory = $objCategory->listCategoryByPost( $id_post );
-		
+
 		$ids_category = array();
-		
+
 		// Monta um array com os ids das categorias relacionadas ao post
 		foreach( $objCategory->listCategoryByPost( $id_post ) as $category )
 		{
 			$ids_category[] = $category->getId_category();
 		}
-		
+
 		$this->view->listPostRelated = $objPost->listPostRelated( $id_post, $ids_category, 5 );
-		
+
 		require_once 'models/comment_model.php';
 		$this->view->objComment = new Comment_Model();
-		
+
 		// Inicio Data log
 		// ------------------------------------------------------------
 		require_once 'models/datalog_model.php';
 		$objDataLog = new Datalog_Model();
-		
+
 		// Configura as variaveis para efetuar a pesquisa do log
 		$dados = array( 'id' => $id_post, 'ip' => $_SERVER["REMOTE_ADDR"], 'type' => 'id_post' );
-		
+
 		// Verifica se ja existe o log especifico
 		if(!$objDataLog->getDataLog($dados))
 		{
@@ -87,10 +89,20 @@ class Blog extends Controller {
 		}
 		// ------------------------------------------------------------
 		// Fim datalog
-		
+
+
+		// configura os dados para compartilhamento no facebook
+		$this->view->meta_facebook = array(
+			'url' 			=> URL . '/blog/post/' . $slug,
+			'type'			=> 'post',
+			'title'			=> $objPost->getTitle(),
+			'description'	=> substr(strip_tags( $objPost->getContent() ), 0, 150)."...",
+			'image'			=> URL . $objPost->getMainpicture()
+		);
+
 		$this->view->render( "header.inc" );
 		$this->view->render( "blog/post" );
 		$this->view->render( "footer.inc" );
-		
+
 	}
 }

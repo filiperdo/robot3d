@@ -1,7 +1,7 @@
 <!-- footer content -->
         <footer>
           <div class="copyright-info">
-            <p class="pull-right"><?php echo SYSTEM_NAME; ?> - by <a href="http://www.anacom.com.br" target="_blank">Anacom</a>  
+            <p class="pull-right"><?php echo SYSTEM_NAME; ?> - by <a href="http://www.anacom.com.br" target="_blank">Anacom</a>
             </p>
           </div>
           <div class="clearfix"></div>
@@ -23,9 +23,6 @@
 
   <script src="<?php echo URL?>public/js/bootstrap.min.js"></script>
 
-  <!-- gauge js -->
-  <script type="text/javascript" src="<?php echo URL?>public/js/gauge/gauge.min.js"></script>
-  <script type="text/javascript" src="<?php echo URL?>public/js/gauge/gauge_demo.js"></script>
   <!-- bootstrap progress js -->
   <script src="<?php echo URL?>public/js/progressbar/bootstrap-progressbar.min.js"></script>
   <script src="<?php echo URL?>public/js/nicescroll/jquery.nicescroll.min.js"></script>
@@ -35,12 +32,10 @@
   <script type="text/javascript" src="<?php echo URL?>public/js/moment/moment.min.js"></script>
   <script type="text/javascript" src="<?php echo URL?>public/js/datepicker/daterangepicker.js"></script>
   <!-- chart js -->
-  <script src="<?php echo URL?>public/js/chartjs/chart.min.js"></script>
+
 
   <script src="<?php echo URL?>public/js/custom.js"></script>
 
-  <script type="text/javascript" src="<?php echo URL?>public/js/jquery.maskedinput-1.3.js"></script>
-  <script type="text/javascript" src="<?php echo URL?>public/js/jquery.maskMoney.js"></script>
   <!-- flot js -->
   <!--[if lte IE 8]><script type="text/javascript" src="js/excanvas.min.js"></script><![endif]-->
   <script type="text/javascript" src="<?php echo URL?>public/js/flot/jquery.flot.js"></script>
@@ -128,48 +123,7 @@
       }
     });
   </script>
-<script>
-    //random data
-    var d1 = [
-    <?php for($i=0; $i<=12; $i++){ 
-      echo "[".$i."," . $this->objService->getTotalByMonth($i, Session::get('id_workshop')) . "],";
-    } ?>
-    ];
 
-    //flot options
-    var options = {
-      series: {
-        curvedLines: {
-          apply: true,
-          active: true,
-          monotonicFit: true
-        }
-      },
-      colors: ["#26B99A"],
-      grid: {
-        borderWidth: {
-          top: 0,
-          right: 0,
-          bottom: 1,
-          left: 1
-        },
-        borderColor: {
-          bottom: "#7F8790",
-          left: "#7F8790"
-        }
-      }
-    };
-    var plot = $.plot($("#placeholder3xx3"), [{
-      label: "Registrations",
-      data: d1,
-      lines: {
-        fillColor: "rgba(150, 202, 89, 0.12)"
-      }, //#96CA59 rgba(150, 202, 89, 0.42)
-      points: {
-        fillColor: "#fff"
-      }
-    }], options);
-</script>
   <!-- worldmap -->
   <script type="text/javascript" src="<?php echo URL?>public/js/maps/jquery-jvectormap-2.0.3.min.js"></script>
   <script type="text/javascript" src="<?php echo URL?>public/js/maps/gdp-data.js"></script>
@@ -215,47 +169,7 @@
     icons.play();
   </script>
 
-  <!-- dashbord linegraph -->
-  <script>
-    Chart.defaults.global.legend = {
-      enabled: false
-    };
-
-    var data = {
-      labels: [
-        "Symbian",
-        "Blackberry",
-        "Other",
-        "Android",
-        "IOS"
-      ],
-      datasets: [{
-        data: [15, 20, 30, 10, 30],
-        backgroundColor: [
-          "#BDC3C7",
-          "#9B59B6",
-          "#455C73",
-          "#26B99A",
-          "#3498DB"
-        ],
-        hoverBackgroundColor: [
-          "#CFD4D8",
-          "#B370CF",
-          "#34495E",
-          "#36CAAB",
-          "#49A9EA"
-        ]
-
-      }]
-    };
-
-    var canvasDoughnut = new Chart(document.getElementById("canvas1"), {
-      type: 'doughnut',
-      tooltipFillColor: "rgba(51, 51, 51, 0.55)",
-      data: data
-    });
-  </script>
-  <!-- /dashbord linegraph -->
+  
   <!-- datepicker -->
   <script type="text/javascript">
     $(document).ready(function() {

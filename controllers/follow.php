@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 class Follow extends Controller {
 
@@ -7,7 +7,7 @@ class Follow extends Controller {
 		//Auth::handleLogin();
 	}
 
-	/** 
+	/**
 	* Metodo index
 	*/
 	public function index()
@@ -20,7 +20,7 @@ class Follow extends Controller {
 		$this->view->render( "footer" );
 	}
 
-	/** 
+	/**
 	* Metodo editForm
 	*/
 	public function form( $id = NULL )
@@ -29,7 +29,7 @@ class Follow extends Controller {
 		$this->view->action = "create";
 		$this->view->obj = $this->model;
 
-		if( $id ) 
+		if( $id )
 		{
 			$this->view->title = "Editar Follow";
 			$this->view->action = "edit/".$id;
@@ -52,19 +52,19 @@ class Follow extends Controller {
 	public function followUser( $id_user )
 	{
 		Session::init();
-		
+
 		$data = array(
 			'id_follower' 	=> Session::get('userid'),
 			'id_user' 		=> $id_user,
 		);
-		
+
 		if( $this->model->create( $data ) )
-			echo 'Seguindo';
-		
+			echo 'Seguindo2';
+
 		//header("location: " . URL . "follow?st=".$msg);
 	}
-	
-	
+
+
 	/**
 	 * Metodo unfollowUser
 	 * @param unknown $id
@@ -72,20 +72,20 @@ class Follow extends Controller {
 	public function unfollowUser( $id_user )
 	{
 		Session::init();
-		
+
 		$this->model->delete( $id_user, Session::get('userid') );
-	
+
 		//header("location: " . URL . "follow?st=".$msg);
 	}
-	
-	/** 
+
+	/**
 	* Metodo create
 	*/
 	public function create()
 	{
 		$data = array(
-			'id_follower' => $_POST["id_follower"], 
-			'id_user' => $_POST["id_user"], 
+			'id_follower' => $_POST["id_follower"],
+			'id_user' => $_POST["id_user"],
 		);
 
 		$this->model->create( $data ) ? $msg = base64_encode( "OPERACAO_SUCESSO" ) : $msg = base64_encode( "OPERACAO_ERRO" );
@@ -93,14 +93,14 @@ class Follow extends Controller {
 		header("location: " . URL . "follow?st=".$msg);
 	}
 
-	/** 
+	/**
 	* Metodo edit
 	*/
 	public function edit( $id )
 	{
 		$data = array(
-			'id_follower' => $_POST["id_follower"], 
-			'id_user' => $_POST["id_user"], 
+			'id_follower' 	=> $_POST["id_follower"],
+			'id_user' 		=> $_POST["id_user"],
 		);
 
 		$this->model->edit( $data, $id ) ? $msg = base64_encode( "OPERACAO_SUCESSO" ) : $msg = base64_encode( "OPERACAO_ERRO" );
@@ -108,7 +108,7 @@ class Follow extends Controller {
 		header("location: " . URL . "follow?st=".$msg);
 	}
 
-	/** 
+	/**
 	* Metodo delete
 	*/
 	public function delete( $id )
