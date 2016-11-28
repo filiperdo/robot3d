@@ -45,28 +45,28 @@
 					<div class="col-sm-7 col-sm-7 col-xs-12">
 
 						<div class="input-group">
-						  <span class="input-group-addon" id="basic-addon1"><i class="glyphicon glyphicon-picture"></i></span>
-						  <input type="text" name="mainpicture" id="mainpicture" placeholder="Link da imagem de capa" class="form-control" value="<?php echo $this->obj->getMainpicture(); ?>" />
+						  <span class="input-group-addon" id="basic-addon1"><i class="glyphicon glyphicon-calendar"></i></span>
+						  <input type="text" name="date" placeholder="Data da notícia" class="form-control calendary" value="<?php echo Data::formataDataRetiraHora($this->obj->getDate()); ?>" />
 						</div>
 
 					</div>
 				</div>
 
-<div class="form-group">
-	<label for="status" class="col-sm-2 control-label">Autor</label>
-	<div class="col-sm-3">
-		<input type="text" name="author" class="form-control" value="<?php echo $this->obj->getAuthor(); ?>" />
-	</div>
+				<div class="form-group">
+					<label for="status" class="col-sm-2 control-label">Autor</label>
+					<div class="col-sm-3">
+						<input type="text" name="author" class="form-control" value="<?php echo $this->obj->getAuthor(); ?>" />
+					</div>
 
-	<div class="col-sm-7">
+					<div class="col-sm-7">
 
-		<div class="input-group">
-		  <span class="input-group-addon" id="basic-addon1"><i class="glyphicon glyphicon-link"></i></span>
-		  <input type="text" name="source" id="source" placeholder="Link de origem" class="form-control" value="<?php echo $this->obj->getSource(); ?>" />
-		</div>
+						<div class="input-group">
+						  <span class="input-group-addon" id="basic-addon1"><i class="glyphicon glyphicon-link"></i></span>
+						  <input type="text" name="source" id="source" placeholder="Link de origem" class="form-control" value="<?php echo $this->obj->getSource(); ?>" />
+						</div>
 
-	</div>
-</div>
+					</div>
+				</div>
 
 				<div class="form-group">
 					<label for="content" class="col-sm-2 control-label">Content</label>
@@ -93,7 +93,7 @@
 						<a href="<?php echo URL; ?>post" class="btn btn-info">Cancelar</a>
 					</div>
 				</div>
-
+				<input type="hidden" name="mainpicture" id="mainpicture" value="">
 				</form>
 			</div><!-- .col-md-8 -->
 
@@ -108,29 +108,43 @@
 				<input type="file" name="files[]" id="filer_input2" multiple="multiple">
 
 				<div id="output-files">
-				<ul class="jFiler-items-list jFiler-items-grid" style="padding: 0">
+				<div class="jFiler-items-list jFiler-items-grid" >
+					<?php echo 'Path: ' . $this->path; ?>
 					<?php if( $this->path != '' ) { ?>
 					<?php foreach ( Data::getImgPost('post', $this->path, true ) as $img ) { ?>
-					<li class="jFiler-item">
+
+					<?php
+					// pega o nome da imagem
+					$array_img = explode('/', $img); $nome_img = end($array_img);
+					?>
+
+					<div class="jFiler-item" id="<?php echo 'id-'.base64_encode($nome_img);?>">
 						<div class="jFiler-item-container">
 							<div class="jFiler-item-inner">
 								<div class="jFiler-item-thumb"><img alt="" src="<?=URL.$img?>" ></div>
-								<div class="jFiler-item-assets jFiler-row">
+								<div class="jFiler-item-assets jFiler-row" style="text-align:center">
 
 									<ul class="list-inline pull-right">
 										<?php $link_img = str_replace('/thumb/', '/', $img);?>
 										<li>
 											<button class="bt-copy btn btn-info btn-xs" data-clipboard-action="copy" data-clipboard-text="<?='../../'.$link_img?>"><i class="glyphicon glyphicon-link"></i></button>
-											<a href="<?php echo URL?>post/delete_img/<?php echo base64_encode($img);?>"  class="btn btn-danger btn-xs"><i class="icon-jfi-trash jFiler-item-trash-action"></i></a>
+											<a rel="<?php echo base64_encode($this->obj->getPath());?>" name="<?php echo base64_encode($nome_img); ?>" href="#" class="btn delete btn-danger btn-xs"><i class="icon-jfi-trash jFiler-item-trash-action"></i> Deletar</a>
 										</li>
-									</ul>
+
+									</ul><br>
+									<label>
+
+										<?php $checked = $this->obj->getMainpicture() == $nome_img ? 'checked="checked"' : ''; ?>
+										<input type="radio" class="radio-mainpicture" <?php echo $checked; ?> name="rd-mainpicture" value="<?php echo $nome_img; ?>">
+										Destaque
+									</label>
 								</div>
 							</div>
 						</div>
-					</li>
+					</div>
 					<?php } // end foreach?>
 					<?php } // end if ?>
-				</ul>
+				</div>
 				</div>
 
 			</div><!-- col-md-4 -->
@@ -146,6 +160,35 @@
 
 	var clipboard = new Clipboard('.bt-copy');
 
+	$(document).ready(function(){
+
+		if( window.location.hostname == 'localhost' )
+		{
+			var URL = 'http://localhost/educacional/';
+		}
+		else
+		{
+			var URL = 'http://educacional.anacom.com.br/';
+		}
+
+		$(".delete").click(function(){
+
+			$target = $(this);
+			$liImg = '#id-' + $(this).attr('name');
+			//alert('Nome: ' + $liImg);
+			$($target).html('Deletando...');
+			$.post(URL+'post/delete_img/'+$(this).attr('rel'), function(data){
+
+				$($liImg).fadeOut( "slow", function() { $($liImg).remove(); });
+				//alert(data);
+			});
+		});
+
+		$('.radio-mainpicture').click(function(){
+			$('#mainpicture').val($(this).val());
+		})
+
+	});
 </script>
 
 <script src='<?php echo URL?>util/tinymce/tinymce.min.js'></script>

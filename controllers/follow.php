@@ -59,7 +59,7 @@ class Follow extends Controller {
 		);
 
 		if( $this->model->create( $data ) )
-			echo 'Seguindo2';
+			echo 'Seguindo';
 
 		//header("location: " . URL . "follow?st=".$msg);
 	}

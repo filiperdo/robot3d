@@ -39,7 +39,7 @@ class Post extends Controller {
 		$objCategoria = new Category_Model();
 		$this->view->listCategory = $objCategoria->listarCategory();
 
-		$this->view->path = '';
+		//$this->view->path = '';
 
 		if( $id_post == NULL )
 		{
@@ -72,10 +72,10 @@ class Post extends Controller {
 		}
 
 		// debug
- 		/*if( Session::get('act_post') == 'create' )
+ 		if( Session::get('act_post') == 'create' )
  			$this->view->title = 'Session: ' . Session::get('act_post').': '.Session::get('path_post');
 		else
- 			$this->view->title = 'Session: ' . Session::get('act_post').': '.Session::get('path_edit_post');*/
+ 			$this->view->title = 'Session: ' . Session::get('act_post').': '.Session::get('path_edit_post');
 		// end debug -------------------------------------
 
 		$this->view->render( "header" );
@@ -102,6 +102,7 @@ class Post extends Controller {
 			'title' 		=> $_POST["title"],
 			'slug'			=> Data::formatSlug($_POST["title"]),
 			'content' 		=> $_POST["content"],
+			'date'			=> Data::formataDataBD($_POST['date']),
 			'status' 		=> $_POST["status"],
 			'path'			=> $_POST['path'],
 			'mainpicture'	=> str_replace('../', '', $_POST['mainpicture']),
@@ -164,6 +165,7 @@ class Post extends Controller {
 			'title' 		=> $_POST["title"],
 			'slug'			=> Data::formatSlug($_POST["title"]),
 			'content' 		=> $_POST["content"],
+			'date'			=> Data::formataDataBD($_POST['date']),
 			'status' 		=> $_POST["status"],
 			'mainpicture'	=> str_replace('../', '', $_POST['mainpicture']),
 			'author'		=> $_POST['author'],
@@ -228,6 +230,22 @@ class Post extends Controller {
 		header("location: " . URL . "post?st=".$msg);
 	}
 
+	public function delete_img($path)
+	{
+		Session::init();
+		$path_original =  'public/img/post/' . base64_decode($path) . '/';
+
+		if(is_dir($path_original))
+		{
+ 			unlink($path_original);
+			echo 'Deletou: ' . $path_original;
+ 		}
+		else
+		{
+			echo 'Nao deletou ' . $path_original;
+		}
+	}
+
 	/**
 	 * Faz o upload das imagens recebidas de um form
 	 */
@@ -242,7 +260,7 @@ class Post extends Controller {
 		$name 	= $_FILES['files']['name'];
 		$tmp_name = $_FILES['files']['tmp_name'];
 
-		$allowedExts = array(".gif", ".jpeg", ".jpg", ".png");
+		$allowedExts = array(".gif", ".jpeg", ".jpg", ".png"); // passar estes parametros para o config
 
 		// Verifica a acao para pegar a variavel do path correta
 		Session::get('act_post') == 'create' ? $var_path = Session::get('path_post') : $var_path = Session::get('path_edit_post');
@@ -256,6 +274,13 @@ class Post extends Controller {
 			if(in_array($ext, $allowedExts))
 			{
 				$new_name = strtolower( PREFIX_SESSION ).date('Ymd_his').'_'.$name[$i];
+
+				$indice_img = ($i+1); // para nao criar img-0.jpg
+				$new_name = 'img-' . $indice_img . $ext;
+				while ( file_exists($dir.$new_name) ) {
+					$indice_img++;
+					$new_name = 'img-' . $indice_img . $ext;
+				}
 
 				// cria a img default =========================================
 				$image = WideImage::load( $tmp_name[$i] );

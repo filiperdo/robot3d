@@ -9,12 +9,7 @@
         	<?php foreach( $this->listarPost as $post ) { ?>
 				<div class="row" style="padding: 25px">
 					<div class="col-md-4">
-						<?php if( !empty( $post->getMainpicture() ) ){?>
-						<div class="" style="background: url(<?php echo URL . $post->getMainpicture(); ?>) center center no-repeat #000; background-size: 140%; overflow: hidden; height:150px"></div>
-						<?php } else { ?>
-						<?php $array_img = Data::getImgPost( 'post', $post->getPath() ); ?>
-						<div class="" style="background: url(<?php echo URL . $array_img[0]; ?>) center center no-repeat #000; background-size: 140%; overflow: hidden; height:150px"></div>
-						<?php } ?>
+						<div class="" style="background: url(<?php echo URL .'public/img/post/'. $post->getPath() .'/'. $post->getMainpicture(); ?>) center center no-repeat #000; background-size: 140%; overflow: hidden; height:150px"></div>
 					</div>
 					<div class="col-md-8" style="">
 						<p>
@@ -43,12 +38,7 @@
 
 	          <div class="row" >
 	            <div class="col-md-3 col-sm-3 col-xs-3 ">
-	            <?php if( !empty( $post->getMainpicture() ) ){?>
-	            	<div class="" style="background: url(<?php echo URL . $post->getMainpicture(); ?>) center center no-repeat #000; background-size: 210%; overflow: hidden; height:60px"></div>
-	            <?php } else { ?>
-	            <?php $array_img = Data::getImgPost( 'post', $post->getPath() ); ?>
-	            	<div class="" style="background: url(<?php echo URL . $array_img[0]; ?>) center center no-repeat #000; background-size: 210%; overflow: hidden; height:60px"></div>
-	            <?php } ?>
+	            	<div class="" style="background: url(<?php echo URL .'public/img/post/'. $post->getPath() .'/'. $post->getMainpicture(); ?>) center center no-repeat #000; background-size: 210%; overflow: hidden; height:60px"></div>
 	            </div>
 	            <div class="col-md-9 col-sm-9 col-xs-9">
 	              <a href="<?php echo URL?>blog/post/<?php echo $post->getSlug();?>">
@@ -69,13 +59,11 @@
 	      <div class="qv rc aok">
 	        <div class="qw">
 	          <h4 class="page-header">Categorias</h4>
-	          <?php foreach( $this->listCategory as $categori ){?>
+	          <?php foreach( $this->listCategory as $categori ){ ?>
 	          <ul>
 	          	<li>
-		          <a href="#" class="text-capitalize">
-		              <?php echo strtolower($categori->getName());?>
-		          </a>
-	          </li>
+		          <a href="#" class="text-capitalize"><?php echo strtolower($categori->getName());?></a>
+	            </li>
 	          </ul>
 	          <?php } ?>
 

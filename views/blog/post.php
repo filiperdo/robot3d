@@ -89,12 +89,7 @@
 
 	          <div class="row" >
 	            <div class="col-md-3" style="padding-left: 15px; padding-right: 0">
-	            	<?php if( !empty( $post->getMainpicture() ) ){?>
-	            	<div class="" style="background: url(<?php echo URL . $post->getMainpicture(); ?>) center center no-repeat #000; background-size: 210%; overflow: hidden; height:60px"></div>
-	            	<?php } else { ?>
-	            	<?php $array_img = Data::getImgPost( 'post', $post->getPath() ); ?>
-	            	<div class="" style="background: url(<?php echo URL . $array_img[0]; ?>) center center no-repeat #000; background-size: 210%; overflow: hidden; height:60px"></div>
-	            	<?php } ?>
+	            	<div class="" style="background: url(<?php echo URL .'public/img/post/'. $post->getPath() .'/'. $post->getMainpicture(); ?>) center center no-repeat #000; background-size: 210%; overflow: hidden; height:60px"></div>
 	            </div>
 	            <div class="col-md-9">
 	              <a href="<?php echo URL?>blog/post/<?php echo $post->getSlug();?>">

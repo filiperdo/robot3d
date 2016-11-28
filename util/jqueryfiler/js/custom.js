@@ -1,5 +1,5 @@
 $(document).ready(function(){
-		
+
 	//Example 2
 	$("#filer_input2").filer({
 		limit: null,
@@ -31,7 +31,7 @@ $(document).ready(function(){
 									</ul>\
 									<ul class="list-inline pull-right">\
 										<li><button class="bt-copy btn btn-info btn-xs" data-clipboard-action="copy" data-clipboard-text=""><i class="glyphicon glyphicon-link"></i></button>\
-										<a class="bt-copy btn btn-danger btn-xs"><i class="icon-jfi-trash jFiler-item-trash-action"></i></a></li>\
+										<a class="btn btn-danger btn-xs"><i class="icon-jfi-trash jFiler-item-trash-action"></i> Deletar</a></li>\
 									</ul>\
 								</div>\
 							</div>\
@@ -57,7 +57,7 @@ $(document).ready(function(){
 											<li><span class="jFiler-item-others">{{fi-icon}}</span></li>\
 										</ul>\
 										<ul class="list-inline pull-right">\
-											<li><a class="icon-jfi-trash jFiler-item-trash-action"></a></li>\
+											<li><a class="icon-jfi-trash jFiler-item-trash-action"> Deletar</a></li>\
 										</ul>\
 									</div>\
 								</div>\
@@ -122,7 +122,7 @@ $(document).ready(function(){
 		onRemove: function(itemEl, file, id, listEl, boxEl, newInputEl, inputEl){
 			var filerKit = inputEl.prop("jFiler"),
 		        file_name = filerKit.files_list[id].name;
-			
+
 		    $.post('http://localhost/khas/util/jqueryfiler/php/ajax_remove_file.php', {file: file_name});
 		},
 		onEmpty: null,

@@ -1,3 +1,5 @@
+
+
 	<div class="gn"><!-- gn Coluna direita -->
 
       <!-- <div class="alert pv alert-dismissible ss" role="alert">
@@ -35,24 +37,25 @@ $objUserModel = new User_Model();
         <div class="qw">
         <h5 class="ald">Quem seguir? <small> <a href="<?php echo URL?>user/whotofollow">Ver todos</a></small></h5>
         <ul class="qo anx">
-        <?php foreach( $objUserModel->listUserRecent(3) as $user ){ ?>
-          <li class="qf alm">
-            <a class="qj" href="<?php echo URL . 'user/dashboard/'. base64_encode( $user->getId_user() )?>">
-              <img class="qh cu" src="<?php echo Data::getPhotoUser( $user->getId_user() ); ?>">
-            </a>
-            <div class="qg">
-              <strong><a href="<?php echo URL . 'user/dashboard/'. base64_encode( $user->getId_user() )?>"><?php echo $user->getLogin()?></a></strong>
-              <div class="aoa">
-				<?php if( Session::get('loggedIn') == true ) { ?>
-                <button class="cg ts fx bt-seguir" id="<?php echo $user->getId_user(); ?>"><span class="h vc"></span> Seguir</button>
-				<?php } else { ?>
-				<button class="cg ts fx disabled"><span class="h vc"></span> Seguir</button>
-				<?php } ?>
-              </div>
-              <div id="result"></div>
-            </div>
-          </li>
-          <?php } ?>
+	        <?php foreach ($objUserModel->listTopWhoToFollow(3) as $user) {?>
+			<li class="qf alm" id="li-user-<?php echo $user->getId_user(); ?>">
+				<a class="qj" href="<?php echo URL . 'user/dashboard/'. base64_encode( $user->getId_user() )?>">
+					<img class="qh cu" src="<?php echo Data::getPhotoUser( $user->getId_user() ); ?>">
+				</a>
+				<div class="qg">
+					<strong><a href="<?php echo URL . 'user/dashboard/'. base64_encode( $user->getId_user() )?>"><?php echo $user->getLogin()?></a></strong>
+					<div class="aoa">
+						<?php if( Session::get( 'loggedIn' ) ){?>
+						<button class="cg ts fx bt-seguir" id="<?php echo $user->getId_user(); ?>"><span class="h vc"></span> Seguir</button>
+						<?php } else { ?>
+						<button class="cg ts fx disabled" ><span class="h vc"></span> Seguir</button>
+						<?php } ?>
+					</div>
+					<div id="result"></div>
+				</div>
+			</li>
+			<?php } ?>
+
         </ul>
         </div>
         <!-- <div class="qz">
@@ -77,27 +80,53 @@ $objUserModel = new User_Model();
       </div>
     </div><!-- .gn Coluna direita -->
 
+	<script>
+	$(document).ready(function(){
 
-<script>
-$(document).ready(function(){
+		if( window.location.hostname == 'localhost' )
+		{
+			var URL = 'http://localhost/robot3d/';
+		}
+		else
+		{
+			var URL = 'http://www.robo3d.com.br/';
+		}
 
-	if( window.location.hostname == 'localhost' )
-	{
-		var URL = 'http://localhost/robot3d/';
-	}
-	else
-	{
-		var URL = 'http://www.robo3d.com.br/';
-	}
+		/*carrega(3);
 
-	$(".bt-seguir").click(function(){
-		$target = $(this);
-		$($target).html('Garregando...');
-		$.post(URL+'follow/followUser/'+$(this).attr('id'), function(data){
-			$($target).addClass('active');
-		    $($target).html(data);
+		function carrega( $limit ){
+
+			$.getJSON(URL + 'user/listTopWhoToFollow',{limit:$limit},function(data){
+				$.each(data,function(){
+
+					html = '<li class="qf alm">\
+							<img class="qh cu" src="' + URL + 'public/img/user/1/'+this['path']+'">\
+							<div class="qg" style="float:left">\
+								<strong><a href="'+ URL + 'user/dashboard/' + this['id_user'] + '">' + this['login'] + '</a></strong>\
+								<div class="aoa">\
+									<button class="cg ts fx bt-seguir" id="'+this['id_user']+'"><span class="h vc"></span> Seguir</button>\
+								</div>\
+							</div>\
+							</li>';
+
+					$(html).appendTo('#ul_wotofollow');
+				})
+			})
+		}*/
+
+		$(".bt-seguir").click(function(){
+			$target = $(this);
+			$liUser = '#li-user-' + $(this).attr('id');
+			$($target).html('Seguindo...');
+			$.post(URL+'follow/followUser/'+$(this).attr('id'), function(data){
+				$($target).addClass('active');
+				$($target).html(data);
+				$($liUser).fadeOut( "slow", function() {
+			    	$(this).remove();
+			  	});
+				//carrega(3);
+			});
 		});
-	});
 
-});
-</script>
+	});
+	</script>

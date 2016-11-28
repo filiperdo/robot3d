@@ -1,18 +1,18 @@
-<?php 
+<?php
 
-/** 
+/**
  * Classe User
- * @author __ 
+ * @author __
  *
  * Data: 01/06/2016
- */ 
+ */
 
 include_once 'typeuser_model.php';
 
 class User_Model extends Model
 {
-	/** 
-	* Atributos Private 
+	/**
+	* Atributos Private
 	*/
 	private $id_user;
 	private $name;
@@ -53,7 +53,7 @@ class User_Model extends Model
 		$this->path = '';
 	}
 
-	/** 
+	/**
 	* Metodos set's
 	*/
 	public function setId_user( $id_user )
@@ -120,7 +120,7 @@ class User_Model extends Model
 	{
 		$this->status = $status;
 	}
-	
+
 	public function setToken( $token )
 	{
 		$this->token = $token;
@@ -130,14 +130,14 @@ class User_Model extends Model
 	{
 		$this->github = $github;
 	}
-	
+
 	public function setPath( $path )
 	{
 		$this->path = $path;
 	}
 
 
-	/** 
+	/**
 	* Metodos get's
 	*/
 	public function getId_user()
@@ -204,7 +204,7 @@ class User_Model extends Model
 	{
 		return $this->status;
 	}
-	
+
 	public function getToken()
 	{
 		return $this->token;
@@ -220,7 +220,7 @@ class User_Model extends Model
 		return $this->path;
 	}
 
-	/** 
+	/**
 	* Metodo create
 	*/
 	public function create( $data )
@@ -236,7 +236,7 @@ class User_Model extends Model
 		return true;
 	}
 
-	/** 
+	/**
 	* Metodo edit
 	*/
 	public function edit( $data, $id )
@@ -252,14 +252,14 @@ class User_Model extends Model
 		return $update;
 	}
 
-	/** 
+	/**
 	* Metodo delete
 	*/
 	public function delete( $id )
 	{
 		$this->db->beginTransaction();
 
-		if( !$delete = $this->db->delete("user", "id_user = {$id} ") ){ 
+		if( !$delete = $this->db->delete("user", "id_user = {$id} ") ){
 			$this->db->rollBack();
 			return false;
 		}
@@ -268,7 +268,7 @@ class User_Model extends Model
 		return $delete;
 	}
 
-	/** 
+	/**
 	* Metodo obterUser
 	*/
 	public function obterUser( $id_user )
@@ -280,7 +280,7 @@ class User_Model extends Model
 		$result = $this->db->select( $sql, array("id" => $id_user) );
 		return $this->montarObjeto( $result[0] );
 	}
-	
+
 	/**
 	 * Metodo obterUserByEmail
 	 * @param unknown $id_user
@@ -290,11 +290,11 @@ class User_Model extends Model
 		$sql  = "select * ";
 		$sql .= "from user as u ";
 		$sql .= "where u.email = :email ";
-	
+
 		$result = $this->db->select( $sql, array("email" => trim($email))  );
 		return $this->montarObjeto( $result[0] );
 	}
-	
+
 	/**
 	 * Metodo obterUserByToken
 	 * @param unknown $id_user
@@ -304,39 +304,39 @@ class User_Model extends Model
 		$sql  = "select * ";
 		$sql .= "from user as u ";
 		$sql .= "where u.token = :token ";
-	
+
 		$result = $this->db->select( $sql, array("token" => trim($token))  );
 		return $this->montarObjeto( $result[0] );
 	}
-	
+
 	/**
 	 * Metodo listarUser
 	 */
 	public function listarUserTeste($return = NULL)
 	{
-		// 
-		$quantidade = 2;
+		Session::init();
+
+		//
+		$quantidade = 15;
 		$page = isset($_GET['page']) && $_GET['page'] > 0 ? $_GET['page'] : 1;
 		$inicio = ( $page * $quantidade ) - $quantidade;
-		
+
 		$sql  = "select * ";
-		$sql .= "from user ";
+		$sql .= "from user as u ";
+		$sql .= "where u.id_user != ". Session::get('userid') ."  ";
+		$sql .= "and u.id_user not in(select f.id_user from follow as f where f.id_follower = ". Session::get('userid') .")"; // exclui os users que ja esta seguindo
 		$sql .= "limit {$inicio},{$quantidade} ";
 		//$sql .= "order by ";
-	
+
 		$result = $this->db->select( $sql );
-		
+
 		if( $return )
-		{
 			echo json_encode( $result );
-		}
-		else 
-		{
+		else
 			return $this->montarLista($result);
-		}
 	}
 
-	/** 
+	/**
 	* Metodo listarUser
 	*/
 	public function listarUser()
@@ -346,7 +346,7 @@ class User_Model extends Model
 
 		if ( isset( $_POST["like"] ) )
 		{
-			$sql .= "where id_user like :id "; // Configurar o like com o campo necessario da tabela 
+			$sql .= "where id_user like :id "; // Configurar o like com o campo necessario da tabela
 			$result = $this->db->select( $sql, array("id" => "%{$_POST["like"]}%") );
 		}
 		else
@@ -354,7 +354,7 @@ class User_Model extends Model
 
 		return $this->montarLista($result);
 	}
-	
+
 	/**
 	 * Lista o ultimos usuarios cadastrados
 	 * @param unknown $limit
@@ -364,14 +364,39 @@ class User_Model extends Model
 		$sql  = "select * ";
 		$sql .= "from user as u ";
 		$sql .= "order by u.id_user desc ";
-		
+
 		if( $limit )
 			$sql .= "limit {$limit} ";
-		
+
 		$result = $this->db->select( $sql );
 		return $this->montarLista($result);
 	}
-	
+
+	/**
+	 * Lista o ultimos usuarios cadastrados
+	 * para uma lista de sugestoes para seguir
+	 *
+	 * @param unknown $limit
+	 */
+	public function listTopWhoToFollow($limit)
+	{
+		Session::init();
+
+		$sql  = "select * ";
+		$sql .= "from user as u ";
+		$sql .= "where u.id_user != ". Session::get('userid') ."  ";
+		$sql .= "and u.id_user not in(select f.id_user from follow as f where f.id_follower = ". Session::get('userid') .")"; // exclui os users que ja esta seguindo
+		$sql .= "order by u.id_user desc ";
+
+		if( isset( $limit ) )
+			$sql .= "limit {$limit} ";
+
+		$result = $this->db->select( $sql );
+		return $this->montarLista($result);
+		//echo json_encode( $result );
+	}
+
+
 	/**
 	 * Verifica se o e-mail ja existe no banco de dados
 	 * @param unknown $email
@@ -381,16 +406,16 @@ class User_Model extends Model
 		$sql  = 'select * ';
 		$sql .= 'from user as u ';
 		$sql .= "where u.email = :email ";
-		
+
 		$result = $this->db->select( $sql, array( "email" => $email ) );
-		
+
 		if( count( $result ) > 0 )
 			return true;
 		else
 			return false;
 	}
 
-	/** 
+	/**
 	* Metodo montarLista
 	*/
 	private function montarLista( $result )
@@ -409,7 +434,7 @@ class User_Model extends Model
 		return $objs;
 	}
 
-	/** 
+	/**
 	* Metodo montarObjeto
 	*/
 	private function montarObjeto( $row )
