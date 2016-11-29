@@ -19,7 +19,6 @@ class User_Model extends Model
 	private $login;
 	private $password;
 	private $email;
-	private $website;
 	private $bio;
 	private $numlogin;
 	private $date;
@@ -28,8 +27,13 @@ class User_Model extends Model
 	private $lastlogin;
 	private $status;
 	private $token;
-	private $github;
 	private $path;
+	private $views;
+	private $website;
+	private $github;
+	private $facebook;
+	private $twitter;
+	private $youtube;
 
 	public function __construct()
 	{
@@ -40,7 +44,6 @@ class User_Model extends Model
 		$this->login = '';
 		$this->password = '';
 		$this->email = '';
-		$this->website = '';
 		$this->bio = '';
 		$this->numlogin = '';
 		$this->date = '';
@@ -49,8 +52,13 @@ class User_Model extends Model
 		$this->lastlogin = '';
 		$this->status = '';
 		$this->token = '';
-		$this->github = '';
 		$this->path = '';
+		$this->views = '';
+		$this->website = '';
+		$this->github = '';
+		$this->facebook = '';
+		$this->twitter = '';
+		$this->youtube = '';
 	}
 
 	/**
@@ -79,11 +87,6 @@ class User_Model extends Model
 	public function setEmail( $email )
 	{
 		$this->email = $email;
-	}
-
-	public function setWebsite( $website )
-	{
-		$this->website = $website;
 	}
 
 	public function setBio( $bio )
@@ -126,14 +129,39 @@ class User_Model extends Model
 		$this->token = $token;
 	}
 
+	public function setPath( $path )
+	{
+		$this->path = $path;
+	}
+
+	public function setViews( $views )
+	{
+		$this->views = $views;
+	}
+
+	public function setWebsite( $website )
+	{
+		$this->website = $website;
+	}
+
 	public function setGithub( $github )
 	{
 		$this->github = $github;
 	}
 
-	public function setPath( $path )
+	public function setFacebook( $facebook )
 	{
-		$this->path = $path;
+		$this->facebook = $facebook;
+	}
+
+	public function setTwitter( $twitter )
+	{
+		$this->twitter = $twitter;
+	}
+
+	public function setYoutube( $youtube )
+	{
+		$this->youtube = $youtube;
 	}
 
 
@@ -163,11 +191,6 @@ class User_Model extends Model
 	public function getEmail()
 	{
 		return $this->email;
-	}
-
-	public function getWebsite()
-	{
-		return $this->website;
 	}
 
 	public function getBio()
@@ -210,14 +233,39 @@ class User_Model extends Model
 		return $this->token;
 	}
 
+	public function getPath()
+	{
+		return $this->path;
+	}
+
+	public function getViews()
+	{
+		return $this->views;
+	}
+
+	public function getWebsite()
+	{
+		return $this->website;
+	}
+
 	public function getGithub()
 	{
 		return $this->github;
 	}
 
-	public function getPath()
+	public function getFacebook()
 	{
-		return $this->path;
+		return $this->facebook;
+	}
+
+	public function getTwitter()
+	{
+		return $this->twitter;
+	}
+
+	public function getYoutube()
+	{
+		return $this->youtube;
 	}
 
 	/**
@@ -444,7 +492,6 @@ class User_Model extends Model
 		$this->setLogin( $row["login"] );
 		$this->setPassword( $row["password"] );
 		$this->setEmail( $row["email"] );
-		$this->setWebsite( $row["website"] );
 		$this->setBio( $row["bio"] );
 		$this->setNumlogin( $row["numlogin"] );
 		$this->setDate( $row["date"] );
@@ -456,9 +503,14 @@ class User_Model extends Model
 		$this->setLastlogin( $row["lastlogin"] );
 		$this->setStatus( $row["status"] );
 		$this->setToken( $row['token'] );
-		$this->setGithub( $row['github'] );
 		$this->setPath( $row['path'] );
-
+		$this->setViews( $row["views"] );
+		$this->setWebsite( $row["website"] );
+		$this->setGithub( $row["github"] );
+		$this->setFacebook( $row["facebook"] );
+		$this->setTwitter( $row["twitter"] );
+		$this->setYoutube( $row["youtube"] );
+		
 		return $this;
 	}
 }

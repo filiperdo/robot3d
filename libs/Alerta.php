@@ -25,10 +25,11 @@ class Alerta
         $this->arrayMsgOk['CADATRO_ATIVADO'] = "Cadastro ativado com sucesso!<br>Utilize os campos acima para fazer login.";
         $this->arrayMsgOk['EMAIL_REDEFINIR_SENHA'] = 'E-mail enviado!<br/>Por favor, confira seu e-mail para recuperar sua senha.';
 		$this->arrayMsgOk['CADASTRO_SUCESSO'] = 'Cadastro efetuado com sucesso!<br/>Acesse seu e-mail para concluir o cadastro.';
-        
-        
+
+
         // Mensagens de Erro
-		
+
+        $this->arrayMsgErro['ERRO_TAMANHO_SENHA'] = "Não foi possível alterar sua senha. Ela deve ter entre 6 e 12 caracteres!";
 		$this->arrayMsgErro['RECAPTCHA_INCORRETO'] = "Não foi possível efetuar o cadastro. Não conseguimos validar o reCaptcha!";
         $this->arrayMsgErro['OPERACAO_ERRO'] = "Erro ao executar a operacao!";
         $this->arrayMsgErro['EXCLUIR_REGISTRO_REL'] = 'Não foi possível excluir este registro, porque ele está sendo utilizado!';
@@ -42,7 +43,7 @@ class Alerta
     }
 
     /**
-     * 
+     *
      * @param unknown_type $msg
      * @param unknown_type $cor
      * @return string
@@ -53,7 +54,7 @@ class Alerta
     }
 
     /**
-     * 
+     *
      * @param unknown_type $msg
      */
     private function obterAlerta($msg)
@@ -72,10 +73,9 @@ class Alerta
         else
         {
             echo $this->desenharHtml(' -- ', '#666');
-            
+
         }
     }
 
 }
 ?>
-

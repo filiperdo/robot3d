@@ -99,6 +99,7 @@ class User extends Controller {
 		$this->view->follow = new Follow_Model();
 
 		$this->view->render( "header.inc" );
+		$this->view->render( "col-left" );
 		$this->view->render( "user/dashboard" );
 		$this->view->render( "footer.inc" );
 	}
@@ -223,13 +224,32 @@ class User extends Controller {
 	*/
 	public function edit( $id )
 	{
+		$this->model->obterUser($id);
+
+		if(isset($_POST['password']))
+		{
+			if( strlen($_POST['password']) < 6 || strlen($_POST['password']) > 12 )
+			{
+				$id = base64_encode($id);
+				$msg = base64_encode( "ERRO_TAMANHO_SENHA" );
+				header("location: " . URL . "user/form/{$id}/?st=".$msg);
+				exit();
+			}
+		}
+
+
 		$data = array(
 			'name' 				=> $_POST["name"],
 			'email' 			=> $_POST["email"],
-			'website' 			=> $_POST["website"],
+			'password'			=> isset($_POST['password']) ? $_POST['password'] : $this->model->getPassword(),
 			'bio' 				=> $_POST["bio"],
 			'linguage' 			=> $_POST["linguage"],
-			'github' 			=> $_POST["github"]
+			'website' 			=> $_POST["website"],
+			'github' 			=> $_POST["github"],
+			'facebook' 			=> $_POST["facebook"],
+			'twitter' 			=> $_POST["twitter"],
+			'youtube' 			=> $_POST["youtube"]
+
 		);
 
 		$this->model->edit( $data, $id ) ? $msg = base64_encode( "OPERACAO_SUCESSO" ) : $msg = base64_encode( "OPERACAO_ERRO" );

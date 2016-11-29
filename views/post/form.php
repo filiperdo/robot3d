@@ -93,7 +93,7 @@
 						<a href="<?php echo URL; ?>post" class="btn btn-info">Cancelar</a>
 					</div>
 				</div>
-				<input type="hidden" name="mainpicture" id="mainpicture" value="">
+				<input type="hidden" name="mainpicture" id="mainpicture" value="<?=$this->obj->getMainpicture()?>">
 				</form>
 			</div><!-- .col-md-8 -->
 

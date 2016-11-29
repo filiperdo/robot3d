@@ -1,78 +1,9 @@
-		<div class="gn"><!-- gn Coluna da esquerda -->
-      <div class="qv rc aog alu">
-        <div class="qx" style="background-image: url(<?php echo URL; ?>public/img/iceland.jpg);"></div>
-        <div class="qw dj">
-        
-          <img class="aoh" src="<?php echo Data::getPhotoUser( $this->obj->getId_user() ); ?>">
 
-          <h5 class="qy">
-            <a class="aku" href="profile/index.html"> <?php echo $this->obj->getName();?></a>
-          </h5>
 
-          <p><?php echo $this->obj->getBio(); ?></p>
 
-          <div class="aoa">
-          	<?php if( Session::get('loggedIn') ) { ?>
-	          	<?php if( Session::get('userid') == $this->obj->getId_user() ) {?>
-	          		<a href="<?php echo URL?>user/form/<?php echo base64_encode(Session::get('userid')); ?>" class="cg ts fx"><span class="h aah"></span> Editar perfil</a>
-	          	<?php } else {?>
-	          		<button class="cg ts fx"><span class="h vc"></span> Seguir</button>
-	          	<?php } ?>
-          	<?php } ?>
-          	
-          </div>
-        
-        </div>
-      </div>
-    
-      <div class="qv rc sm sp">
-        <div class="qw">
-          <h5 class="ald">Sobre </h5>
-          <ul class="eb tb">
-            <!-- <li><span class="dp h xh all"></span>Went to <a href="#">Oh, Canada</a> -->
-            <li><span class="dp h ajw all"></span>Se tornou amigo <a href="#"> Lorem ipsum </a></li>
-            <li><span class="dp h abu all"></span>Projetos <a href="#">Github</a></li>
-            <li><span class="dp h ack all"></span>Mora em <a href="#">Santo André, SP</a></li>
-            <li><span class="dp h adt all"></span>Posts <a href="#">145</a></li>
-            <li><span class="dp h adt all"></span>Site <a href="#">site.com.br</a></li>
-          </ul>
-        </div>
-      </div>
-	
-       <div class="qv rc sm sp">
-        <div class="qw">
-          <h5 class="ald">Ultimos projetos <small> - <a href="<?php echo URL?>project">Ver todos</a></small></h5>
-          
-          <?php 
-          include_once 'models/project_model.php';
-          $objProject = new Project_Model();
-          ?>
-          
-          <ul class="qo anx"><!-- listar os ultimos 5 projetos ou os mais curtidos -->
-          <?php foreach( $objProject->listarProject( 4 ) as $project ) {?>
-          <li class="qf alm">
-            <a class="qj" href="<?php echo URL . 'project/detail/' . $project->getId_project(); ?>">
-              <img class="qh cu" src="<?php echo URL; ?>public/img/instagram_10.jpg">
-            </a>
-            <div class="qg">
-              <strong><a href="<?php echo URL . 'project/detail/' . $project->getId_project(); ?>"><?php echo $project->getTitle(); ?></a> </strong> @<?php echo $project->getUser()->getLogin(); ?>
-              <div class="aoa ">
-                <p><small><?php echo substr($project->getContent(), 0,50); ?></small></p>
-              </div>
-            </div>
-          </li>
-           <?php } ?>
-        </ul>
-        
-        </div>
-      </div>
-      
-    </div><!-- .gn Coluna da esquerda -->
-    
-    
 	<div class="hl">
       <ul class="ca qo anx">
-        
+
 		<li class="b qf aml">
           <!-- <div class="qj">
             <span class="h ajv dp"></span>
@@ -85,9 +16,9 @@
             </div> -->
 
             <div class="alk">
-              
+
               <h3 class="alc page-header">Projetos publicados</h3>
-              
+
               <div class="row" style="margin-top: 20px">
               <?php foreach( $this->listProject as $project ){?>
                 <div class="col-md-4">
@@ -108,20 +39,20 @@
                 </div>
 				<?php } ?>
                 </div>
-                
-                
-              
+
+
+
             </div>
           </div>
         </li>
-        
+
         <li class="b qf aml">
           <div class="qj">
             <span class="h ajv dp"></span>
           </div>
 
           <div class="qg">
-            
+
             <div class="qn">
               <a href="#"><strong>Seguidores</strong></a> <!-- <small>(3 novos)</small> -->
             </div>
@@ -132,14 +63,14 @@
             </ul>
           </div>
         </li>
-        
+
         <li class="b qf aml">
           <div class="qj">
             <span class="h ajv dp"></span>
           </div>
 
           <div class="qg">
-            
+
             <div class="qn">
               <a href="#"><strong>Seguindo</strong></a>
             </div>
@@ -153,7 +84,7 @@
 
 		<li class="b aml">
           <h3 class="alc page-header">Projetos de seu interesse</h3>
-          
+
           <div data-grid="images" data-target-height="150" style="margin-top: 20px">
             <div>
               <img data-width="640" data-height="640" data-action="zoom" src="<?php echo URL; ?>public/img/instagram_5.jpg">
@@ -177,7 +108,7 @@
           </div>
         </li>
 
-        
+
 
         <li class="b qf aml">
           <div class="qj">
@@ -213,6 +144,3 @@
 
       </ul>
     </div>
-    
-    
-   

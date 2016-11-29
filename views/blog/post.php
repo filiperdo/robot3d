@@ -15,9 +15,7 @@
 		        	<?php if( !empty($this->obj->getAuthor()) ){ echo ' | por ' . $this->obj->getAuthor(); } ?>
 		        	</small>
 		        	</p>
-	        	<?php if( !empty( $this->obj->getMainpicture() ) ) { ?>
-	        	<p><img alt="" src="<?php echo URL . $this->obj->getMainpicture(); ?>" width="100%"></p>
-	        	<?php } ?>
+	        	
 				<div class="post-content text-justify"><p class=""><?=$this->obj->getContent()?></p></div>
 
 				<div class="text-left"><small>Fonte: <a href="<?php echo $this->obj->getSource(); ?>" target="_blank"><?php echo substr($this->obj->getSource(), 0,40).'...'; ?></a></small></div>

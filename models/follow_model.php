@@ -1,18 +1,18 @@
-<?php 
+<?php
 
-/** 
+/**
  * Classe Follow
- * @author __ 
+ * @author __
  *
  * Data: 01/06/2016
- */ 
+ */
 
 include_once 'user_model.php';
 
 class Follow_Model extends Model
 {
-	/** 
-	* Atributos Private 
+	/**
+	* Atributos Private
 	*/
 	private $follower;
 	private $user;
@@ -25,7 +25,7 @@ class Follow_Model extends Model
 		$this->user = new User_Model();
 	}
 
-	/** 
+	/**
 	* Metodos set's
 	*/
 	public function setFollower( User_Model $follower )
@@ -38,7 +38,7 @@ class Follow_Model extends Model
 		$this->user = $user;
 	}
 
-	/** 
+	/**
 	* Metodos get's
 	*/
 	public function getFollower()
@@ -52,13 +52,13 @@ class Follow_Model extends Model
 	}
 
 
-	/** 
+	/**
 	* Metodo create
 	*/
 	public function create( $data )
 	{
 		$this->db->beginTransaction();
-		
+
 		if( !$id = $this->db->insert( "follow", $data, false ) ){
 			$this->db->rollBack();
 			return false;
@@ -68,7 +68,7 @@ class Follow_Model extends Model
 		return true;
 	}
 
-	/** 
+	/**
 	* Metodo edit
 	*/
 	public function edit( $data, $id )
@@ -84,7 +84,7 @@ class Follow_Model extends Model
 		return $update;
 	}
 
-	/** 
+	/**
 	* Metodo delete
 	*/
 	public function delete( $id_user, $id_follower )
@@ -92,8 +92,8 @@ class Follow_Model extends Model
 		$this->db->beginTransaction();
 
 		$where = "id_follower = {$id_follower} and id_user = {$id_user}";
-		
-		if( !$delete = $this->db->delete("follow", $where) ){ 
+
+		if( !$delete = $this->db->delete("follow", $where) ){
 			$this->db->rollBack();
 			return false;
 		}
@@ -102,7 +102,7 @@ class Follow_Model extends Model
 		return $delete;
 	}
 
-	/** 
+	/**
 	* Metodo obterFollow
 	*/
 	public function obterFollow( $id_follow )
@@ -124,12 +124,12 @@ class Follow_Model extends Model
 		$sql  = 'select * ';
 		$sql .= 'from follow ';
 		$sql .= 'where id_user = :id ';
-	
+
 		$result = $this->db->select( $sql, array("id" => $id_user) );
-		
+
 		return $this->montarLista($result);
 	}
-	
+
 	/**
 	 * Lista as pessoas que o user selecionado esta seguindo
 	 */
@@ -138,12 +138,12 @@ class Follow_Model extends Model
 		$sql  = 'select * ';
 		$sql .= 'from follow ';
 		$sql .= 'where id_follower = :id ';
-	
+
 		$result = $this->db->select( $sql, array("id" => $id_user) );
-		
+
 		return $this->montarLista($result);
 	}
-	
+
 	/**
 	 * Conta a quantidade de pessoas que o
 	 * user logado esta seguindo
@@ -155,12 +155,12 @@ class Follow_Model extends Model
 		$sql  = 'select count( distinct id_user ) as total ';
 		$sql .= 'from follow ';
 		$sql .= 'where id_follower = :id';
-	
+
 		$result = $this->db->select( $sql, array("id" => $id_user) );
 		return $result[0]['total'];
-		
+
 	}
-	
+
 	/**
 	 * Retorna a quantia de followers
 	 * @param unknown $id_pessoa
@@ -168,16 +168,16 @@ class Follow_Model extends Model
 	 */
 	public function countFollowers( $id_user )
 	{
-		$sql  = 'select count( distinct id_follower ) as total ';
-		$sql .= 'from following ';
-		$sql .= 'where id_pessoa = :id ';
-	
+			$sql  = 'select count( distinct id_follower ) as total ';
+			$sql .= 'from follow ';
+			$sql .= 'where id_user = :id ';
+
 		$result = $this->db->select( $sql, array("id" => $id_user) );
 		return $result[0]['total'];
 	}
-	
-	
-	/** 
+
+
+	/**
 	* Metodo listarFollow
 	*/
 	/*public function listarFollow()
@@ -187,7 +187,7 @@ class Follow_Model extends Model
 
 		if ( isset( $_POST["like"] ) )
 		{
-			$sql .= "where id_follow like :id "; // Configurar o like com o campo necessario da tabela 
+			$sql .= "where id_follow like :id "; // Configurar o like com o campo necessario da tabela
 			$result = $this->db->select( $sql, array("id" => "%{$_POST["like"]}%") );
 		}
 		else
@@ -196,7 +196,7 @@ class Follow_Model extends Model
 		return $this->montarLista($result);
 	}*/
 
-	/** 
+	/**
 	* Metodo montarLista
 	*/
 	private function montarLista( $result )
@@ -215,7 +215,7 @@ class Follow_Model extends Model
 		return $objs;
 	}
 
-	/** 
+	/**
 	* Metodo montarObjeto
 	*/
 	private function montarObjeto( $row )
