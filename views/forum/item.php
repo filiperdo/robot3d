@@ -3,28 +3,28 @@
 <ul class="ca qo anx">
 
 	<li class="qf b aml row">
-	
+
 		<ol class="breadcrumb">
 		  <li><a href="<?php echo URL?>">Home</a></li>
-		  <li><a href="<?php echo URL?>forum">Forum</a></li>
+		  <li><a href="<?php echo URL?>forum">Fórum</a></li>
 		  <li class="active"><?php echo $this->objTopic->getName();?></li>
 		</ol>
-		
+
 		<?php if( Session::get('loggedIn') ) { ?>
-		
+
 		<div class="row" style="margin-bottom: 15px">
 			<div class="col-md-12" style="text-align: right;">
 				<a href="<?php echo URL; ?>forum/write/<?php echo $this->objTopic->getId_topic(); ?>" class="cg ts fx"><i class="glyphicon glyphicon-plus"></i> Novo tópico</a>
-				
+
 				<button type="button" class="cg ts fx bt-notify" >
 				  <i class="glyphicon glyphicon-tag"></i> Não receber alertas ou e-mail
 				</button>
-				
+
 			</div>
 		</div>
-		
+
 		<?php } ?>
-		
+
 		<div class="row" style="margin-bottom: 15px">
 			<div class="col-md-12">
 				<div style="background: #583F7E; color: #fff; padding: 10px; border-radius:4px" id="tes">
@@ -32,9 +32,9 @@
 				</div>
 			</div>
 		</div>
-		
+
 		<?php if (isset($_GET["st"])) { $objAlert = new Alerta($_GET["st"]); } ?>
-		
+
 		<table class="table table-hover table-condensed">
 			<thead>
 			<tr>
@@ -51,14 +51,14 @@
 					<a href="<?php echo URL . 'forum/detail/' . $item->getId_item(); ?>">
 						<?php echo $item->getTitle(); ?>
 					</a>
-					
+
 					<?php if( Session::get('userid') == $item->getUser()->getId_user() ) {?>
 					<a href="<?php echo URL . 'forum/write/'. $this->objTopic->getId_topic() .'/' . $item->getId_item() ?>">[ <i class="glyphicon glyphicon-pencil"></i> ]</a>
 					<?php } ?>
-					
+
 				</td>
-				
-				<td><?php echo $item->getUser()->getLogin(); ?></td>
+
+				<td><a href="<?php echo URL , 'user/dashboard/' .$item->getUser()->getLogin()?>"><?php echo $item->getUser()->getLogin(); ?></a></td>
 				<td align="center">
 					<div class="col-md-6"><small><strong><?php echo $this->objReplie->countReplieByItem( $item->getId_item() )?></strong><br>Respostas</small></div>
 					<div class="col-md-6"><small><strong><?php echo $this->datalog->countDataLog($item->getId_item(),'item'); ?></strong><br>Views</small></div>

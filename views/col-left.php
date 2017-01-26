@@ -23,15 +23,15 @@ if( Session::get('loggedIn') ) {
         <?php if( Session::get('loggedIn') ) { ?>
 
           <a href="#">
-            <a href="<?php echo URL . 'user/dashboard/' . base64_encode( Session::get('userid') )?>"><img class="aoh" src="<?php echo Data::getPhotoUser( Session::get('userid') ); ?>"></a>
+            <a href="<?php echo URL . 'user/dashboard/' . Session::get('user_login')?>"><img class="aoh" src="<?php echo Data::getPhotoUser( Session::get('userid') ); ?>"></a>
           </a>
 
           <h5 class="qy">
-            <a class="aku" href="<?php echo URL . 'user/dashboard/' . base64_encode( Session::get('userid') )?>"> <?php echo Session::get('user_name');?></a>
+            <a class="aku" href="<?php echo URL . 'user/dashboard/' . Session::get('user_login')?>"> <?php echo Session::get('user_name');?></a>
           </h5>
           <p class="alu"><?php echo $objUser->getBio(); ?></p>
 
-		  <p><a href="<?php echo URL?>user/form/<?php echo base64_encode(Session::get('userid')); ?>" class="cg ts fx"><span class="h aah"></span> Editar perfil</a></p>
+		  <p><a href="<?php echo URL?>user/form/<?php echo Session::get('userid'); ?>" class="cg ts fx"><span class="h aah"></span> Editar perfil</a></p>
 
           <ul class="aoi">
             <li class="aoj">
@@ -99,7 +99,7 @@ if( Session::get('loggedIn') ) {
 
             <div class="qg">
               <strong><a href="<?php echo URL . 'project/detail/' . $project->getId_project(); ?>"><?php echo $project->getTitle(); ?></a> </strong>
-			  <small>| <a href="<?php echo URL . 'user/dashboard/' . base64_encode($project->getUser()->getId_user());?>"><?php echo $project->getUser()->getLogin(); ?></a></small>
+			  <small>| <a href="<?php echo URL . 'user/dashboard/' . $project->getUser()->getLogin();?>"><?php echo $project->getUser()->getLogin(); ?></a></small>
               <div class="aoa ">
                 <p><small><?php echo substr($project->getContent(), 0,50); ?></small></p>
               </div>

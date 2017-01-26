@@ -28,7 +28,8 @@ class Index_Model extends Model
 		// Faz a selecao de post e projetos
 
 		$sql  = 'select ';
-		$sql .= 'p.slug as id, ';
+		$sql .= 'p.id_post as id, ';
+		$sql .= 'p.slug, ';
 		$sql .= 'p.title, ';
 		$sql .= 'p.content, ';
 		$sql .= 'p.date, ';
@@ -40,6 +41,7 @@ class Index_Model extends Model
 		$sql .= 'union ';
 		$sql .= 'select ';
 		$sql .= 'p.id_project as id, ';
+		$sql .= 'p.slug, ';
 		$sql .= 'p.title, ';
 		$sql .= 'p.content, ';
 		$sql .= 'p.date, ';
@@ -47,7 +49,7 @@ class Index_Model extends Model
 		$sql .= 'p.mainpicture, ';
 		$sql .= "'project' as tipo ";
 		$sql .= 'from project as p ';
-		$sql .= 'order by 4 desc '; // 4 coluna
+		$sql .= 'order by 5 desc '; // 5 colun = date
 
 		$sql .= "limit {$inicio},{$quantidade} ";
 

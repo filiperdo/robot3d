@@ -109,7 +109,7 @@
 
 				<div id="output-files">
 				<div class="jFiler-items-list jFiler-items-grid" >
-					<?php echo 'Path: ' . $this->path; ?>
+					
 					<?php if( $this->path != '' ) { ?>
 					<?php foreach ( Data::getImgPost('post', $this->path, true ) as $img ) { ?>
 
@@ -184,7 +184,7 @@
 			});
 		});
 
-		$('.radio-mainpicture').click(function(){
+		$('.radio-mainpicture').on('click',function(){
 			$('#mainpicture').val($(this).val());
 		})
 

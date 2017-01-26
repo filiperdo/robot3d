@@ -84,22 +84,22 @@ class User extends Controller {
 	 * Metodo dashboard
 	 * @param unknown $id
 	 */
-	public function dashboard( $id )
+	public function dashboard( $login )
 	{
 		$this->view->title = "Dashboard";
 
 		require_once 'models/project_model.php';
 		$objProject = new Project_Model();
 
-		$this->view->listProject = $objProject->listarProjectByUser( base64_decode( $id ) );
+		$this->view->obj = $this->model->obterUserByLogin( $login );
 
-		$this->view->obj = $this->model->obterUser( base64_decode( $id ) );
+		$this->view->listProject = $objProject->listarProjectByUser( $this->model->getId_user() );
 
 		require_once 'models/follow_model.php';
 		$this->view->follow = new Follow_Model();
 
 		$this->view->render( "header.inc" );
-		$this->view->render( "col-left" );
+		//$this->view->render( "col-left" );
 		$this->view->render( "user/dashboard" );
 		$this->view->render( "footer.inc" );
 	}
@@ -290,59 +290,41 @@ class User extends Controller {
 		$name 	= $_FILES['fileUpload']['name'];
 		$tmp_name = $_FILES['fileUpload']['tmp_name'];
 
-		$allowedExts = array(".gif", ".jpeg", ".jpg", ".png");
+		$allowedExts = array(".gif", ".jpeg", ".jpg", ".png"); // passar para o config
 
 		// Verifica a acao para pegar a variavel do path correta
 		Session::get('act_post') == 'create' ? $var_path = Session::get('path_post') : $var_path = Session::get('path_edit_post');
 
-		$dir = 'public/img/user/'. Session::get('userid') .'/';
+		$path = 'public/img/user/'. strtolower( PREFIX_SESSION ).date('Ymd_his').'-'.Session::get('userid') .'/';
 
-		for($i = 0; $i < count($tmp_name); $i++)
+		// Edita o campo path no banco
+		$this->model->edit( ['path' => $path], Session::get('userid') );
+
+		$ext = strtolower(substr($name[0],-4));
+
+		if(in_array($ext, $allowedExts))
 		{
-			$ext = strtolower(substr($name[$i],-4));
+			$new_name = 'foto-perfil.jpg';
+			$image = WideImage::load( $tmp_name[0] );
+			$image = $image->resize(350, 350, 'inside');
+			$image = $image->crop('center', 'center', 350, 350);
 
-			if(in_array($ext, $allowedExts))
-			{
-				$new_name = strtolower( PREFIX_SESSION ).date('Ymd_his').'_'.$name[$i];
+			if( !is_dir( $path ) )
+				mkdir( $path, 0777, true);
 
-				// cria a img default =========================================
-				$image = WideImage::load( $tmp_name[$i] );
-				$image = $image->resize(600, 600, 'inside');
-				//$image = $image->crop('center', 'center', 170, 180);
+			$image->saveToFile( $path . $new_name, 60 );
 
-				// verifica so o diretorio existe
-				// caso contrario, criamos o diretorio com permissao para escrita
-				if( !is_dir( $dir ) )
-					mkdir( $dir, 0777);
-
-				$image->saveToFile( $dir . $new_name );
-
-				// cria a img thumb ==========================================
-				$image_thumb = WideImage::load( $tmp_name[$i] );
-				$image_thumb = $image_thumb->resize(170, 170, 'outside');
-				$image_thumb = $image_thumb->crop('center', 'center', 170, 170);
-
-				$dir_thumb = $dir.'thumb/';
-
-				// verifica so o diretorio existe
-				// caso contrario, criamos o diretorio com permissao para escrita
-				if( !is_dir( $dir_thumb ) )
-					mkdir( $dir_thumb, 0777);
-
-				$image_thumb->saveToFile( $dir_thumb . $new_name );
-			}
 		}
-
 		//echo 'ok';
 	}
 
 	public function delete_fotoperfil()
 	{
 		Session::init();
-		$dir = 'public/img/user/'. Session::get('userid') .'/';
+		$this->model->obterUser(Session::get('userid'));
 
 		// Varre a pasta apagando os arquivos
-		foreach( glob( $dir . "/*.*" ) as $foto )
+		foreach( glob( $this->model->getPath() . "/*.*" ) as $foto )
 		{
 			if( file_exists( $foto ) )
 			{
@@ -352,8 +334,8 @@ class User extends Controller {
 		}
 
 		// Remove o diretorio
-		if( is_dir( $dir ) )
-			rmdir( $dir );
+		if( is_dir( $this->model->getPath() ) )
+			rmdir( $this->model->getPath() );
 
 		header('Location: ' . URL . 'user/form/' . base64_encode( Session::get('userid') ));
 		//echo 'deletou diretorio : ' . $dir;

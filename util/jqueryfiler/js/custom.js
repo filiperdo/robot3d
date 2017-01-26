@@ -30,9 +30,13 @@ $(document).ready(function(){
 										<li>{{fi-progressBar}}</li>\
 									</ul>\
 									<ul class="list-inline pull-right">\
-										<li><button class="bt-copy btn btn-info btn-xs" data-clipboard-action="copy" data-clipboard-text=""><i class="glyphicon glyphicon-link"></i></button>\
+										<li><button class="bt-copy btn btn-info btn-xs" data-clipboard-action="copy" data-clipboard-text="{{fi-name}}"><i class="glyphicon glyphicon-link"></i></button>\
 										<a class="btn btn-danger btn-xs"><i class="icon-jfi-trash jFiler-item-trash-action"></i> Deletar</a></li>\
-									</ul>\
+									</ul><br>\
+									<label>\
+										<input type="radio" class="radio-mainpicture" name="rd-mainpicture" value="{{fi-name}}">\
+										Destaque\
+									</label>\
 								</div>\
 							</div>\
 						</div>\

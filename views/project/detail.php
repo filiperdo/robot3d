@@ -17,7 +17,7 @@
 				<p class="alu"><?=$this->obj->getContent()?></p>
 			</div>
 		</li>
-		
+
 		<li class="qf b aml">
 			<div class="any" data-grid="images">
             <?php foreach( glob('public/img/project/'. $this->obj->getId_project() .'/*.jpg') as $imagem ){ ?>
@@ -26,7 +26,7 @@
                 <img data-action="zoom" data-width="<?php echo $width; ?>" data-height="<?php echo $height; ?>" src="<?php echo URL . $imagem; ?>">
               </div>
 			<?php } ?>
-				
+
             </div>
 		</li>
 	</ul>
@@ -37,16 +37,16 @@
 
 		<div class="qv rc alu">
 	        <div class="qw">
-	        
+
 	        <h4 class="page-header"><?php echo $this->obj->getTitle();?></h4>
-	        
+
 	        <ul class="qo anx">
 	          <li class="qf alm">
 	            <a class="qj" href="#">
 	              <img class="qh cu" src="<?php echo Data::getPhotoUser( $this->obj->getUser()->getId_user() ) ?>">
 	            </a>
 	            <div class="qg">
-	              <a href="<?php echo URL . 'user/dashboard/' . base64_encode( $this->obj->getUser()->getId_user() ); ?>">
+	              <a href="<?php echo URL . 'user/dashboard/' . $this->obj->getUser()->getLogin(); ?>">
 	              	<strong><?php echo $this->obj->getUser()->getName();?> </strong> @<?php echo $this->obj->getUser()->getLogin();?>
 	              </a>
 	              <p><small><a href="#"><?php echo $this->obj->getTotalProjectByUser( $this->obj->getUser()->getId_user() );?> Projetos</a> | <a href="#">34 Seguidores</a></small></p>
@@ -56,13 +56,13 @@
 	            </div>
 	          </li>
 	        </ul>
-	        
+
 	        </div>
 	        <div class="qz">
 	          Publicado em <?php echo Data::formatDateShort( $this->obj->getDate() );?>
 	        </div>
 	      </div>
-		
+
 		<div class="qv rc aok">
 	        <div class="qw">
 	          <h4 class="page-header">Membros do projeto</h4>
@@ -77,7 +77,7 @@
 	          <?php } ?>
 	        </div>
 	      </div>
-	      
+
 	      <div class="row" style="margin-bottom: 20px;">
 	      	<div class="col-md-12">
 	      		<!--<a class="cg ts fx ppv" tabindex="0" role="button" data-toggle="popover2" data-placement="top" data-trigger="focus" title="Titulo" data-content=" 1 - 2 - 3 - 4 - 5 ">
@@ -87,7 +87,7 @@
 	      		<a href="#" class="cg ts fx"><i class="h aja"></i> Eu fiz um</a>
 	      	</div>
 	      </div>
-	      
+
 	      <div class="qv rc aok">
 	        <div class="qw">
 	          <h4 class="page-header">Componentes</h4>
@@ -100,14 +100,14 @@
 	          </li>
 	          </ul>
 	          <?php } ?>
-	          
+
 	        </div>
 	      </div>
 
 
 	      <div class="row" style="margin-bottom: 20px;">
 	      	<div class="col-md-12">
-	      		
+
 	      		<div class="row">
 	      			<div class="col-md-12">
 	      				<strong>Sua avaliação</strong>
@@ -119,7 +119,7 @@
 				      		</a>
 			      		</div>
 
-			      		<div class="star-box meio">				      		
+			      		<div class="star-box meio">
 				      		<a href="#">
 				      			<i class="glyphicon glyphicon-star-empty"></i>
 				      			<i class="glyphicon glyphicon-star-empty"></i>
@@ -154,8 +154,8 @@
 			      		</div>
 		      		</div>
 	      		</div>
-	      	
-	      		
+
+
 	      	</div>
 	      </div>
 
@@ -168,8 +168,8 @@
 
 	  //$('.ppv').popover();
 
-	  $('.btshare').popover({ html: true, trigger: 'focus', placement: 'top', content: $('#pshare').html() }); 
-	  
+	  $('.btshare').popover({ html: true, trigger: 'focus', placement: 'top', content: $('#pshare').html() });
+
 	});
 
 </script>
@@ -181,5 +181,3 @@
 	<a href=""><i class="h aft" style="font-size: 22px"></i></a>&ensp;
 	<a href=""><i class="h abx" style="font-size: 22px"></i></a>
 </div>
-
-    

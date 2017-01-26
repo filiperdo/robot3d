@@ -330,6 +330,19 @@ class User_Model extends Model
 	}
 
 	/**
+	* Metodo obterUser
+	*/
+	public function obterUserByLogin( $login )
+	{
+		$sql  = "select * ";
+		$sql .= "from user ";
+		$sql .= "where login = :login ";
+
+		$result = $this->db->select( $sql, array("login" => $login) );
+		return $this->montarObjeto( $result[0] );
+	}
+
+	/**
 	 * Metodo obterUserByEmail
 	 * @param unknown $id_user
 	 */
@@ -363,18 +376,22 @@ class User_Model extends Model
 	public function listarUserTeste($return = NULL)
 	{
 		Session::init();
-
 		//
-		$quantidade = 15;
+		$quantidade = 10;
 		$page = isset($_GET['page']) && $_GET['page'] > 0 ? $_GET['page'] : 1;
 		$inicio = ( $page * $quantidade ) - $quantidade;
 
 		$sql  = "select * ";
 		$sql .= "from user as u ";
-		$sql .= "where u.id_user != ". Session::get('userid') ."  ";
-		$sql .= "and u.id_user not in(select f.id_user from follow as f where f.id_follower = ". Session::get('userid') .")"; // exclui os users que ja esta seguindo
+
+		if( Session::get('userid') != NULL )
+		{
+			$sql .= "where u.id_user != ". Session::get('userid') ."  ";
+			$sql .= "and u.id_user not in(select f.id_user from follow as f where f.id_follower = ". Session::get('userid') .")"; // exclui os users que ja esta seguindo
+		}
+
+		$sql .= "order by u.id_user desc ";
 		$sql .= "limit {$inicio},{$quantidade} ";
-		//$sql .= "order by ";
 
 		$result = $this->db->select( $sql );
 
@@ -432,8 +449,13 @@ class User_Model extends Model
 
 		$sql  = "select * ";
 		$sql .= "from user as u ";
-		$sql .= "where u.id_user != ". Session::get('userid') ."  ";
-		$sql .= "and u.id_user not in(select f.id_user from follow as f where f.id_follower = ". Session::get('userid') .")"; // exclui os users que ja esta seguindo
+
+		if( Session::get('userid') != NULL )
+		{
+			$sql .= "where u.id_user != ". Session::get('userid') ."  ";
+			$sql .= "and u.id_user not in(select f.id_user from follow as f where f.id_follower = ". Session::get('userid') .")"; // exclui os users que ja esta seguindo
+		}
+
 		$sql .= "order by u.id_user desc ";
 
 		if( isset( $limit ) )
@@ -510,7 +532,7 @@ class User_Model extends Model
 		$this->setFacebook( $row["facebook"] );
 		$this->setTwitter( $row["twitter"] );
 		$this->setYoutube( $row["youtube"] );
-		
+
 		return $this;
 	}
 }

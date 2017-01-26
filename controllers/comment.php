@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 class Comment extends Controller {
 
@@ -7,7 +7,7 @@ class Comment extends Controller {
 		//Auth::handleLogin();
 	}
 
-	/** 
+	/**
 	* Metodo index
 	*/
 	public function index()
@@ -20,7 +20,7 @@ class Comment extends Controller {
 		$this->view->render( "footer" );
 	}
 
-	/** 
+	/**
 	* Metodo editForm
 	*/
 	public function form( $id = NULL )
@@ -29,7 +29,7 @@ class Comment extends Controller {
 		$this->view->action = "create";
 		$this->view->obj = $this->model;
 
-		if( $id ) 
+		if( $id )
 		{
 			$this->view->title = "Editar Comment";
 			$this->view->action = "edit/".$id;
@@ -45,23 +45,21 @@ class Comment extends Controller {
 		$this->view->render( "footer" );
 	}
 
-	/** 
+	/**
 	* Metodo create
 	*/
 	public function create()
 	{
 		Session::init();
-		
+
 		$data = array(
 			'content' 	=> $_POST["content"],
 			'id_user' 	=> Session::get('userid')
 		);
-		
-		
-		
+
 		// Verifica e configura se eh um comment de um post ou project
 		$_POST['comment_type'] == 'post' ? $data['id_post'] = $_POST['id_item'] : $data['id_project'] = $_POST['id_item'];
-		
+
 		if( !$this->model->create( $data ) )
 		{
 			echo 'Erro! O sistema não conseguiu gravar seu comentário!';
@@ -70,15 +68,15 @@ class Comment extends Controller {
 		{
 			// <li> comentarios inseridos na home </i>
 			echo '<li class="qf"><a class="qj" href="#"><img class="qh cu" src="' . Data::getPhotoUser( Session::get('userid') ) . '"></a> ';
-			
-			echo '<div class="qg"><strong><a href="' . URL . 'user/dashboard/' . base64_encode( Session::get('userid') ) . ' ">' . Session::get('user_login') . ':</a> </strong>';
+
+			echo '<div class="qg"><strong><a href="' . URL . 'user/dashboard/' . Session::get('user_login') . ' ">' . Session::get('user_login') . ':</a> </strong>';
 			echo '<small>('. Data::timeAgo( 'now' ) .')</small>: ';
 			echo $_POST["content"] . '</div></li>';
 		}
-		
+
 	}
 
-	/** 
+	/**
 	* Metodo edit
 	*/
 	public function edit( $id )
@@ -92,7 +90,7 @@ class Comment extends Controller {
 		header("location: " . URL . "comment?st=".$msg);
 	}
 
-	/** 
+	/**
 	* Metodo delete
 	*/
 	public function delete( $id )

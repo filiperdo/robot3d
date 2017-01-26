@@ -1,3 +1,77 @@
+<?php
+
+include_once 'models/project_model.php';
+$objProject = new Project_Model();
+
+include_once 'models/item_model.php';
+$objItem = new Item_Model();
+
+include_once 'models/follow_model.php';
+$objFollow = new Follow_Model();
+
+?>
+
+	<div class="gn"><!-- gn Coluna da esquerda -->
+      <div class="qv rc aog alu">
+        <div class="qx" style="background-image: url(<?php echo URL; ?>public/img/iceland.jpg);"></div>
+        <div class="qw dj">
+
+          <a href="#"><a href=""><img class="aoh" src="<?php echo Data::getPhotoUser( $this->obj->getId_user() ); ?>"></a></a>
+
+          <h5 class="qy"><?php echo $this->obj->getName() != '' ? $this->obj->getName() : $this->obj->getLogin();?></h5>
+          <p class="alu"><?php echo $this->obj->getBio(); ?></p>
+
+		  <?php if( Session::get('loggedIn') && Session::get('userid') == $this->obj->getId_user()  ) { ?>
+		  <p><a href="<?php echo URL?>user/form/<?php echo Session::get('userid'); ?>" class="cg ts fx"><span class="h aah"></span> Editar perfil</a></p>
+		  <?php } else { ?>
+		  <p><a href="<?php echo URL?>" class="cg ts fx"><span class="h vc"></span> Seguir</a></p>
+		  <?php } ?>
+
+          <ul class="aoi">
+            <li class="aoj">
+              <a href="#userModal" class="aku" data-toggle="modal">
+                Seguindo
+                <h5 class="ali"><?php echo $objFollow->countFollowing($this->obj->getId_user()); ?></h5>
+              </a>
+            </li>
+
+            <li class="aoj">
+              <a href="#userModal" class="aku" data-toggle="modal">
+                Seguidores
+                <h5 class="ali"><?php echo $objFollow->countFollowers($this->obj->getId_user()); ?></h5>
+              </a>
+            </li>
+          </ul>
+
+
+        </div>
+      </div>
+
+
+
+
+      <div class="qv rc sm sp">
+        <div class="qw">
+          <h5 class="ald">Sobre mim <small></small></h5>
+          <ul class="eb tb">
+            <!-- <li><span class="dp h xh all"></span>Went to <a href="#">Oh, Canada</a> -->
+            <!--<li><span class="dp h ajw all"></span>Se tornou amigo <a href="#"> Lorem ipsum </a>-->
+			<?php if(!empty($this->obj->getWebsite())){ ?><li><span class="dp h add all"></span><a href="<?php echo $this->obj->getWebsite(); ?>" target="_blank">Website </a><?php } ?>
+			<?php if(!empty($this->obj->getGithub())){ ?><li><span class="dp h abu all"></span><a href="<?php echo $this->obj->getGithub(); ?>" target="_blank">Github </a><?php } ?>
+			<?php if(!empty($this->obj->getFacebook())){ ?><li><span class="dp h aau all"></span><a href="<?php echo $this->obj->getFacebook(); ?>" target="_blank">Facebook </a><?php } ?>
+			<?php if(!empty($this->obj->getTwitter())){ ?><li><span class="dp h ajo all"></span><a href="<?php echo $this->obj->getTwitter(); ?>" target="_blank">Twitter </a><?php } ?>
+			<?php if(!empty($this->obj->getYoutube())){ ?><li><span class="dp h akt all"></span><a href="<?php echo $this->obj->getYoutube(); ?>" target="_blank">Youtube </a><?php } ?>
+            <!--<li><span class="dp h ack all"></span>Mora em <a href="#">Lorem ipsum, SP</a>-->
+            <li><span class="dp h wi all"></span>Posts <strong><?php echo $objItem->countItemByUser($this->obj->getId_user()); ?></strong>
+			<li><span class="dp h abk all"></span>Projetos <strong><?php echo $objProject->getTotalProjectByUser($this->obj->getId_user()); ?></strong>
+          </ul>
+        </div>
+      </div>
+
+
+
+
+    </div><!-- .gn Coluna da esquerda -->
 
 
 
@@ -86,25 +160,9 @@
           <h3 class="alc page-header">Projetos de seu interesse</h3>
 
           <div data-grid="images" data-target-height="150" style="margin-top: 20px">
-            <div>
+            <!--<div>
               <img data-width="640" data-height="640" data-action="zoom" src="<?php echo URL; ?>public/img/instagram_5.jpg">
-            </div>
-
-            <div>
-              <img data-width="640" data-height="640" data-action="zoom" src="<?php echo URL; ?>public/img/instagram_7.jpg">
-            </div>
-
-            <div>
-              <img data-width="640" data-height="640" data-action="zoom" src="<?php echo URL; ?>public/img/instagram_8.jpg">
-            </div>
-
-            <div>
-              <img data-width="640" data-height="640" data-action="zoom" src="<?php echo URL; ?>public/img/instagram_9.jpg">
-            </div>
-
-            <div>
-              <img data-width="640" data-height="640" data-action="zoom" src="<?php echo URL; ?>public/img/instagram_10.jpg">
-            </div>
+		  </div>-->
           </div>
         </li>
 

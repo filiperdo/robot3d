@@ -10,7 +10,7 @@ class Index extends Controller {
     public function index()
     {
         $this->view->title = 'Home';
-        $this->view->js[] = 'index.js';
+        //$this->view->js[] = 'index.js'; este arquivo esta sendo carregado no blog/post, ACERTAR!!!
 
         require_once 'models/post_model.php';
         require_once 'models/project_model.php';
@@ -63,7 +63,7 @@ class Index extends Controller {
 	        $html .= '<h4 class="title-post-home" style="text-transform: uppercase;">';
 
 			if( $list['tipo'] == 'post' ) {
-          		$link = URL . 'blog/post/' . $list['id'];
+          		$link = URL . 'blog/post/' . $list['slug'];
           		$html .= '<a href="' . $link . '">' . strtoupper($list['title']) . '</a>';
           	} else {
           		$link = URL . 'project/detail/' . $list['id'];
@@ -126,7 +126,7 @@ class Index extends Controller {
 	            $html .= '</li>';
             }
 
-            $html .= '<li class="qf" id="result-'. $list['id'] .'" style="display: none"><img alt="Carregando..." src="<?php echo URL?>public/img/loader.gif"> Carregando...</li>';
+            $html .= '<li class="qf" id="result-'. $list['id'] .'" style="display: none"><img alt="Carregando..." src="'. URL .'public/img/loader.gif"> Carregando...</li>';
 
             foreach( $objComment->listCommentByType( $list['tipo'], $list['id'], 3 ) as $comment )
 			{
@@ -135,7 +135,7 @@ class Index extends Controller {
                 $html .= '<img class="qh cu" src="'. Data::getPhotoUser( $comment->getUser()->getId_user() ) .'">';
                 $html .= '</a>';
                 $html .= '<div class="qg">';
-                $html .= '<strong><a href="'. URL . 'user/dashboard/'. base64_encode( $comment->getUser()->getId_user() ).'"> '. $comment->getUser()->getLogin().' </a></strong>';
+                $html .= '<strong><a href="'. URL . 'user/dashboard/'. $comment->getUser()->getLogin().'"> '. $comment->getUser()->getLogin().' </a></strong>';
                 $html .= '<small>('. Data::formatDateShort( $comment->getDate() ) .')</small>: ';
                 $html .= $comment->getContent();
                 $html .= '</div>';

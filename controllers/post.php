@@ -292,7 +292,7 @@ class Post extends Controller {
 				if( !is_dir( $dir ) )
 					mkdir( $dir, 0777, true);
 
-				$image->saveToFile( $dir . $new_name );
+				$image->saveToFile( $dir . $new_name, 60 );
 
 				// cria a img thumb ==========================================
 				$image_thumb = WideImage::load( $tmp_name[$i] );

@@ -39,11 +39,11 @@ $objUserModel = new User_Model();
         <ul class="qo anx">
 	        <?php foreach ($objUserModel->listTopWhoToFollow(3) as $user) {?>
 			<li class="qf alm" id="li-user-<?php echo $user->getId_user(); ?>">
-				<a class="qj" href="<?php echo URL . 'user/dashboard/'. base64_encode( $user->getId_user() )?>">
+				<a class="qj" href="<?php echo URL . 'user/dashboard/'. $user->getLogin();?>">
 					<img class="qh cu" src="<?php echo Data::getPhotoUser( $user->getId_user() ); ?>">
 				</a>
 				<div class="qg">
-					<strong><a href="<?php echo URL . 'user/dashboard/'. base64_encode( $user->getId_user() )?>"><?php echo $user->getLogin()?></a></strong>
+					<strong><a href="<?php echo URL . 'user/dashboard/'. $user->getLogin(); ?>"><?php echo $user->getLogin()?></a></strong>
 					<div class="aoa">
 						<?php if( Session::get( 'loggedIn' ) ){?>
 						<button class="cg ts fx bt-seguir" id="<?php echo $user->getId_user(); ?>"><span class="h vc"></span> Seguir</button>

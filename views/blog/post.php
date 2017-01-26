@@ -6,7 +6,7 @@
 	  <li><span class="text-uppercase"><?php echo $this->obj->getTitle();?></span></li>
 	</ol>
 
-	<ul class="ca qo anx">
+	<ul class="ca qo anx" id="indexTest">
 		<li class="qf b aml">
 	        <div class="qw dj " style="padding-top: 0">
 	        	<h3 class="text-uppercase"><?php echo $this->obj->getTitle(); ?></h3>
@@ -15,7 +15,7 @@
 		        	<?php if( !empty($this->obj->getAuthor()) ){ echo ' | por ' . $this->obj->getAuthor(); } ?>
 		        	</small>
 		        	</p>
-	        	
+
 				<div class="post-content text-justify"><p class=""><?=$this->obj->getContent()?></p></div>
 
 				<div class="text-left"><small>Fonte: <a href="<?php echo $this->obj->getSource(); ?>" target="_blank"><?php echo substr($this->obj->getSource(), 0,40).'...'; ?></a></small></div>
@@ -65,7 +65,7 @@
                   <img class="qh cu" src="<?php echo Data::getPhotoUser( $comment->getUser()->getId_user() ); ?>">
                 </a>
                 <div class="qg">
-                  <strong><a href="<?php echo URL . 'user/dashboard/'. base64_encode( $comment->getUser()->getId_user() )?>"><?php echo $comment->getUser()->getLogin()?>: </a></strong>
+                  <strong><a href="<?php echo URL . 'user/dashboard/'. $comment->getUser()->getLogin()?>"><?php echo $comment->getUser()->getLogin()?>: </a></strong>
                   <?php echo $comment->getContent();?>
                 </div>
               </li>
