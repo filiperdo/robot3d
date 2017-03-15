@@ -33,6 +33,37 @@ class Index extends Controller {
         $this->view->render('footer.inc');
     }
 
+    public function trends()
+    {
+        $content = file_get_contents('http://www.robo3d.com.br/_files/reports/arduino-mercadolivre.json');
+
+        $array = json_decode($content);
+
+        foreach ($array as $value) {
+            $value->vendidos = trim( str_replace('vendidos', '', $value->vendidos) );
+
+            $centavos = substr($value->preco, -2);
+            $reais = substr($value->preco, 0, -2);
+
+            $value->preco = $reais .','. $centavos;
+        }
+
+        //var_dump($array);
+        //exit();
+
+        // Compara se $a é maior que $b
+        function cmp($a, $b) {
+        	return $a->vendidos < $b->vendidos;
+        }
+
+        // Ordena
+        usort($array, 'cmp');
+        $this->view->json = $array;
+
+        //var_dump($this->view->json);
+        $this->view->render('index/trends');
+    }
+
 	public function indexTest($num_page)
 	{
 		Session::init();

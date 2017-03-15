@@ -107,12 +107,18 @@
 
 	      <div class="row" style="margin-bottom: 20px; margin-top: 20px;">
 	      	<div class="col-md-12">
-	      		<div style="float:left; margin-right:4px" class="fb-share-button" data-href="http://www.robo3d.com.br/blog/post/<?php echo $this->obj->getSlug();?>" data-layout="button_count" data-size="large" data-mobile-iframe="true">
-	      		<a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.robo3d.com.br/blog/post/<?php echo $this->obj->getSlug();?>%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore cg ts fx"><i class="h aau" style="font-size: 22px"></i> </a>
-				</div>
-				<a href="#" class="cg ts fx disabled"><i class="h ajo" style="font-size: 22px"></i> </a>
-	      		<a href="#" class="cg ts fx disabled"><i class="h adr" style="font-size: 22px"></i> </a>
-	      		<a href="#" class="cg ts fx disabled"><i class="h abx" style="font-size: 22px"></i> </a>
+				<a href="#" class="fb-xfbml-parse-ignore cg ts fx" title="Compartilhar via Facebook" alt="Compartilhar via Facebook" onclick='open_social_popup(600,300,"facebook","https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.robo3d.com.br/blog/post/<?php echo $this->obj->getSlug();?>%2F&amp;src=sdkpreparse%3Futm_source%3Dfacebook%26utm_medium%3Dsocial%26utm_campaign")' >
+					<i class="h aau" style="font-size: 22px"></i>
+				</a>
+				<a href="#" class="cg ts fx " title="Compartilhar via Twitter" alt="Compartilhar via Twitter" onclick='open_social_popup(700,300,"twitter","https://twitter.com/intent/tweet?url=http://www.robo3d.com.br/blog/post/<?php echo $this->obj->getSlug();?>%3Futm_source%3Dtwitter%26utm_medium%3Dsocial%26utm_campaign")'>
+					<i class="h ajo" style="font-size: 22px"></i>
+				</a>
+	      		<a href="#" title="Compartilhar via LinkedIn" alt="Compartilhar via LinkedIn" onclick='open_social_popup(490,300,"linkedin","https://www.linkedin.com/shareArticle?url=http://www.robo3d.com.br/blog/post/<?php echo $this->obj->getSlug();?>")' class="cg ts fx">
+					<i class="h adr" style="font-size: 22px"></i>
+				</a>
+	      		<a href="#" class="cg ts fx" title="Compartilhar via Google+" alt="Compartilhar via Google+" onclick='open_social_popup(490,300,"googleplus","http://plus.google.com/share?url=http://www.robo3d.com.br/blog/post/<?php echo $this->obj->getSlug();?>")'>
+					<i class="h abx" style="font-size: 22px"></i>
+				</a>
 	      	</div>
 	      </div>
 
@@ -143,7 +149,19 @@
 	  $('.ppv').popover();
 	});
 
+	function open_social_popup(width,height,social_name,social_url)
+    {
+        var left,top;
+        left=window.screen.width/2-(width/2+10);
+        top=window.screen.height/2-(height/2+50);
+        parameters="status=no,height="+height+",width="+width+",resizable=yes,left="+left+",top="+top+",screenX="+left+",screenY="+top+",toolbar=no,menubar=no,scrollbars=no,location=no,directories=no";
+        t=document.title;
+        window.open(social_url,"sharer",parameters);
+        return false
+    }
+
 </script>
+
 
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
