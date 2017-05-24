@@ -109,7 +109,7 @@
 
 				<div id="output-files">
 				<div class="jFiler-items-list jFiler-items-grid" >
-					
+
 					<?php if( $this->path != '' ) { ?>
 					<?php foreach ( Data::getImgPost('post', $this->path, true ) as $img ) { ?>
 
@@ -164,11 +164,11 @@
 
 		if( window.location.hostname == 'localhost' )
 		{
-			var URL = 'http://localhost/educacional/';
+			var URL = 'http://localhost/robot3d/';
 		}
 		else
 		{
-			var URL = 'http://educacional.anacom.com.br/';
+			var URL = 'http://www.robo3d.com.br/';
 		}
 
 		$(".delete").click(function(){

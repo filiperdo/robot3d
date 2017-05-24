@@ -9,7 +9,7 @@
 	Input
 -------------------------*/
 .jFiler-input-dragDrop {
-    display: block;    
+    display: block;
     margin: 0 auto 25px auto;
     padding: 25px;
     color: #97A1A8;
@@ -46,7 +46,7 @@
 }
 
 .jFiler-input-dragDrop .jFiler-input-icon {
-    font-size: 48px;
+    font-size: 18px;
     margin-top: -10px;
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
@@ -55,7 +55,7 @@
 
 .jFiler-input-text h3 {
     margin: 0;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .jFiler-input-text span {

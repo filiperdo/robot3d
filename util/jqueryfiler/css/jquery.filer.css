@@ -239,7 +239,7 @@ span.jFiler-icon-file.f-audio {
 }
 
 .jFiler-items-default .jFiler-item {
-    position: relative;
+
     padding: 16px;
     margin-bottom: 16px;
     background: #f7f7f7;
@@ -300,6 +300,9 @@ span.jFiler-icon-file.f-audio {
 /* Thumbnails: Grid */
 .jFiler-items-grid .jFiler-item {
     float: left;
+}
+.jFiler-items-grid{
+  display: inline-block;
 }
 
 .jFiler-items-grid .jFiler-item .jFiler-item-container {

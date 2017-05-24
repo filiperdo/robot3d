@@ -106,7 +106,9 @@ class Index extends Controller {
 
 			if( !empty( $list['mainpicture'] ) ) {
 
-	            $mainpicture = URL .'public/img/post/'.$list['path'].'/'. $list['mainpicture'];
+                $list['tipo'] == 'post' ? $strpath = 'post' : $strpath = 'project';
+
+	            $mainpicture = URL .'public/img/'.$strpath.'/'.$list['path'].'/'. $list['mainpicture'];
 
                 list( $width, $height, $type, $attr ) = getimagesize( $mainpicture );
 				$html .= '<div class="any" data-grid="images">';

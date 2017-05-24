@@ -21,9 +21,9 @@ function SmartWizard(target, options) {
     this.elmStepContainer = $('<div></div>').addClass("stepContainer");
     this.loader = $('<div>Loading</div>').addClass("loader");
     this.buttons = {
-        next : $('<a>'+options.labelNext+'</a>').attr("href","#").addClass("btn btn-success"),
+        next : $('<a>'+options.labelNext+'</a>').attr("href","#").addClass("btn btn-info"),
         previous : $('<a>'+options.labelPrevious+'</a>').attr("href","#").addClass("btn btn-primary"),
-        finish  : $('<a>'+options.labelFinish+'</a>').attr("href","#").addClass("btn btn-default")
+        finish  : $('<a>'+options.labelFinish+'</a>').attr("href","#").addClass("btn btn-success")
     };
 
     /*
@@ -426,7 +426,7 @@ function SmartWizard(target, options) {
 
         // These values (5 and 20) are experimentally chosen.
         stepContainer.height(height + 5);
-        this.elmStepContainer.height(height + 20); 
+        this.elmStepContainer.height(height + 20);
    }
 
     _init(this);
@@ -475,9 +475,9 @@ function SmartWizard(target, options) {
         enableFinishButton: false, // make finish button enabled always
         hideButtonsOnDisabled: false, // when the previous/next/finish buttons are disabled, hide them instead?
         errorSteps:[],    // Array Steps with errors
-        labelNext:'Next',
-        labelPrevious:'Previous',
-        labelFinish:'Finish',
+        labelNext:'Próximo',
+        labelPrevious:'Voltar',
+        labelFinish:'Publicar',
         noForwardJumping: false,
         ajaxType: "POST",
         onLeaveStep: null, // triggers when leaving a step

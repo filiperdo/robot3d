@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 class Component extends Controller {
 
@@ -7,7 +7,7 @@ class Component extends Controller {
 		//Auth::handleLogin();
 	}
 
-	/** 
+	/**
 	* Metodo index
 	*/
 	public function index()
@@ -20,7 +20,7 @@ class Component extends Controller {
 		$this->view->render( "footer" );
 	}
 
-	/** 
+	/**
 	* Metodo editForm
 	*/
 	public function form( $id = NULL )
@@ -29,7 +29,7 @@ class Component extends Controller {
 		$this->view->action = "create";
 		$this->view->obj = $this->model;
 
-		if( $id ) 
+		if( $id )
 		{
 			$this->view->title = "Editar Component";
 			$this->view->action = "edit/".$id;
@@ -45,13 +45,13 @@ class Component extends Controller {
 		$this->view->render( "footer" );
 	}
 
-	/** 
+	/**
 	* Metodo create
 	*/
 	public function create()
 	{
 		$data = array(
-			'name' => $_POST["name"], 
+			'name' => $_POST["name"],
 		);
 
 		$this->model->create( $data ) ? $msg = base64_encode( "OPERACAO_SUCESSO" ) : $msg = base64_encode( "OPERACAO_ERRO" );
@@ -59,13 +59,13 @@ class Component extends Controller {
 		header("location: " . URL . "component?st=".$msg);
 	}
 
-	/** 
+	/**
 	* Metodo edit
 	*/
 	public function edit( $id )
 	{
 		$data = array(
-			'name' => $_POST["name"], 
+			'name' => $_POST["name"],
 		);
 
 		$this->model->edit( $data, $id ) ? $msg = base64_encode( "OPERACAO_SUCESSO" ) : $msg = base64_encode( "OPERACAO_ERRO" );
@@ -73,13 +73,13 @@ class Component extends Controller {
 		header("location: " . URL . "component?st=".$msg);
 	}
 
-	/** 
+	/**
 	* Metodo delete
 	*/
 	public function delete( $id )
 	{
 		$this->model->delete( $id ) ? $msg = base64_encode( "OPERACAO_SUCESSO" ) : $msg = base64_encode( "OPERACAO_ERRO" );
 
-		header("location: " . URL . "component?st=".$msg);
+		header("location: " . URL . "project/form/".$_GET['idProj']."?idTab=".$_GET['idTab']."&st=".$msg);
 	}
 }

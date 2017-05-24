@@ -1,18 +1,18 @@
-<?php 
+<?php
 
-/** 
+/**
  * Classe Project
  * @author __ Filipe Rodrigues | filiperdo@gmail.com
  *
  * Data: 01/06/2016
- */ 
+ */
 
 include_once 'user_model.php';
 
 class Project_Model extends Model
 {
-	/** 
-	* Atributos Private 
+	/**
+	* Atributos Private
 	*/
 	private $id_project;
 	private $title;
@@ -22,8 +22,12 @@ class Project_Model extends Model
 	private $level;
 	private $date;
 	private $user;
+	private $summary;
 	private $path;
 	private $mainpicture;
+	private $slug;
+	private $tags;
+	private $status;
 
 	public function __construct()
 	{
@@ -37,11 +41,15 @@ class Project_Model extends Model
 		$this->level = '';
 		$this->date = '';
 		$this->user = new User_Model();
+		$this->summary = '';
 		$this->path = '';
-		$this->mainpicture = '';
+		$this->mainpicture = '-';
+		$this->slug = '';
+		$this->tags = '';
+		$this->private = '';
 	}
 
-	/** 
+	/**
 	* Metodos set's
 	*/
 	public function setId_project( $id_project )
@@ -84,6 +92,11 @@ class Project_Model extends Model
 		$this->user = $user;
 	}
 
+	public function setSummary( $summary )
+	{
+		$this->summary = $summary;
+	}
+
 	public function setPath( $path )
 	{
 		$this->path = $path;
@@ -94,7 +107,22 @@ class Project_Model extends Model
 		$this->mainpicture = $mainpicture;
 	}
 
-	/** 
+	public function setSlug( $slug )
+	{
+		$this->slug = $slug;
+	}
+
+	public function setTags( $tags )
+	{
+		$this->tags = $tags;
+	}
+
+	public function setStatus( $status )
+	{
+		$this->status = $status;
+	}
+
+	/**
 	* Metodos get's
 	*/
 	public function getId_project()
@@ -137,6 +165,11 @@ class Project_Model extends Model
 		return $this->user;
 	}
 
+	public function getSummary()
+	{
+		return $this->summary;
+	}
+
 	public function getPath()
 	{
 		return $this->path;
@@ -147,48 +180,63 @@ class Project_Model extends Model
 		return $this->mainpicture;
 	}
 
+	public function getSlug()
+	{
+		return $this->slug;
+	}
 
-	/** 
+	public function getTags()
+	{
+		return $this->tags;
+	}
+
+	public function getStatus()
+	{
+		return $this->status;
+	}
+
+
+	/**
 	* Metodo create
 	*/
 	public function create( $data )
 	{
-		$this->db->beginTransaction();
+		//$this->db->beginTransaction();
 
 		if( !$id = $this->db->insert( "project", $data ) ){
 			$this->db->rollBack();
 			return false;
 		}
 
-		$this->db->commit();
-		
-		return true;
+		//$this->db->commit();
+
+		return $id;
 	}
 
-	/** 
+	/**
 	* Metodo edit
 	*/
 	public function edit( $data, $id )
 	{
-		$this->db->beginTransaction();
+		//$this->db->beginTransaction();
 
 		if( !$update = $this->db->update("project", $data, "id_project = {$id} ") ){
 			$this->db->rollBack();
 			return false;
 		}
 
-		$this->db->commit();
+		//$this->db->commit();
 		return $update;
 	}
 
-	/** 
+	/**
 	* Metodo delete
 	*/
 	public function delete( $id )
 	{
 		$this->db->beginTransaction();
 
-		if( !$delete = $this->db->delete("project", "id_project = {$id} ") ){ 
+		if( !$delete = $this->db->delete("project", "id_project = {$id} ") ){
 			$this->db->rollBack();
 			return false;
 		}
@@ -197,7 +245,7 @@ class Project_Model extends Model
 		return $delete;
 	}
 
-	/** 
+	/**
 	* Metodo obterProject
 	*/
 	public function obterProject( $id_project )
@@ -210,7 +258,7 @@ class Project_Model extends Model
 		return $this->montarObjeto( $result[0] );
 	}
 
-	/** 
+	/**
 	* Metodo listarProject
 	*/
 	public function listarProject( $limit = NULL )
@@ -218,12 +266,12 @@ class Project_Model extends Model
 		$sql  = "select * ";
 		$sql .= "from project as p ";
 		$sql .= "order by p.date desc ";
-		
+
 		if( $limit )
 			$sql .= "limit {$limit} ";
-		
+
 		$result = $this->db->select($sql);
-		
+
 		return $this->montarLista($result);
 	}
 
@@ -238,15 +286,15 @@ class Project_Model extends Model
 		$sql .= "from project as p ";
 		$sql .= "where p.id_user = :id ";
 		$sql .= "order by p.date desc ";
-		
+
 		if( $limit )
 			$sql .= "limit {$limit} ";
-		
+
 		$result = $this->db->select( $sql, array( "id" => $id_user ) );
-		
+
 		return $this->montarLista($result);
 	}
-	
+
 	/**
 	 * lista os projetos para a home unindo com os posts
 	 * @param unknown $limit
@@ -256,15 +304,15 @@ class Project_Model extends Model
 		$sql  = "select * ";
 		$sql .= "from project as p ";
 		$sql .= "order by p.date desc ";
-	
+
 		if( $limit )
 			$sql .= "limit {$limit} ";
-	
+
 		$result = $this->db->select($sql);
-	
+
 		return $this->montarLista($result);
 	}
-	
+
 	/**
 	 * Conta quantos projetos foram publicados por um usuario
 	 * @param unknown $id_user
@@ -274,12 +322,12 @@ class Project_Model extends Model
 		$sql  = "select count(p.id_project) as total ";
 		$sql .= "from project as p ";
 		$sql .= "where p.id_user = :id ";
-		
+
 		$result = $this->db->select( $sql, array("id" => $id_user) );
 		return $result[0]['total'];
 	}
-	
-	/** 
+
+	/**
 	* Metodo montarLista
 	*/
 	private function montarLista( $result )
@@ -298,7 +346,7 @@ class Project_Model extends Model
 		return $objs;
 	}
 
-	/** 
+	/**
 	* Metodo montarObjeto
 	*/
 	private function montarObjeto( $row )
@@ -314,9 +362,13 @@ class Project_Model extends Model
 		$objUser = new User_Model();
 		$objUser->obterUser( $row["id_user"] );
 		$this->setUser( $objUser );
-		
+
+		$this->setSummary( $row['summary'] );
 		$this->setPath( $row['path'] ) ;
 		$this->setMainpicture( $row['mainpicture'] );
+		$this->setSlug( $row['slug'] );
+		$this->setTags( $row['tags'] );
+		$this->setStatus( $row['status'] );
 
 		return $this;
 	}

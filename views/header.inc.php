@@ -89,6 +89,12 @@
 
         <?php if( Session::get( 'loggedIn' ) ){?>
 
+            <li>
+              <a class="g" href="<?=URL?>project/form">
+                 Publicar projeto
+              </a>
+            </li>
+
           <li>
             <a class="g" href="index">
               <span class="h ws"></span>
@@ -110,11 +116,11 @@
 
         </ul>
 
-        <form class="ow og i" role="search">
+        <!--<form class="ow og i" role="search">
           <div class="et">
             <input type="text" class="form-control" data-action="grow" disabled="disabled" placeholder="Search">
           </div>
-        </form>
+        </form>-->
 
         <ul class="nav navbar-nav st su sv">
           <?php foreach( $menu_base as $menu ) { ?>

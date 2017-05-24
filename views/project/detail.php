@@ -1,3 +1,6 @@
+<script src="<?php echo URL?>public/js/custom.js" type="text/javascript"></script>
+
+
 <div class="hh">
 
 	<ol class="breadcrumb bread-border">
@@ -7,12 +10,12 @@
 	</ol>
 
 	<div class="qv rc aog alu">
-		<div class="qx" style="background: url(<?php echo URL . $this->obj->getMainpicture() ; ?>) center center; background-size:100%; height: 350px;"></div>
+		<div class="qx" style="background: url(<?php echo URL .'public/img/project/'.$this->obj->getPath().'/'.$this->obj->getMainpicture() ; ?>) center center; background-size:100%; height: 350px;"></div>
 	</div>
 
 	<ul class="ca qo anx">
 		<li class="qf b aml">
-	        <div class="qw dj">
+	        <div class="qw ">
 	        	<h5 class="qy"><?=$this->obj->getTitle()?></h5>
 				<p class="alu"><?=$this->obj->getContent()?></p>
 			</div>
@@ -49,7 +52,7 @@
 	              <a href="<?php echo URL . 'user/dashboard/' . $this->obj->getUser()->getLogin(); ?>">
 	              	<strong><?php echo $this->obj->getUser()->getName();?> </strong> @<?php echo $this->obj->getUser()->getLogin();?>
 	              </a>
-	              <p><small><a href="#"><?php echo $this->obj->getTotalProjectByUser( $this->obj->getUser()->getId_user() );?> Projetos</a> | <a href="#">34 Seguidores</a></small></p>
+	              <p><small><?php echo $this->obj->getTotalProjectByUser( $this->obj->getUser()->getId_user() );?> Projetos | <?php echo $this->follow->countFollowers($this->obj->getUser()->getId_user()); ?> Seguidores</small></p>
 	              <div class="aoa">
 	                <button class="cg ts fx"><span class="h vc"></span> Seguir</button>
 	              </div>
@@ -72,7 +75,7 @@
 		          <a class="ttp" data-toggle="tooltip" data-placement="top" title="Name User">
 		              <img class="cu" src="<?php echo URL; ?>public/img/avatar-fat.jpg">
 		          </a>
-	          </li>
+	          	</li>
 	          </ul>
 	          <?php } ?>
 	        </div>
@@ -109,49 +112,16 @@
 	      	<div class="col-md-12">
 
 	      		<div class="row">
-	      			<div class="col-md-12">
-	      				<strong>Sua avaliação</strong>
-	      			</div>
 		      		<div class="col-md-12">
-			      		<div class="star-box first">
-				      		<a href="#">
-				      			<i class="glyphicon glyphicon-star-empty"></i>
-				      		</a>
-			      		</div>
+						<div class="x_content">
 
-			      		<div class="star-box meio">
-				      		<a href="#">
-				      			<i class="glyphicon glyphicon-star-empty"></i>
-				      			<i class="glyphicon glyphicon-star-empty"></i>
-				      		</a>
-			      		</div>
+						  <h4>Sua avaliação <small>Passe o mouse sobre as estrelas</small></h4>
+						  <div>
+							<div id="stars" class="starrr lead"></div>
+							Atribua uma nota de 0 a 5 estrelas
+						  </div>
 
-			      		<div class="star-box meio">
-				      		<a href="#">
-				      			<i class="glyphicon glyphicon-star-empty"></i>
-				      			<i class="glyphicon glyphicon-star-empty"></i>
-				      			<i class="glyphicon glyphicon-star-empty"></i>
-				      		</a>
-			      		</div>
-
-			      		<div class="star-box meio">
-			      			<a href="#">
-			      				<i class="glyphicon glyphicon-star-empty"></i>
-			      				<i class="glyphicon glyphicon-star-empty"></i>
-			      				<i class="glyphicon glyphicon-star-empty"></i>
-			      				<i class="glyphicon glyphicon-star-empty"></i>
-			      			</a>
-			      		</div>
-
-			      		<div class="star-box last">
-			      			<a href="#">
-			      				<i class="glyphicon glyphicon-star-empty"></i>
-			      				<i class="glyphicon glyphicon-star-empty"></i>
-			      				<i class="glyphicon glyphicon-star-empty"></i>
-			      				<i class="glyphicon glyphicon-star-empty"></i>
-			      				<i class="glyphicon glyphicon-star-empty"></i>
-			      			</a>
-			      		</div>
+						</div>
 		      		</div>
 	      		</div>
 

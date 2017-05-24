@@ -15,7 +15,7 @@
 	<?php foreach( $this->listarProject as $project ) { ?>
 	<div class="col-md-4">
       <div class="qv rc aog alu">
-        <div class="qx" style="background: url(<?php echo URL . $project->getMainpicture(); ?>) center center no-repeat #000; background-size: 100%; overflow: hidden; height:200px"></div>
+        <div class="qx" style="background: url(<?php echo URL.'public/img/project/'.$project->getPath().'/'.$project->getMainpicture(); ?>) center center no-repeat #000; background-size: 100%; overflow: hidden; height:200px"></div>
 
         <div class="qw dj">
 
@@ -39,7 +39,7 @@
 			<div class="row">
 				<div class="col-md-4 col-xs-4"><small><strong><?php echo $this->datalog->countDataLog($project->getId_project(), 'project')?></strong><br>Views</small></div>
 				<div class="col-md-4 col-xs-4"><small><strong><?php echo $this->comment->getTotalComment('project', $project->getId_project());?></strong><br>Comments</small></div>
-				<div class="col-md-4 col-xs-4"><small><strong>100</strong><br>Likes</small></div>
+				<div class="col-md-4 col-xs-4"><small><strong>0</strong><br>Likes</small></div>
 			</div>
 
         </div>

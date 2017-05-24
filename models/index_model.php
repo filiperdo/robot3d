@@ -31,7 +31,7 @@ class Index_Model extends Model
 		$sql .= 'p.id_post as id, ';
 		$sql .= 'p.slug, ';
 		$sql .= 'p.title, ';
-		$sql .= 'p.content, ';
+		$sql .= 'p.content as content, ';
 		$sql .= 'p.date, ';
 		$sql .= 'p.path, ';
 		$sql .= 'p.mainpicture, ';
@@ -43,7 +43,7 @@ class Index_Model extends Model
 		$sql .= 'p.id_project as id, ';
 		$sql .= 'p.slug, ';
 		$sql .= 'p.title, ';
-		$sql .= 'p.content, ';
+		$sql .= 'p.summary as content, ';
 		$sql .= 'p.date, ';
 		$sql .= 'p.path, ';
 		$sql .= 'p.mainpicture, ';

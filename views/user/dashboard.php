@@ -1,3 +1,5 @@
+
+
 <?php
 
 include_once 'models/project_model.php';
@@ -16,13 +18,14 @@ $objFollow = new Follow_Model();
         <div class="qx" style="background-image: url(<?php echo URL; ?>public/img/iceland.jpg);"></div>
         <div class="qw dj">
 
-          <a href="#"><a href=""><img class="aoh" src="<?php echo Data::getPhotoUser( $this->obj->getId_user() ); ?>"></a></a>
+          <a href="#"><img class="aoh" src="<?php echo Data::getPhotoUser( $this->obj->getId_user() ); ?>"></a>
 
           <h5 class="qy"><?php echo $this->obj->getName() != '' ? $this->obj->getName() : $this->obj->getLogin();?></h5>
+
           <p class="alu"><?php echo $this->obj->getBio(); ?></p>
 
 		  <?php if( Session::get('loggedIn') && Session::get('userid') == $this->obj->getId_user()  ) { ?>
-		  <p><a href="<?php echo URL?>user/form/<?php echo Session::get('userid'); ?>" class="cg ts fx"><span class="h aah"></span> Editar perfil</a></p>
+		  <p><a href="<?php echo URL?>user/form/<?php echo base64_encode(Session::get('userid')); ?>" class="cg ts fx"><span class="h aah"></span> Editar perfil</a></p>
 		  <?php } else { ?>
 		  <p><a href="<?php echo URL?>" class="cg ts fx"><span class="h vc"></span> Seguir</a></p>
 		  <?php } ?>
@@ -97,17 +100,26 @@ $objFollow = new Follow_Model();
               <?php foreach( $this->listProject as $project ){?>
                 <div class="col-md-4">
                   <div class="qv rc aog">
-                    <div class="qx" style="background: url(<?php echo URL . $project->getMainpicture() ; ?>) center center; background-size:100%; "></div>
+                    <div class="qx" style="background: url(<?php echo URL.'public/img/project/'.$project->getPath().'/'.$project->getMainpicture(); ?>) center center no-repeat #000; background-size: 100%; overflow: hidden; height:150px"></div>
                     <div class="qw dj">
-
-                      <h5 class="qy"><a href="<?php echo URL?>project/detail/<?php echo $project->getId_project(); ?>"><?php echo $project->getTitle(); ?></a></h5>
-                      <p class="alu"><?php echo $project->getContent(); ?></p>
-
-                      <div class="row">
-						<div class="col-md-4 col-xs-4"><small><strong>456</strong><br>Views</small></div>
-						<div class="col-md-4 col-xs-4"><small><strong>34</strong><br>Comments</small></div>
-						<div class="col-md-4 col-xs-4"><small><strong>100</strong><br>Likes</small></div>
-					</div>
+						<div class="row" style="padding: 0 20px; height:130px">
+							<h5 class="qy"><a href="<?php echo URL?>project/detail/<?php echo $project->getId_project(); ?>"><?php echo $project->getTitle(); ?></a></h5>
+							<p class="alu">
+								<span style="font-size: 80%"><?php echo Data::formatDateShort( $project->getDate() ) ?></span><br>
+								<?php echo substr( $project->getSummary(), 0, 90).'...'; ?>
+							</p>
+						</div>
+						<div class="row">
+							<div class="col-md-4 col-xs-4"><small><strong><?php echo $this->datalog->countDataLog($project->getId_project(), 'project')?></strong><br>Views</small></div>
+							<div class="col-md-4 col-xs-4"><small><strong><?php echo $this->comment->getTotalComment('project', $project->getId_project());?></strong><br>Comments</small></div>
+							<div class="col-md-4 col-xs-4"><small><strong>0</strong><br>Likes</small></div>
+						</div>
+						<?php if( Session::get('userid') == $project->getUser()->getId_user() ) { ?>
+						<div class="row">
+						<hr>
+						<a href="<?=URL?>project/form/<?=$project->getId_project()?>" class="btn btn-default"> <i class="glyphicon glyphicon-pencil"></i> Editar</a>
+						</div>
+						<?php } ?>
                     </div>
                   </div>
                 </div>
@@ -128,11 +140,13 @@ $objFollow = new Follow_Model();
           <div class="qg">
 
             <div class="qn">
-              <a href="#"><strong>Seguidores</strong></a> <!-- <small>(3 novos)</small> -->
+              <strong>Seguidores</strong> <small>(<?php echo $this->follow->countFollowers($this->obj->getId_user()); ?>)</small>
             </div>
             <ul class="ano">
             <?php foreach( $this->follow->listFollowers($this->obj->getId_user()) as $followers ){?>
-              <li class="anp"><img class="cu" src="<?php echo Data::getPhotoUser($followers->getFollower()->getId_user());?>"></li>
+              <li class="anp">
+				 <a href="<?=URL?>user/dashboard/<?=$followers->getFollower()->getLogin()?>"><img class="cu" src="<?php echo Data::getPhotoUser($followers->getFollower()->getId_user());?>"></a>
+			  </li>
             <?php } ?>
             </ul>
           </div>
@@ -146,11 +160,15 @@ $objFollow = new Follow_Model();
           <div class="qg">
 
             <div class="qn">
-              <a href="#"><strong>Seguindo</strong></a>
+              <strong>Seguindo</strong> <small> (<?php echo $this->follow->countFollowing($this->obj->getId_user()); ?>)</small>
             </div>
             <ul class="ano">
             <?php foreach( $this->follow->listFollowing($this->obj->getId_user()) as $following ){?>
-              <li class="anp"><img class="cu" src="<?php echo Data::getPhotoUser($following->getUser()->getId_user());?>"></li>
+              <li class="anp">
+				  <a href="<?=URL?>user/dashboard/<?=$following->getUser()->getLogin()?>">
+					  <img class="cu" src="<?php echo Data::getPhotoUser($following->getUser()->getId_user());?>">
+				  </a>
+			  </li>
             <?php } ?>
             </ul>
           </div>
@@ -168,7 +186,7 @@ $objFollow = new Follow_Model();
 
 
 
-        <li class="b qf aml">
+        <!--<li class="b qf aml">
           <div class="qj">
             <span class="h aax dp"></span>
           </div>
@@ -198,7 +216,7 @@ $objFollow = new Follow_Model();
               </div>
             </div>
           </div>
-        </li>
+	  </li>-->
 
       </ul>
     </div>

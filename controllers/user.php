@@ -91,6 +91,12 @@ class User extends Controller {
 		require_once 'models/project_model.php';
 		$objProject = new Project_Model();
 
+		require_once 'models/datalog_model.php';
+		$this->view->datalog = new Datalog_Model();
+
+		require_once 'models/comment_model.php';
+		$this->view->comment = new Comment_Model();
+
 		$this->view->obj = $this->model->obterUserByLogin( $login );
 
 		$this->view->listProject = $objProject->listarProjectByUser( $this->model->getId_user() );

@@ -31,7 +31,7 @@ if( Session::get('loggedIn') ) {
           </h5>
           <p class="alu"><?php echo $objUser->getBio(); ?></p>
 
-		  <p><a href="<?php echo URL?>user/form/<?php echo Session::get('userid'); ?>" class="cg ts fx"><span class="h aah"></span> Editar perfil</a></p>
+		  <p><a href="<?php echo URL?>user/form/<?php echo base64_encode(Session::get('userid')); ?>" class="cg ts fx"><span class="h aah"></span> Editar perfil</a></p>
 
           <ul class="aoi">
             <li class="aoj">
@@ -94,17 +94,14 @@ if( Session::get('loggedIn') ) {
 
           <ul class="qo anx"><!-- listar os ultimos 5 projetos ou os mais curtidos -->
           <?php foreach( $objProject->listarProject( 4 ) as $project ) {?>
-          <li class="qf alm">
-          	<div class="" style="float:left; margin-right:10px; width:80px; background: url(<?php echo URL . $project->getMainpicture(); ?>) center center no-repeat #000; background-size: 100%; overflow: hidden; height:50px"></div>
-
+          <li class="qf alm" style="height:45px">
+          	<div class="" style="float:left; margin-right:10px; width:80px; background: url(<?php echo URL .'public/img/project/'.$project->getPath().'/'. $project->getMainpicture(); ?>) center center no-repeat #000; background-size: 100%; overflow: hidden; height:50px"></div>
             <div class="qg">
               <strong><a href="<?php echo URL . 'project/detail/' . $project->getId_project(); ?>"><?php echo $project->getTitle(); ?></a> </strong>
 			  <small>| <a href="<?php echo URL . 'user/dashboard/' . $project->getUser()->getLogin();?>"><?php echo $project->getUser()->getLogin(); ?></a></small>
-              <div class="aoa ">
-                <p><small><?php echo substr($project->getContent(), 0,50); ?></small></p>
-              </div>
             </div>
           </li>
+		  <hr>
           <?php } ?>
         </ul>
 

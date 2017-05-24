@@ -14,7 +14,10 @@
 		        	<small><?=Data::formatDateShort($this->obj->getDate())?>
 		        	<?php if( !empty($this->obj->getAuthor()) ){ echo ' | por ' . $this->obj->getAuthor(); } ?>
 		        	</small>
-		        	</p>
+		        </p>
+
+				<p>
+					<img src="<?=URL?>public/img/post/<?=$this->obj->getPath().'/'.$this->obj->getMainpicture();?>" alt="" style="max-width:100%"></p>
 
 				<div class="post-content text-justify"><p class=""><?=$this->obj->getContent()?></p></div>
 
