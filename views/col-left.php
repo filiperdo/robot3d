@@ -69,11 +69,11 @@ if( Session::get('loggedIn') ) {
           <ul class="eb tb">
             <!-- <li><span class="dp h xh all"></span>Went to <a href="#">Oh, Canada</a> -->
             <!--<li><span class="dp h ajw all"></span>Se tornou amigo <a href="#"> Lorem ipsum </a>-->
-			<?php if(!empty($objUser->getWebsite())){ ?><li><span class="dp h add all"></span><a href="<?php echo $objUser->getWebsite(); ?>" target="_blank">Website </a><?php } ?>
-			<?php if(!empty($objUser->getGithub())){ ?><li><span class="dp h abu all"></span><a href="<?php echo $objUser->getGithub(); ?>" target="_blank">Github </a><?php } ?>
-			<?php if(!empty($objUser->getFacebook())){ ?><li><span class="dp h aau all"></span><a href="<?php echo $objUser->getFacebook(); ?>" target="_blank">Facebook </a><?php } ?>
-			<?php if(!empty($objUser->getTwitter())){ ?><li><span class="dp h ajo all"></span><a href="<?php echo $objUser->getTwitter(); ?>" target="_blank">Twitter </a><?php } ?>
-			<?php if(!empty($objUser->getYoutube())){ ?><li><span class="dp h akt all"></span><a href="<?php echo $objUser->getYoutube(); ?>" target="_blank">Youtube </a><?php } ?>
+			<?php if(!empty($objUser->getWebsite())){ ?><li><span class="dp h add all"></span><a href="http://<?php echo $objUser->getWebsite(); ?>" target="_blank">Website </a><?php } ?>
+			<?php if(!empty($objUser->getGithub())){ ?><li><span class="dp h abu all"></span><a href="http://<?php echo $objUser->getGithub(); ?>" target="_blank">Github </a><?php } ?>
+			<?php if(!empty($objUser->getFacebook())){ ?><li><span class="dp h aau all"></span><a href="http://<?php echo $objUser->getFacebook(); ?>" target="_blank">Facebook </a><?php } ?>
+			<?php if(!empty($objUser->getTwitter())){ ?><li><span class="dp h ajo all"></span><a href="http://<?php echo $objUser->getTwitter(); ?>" target="_blank">Twitter </a><?php } ?>
+			<?php if(!empty($objUser->getYoutube())){ ?><li><span class="dp h akt all"></span><a href="http://<?php echo $objUser->getYoutube(); ?>" target="_blank">Youtube </a><?php } ?>
             <!--<li><span class="dp h ack all"></span>Mora em <a href="#">Lorem ipsum, SP</a>-->
             <li><span class="dp h wi all"></span>Posts <strong><?php echo $objItem->countItemByUser(Session::get('userid')); ?></strong>
 			<li><span class="dp h abk all"></span>Projetos <strong><?php echo $objProject->getTotalProjectByUser(Session::get('userid')); ?></strong>

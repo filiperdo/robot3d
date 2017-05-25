@@ -120,6 +120,15 @@ class Project extends Controller {
 		// ------------------------------------------------------------
 		// Fim datalog
 
+		// configura os dados para compartilhamento no facebook
+		$this->view->meta_facebook = array(
+			'url' 			=> URL . 'project/detail/' . $id_project,
+			'type'			=> 'post',
+			'title'			=> $this->view->obj->getTitle(),
+			'description'	=> substr(strip_tags( $this->view->obj->getSummary() ), 0, 150)."...",
+			'image'			=> URL . 'public/img/project/' . $this->view->obj->getPath() .'/' . $this->view->obj->getMainpicture()
+		);
+
 		$this->view->render( "header.inc" );
 		$this->view->render( "project/detail" );
 		//$this->view->render( "col-right" );
@@ -255,7 +264,7 @@ class Project extends Controller {
 			$data_component = array(
 				'name'			=> $_POST['name_component'],
 				'amount'		=> $_POST['amount_component'],
-				'link'			=> $_POST['link_component'],
+				'link'			=> Data::formataHttp($_POST['link_component']),
 				'id_project'	=> $id
 			);
 

@@ -7,7 +7,17 @@ class Data
      * date( 'd/m/Y', strtotime( $this->dataRegistro ) )
      */
 
-	static public function formataData($data)
+    static public function formataHttp($data)
+ 	{
+ 		if (!empty($data))
+ 		{
+ 			$data = str_replace('http://', '', $data);
+            $data = str_replace('https://', '', $data);
+            return $data;
+ 		}
+ 	}
+
+    static public function formataData($data)
 	{
 		if (!empty($data))
 		{

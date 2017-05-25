@@ -250,11 +250,11 @@ class User extends Controller {
 			'password'			=> isset($_POST['password']) ? $_POST['password'] : $this->model->getPassword(),
 			'bio' 				=> $_POST["bio"],
 			'linguage' 			=> $_POST["linguage"],
-			'website' 			=> $_POST["website"],
-			'github' 			=> $_POST["github"],
-			'facebook' 			=> $_POST["facebook"],
-			'twitter' 			=> $_POST["twitter"],
-			'youtube' 			=> $_POST["youtube"]
+			'website' 			=> Data::formataHttp($_POST["website"]),
+			'github' 			=> Data::formataHttp($_POST["github"]),
+			'facebook' 			=> Data::formataHttp($_POST["facebook"]),
+			'twitter' 			=> Data::formataHttp($_POST["twitter"]),
+			'youtube' 			=> Data::formataHttp($_POST["youtube"])
 
 		);
 

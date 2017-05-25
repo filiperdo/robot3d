@@ -59,11 +59,11 @@ $objFollow = new Follow_Model();
           <ul class="eb tb">
             <!-- <li><span class="dp h xh all"></span>Went to <a href="#">Oh, Canada</a> -->
             <!--<li><span class="dp h ajw all"></span>Se tornou amigo <a href="#"> Lorem ipsum </a>-->
-			<?php if(!empty($this->obj->getWebsite())){ ?><li><span class="dp h add all"></span><a href="<?php echo $this->obj->getWebsite(); ?>" target="_blank">Website </a><?php } ?>
-			<?php if(!empty($this->obj->getGithub())){ ?><li><span class="dp h abu all"></span><a href="<?php echo $this->obj->getGithub(); ?>" target="_blank">Github </a><?php } ?>
-			<?php if(!empty($this->obj->getFacebook())){ ?><li><span class="dp h aau all"></span><a href="<?php echo $this->obj->getFacebook(); ?>" target="_blank">Facebook </a><?php } ?>
-			<?php if(!empty($this->obj->getTwitter())){ ?><li><span class="dp h ajo all"></span><a href="<?php echo $this->obj->getTwitter(); ?>" target="_blank">Twitter </a><?php } ?>
-			<?php if(!empty($this->obj->getYoutube())){ ?><li><span class="dp h akt all"></span><a href="<?php echo $this->obj->getYoutube(); ?>" target="_blank">Youtube </a><?php } ?>
+			<?php if(!empty($this->obj->getWebsite())){ ?><li><span class="dp h add all"></span><a href="http://<?php echo $this->obj->getWebsite(); ?>" target="_blank">Website </a><?php } ?>
+			<?php if(!empty($this->obj->getGithub())){ ?><li><span class="dp h abu all"></span><a href="http://<?php echo $this->obj->getGithub(); ?>" target="_blank">Github </a><?php } ?>
+			<?php if(!empty($this->obj->getFacebook())){ ?><li><span class="dp h aau all"></span><a href="http://<?php echo $this->obj->getFacebook(); ?>" target="_blank">Facebook </a><?php } ?>
+			<?php if(!empty($this->obj->getTwitter())){ ?><li><span class="dp h ajo all"></span><a href="http://<?php echo $this->obj->getTwitter(); ?>" target="_blank">Twitter </a><?php } ?>
+			<?php if(!empty($this->obj->getYoutube())){ ?><li><span class="dp h akt all"></span><a href="http://<?php echo $this->obj->getYoutube(); ?>" target="_blank">Youtube </a><?php } ?>
             <!--<li><span class="dp h ack all"></span>Mora em <a href="#">Lorem ipsum, SP</a>-->
             <li><span class="dp h wi all"></span>Posts <strong><?php echo $objItem->countItemByUser($this->obj->getId_user()); ?></strong>
 			<li><span class="dp h abk all"></span>Projetos <strong><?php echo $objProject->getTotalProjectByUser($this->obj->getId_user()); ?></strong>

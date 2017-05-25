@@ -149,7 +149,7 @@
                                                         <ul class="list-inline pull-right">
                                                             <?php $link_img = str_replace('/thumb/', '/', $img);?>
                                                             <li>
-                                                                <button class="bt-copy btn btn-info btn-xs" data-clipboard-action="copy" data-clipboard-text="<?='../../'.$link_img?>"><i class="glyphicon glyphicon-link"></i></button>
+                                                                <button type="button" class="bt-copy btn btn-info btn-xs" data-clipboard-action="copy" data-clipboard-text="<?='../../'.$link_img?>"><i class="glyphicon glyphicon-link"></i></button>
                                                                 <a rel="<?php echo base64_encode($this->obj->getPath());?>" name="<?php echo base64_encode($nome_img); ?>" href="#" class="btn delete btn-danger btn-xs"><i class="icon-jfi-trash jFiler-item-trash-action"></i> Deletar</a>
                                                             </li>
                                                         </ul>
@@ -300,6 +300,7 @@ $(document).ready(function() {
 	  selector: '#content',
 	  theme: 'modern',
 	  menubar:false,
+      height : 500,
 	  image_prepend_url: "<?php echo URL?>",
 	  plugins: [
 	    'advlist autolink lists link image charmap print preview hr anchor pagebreak',
